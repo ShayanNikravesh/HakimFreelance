@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ManagerController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,7 +19,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('admin',ManagerController::class);
+Route::group(['prefix'=>'admin'],function(){
+
+    Route::resource('/',ManagerController::class);
+
+    // Route::get('/show-users',function(){
+    //     return view('admin.show-users');
+    // });
+
+});
+
+Route::resource('show-users',UserController::class);
 
 Route::get('admin-login',function(){
     return view('admin.login');
