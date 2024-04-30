@@ -17,9 +17,9 @@ return new class extends Migration
             $table->string('last_name');
             $table->integer('national_code');
             $table->integer('mobile');
-            $table->boolean('gender');
+            $table->enum('gender',['male','female']);
             $table->string('password');
-            $table->boolean('status');
+            $table->enum('status',['active','inactive','banned'])->default('active');
             $table->rememberToken();
             $table->timestamps();
         });

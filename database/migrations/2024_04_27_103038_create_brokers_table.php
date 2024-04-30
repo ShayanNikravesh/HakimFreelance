@@ -16,9 +16,11 @@ return new class extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->integer('national_code');
+            $table->string('email')->unique();
+            $table->string('password');
             $table->text('description');
             $table->integer('category_id');
-            $table->boolean('status');
+            $table->enum('status',['active','inactive','banned'])->default('active');
             $table->string('address');
             $table->text('image');
             $table->timestamps();

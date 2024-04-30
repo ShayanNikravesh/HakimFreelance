@@ -19,32 +19,25 @@
                     <th>#</th>
                     <th>نام</th>
                     <th>نام خانوادگی</th>
-                    <th>کد ملی</th>
-                    <th>موبایل</th>
-                    <th>جنسیت</th>
+                    <th>ایمیل</th>
+                    <th>توضیحات</th>
+                    <th>دسنه</th>
                     <th>وضعیت</th>
+                    <th>آدرس</th>
+                    <th>عکس</th>
                 </tr>
             </thead>
             <tbody>
-                @if ($users)
-                    @foreach ($users as $user)
+                @if ($brokers)
+                    @foreach ($brokers as $broker)
                         <tr>
                             <td>1</td>
-                            <td>{{$user->first_name}}</td>
-                            <td>{{$user->last_name}}</td>
-                            <td>{{$user->national_code}}</td>
-                            <td>{{$user->mobile}}</td>
-                                @switch($user->gender)
-                                    @case('male')
-                                        <td>آقا</td>
-                                        @break
-                                    @case('female')
-                                        <td>خانم</td>
-                                    @break    
-                                    @default
-                                    <td>نا مشخص</td>
-                                @endswitch
-                                @switch($user->status)
+                            <td>{{$broker->first_name}}</td>
+                            <td>{{$broker->last_name}}</td>
+                            <td>{{$broker->email}}</td>
+                            <td>{{$broker->description}}</td>
+                            <td>دسته</td>
+                                @switch($broker->status)
                                     @case('active')
                                         <td>فعال</td>
                                         @break
@@ -57,6 +50,8 @@
                                     @default
                                     <td>نا مشخص</td>
                                 @endswitch
+                            <td>{{$broker->address}}</td>
+                            <td>{{$broker->image}}</td>
                         </tr>
                     @endforeach
                 @endif
