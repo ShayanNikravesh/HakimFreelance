@@ -8,11 +8,11 @@
 			<!--begin::Info-->
 			<div class="d-flex align-items-center flex-wrap mr-2">
 				<!--begin::Page Title-->
-				<h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">لیست کارگزاران</h5>
+				<h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">لیست دسته ها</h5>
 				<!--end::Page Title-->
 				<!--begin::Actions-->
 				<div class="subheader-separator subheader-separator-ver mt-2 mb-2 mr-4 bg-gray-200"></div>
-				<span class="font-weight-bold mr-4">در این صفحه لیست کارگزاران را مشاهده میکنید.</span>
+				<span class="font-weight-bold mr-4">در این صفحه لیست دسته ها را مشاهده میکنید.</span>
 				<!--end::Actions-->
 			</div>
 			<!--end::Info-->
@@ -130,7 +130,7 @@
                 <span class="card-icon">
                     <i class="flaticon2-favourite text-primary"></i>
                 </span>
-                <h3 class="card-label font-weight">لیست کارگزاران</h3>
+                <h3 class="card-label font-weight">لیست دسته ها</h3>
             </div>
         </div>
         <div class="card-body">
@@ -139,41 +139,17 @@
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>نام</th>
-                        <th>نام خانوادگی</th>
-                        <th>ایمیل</th>
-                        <th>توضیحات</th>
-                        <th>دسنه</th>
-                        <th>وضعیت</th>
-                        <th>آدرس</th>
-                        <th>عکس</th>
+                        <th>عنوان</th>
+                        <th>دسته والد</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @if ($brokers)
-                        @foreach ($brokers as $broker)
+                    @if ($categoies)
+                        @foreach ($categoies as $category)
                             <tr>
                                 <td>1</td>
-                                <td>{{$broker->first_name}}</td>
-                                <td>{{$broker->last_name}}</td>
-                                <td>{{$broker->email}}</td>
-                                <td>{{$broker->description}}</td>
-                                <td>دسته</td>
-                                    @switch($broker->status)
-                                        @case('active')
-                                            <td>فعال</td>
-                                            @break
-                                        @case('inactive')
-                                            <td>غیر فعال</td>
-                                            @break
-                                        @case('banned')
-                                            <td>مسدود شده</td>
-                                            @break        
-                                        @default
-                                        <td>نا مشخص</td>
-                                    @endswitch
-                                <td>{{$broker->address}}</td>
-                                <td>{{$broker->image}}</td>
+                                <td>{{$category->name}}</td>
+                                <td>{{$category->parent_id}}</td>
                             </tr>
                         @endforeach
                     @endif

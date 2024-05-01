@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BrokerController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ManagerController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -20,19 +21,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix'=>'admin'],function(){
 
-    Route::resource('/',ManagerController::class);
-
-    // Route::get('/show-users',function(){
-    //     return view('admin.show-users');
-    // });
-
-});
+Route::resource('admin',ManagerController::class);
 
 Route::resource('show-users',UserController::class);
 
 Route::resource('show-brokers',BrokerController::class);
+
+Route::resource('categories',CategoryController::class);
 
 Route::get('admin-login',function(){
     return view('admin.login');

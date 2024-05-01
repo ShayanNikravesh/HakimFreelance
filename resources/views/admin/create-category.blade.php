@@ -8,11 +8,11 @@
 			<!--begin::Info-->
 			<div class="d-flex align-items-center flex-wrap mr-2">
 				<!--begin::Page Title-->
-				<h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">لیست کارگزاران</h5>
+				<h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">ایجاد دسته</h5>
 				<!--end::Page Title-->
 				<!--begin::Actions-->
 				<div class="subheader-separator subheader-separator-ver mt-2 mb-2 mr-4 bg-gray-200"></div>
-				<span class="font-weight-bold mr-4">در این صفحه لیست کارگزاران را مشاهده میکنید.</span>
+				<span class="font-weight-bold mr-4">در این صفحه می توانید دسته جدید کنید.</span>
 				<!--end::Actions-->
 			</div>
 			<!--end::Info-->
@@ -123,66 +123,60 @@
     <!--begin::Entry-->
     <div class="d-flex flex-column-fluid">
         <!--begin::Container-->
-    </div>
-    <div class="card card-custom">
-        <div class="card-header">
-            <div class="card-title">
-                <span class="card-icon">
-                    <i class="flaticon2-favourite text-primary"></i>
-                </span>
-                <h3 class="card-label font-weight">لیست کارگزاران</h3>
+        <div class="container">
+            <!--begin::Card-->
+            <div class="card card-custom card-sticky" id="kt_page_sticky_card">
+                <div class="card-header">
+                    <div class="card-title">
+                        <h3 class="card-label">مشخصات دسته</h3>
+                    </div>
+                </div>
+                @if ($errors->any())
+                    @foreach ($errors->all() as $error)
+                        <div class="alert alert-danger">{{$error}}</div>
+                    @endforeach
+                @endif
+                <div class="card-body">
+                    <!--begin::Form-->
+                    <form class="form" method="POST" action="{{route('categories.store')}}" id="kt_form">
+                        @csrf
+                        <div class="row">
+                            <div class="col-xl-2"></div>
+                            <div class="col-xl-8">
+                                <div class="my-5">
+                                    <div class="form-group row">
+                                        <label class="col-3">عنوان</label>
+                                        <div class="col-9">
+                                            <input class="form-control form-control-solid" type="text" name="name"/>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-3">دسته والد</label>
+                                        <div class="col-9">
+                                            <select class="form-control form-control-solid" type="text" name="parent_id">
+                                                <option value="">انتخاب کنید.</option>
+                                                @foreach ($parentCategories as $category)
+                                                    <option value="{{$category->id}}">{{$category->name}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-2"></div>
+                        </div>
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary mr-2">ثبت</button>
+                            <button type="reset" class="btn btn-secondary">پاک کردن</button>
+                        </div>
+                    </form>
+                    <!--end::Form-->
+                </div>
             </div>
+            <!--end::Card-->
         </div>
-        <div class="card-body">
-            <!--begin: Datatable-->
-            <table class="table table-bordered table-hover table-checkable" id="kt_datatable" style="margin-top: 13px !important">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>نام</th>
-                        <th>نام خانوادگی</th>
-                        <th>ایمیل</th>
-                        <th>توضیحات</th>
-                        <th>دسنه</th>
-                        <th>وضعیت</th>
-                        <th>آدرس</th>
-                        <th>عکس</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @if ($brokers)
-                        @foreach ($brokers as $broker)
-                            <tr>
-                                <td>1</td>
-                                <td>{{$broker->first_name}}</td>
-                                <td>{{$broker->last_name}}</td>
-                                <td>{{$broker->email}}</td>
-                                <td>{{$broker->description}}</td>
-                                <td>دسته</td>
-                                    @switch($broker->status)
-                                        @case('active')
-                                            <td>فعال</td>
-                                            @break
-                                        @case('inactive')
-                                            <td>غیر فعال</td>
-                                            @break
-                                        @case('banned')
-                                            <td>مسدود شده</td>
-                                            @break        
-                                        @default
-                                        <td>نا مشخص</td>
-                                    @endswitch
-                                <td>{{$broker->address}}</td>
-                                <td>{{$broker->image}}</td>
-                            </tr>
-                        @endforeach
-                    @endif
-                </tbody>
-            </table>
-            <!--end: Datatable-->
-        </div>
-    </div> 
         <!--end::Container-->
     </div>
     <!--end::Entry-->
+</div>
 @endsection
