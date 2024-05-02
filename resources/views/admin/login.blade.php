@@ -61,10 +61,20 @@ License: You must have a valid license purchased only from themeforest(the above
 								<h3>ورود مدیر</h3>
 								{{-- <div class="text-muted font-weight-bold">Enter your details to login to your account:</div> --}}
 							</div>
-							<form class="form" id="kt_login_signin_form">
+							<form class="form" id="kt_login_signin_form" action="{{ route('login') }}" method="post">
+                                @csrf
 								<div class="form-group mb-5">
-									<input class="form-control h-auto form-control-solid py-4 px-8" type="text" placeholder="ایمیل خود را وارد کنید." name="email" autocomplete="off" />
+									<input class="form-control h-auto form-control-solid py-4 px-8" type="number" placeholder="کدملی خود را وارد کنید." name="national_code" autocomplete="off" />
 								</div>
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
 								<div class="form-group mb-5">
 									<input class="form-control h-auto form-control-solid py-4 px-8" type="password" placeholder="رمز خود را وارد کنید." name="password" />
 								</div>
@@ -78,6 +88,10 @@ License: You must have a valid license purchased only from themeforest(the above
 								</div>
 								<button id="kt_login_signin_submit" class="btn btn-primary font-weight-bold px-9 py-4 my-3 mx-4">ورود</button>
 							</form>
+                            @auth
+                                fuck
+                            @endauth
+
 							{{-- <div class="mt-10">
 								<span class="opacity-70 mr-4">Don't have an account yet?</span>
 								<a href="javascript:;" id="kt_login_signup" class="text-muted text-hover-primary font-weight-bold">Sign Up!</a>

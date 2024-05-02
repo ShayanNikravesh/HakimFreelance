@@ -33,3 +33,5 @@ Route::resource('categories',CategoryController::class);
 Route::get('admin-login',function(){
     return view('admin.login');
 });
+Route::post('admin-login', [\App\Http\Controllers\LoginController::class, 'authenticate'])->name('login');
+Route::get('logout', [\App\Http\Controllers\LogoutController::class, 'logout'])->name('logout');
