@@ -135,7 +135,7 @@
         </div>
         <div class="card-body">
             <!--begin: Datatable-->
-            <table class="table table-bordered table-hover table-checkable" id="kt_datatable" style="margin-top: 13px !important">
+            <table class="table table-bordered table-hover table-checkable" id="datatable" style="margin-top: 13px !important">
                 <thead>
                     <tr>
                         <th>#</th>
@@ -153,7 +153,7 @@
                     @if ($brokers)
                         @foreach ($brokers as $broker)
                             <tr>
-                                <td>1</td>
+                                <td>{{++$loop->index}}</td>
                                 <td>{{$broker->first_name}}</td>
                                 <td>{{$broker->last_name}}</td>
                                 <td>{{$broker->email}}</td>

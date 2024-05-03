@@ -26,6 +26,7 @@ License: You must have a valid license purchased only from themeforest(the above
 		<!--begin::Page Vendors Styles(used by this page)--{{asset('')}}admin>
 		<link href="{{asset('adminassets/plugins/custom/fullcalendar/fullcalendar.bundle.rtl.css')}}" rel="stylesheet" type="text/css" />
 		<!--end::Page Vendors Styles-->
+		<link href="{{asset('assets/plugins/custom/datatables/datatables.bundle.css')}}" rel="stylesheet" type="text/css" />
 		<!--begin::Global Theme Styles(used by all pages)-->
 		<link href="{{asset('adminassets/plugins/global/plugins.bundle.rtl.css')}}" rel="stylesheet" type="text/css" />
 		<link href="{{asset('adminassets/plugins/custom/prismjs/prismjs.bundle.rtl.css')}}" rel="stylesheet" type="text/css" />
@@ -37,7 +38,8 @@ License: You must have a valid license purchased only from themeforest(the above
 		<link href="{{asset('adminassets/css/themes/layout/brand/dark.rtl.css')}}" rel="stylesheet" type="text/css" />
 		<link href="{{asset('adminassets/css/themes/layout/aside/dark.rtl.css')}}" rel="stylesheet" type="text/css" />
 		<!--end::Layout Themes-->
-		<link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
+
+		<link rel="shortcut icon" href="{{asset('assets/media/logos/favicon.ico')}}" />
 	</head>
 	<!--end::Head-->
 	<!--begin::Body-->
@@ -1806,9 +1808,18 @@ License: You must have a valid license purchased only from themeforest(the above
 		<!--begin::Page Vendors(used by this page)-->
 		<script src="{{asset('adminassets/plugins/custom/fullcalendar/fullcalendar.bundle.js')}}"></script>
 		<!--end::Page Vendors-->
+		<!--begin::Page Vendors(used by this page)-->
+		<script src="{{asset('adminassets/plugins/custom/datatables/datatables.bundle.js')}}"></script>
+		<!--end::Page Vendors-->
 		<!--begin::Page Scripts(used by this page)-->
 		<script src="{{asset('adminassets/js/pages/widgets.js')}}"></script>
 		<!--end::Page Scripts-->
+		<script>
+			$('#datatable').DataTable({
+				responsive: true
+			})
+		</script>
+		
 	</body>
 	<!--end::Body-->
 </html>
