@@ -21,17 +21,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::middleware('auth')->group(function () {
+    Route::resource('admin', ManagerController::class);
 
-Route::resource('admin',ManagerController::class);
+    Route::resource('show-users', UserController::class);
 
-Route::resource('show-users',UserController::class);
+    Route::resource('show-brokers', BrokerController::class);
 
-Route::resource('show-brokers',BrokerController::class);
-
-Route::resource('categories',CategoryController::class);
+    Route::resource('categories', CategoryController::class);
+});
 
 Route::get('admin-login',function(){
     return view('admin.login');
-});
-Route::post('admin-login', [\App\Http\Controllers\LoginController::class, 'authenticate'])->name('login');
+})->name('login');
+
+Route::post('admin-login', [\App\Http\Controllers\LoginController::class, 'authenticate'])->name('login-p');
 Route::get('logout', [\App\Http\Controllers\LogoutController::class, 'logout'])->name('logout');

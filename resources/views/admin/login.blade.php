@@ -61,7 +61,7 @@ License: You must have a valid license purchased only from themeforest(the above
 								<h3>ورود مدیر</h3>
 								{{-- <div class="text-muted font-weight-bold">Enter your details to login to your account:</div> --}}
 							</div>
-							<form class="form" id="kt_login_signin_form" action="{{ route('login') }}" method="post">
+							<form class="form" id="kt_login_signin_form" action="{{ route('login-p') }}" method="post">
                                 @csrf
 								<div class="form-group mb-5">
 									<input class="form-control h-auto form-control-solid py-4 px-8" type="number" placeholder="کدملی خود را وارد کنید." name="national_code" autocomplete="off" />
