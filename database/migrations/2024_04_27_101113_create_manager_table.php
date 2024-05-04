@@ -11,12 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('brokers', function (Blueprint $table) {
+        Schema::create('manager', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->text('desc');
-            $table->text('photo');
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->integer('mobile');
+            $table->string('email')->unique();
+            $table->string('password');
+            $table->boolean('gender');
+            $table->boolean('status');
             $table->timestamps();
         });
     }
@@ -26,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('broker');
+        Schema::dropIfExists('manager');
     }
 };
