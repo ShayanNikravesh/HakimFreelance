@@ -19,8 +19,6 @@ return new class extends Migration
             $table->unsignedBigInteger('national_code');
             $table->unsignedBigInteger('mobile');
             $table->string('email');
-            $table->text('desc');
-            $table->text('photo');
             $table->integer('access_level')->default(0);
             $table->string('password');
 //            $table->enum('status',['active','inactive','banned'])->default('active');
