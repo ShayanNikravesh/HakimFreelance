@@ -23,6 +23,7 @@ return new class extends Migration
             $table->enum('status',['active','inactive','banned'])->default('active');
             $table->string('address');
             $table->text('image');
+            $table->integer('role_id');
             $table->timestamps();
         });
     }
