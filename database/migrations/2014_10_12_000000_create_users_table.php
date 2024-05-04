@@ -15,16 +15,14 @@ return new class extends Migration
             $table->id();
             $table->string('f_name');
             $table->string('l_name');
-            $table->enum('gender',['male','female']);
-            $table->unsignedBigInteger('national_code');
             $table->unsignedBigInteger('mobile');
-            $table->string('email');
-            $table->text('desc');
-            $table->text('photo');
-            $table->integer('access_level')->default(0);
-            $table->string('password');
-//            $table->enum('status',['active','inactive','banned'])->default('active');
+            // $table->integer('access_level')->default(0);
             //for authentication
+            $table->enum('status',['active','inactive','banned'])->default('active');
+            $table->string('email')->unique();
+            $table->enum('gender',['male','female']);
+            $table->string('password');
+
             $table->rememberToken();
             $table->timestamps();
         });

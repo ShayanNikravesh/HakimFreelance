@@ -13,13 +13,10 @@ return new class extends Migration
     {
         Schema::create('manager', function (Blueprint $table) {
             $table->id();
-            $table->string('first_name');
-            $table->string('last_name');
-            $table->integer('mobile');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->boolean('gender');
-            $table->boolean('status');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->integer('level');
+            $table->rememberToken();
             $table->timestamps();
         });
     }
