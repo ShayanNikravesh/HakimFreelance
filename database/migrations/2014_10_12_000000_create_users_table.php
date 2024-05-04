@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('f_name');
             $table->string('l_name');
+            $table->enum('gender',['male','female']);
+            $table->unsignedBigInteger('national_code');
             $table->unsignedBigInteger('mobile');
             $table->string('email');
             $table->text('desc');
@@ -23,11 +25,6 @@ return new class extends Migration
             $table->string('password');
 //            $table->enum('status',['active','inactive','banned'])->default('active');
             //for authentication
-            $table->enum('status',['active','inactive','banned'])->default('active');
-            $table->string('email')->unique();
-            $table->enum('gender',['male','female']);
-            $table->string('password');
-
             $table->rememberToken();
             $table->timestamps();
         });
