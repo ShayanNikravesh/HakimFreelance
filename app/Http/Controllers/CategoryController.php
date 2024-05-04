@@ -13,7 +13,8 @@ class CategoryController extends Controller
     public function index()
     {
        $categoies = Category::all();
-       return view('admin.show-categories',compact('categoies')); 
+       $parentCategories = Category::whereNull('parent_id')->get();
+       return view('admin.show-categories',compact('categoies','parentCategories')); 
     }
 
     /**
@@ -39,7 +40,7 @@ class CategoryController extends Controller
         $category->parent_id = $request->parent_id;
         $category->save();
 
-        return redirect()->route('admin.index');
+        return redirect()->route('categories.index');
     }
 
     /**
@@ -55,7 +56,10 @@ class CategoryController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $category = Category::findOrFail($id);
+
+        $parentCategories = Category::whereNull('parent_id')->get();
+        return view('admin.edit-category',compact('category','parentCategories'));
     }
 
     /**
@@ -63,7 +67,17 @@ class CategoryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $category = Category::findOrFail($id);
+
+        $request -> validate([
+            'name' => ['required'],
+        ]);
+
+        $category->name = $request->name;
+        $category->parent_id = $request->parent_id;
+        $category->save();
+
+        return redirect()->route('categories.index');
     }
 
     /**
