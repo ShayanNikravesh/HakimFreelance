@@ -64,7 +64,7 @@ License: You must have a valid license purchased only from themeforest(the above
 							<form class="form" id="kt_login_signin_form" action="{{ route('login-p') }}" method="post">
                                 @csrf
 								<div class="form-group mb-5">
-									<input class="form-control h-auto form-control-solid py-4 px-8" type="number" placeholder="کدملی خود را وارد کنید." name="national_code" autocomplete="off" />
+									<input class="form-control h-auto form-control-solid py-4 px-8" type="number" placeholder="ایمیل خود را وارد کنید." name="email" autocomplete="off" />
 								</div>
                                 @if ($errors->any())
                                     <div class="alert alert-danger">

@@ -16,7 +16,7 @@ class LoginController extends Controller
     {
 
         $credentials = $request->validate([
-            'national_code'=> ['required', ],
+            'email'=> ['required', ],
             'password'=> ['required', ],
         ]);
 
