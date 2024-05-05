@@ -40,6 +40,10 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'managers' => [
+            'driver' => 'session',
+            'provider' => 'managers'
+        ]
     ],
 
     /*
@@ -63,6 +67,11 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
+        ],
+
+        'users' => [
+            'managers' => 'eloquent',
+            'model' => App\Models\Manager::class,
         ],
 
         // 'users' => [

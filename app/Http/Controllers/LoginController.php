@@ -16,18 +16,18 @@ class LoginController extends Controller
     {
 
         $credentials = $request->validate([
-            'national_code'=> ['required', ],
+            'email'=> ['required', ],
             'password'=> ['required', ],
         ]);
 
-        if(Auth::attempt($credentials, $request->remember)){
+        if(Auth::guard('managers')->attempt($credentials, $request->remember)){
             $request->session()->regenerate();
 
             return redirect('/');
         }
 
         return back()->withErrors([
-            'national_code'=> 'national_code or password is false'
-        ])->onlyInput('national_code');
+            'email'=> 'email or password is false'
+        ])->onlyInput('email');
     }
 }
