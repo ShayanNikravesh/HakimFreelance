@@ -20,7 +20,7 @@ class LoginController extends Controller
             'password'=> ['required', ],
         ]);
 
-        if(Auth::guard('managers')->attempt($credentials, $request->remember)){
+        if(Auth->attempt($credentials, $request->remember)){
             $request->session()->regenerate();
 
             return redirect('/');

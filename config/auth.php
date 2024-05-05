@@ -69,7 +69,7 @@ return [
             'model' => App\Models\User::class,
         ],
 
-        'users' => [
+        'managers' => [
             'managers' => 'eloquent',
             'model' => App\Models\Manager::class,
         ],
