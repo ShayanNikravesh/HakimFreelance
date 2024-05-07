@@ -20,14 +20,14 @@ class LoginController extends Controller
             'password'=> ['required', ],
         ]);
 
-        if(Auth::attempt($credentials, $request->remember)){
+        if(Auth->attempt($credentials, $request->remember)){
             $request->session()->regenerate();
 
             return redirect('/');
         }
 
         return back()->withErrors([
-            'national_code'=> 'national_code or password is false'
-        ])->onlyInput('national_code');
+            'email'=> 'email or password is false'
+        ])->onlyInput('email');
     }
 }
