@@ -153,6 +153,7 @@
                                     <div class="form-group row">
                                         <label class="col-3">دسته والد</label>
                                         <div class="col-9">
+											{{-- hi --}}
                                             <select class="form-control form-control-solid" type="text" name="parent_id">
                                                 <option value="">انتخاب کنید.</option>
                                                 @foreach ($parentCategories as $category)
