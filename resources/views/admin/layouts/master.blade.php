@@ -19,9 +19,9 @@ License: You must have a valid license purchased only from themeforest(the above
 		<title>پنل مدیریت</title>
 		<meta name="description" content="Metronic admin dashboard live demo. Check out all the features of the admin panel. A large number of settings, additional services and widgets." />
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-		{{-- <link rel="canonical" href="https://keenthemes.com/metronic" /> --}}
+		<link rel="canonical" href="https://keenthemes.com/metronic" />
 		<!--begin::Fonts-->
-		{{-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" /> --}}
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
 		<!--end::Fonts-->
 		<!--begin::Page Vendors Styles(used by this page)--{{asset('')}}admin>
 		<link href="{{asset('adminassets/plugins/custom/fullcalendar/fullcalendar.bundle.rtl.css')}}" rel="stylesheet" type="text/css" />
@@ -1489,7 +1489,7 @@ License: You must have a valid license purchased only from themeforest(the above
 								<div class="topbar-item">
 									<div class="btn btn-icon btn-icon-mobile w-auto btn-clean d-flex align-items-center btn-lg px-2" id="kt_quick_user_toggle">
 										<span class="text-muted font-weight-bold font-size-base d-none d-md-inline mr-1">Hi,</span>
-										{{-- <span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">{{ auth()->user()->f_name }}</span> --}}
+										<span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">{{ auth()->user()->f_name }}</span>
 										<span class="symbol symbol-lg-35 symbol-25 symbol-light-success">
 											<span class="symbol-label font-size-h5 font-weight-bold">S</span>
 										</span>
@@ -1553,7 +1553,7 @@ License: You must have a valid license purchased only from themeforest(the above
 						<i class="symbol-badge bg-success"></i>
 					</div>
 					<div class="d-flex flex-column">
-						{{-- <a href="#" class="font-weight-bold font-size-h5 text-dark-75 text-hover-primary">{{ auth()->user()->f_name. '' .auth()->user()->l_name }}</a> --}}
+						<a href="#" class="font-weight-bold font-size-h5 text-dark-75 text-hover-primary">{{ auth()->user()->f_name. '' .auth()->user()->l_name }}</a>
 						<div class="text-muted mt-1">Application Developer</div>
 						<div class="navi mt-2">
 							<a href="#" class="navi-item">
@@ -1571,7 +1571,7 @@ License: You must have a valid license purchased only from themeforest(the above
 											<!--end::Svg Icon-->
 										</span>
 									</span>
-									{{-- <span class="navi-text text-muted text-hover-primary">{{ auth()->user()->email }}</span> --}}
+									<span class="navi-text text-muted text-hover-primary">{{ auth()->user()->email }}</span>
 								</span>
 							</a>
 							<a href="{{ route('logout') }}" class="btn btn-sm btn-light-primary font-weight-bolder py-2 px-5">Sign Out</a>
