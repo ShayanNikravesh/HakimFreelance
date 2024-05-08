@@ -26,9 +26,14 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('show-users', UserController::class);
 
+    Route::get('users_status/{id}/{status}',[UserController::class,'changeStatus'])->name('change-status-user');
+
     Route::resource('show-brokers', BrokerController::class);
 
+    Route::get('broker_status/{id}/{status}',[BrokerController::class,'changeStatus'])->name('change-status-broker');
+
     Route::resource('categories', CategoryController::class);
+
 });
 
 Route::get('admin-login',function(){

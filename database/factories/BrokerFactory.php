@@ -27,6 +27,7 @@ class BrokerFactory extends Factory
             'status' => fake()->randomElement(['active','inactive','banned']),
             'address' => fake()->sentence(),
             'image' => fake()->paragraph(),
+            'role_id' => 1,
         ];
     }
 }

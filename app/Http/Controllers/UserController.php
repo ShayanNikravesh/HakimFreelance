@@ -64,4 +64,15 @@ class UserController extends Controller
     {
         //
     }
+
+    public function changeStatus(Request $request,string $id)
+    {
+        $user = User::findOrFail($id);
+        $status = $request->status;
+        
+        $user->status = $status;
+        $user->save();
+
+        return redirect()->back();
+    }
 }

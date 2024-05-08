@@ -23,7 +23,6 @@ class UserFactory extends Factory
             'national_code' => rand(0,100),
             'mobile' => rand(0,100),
             'gender' => fake()->randomElement(['male','female']),
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
             'status' => fake()->randomElement(['active','inactive','banned']),
             'remember_token' => Str::random(10),
         ];
