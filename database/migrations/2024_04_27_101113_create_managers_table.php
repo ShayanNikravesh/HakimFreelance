@@ -13,9 +13,11 @@ return new class extends Migration
     {
         Schema::create('manager', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->string('f_name');
+            $table->string('l_name');
+            $table->text('email');
             $table->integer('level');
+            $table->string('password');
             $table->rememberToken();
             $table->timestamps();
         });
