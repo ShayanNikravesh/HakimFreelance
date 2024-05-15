@@ -1489,7 +1489,11 @@ License: You must have a valid license purchased only from themeforest(the above
 								<div class="topbar-item">
 									<div class="btn btn-icon btn-icon-mobile w-auto btn-clean d-flex align-items-center btn-lg px-2" id="kt_quick_user_toggle">
 										<span class="text-muted font-weight-bold font-size-base d-none d-md-inline mr-1">Hi,</span>
+                                        @if(auth('managers')->check())
 										 <span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">{{ auth('managers')->user()->f_name }}</span>
+                                        @else
+                                        <span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">{{ auth('brokers')->user()->f_name }}</span>
+                                        @endif
 										<span class="symbol symbol-lg-35 symbol-25 symbol-light-success">
 											<span class="symbol-label font-size-h5 font-weight-bold">S</span>
 										</span>
@@ -1553,8 +1557,12 @@ License: You must have a valid license purchased only from themeforest(the above
 						<i class="symbol-badge bg-success"></i>
 					</div>
 					<div class="d-flex flex-column">
+                        @if(auth('managers')->check())
 						 <a href="#" class="font-weight-bold font-size-h5 text-dark-75 text-hover-primary">{{ auth('managers')->user()->f_name. '' .auth()->user()->l_name }}</a>
-						<div class="text-muted mt-1">Application Developer</div>
+                        @else
+                            <a href="#" class="font-weight-bold font-size-h5 text-dark-75 text-hover-primary">{{ auth('brokers')->user()->f_name. '' .auth()->user()->l_name }}</a>
+                        @endif
+                            <div class="text-muted mt-1">Application Developer</div>
 						<div class="navi mt-2">
 							<a href="#" class="navi-item">
 								<span class="navi-link p-0 pb-2">
@@ -1571,8 +1579,12 @@ License: You must have a valid license purchased only from themeforest(the above
 											<!--end::Svg Icon-->
 										</span>
 									</span>
+                                    @if(auth('managers')->check())
 									 <span class="navi-text text-muted text-hover-primary">{{ auth('managers')->user()->email }}</span>
-								</span>
+                                    @else
+                                        <span class="navi-text text-muted text-hover-primary">{{ auth('brokers')->user()->email }}</span>
+                                    @endif
+                                </span>
 							</a>
 							<a href="{{ route('logout') }}" class="btn btn-sm btn-light-primary font-weight-bolder py-2 px-5">Sign Out</a>
 						</div>

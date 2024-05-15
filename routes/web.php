@@ -37,6 +37,9 @@ Route::middleware('auth:managers')->group(function () {
 });
 
 Route::get('admin-login',function(){
+    if (auth('managers')->check() or auth('brokers')->check()){
+        return redirect('/panel');
+    }
     return view('panel.login');
 })->name('login');
 

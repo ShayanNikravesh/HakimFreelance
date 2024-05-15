@@ -73,11 +73,15 @@ License: You must have a valid license purchased only from themeforest(the above
 							<form class="form" id="kt_login_signin_form" action="{{ route('login-p') }}" method="post">
                                 @csrf
 								<div class="form-group mb-5">
-									<input class="form-control h-auto form-control-solid py-4 px-8" type="email" placeholder="ایمیل خود را وارد کنید." name="email" autocomplete="off" />
+									<input class="form-control h-auto form-control-solid py-4 px-8" type="email" placeholder="ایمیل خود را وارد کنید." name="email" autocomplete="on" id="email"/>
 								</div>
 								<div class="form-group mb-5">
 									<input class="form-control h-auto form-control-solid py-4 px-8" type="password" placeholder="رمز خود را وارد کنید." name="password" />
 								</div>
+                                <select class="form-select mb-5" aria-label="Default select example" class="form-control h-auto form-control-solid py-4 px-8" name="table_name" id="my_select">
+                                    <option value="1" selected>کارگزار</option>
+                                    <option value="2">مدیر</option>
+                                </select>
 								<div class="form-group d-flex flex-wrap justify-content-between align-items-center">
 									<div class="checkbox-inline">
 										<label class="checkbox m-0 text-muted">
@@ -168,6 +172,26 @@ License: You must have a valid license purchased only from themeforest(the above
 		<!--end::Global Theme Bundle-->
 		<!--begin::Page Scripts(used by this page)-->
 		<script src="assets/js/pages/custom/login/login-general.js"></script>
+        <script>
+            // گرفتن عناصر فرم
+            const usernameInput = document.getElementById('email');
+            const selectField = document.getElementById('my_select');
+
+            selectField.addEventListener('change', function() {
+                if (this.value === '2') {
+                    usernameInput.placeholder = 'لطفا کد ملی خود را وارد کنید';
+                    usernameInput.type = 'number';
+                    usernameInput.name = 'notional_code'
+                    usernameInput.value = '';
+                } else {
+                    usernameInput.placeholder = 'لطفا ایمیل خود را وارد کنید';
+                    usernameInput.type = 'email';
+                    usernameInput.name = 'email'
+                    usernameInput.value = '';
+                }
+            });
+
+        </script>
 		<!--end::Page Scripts-->
 	</body>
 	<!--end::Body-->

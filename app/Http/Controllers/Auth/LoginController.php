@@ -13,20 +13,35 @@ class LoginController extends Controller
      */
     public function authenticate(Request $request)
     {
+        if ($request->table_name == 1) {
 
+            $credentials = $request->validate([
+                'email'=> ['required', ],
+                'password'=> ['required', ],
+            ]);
+
+            if (Auth::guard('managers')->attempt($credentials, $request->remember)) {
+                $request->session()->regenerate();
+
+                return redirect('/');
+            }
+            return back()->withErrors([
+                'email'=> 'national_code or password is false'
+            ])->onlyInput('national_code');
+        }
         $credentials = $request->validate([
-            'email'=> ['required', ],
+            'national_code'=> ['required', ],
             'password'=> ['required', ],
         ]);
 
-        if(Auth::guard('managers')->attempt($credentials, $request->remember)){
+        if (Auth::guard('brokers')->attempt($credentials, $request->remember)) {
             $request->session()->regenerate();
 
             return redirect('/');
         }
-
         return back()->withErrors([
             'national_code'=> 'national_code or password is false'
         ])->onlyInput('national_code');
+
     }
 }

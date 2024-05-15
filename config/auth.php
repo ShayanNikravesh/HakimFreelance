@@ -44,6 +44,10 @@ return [
             'driver' => 'session',
             'provider' => 'managers',
         ],
+        'brokers' => [
+            'driver' => 'session',
+            'provider' => 'brokers',
+        ],
     ],
 
     /*
@@ -71,6 +75,10 @@ return [
         'managers' => [
             'driver' => 'eloquent',
             'model' => App\Models\Manager::class,
+        ],
+        'brokers' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Broker::class,
         ],
 
         // 'users' => [
@@ -105,12 +113,7 @@ return [
             'expire' => 60,
             'throttle' => 60,
         ],
-        'managers' => [
-            'provider' => 'managers',
-            'table' => 'password_reset_tokens',
-            'expire' => 60,
-            'throttle' => 60,
-        ],
+
     ],
 
     /*
