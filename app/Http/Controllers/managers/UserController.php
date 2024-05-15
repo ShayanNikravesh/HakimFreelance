@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\managers;
 
+use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,7 @@ class UserController extends Controller
     {
         $users = User::all();
 
-        return view('panel.users.index',compact('users'));
+        return view('panel.managers.users.index',compact('users'));
     }
 
     /**

@@ -16,13 +16,8 @@ return new class extends Migration
             $table->string('f_name');
             $table->string('l_name');
             $table->unsignedBigInteger('mobile');
-            // $table->integer('access_level')->default(0);
-            //for authentication
             $table->enum('status',['active','inactive','banned'])->default('active');
-            $table->string('email')->unique();
-            $table->enum('gender',['male','female']);
-            $table->string('password');
-
+            //for authentication
             $table->rememberToken();
             $table->timestamps();
         });

@@ -2,13 +2,14 @@
 
 namespace Database\Factories;
 
+use App\Models\Broker;
+use App\Models\Tag;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Optional;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
-class TagFactory extends Factory
+class BrokerTagFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,8 +19,8 @@ class TagFactory extends Factory
     public function definition(): array
     {
         return [
-            'tag' => fake()->name(),
-            'parent_id' => fake()->boolean(50) ? null : rand(0,9),
+            'tag_id' => fake()->unique()->numberBetween(1, Tag::count()),
+            'broker_id' => fake()->unique()->numberBetween(1, Broker::count()),
         ];
     }
 }

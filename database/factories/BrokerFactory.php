@@ -17,17 +17,17 @@ class BrokerFactory extends Factory
     public function definition(): array
     {
         return [
-            'first_name' => fake()->name(),
-            'last_name' => fake()->name(),
+            'f_name' => fake()->name(),
+            'l_name' => fake()->name(),
+            'mobile' => rand(0,100),
+            'gender' => fake()->randomElement(['male','female']),
             'national_code' => rand(0,100),
-            'email'=>fake()->unique()->safeEmail,
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
-            'description' => fake()->paragraph(),
-            'category_id' => rand(0,9),
-            'status' => fake()->randomElement(['active','inactive','banned']),
+            'desc' => fake()->paragraph(),
             'address' => fake()->sentence(),
-            'image' => fake()->paragraph(),
-            'role_id' => 1,
+            'photo' => fake()->paragraph(),
+            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+//            'email'=>fake()->unique()->safeEmail,
+            'status' => fake()->randomElement(['active','inactive','banned']),
         ];
     }
 }

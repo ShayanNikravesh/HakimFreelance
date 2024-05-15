@@ -13,13 +13,16 @@ return new class extends Migration
     {
         Schema::create('brokers', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->string('f_name');
+            $table->string('l_name');
+            $table->unsignedBigInteger('mobile');
             $table->enum('gender',['male','female']);
             $table->unsignedBigInteger('national_code');
             $table->text('desc');
             $table->string('address');
             $table->text('photo');
+            $table->string('password');
+            $table->enum('status',['active','inactive','banned'])->default('active');
             $table->rememberToken();
             $table->timestamps();
         });

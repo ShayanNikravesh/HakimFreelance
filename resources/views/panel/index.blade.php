@@ -1,4 +1,4 @@
-@extends('admin.layouts.master')
+@extends('panel.layouts.master')
 
 @section('content')
 <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
@@ -122,7 +122,7 @@
 	</div>
 	<!--end::Subheader-->
 	<!--begin::Entry-->
-	
+
 	<!--end::Entry-->
 </div>
 @endsection

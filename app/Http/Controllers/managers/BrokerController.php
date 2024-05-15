@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\managers;
 
+use App\Http\Controllers\Controller;
 use App\Models\Broker;
 use Illuminate\Http\Request;
 
@@ -13,7 +14,7 @@ class BrokerController extends Controller
     public function index()
     {
         $brokers = Broker::all();
-        return view('panel.brokers.index',compact('brokers'));
+        return view('panel.managers.brokers.index',compact('brokers'));
     }
 
     /**

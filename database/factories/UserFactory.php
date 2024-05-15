@@ -18,11 +18,9 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
-            'first_name' => fake()->name(),
-            'last_name' => fake()->name(),
-            'national_code' => rand(0,100),
+            'f_name' => fake()->name(),
+            'l_name' => fake()->name(),
             'mobile' => rand(0,100),
-            'gender' => fake()->randomElement(['male','female']),
             'status' => fake()->randomElement(['active','inactive','banned']),
             'remember_token' => Str::random(10),
         ];

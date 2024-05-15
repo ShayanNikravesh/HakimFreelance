@@ -1,9 +1,8 @@
 <?php
 
-use App\Http\Controllers\BrokerController;
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\ManagerController;
-use App\Http\Controllers\UserController;
+use App\Http\Controllers\managers\BrokerController;
+use App\Http\Controllers\managers\TagController;
+use App\Http\Controllers\managers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,24 +20,25 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware('auth')->group(function () {
-    Route::resource('admin', ManagerController::class);
-
-    Route::resource('show-users', UserController::class);
+Route::middleware('auth:managers')->group(function () {
+    Route::get('panel', function () {
+        return view('panel.managers.index');
+    });
+    Route::resource('users', UserController::class);
 
     Route::get('users_status/{id}/{status}',[UserController::class,'changeStatus'])->name('change-status-user');
 
-    Route::resource('show-brokers', BrokerController::class);
+    Route::resource('brokers', BrokerController::class);
 
     Route::get('broker_status/{id}/{status}',[BrokerController::class,'changeStatus'])->name('change-status-broker');
 
-    Route::resource('categories', CategoryController::class);
+    Route::resource('tags', TagController::class);
 
 });
 
 Route::get('admin-login',function(){
-    return view('admin.login');
+    return view('panel.login');
 })->name('login');
 
-Route::post('admin-login', [\App\Http\Controllers\LoginController::class, 'authenticate'])->name('login-p');
-Route::get('logout', [\App\Http\Controllers\LogoutController::class, 'logout'])->name('logout');
+Route::post('admin-login', [\App\Http\Controllers\Auth\LoginController::class, 'authenticate'])->name('login-p');
+Route::get('logout', [\App\Http\Controllers\Auth\LogoutController::class, 'logout'])->name('logout');

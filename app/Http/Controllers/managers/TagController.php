@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\managers;
 
+use App\Http\Controllers\Controller;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,7 @@ class TagController extends Controller
     {
        $tags = Tag::all();
        $parentTags = Tag::whereNull('parent_id')->get();
-       return view('panel.tags.index',compact('tags','parentTags'));
+       return view('panel.managers.tags.index',compact('tags','parentTags'));
     }
 
     /**
@@ -23,7 +24,7 @@ class TagController extends Controller
     public function create()
     {
         $parentTag = Tag::whereNull('parent_id')->get();
-        return view('panel.tags.create',compact('parentTag'));
+        return view('panel.managers.tags.create',compact('parentTag'));
     }
 
     /**
@@ -59,7 +60,7 @@ class TagController extends Controller
         $tags = Tag::findOrFail($id);
 
         $parentTags = Tag::whereNull('parent_id')->get();
-        return view('panel.tags.edit',compact('tags','parentTags'));
+        return view('panel.managers.tags.edit',compact('tags','parentTags'));
     }
 
     /**
@@ -77,7 +78,7 @@ class TagController extends Controller
         $Tag->parent_id = $request->parent_id;
         $Tag->save();
 
-        return redirect()->route('panel.tags.index');
+        return redirect()->route('panel.managers.tags.index');
     }
 
     /**
