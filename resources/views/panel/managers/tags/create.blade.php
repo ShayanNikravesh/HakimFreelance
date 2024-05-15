@@ -1,4 +1,4 @@
-@extends('admin.layouts.master')
+@extends('panel.layouts.master')
 
 @section('content')
 <div class="content d-flex flex-column flex-column-fluid" id="kt_content">
@@ -138,7 +138,7 @@
                 @endif
                 <div class="card-body">
                     <!--begin::Form-->
-                    <form class="form" method="POST" action="{{route('categories.store')}}" id="kt_form">
+                    <form class="form" method="POST" action="{{route('tags.store')}}" id="kt_form">
                         @csrf
                         <div class="row">
                             <div class="col-xl-2"></div>
@@ -155,8 +155,8 @@
                                         <div class="col-9">
                                             <select class="form-control form-control-solid" type="text" name="parent_id">
                                                 <option value="">انتخاب کنید.</option>
-                                                @foreach ($parentCategories as $category)
-                                                    <option value="{{$category->id}}">{{$category->name}}</option>
+                                                @foreach ($parentTag as $tag)
+                                                    <option value="{{$tag->id}}">{{$tag->name}}</option>
                                                 @endforeach
                                             </select>
                                         </div>

@@ -1,4 +1,4 @@
-@extends('admin.layouts.master')
+@extends('panel.layouts.master')
 
 @section('content')
 	<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
@@ -8,11 +8,11 @@
 				<!--begin::Info-->
 				<div class="d-flex align-items-center flex-wrap mr-2">
 					<!--begin::Page Title-->
-					<h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">لیست کاربران</h5>
+					<h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">لیست کارگزاران</h5>
 					<!--end::Page Title-->
 					<!--begin::Actions-->
 					<div class="subheader-separator subheader-separator-ver mt-2 mb-2 mr-4 bg-gray-200"></div>
-					<span class="font-weight-bold mr-4">در این صفحه لیست کاربران را مشاهده میکنید.</span>
+					<span class="font-weight-bold mr-4">در این صفحه لیست کارگزاران را مشاهده میکنید.</span>
 					<!--end::Actions-->
 				</div>
 				<!--end::Info-->
@@ -128,7 +128,7 @@
 					<span class="card-icon">
 						<i class="flaticon2-favourite text-primary"></i>
 					</span>
-					<h3 class="card-label font-weight">لیست کاربران</h3>
+					<h3 class="card-label font-weight">لیست کارگزاران</h3>
 				</div>
 			</div>
 			<div class="card-body">
@@ -139,33 +139,26 @@
 							<th>#</th>
 							<th>نام</th>
 							<th>نام خانوادگی</th>
-							<th>کد ملی</th>
-							<th>موبایل</th>
-							<th>جنسیت</th>
+							<th>ایمیل</th>
+							<th>توضیحات</th>
+							<th>دسنه</th>
 							<th>وضعیت</th>
+							<th>آدرس</th>
+							<th>عکس</th>
 							<th>تغییر وضعیت</th>
 						</tr>
 					</thead>
 					<tbody>
-						@if ($users)
-							@foreach ($users as $user)
+						@if ($brokers)
+							@foreach ($brokers as $broker)
 								<tr>
 									<td>{{++$loop->index}}</td>
-									<td>{{$user->first_name}}</td>
-									<td>{{$user->last_name}}</td>
-									<td>{{$user->national_code}}</td>
-									<td>{{$user->mobile}}</td>
-										@switch($user->gender)
-											@case('male')
-												<td>آقا</td>
-												@break
-											@case('female')
-												<td>خانم</td>
-											@break    
-											@default
-											<td>نا مشخص</td>
-										@endswitch
-										@switch($user->status)
+									<td>{{$broker->first_name}}</td>
+									<td>{{$broker->last_name}}</td>
+									<td>{{$broker->email}}</td>
+									<td>{{$broker->description}}</td>
+									<td>دسته</td>
+										@switch($broker->status)
 											@case('active')
 												<td>فعال</td>
 												@break
@@ -174,32 +167,34 @@
 												@break
 											@case('banned')
 												<td>مسدود شده</td>
-												@break        
+												@break
 											@default
 											<td>نا مشخص</td>
 										@endswitch
+									<td>{{$broker->address}}</td>
+									<td>{{$broker->image}}</td>
 									<td>
 										<button type="button" class="btn-sm btn-primary btn mx-1" data-toggle="modal" data-target="#ModalCenter">
 											<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-vcard-fill" viewBox="0 0 16 16">
 												<path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm9 1.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 0-1h-4a.5.5 0 0 0-.5.5M9 8a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 0-1h-4A.5.5 0 0 0 9 8m1 2.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 0-1h-3a.5.5 0 0 0-.5.5m-1 2C9 10.567 7.21 9 5 9c-2.086 0-3.8 1.398-3.984 3.181A1 1 0 0 0 2 13h6.96q.04-.245.04-.5M7 6a2 2 0 1 0-4 0 2 2 0 0 0 4 0"/>
-											</svg>	
+											</svg>
 										</button>
-									</td>	
+									</td>
 								</tr>
 								<!-- Modal -->
 								<div class="modal fade" id="ModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 									<div class="modal-dialog modal-dialog-centered" role="document">
 									<div class="modal-content">
 										<div class="modal-header">
-										<h5 class="modal-title" id="exampleModalLongTitle">وضعیت کاربر را تعیین کنید.</h5>
+										<h5 class="modal-title" id="exampleModalLongTitle">وضعیت کارگزار را تعیین کنید.</h5>
 										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 											<span aria-hidden="true">&times;</span>
 										</button>
 										</div>
 										<div class="modal-body text-center">
-											<a href="{{route('change-status-user',[$user->id,'status'=>'active'])}}" class="btn btn-success btn-sm">فعال</a>
-											<a href="{{route('change-status-user',[$user->id,'status'=>'inactive'])}}" class="btn btn-warning btn-sm">غیر فعال</a>
-											<a href="{{route('change-status-user',[$user->id,'status'=>'banned'])}}" class="btn btn-danger btn-sm">مسدود شده</a>
+											<a href="{{route('change-status-broker',[$broker->id,'status'=>'active'])}}" class="btn btn-success btn-sm">فعال</a>
+											<a href="{{route('change-status-broker',[$broker->id,'status'=>'inactive'])}}" class="btn btn-warning btn-sm">غیر فعال</a>
+											<a href="{{route('change-status-broker',[$broker->id,'status'=>'banned'])}}" class="btn btn-danger btn-sm">مسدود شده</a>
 										</div>
 										<div class="modal-footer">
 										<button type="button" class="btn btn-secondary" data-dismiss="modal">بستن</button>

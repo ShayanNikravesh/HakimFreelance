@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class TagController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-       $categoies = Category::all();
-       $parentCategories = Category::whereNull('parent_id')->get();
-       return view('admin.show-categories',compact('categoies','parentCategories')); 
+       $tags = Tag::all();
+       $parentTags = Tag::whereNull('parent_id')->get();
+       return view('panel.tags.index',compact('tags','parentTags'));
     }
 
     /**
@@ -22,8 +22,8 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        $parentCategories = Category::whereNull('parent_id')->get();
-        return view('admin.create-category',compact('parentCategories'));
+        $parentTag = Tag::whereNull('parent_id')->get();
+        return view('panel.tags.create',compact('parentTag'));
     }
 
     /**
@@ -33,12 +33,12 @@ class CategoryController extends Controller
     {
         $request -> validate([
             'name' => ['required'],
-        ]);   
-        
-        $category = new Category();
-        $category->name = $request->name;
-        $category->parent_id = $request->parent_id;
-        $category->save();
+        ]);
+
+        $Tag = new Tag();
+        $Tag->name = $request->name;
+        $Tag->parent_id = $request->parent_id;
+        $Tag->save();
 
         return redirect()->route('categories.index');
     }
@@ -56,10 +56,10 @@ class CategoryController extends Controller
      */
     public function edit(string $id)
     {
-        $category = Category::findOrFail($id);
+        $tags = Tag::findOrFail($id);
 
-        $parentCategories = Category::whereNull('parent_id')->get();
-        return view('admin.edit-category',compact('category','parentCategories'));
+        $parentTags = Tag::whereNull('parent_id')->get();
+        return view('panel.tags.edit',compact('tags','parentTags'));
     }
 
     /**
@@ -67,17 +67,17 @@ class CategoryController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $category = Category::findOrFail($id);
+        $Tag = Tag::findOrFail($id);
 
         $request -> validate([
             'name' => ['required'],
         ]);
 
-        $category->name = $request->name;
-        $category->parent_id = $request->parent_id;
-        $category->save();
+        $Tag->name = $request->name;
+        $Tag->parent_id = $request->parent_id;
+        $Tag->save();
 
-        return redirect()->route('categories.index');
+        return redirect()->route('panel.tags.index');
     }
 
     /**

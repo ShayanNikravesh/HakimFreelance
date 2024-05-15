@@ -13,8 +13,8 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
-        
-        return view('admin.show-users',compact('users'));
+
+        return view('panel.users.index',compact('users'));
     }
 
     /**
@@ -69,7 +69,7 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
         $status = $request->status;
-        
+
         $user->status = $status;
         $user->save();
 

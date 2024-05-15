@@ -13,7 +13,7 @@ class BrokerController extends Controller
     public function index()
     {
         $brokers = Broker::all();
-        return view('admin.show-brokers',compact('brokers'));
+        return view('panel.brokers.index',compact('brokers'));
     }
 
     /**
@@ -68,7 +68,7 @@ class BrokerController extends Controller
     {
         $broker = Broker::findOrFail($id);
         $status = $request->status;
-        
+
         $broker->status = $status;
         $broker->save();
 

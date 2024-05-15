@@ -1,4 +1,4 @@
-@extends('admin.layouts.master')
+@extends('panel.layouts.master')
 
 @section('content')
 	<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
@@ -8,11 +8,11 @@
 				<!--begin::Info-->
 				<div class="d-flex align-items-center flex-wrap mr-2">
 					<!--begin::Page Title-->
-					<h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">لیست کارگزاران</h5>
+					<h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">لیست دسته ها</h5>
 					<!--end::Page Title-->
 					<!--begin::Actions-->
 					<div class="subheader-separator subheader-separator-ver mt-2 mb-2 mr-4 bg-gray-200"></div>
-					<span class="font-weight-bold mr-4">در این صفحه لیست کارگزاران را مشاهده میکنید.</span>
+					<span class="font-weight-bold mr-4">در این صفحه لیست دسته ها را مشاهده میکنید.</span>
 					<!--end::Actions-->
 				</div>
 				<!--end::Info-->
@@ -128,7 +128,7 @@
 					<span class="card-icon">
 						<i class="flaticon2-favourite text-primary"></i>
 					</span>
-					<h3 class="card-label font-weight">لیست کارگزاران</h3>
+					<h3 class="card-label font-weight">لیست دسته ها</h3>
 				</div>
 			</div>
 			<div class="card-body">
@@ -137,79 +137,50 @@
 					<thead>
 						<tr>
 							<th>#</th>
-							<th>نام</th>
-							<th>نام خانوادگی</th>
-							<th>ایمیل</th>
-							<th>توضیحات</th>
-							<th>دسنه</th>
-							<th>وضعیت</th>
-							<th>آدرس</th>
-							<th>عکس</th>
-							<th>تغییر وضعیت</th>
+							<th>عنوان</th>
+							<th>دسته والد</th>
+							<th>عملیات</th>
 						</tr>
 					</thead>
 					<tbody>
-						@if ($brokers)
-							@foreach ($brokers as $broker)
+						@if ($tags)
+							@foreach ($tags as $tag)
 								<tr>
 									<td>{{++$loop->index}}</td>
-									<td>{{$broker->first_name}}</td>
-									<td>{{$broker->last_name}}</td>
-									<td>{{$broker->email}}</td>
-									<td>{{$broker->description}}</td>
-									<td>دسته</td>
-										@switch($broker->status)
-											@case('active')
-												<td>فعال</td>
-												@break
-											@case('inactive')
-												<td>غیر فعال</td>
-												@break
-											@case('banned')
-												<td>مسدود شده</td>
-												@break        
-											@default
-											<td>نا مشخص</td>
-										@endswitch
-									<td>{{$broker->address}}</td>
-									<td>{{$broker->image}}</td>
+									<td>{{$tag->name}}</td>
+									@foreach ($parentCategories as $parentTag)
+										@if ($tag->parent_id == $parentTag->id)
+											<td>{{$parentTag->name}}</td>
+											@else
+												<td>-----</td>
+										@endif
+                                    @endforeach
 									<td>
-										<button type="button" class="btn-sm btn-primary btn mx-1" data-toggle="modal" data-target="#ModalCenter">
-											<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-vcard-fill" viewBox="0 0 16 16">
-												<path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm9 1.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 0-1h-4a.5.5 0 0 0-.5.5M9 8a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 0-1h-4A.5.5 0 0 0 9 8m1 2.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 0-1h-3a.5.5 0 0 0-.5.5m-1 2C9 10.567 7.21 9 5 9c-2.086 0-3.8 1.398-3.984 3.181A1 1 0 0 0 2 13h6.96q.04-.245.04-.5M7 6a2 2 0 1 0-4 0 2 2 0 0 0 4 0"/>
-											</svg>	
-										</button>
+										<div class="d-flex">
+											<a href="{{route('tags.edit',$tag->id)}}" class="btn-sm btn-primary btn mx-1" data-toggle="tooltip" data-placement="bottom" title="ویرایش دسته">
+												<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+													<path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325"/>
+												</svg>
+											</a>
+											<form action="{{route('tags.destroy',$tag->id)}}" method="POST" data-toggle="tooltip" data-placement="bottom" title="حذف دسته">
+												@csrf
+												@method('DELETE')
+												<button class="btn-sm btn-danger btn mx-1">
+													<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+													<path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0"/>
+													</svg>
+												</button>
+											</form>
+										</div>
 									</td>
 								</tr>
-								<!-- Modal -->
-								<div class="modal fade" id="ModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-									<div class="modal-dialog modal-dialog-centered" role="document">
-									<div class="modal-content">
-										<div class="modal-header">
-										<h5 class="modal-title" id="exampleModalLongTitle">وضعیت کارگزار را تعیین کنید.</h5>
-										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-											<span aria-hidden="true">&times;</span>
-										</button>
-										</div>
-										<div class="modal-body text-center">
-											<a href="{{route('change-status-broker',[$broker->id,'status'=>'active'])}}" class="btn btn-success btn-sm">فعال</a>
-											<a href="{{route('change-status-broker',[$broker->id,'status'=>'inactive'])}}" class="btn btn-warning btn-sm">غیر فعال</a>
-											<a href="{{route('change-status-broker',[$broker->id,'status'=>'banned'])}}" class="btn btn-danger btn-sm">مسدود شده</a>
-										</div>
-										<div class="modal-footer">
-										<button type="button" class="btn btn-secondary" data-dismiss="modal">بستن</button>
-										</div>
-									</div>
-									</div>
-								</div>
-								<!-- Modal end -->
 							@endforeach
 						@endif
 					</tbody>
 				</table>
 				<!--end: Datatable-->
 			</div>
-		</div> 
+		</div>
 			<!--end::Container-->
 	</div>
     <!--end::Entry-->
