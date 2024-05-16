@@ -23,11 +23,11 @@ class LoginController extends Controller
             if (Auth::guard('managers')->attempt($credentials, $request->remember)) {
                 $request->session()->regenerate();
 
-                return redirect('/');
+                return redirect('panel');
             }
             return back()->withErrors([
-                'email'=> 'national_code or password is false'
-            ])->onlyInput('national_code');
+                'email'=> 'email or password is false'
+            ])->onlyInput('email');
         }
         $credentials = $request->validate([
             'national_code'=> ['required', ],

@@ -78,9 +78,9 @@ License: You must have a valid license purchased only from themeforest(the above
 								<div class="form-group mb-5">
 									<input class="form-control h-auto form-control-solid py-4 px-8" type="password" placeholder="رمز خود را وارد کنید." name="password" />
 								</div>
-                                <select class="form-select mb-5" aria-label="Default select example" class="form-control h-auto form-control-solid py-4 px-8" name="table_name" id="my_select">
-                                    <option value="1" selected>کارگزار</option>
-                                    <option value="2">مدیر</option>
+                                <select class="form-select form-control h-auto form-control-solid py-4 px-8 mb-2" aria-label="Default select example" name="table_name" id="my_select">
+                                    <option value="1" selected>مدیر</option>
+                                    <option value="2">کارگزار</option>
                                 </select>
 								<div class="form-group d-flex flex-wrap justify-content-between align-items-center">
 									<div class="checkbox-inline">
