@@ -20,15 +20,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::middleware('auth:managers')->group(function () {
-
-    Route::get('admin-panel', function () {
-        return view('panel.managers.index');
-    });
-
+Route::middleware('auth:brokers')->group(function () {
     Route::get('broker-panel', function () {
         return view('panel.brokers.index');
     })->name('broker-panel');
+});
+
+ Route::middleware('auth:managers')->group(function () {
+    Route::get('admin-panel', function () {
+        return view('panel.managers.index');
+    });
 
     Route::resource('users', UserController::class);
 
@@ -39,8 +40,7 @@ Route::get('/', function () {
     Route::get('broker_status/{id}/{status}',[BrokerController::class,'changeStatus'])->name('change-status-broker');
 
     Route::resource('tags', TagController::class);
-
-// });
+ });
 
 Route::get('admin-login',function(){
     if (auth('managers')->check() or auth('brokers')->check()){
