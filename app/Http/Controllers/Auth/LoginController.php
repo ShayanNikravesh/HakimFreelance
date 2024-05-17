@@ -23,7 +23,7 @@ class LoginController extends Controller
             if (Auth::guard('managers')->attempt($credentials, $request->remember)) {
                 $request->session()->regenerate();
 
-                return redirect('admin-panel');
+                return redirect('admin/panel');
             }
             return back()->withErrors([
                 'email'=> 'email or password is false'

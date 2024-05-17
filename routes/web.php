@@ -26,8 +26,8 @@ Route::middleware('auth:brokers')->group(function () {
     })->name('broker-panel');
 });
 
- Route::middleware('auth:managers')->group(function () {
-    Route::get('admin-panel', function () {
+ Route::middleware('auth:managers')->prefix('admin')->group(function () {
+    Route::get('panel', function () {
         return view('panel.managers.index');
     });
 
