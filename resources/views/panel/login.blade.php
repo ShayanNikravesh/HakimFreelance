@@ -73,7 +73,7 @@ License: You must have a valid license purchased only from themeforest(the above
 							<form class="form" id="kt_login_signin_form" action="{{ route('login-p') }}" method="post">
                                 @csrf
 								<div class="form-group mb-5">
-									<input class="form-control h-auto form-control-solid py-4 px-8" type="email" placeholder="ایمیل خود را وارد کنید." name="email" autocomplete="on" id="email"/>
+									<input class="form-control h-auto form-control-solid py-4 px-8" type="email" placeholder="ایمیل خود را وارد کنید." name="email" autocomplete="on" id="field"/>
 								</div>
 								<div class="form-group mb-5">
 									<input class="form-control h-auto form-control-solid py-4 px-8" type="password" placeholder="رمز خود را وارد کنید." name="password" />
@@ -174,14 +174,14 @@ License: You must have a valid license purchased only from themeforest(the above
 		<script src="assets/js/pages/custom/login/login-general.js"></script>
         <script>
             // گرفتن عناصر فرم
-            const usernameInput = document.getElementById('email');
+            const usernameInput = document.getElementById('field');
             const selectField = document.getElementById('my_select');
 
             selectField.addEventListener('change', function() {
                 if (this.value === '2') {
                     usernameInput.placeholder = 'لطفا کد ملی خود را وارد کنید';
                     usernameInput.type = 'number';
-                    usernameInput.name = 'notional_code'
+                    usernameInput.name = 'national_code'
                     usernameInput.value = '';
                 } else {
                     usernameInput.placeholder = 'لطفا ایمیل خود را وارد کنید';
