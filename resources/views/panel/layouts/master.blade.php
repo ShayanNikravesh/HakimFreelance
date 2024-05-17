@@ -16,7 +16,7 @@ License: You must have a valid license purchased only from themeforest(the above
 	<!--begin::Head-->
 	<head><base href="">
 		<meta charset="utf-8" />
-		<title>پنل مدیریت</title>
+		<title>پنل</title>
 		<meta name="description" content="Metronic admin dashboard live demo. Check out all the features of the admin panel. A large number of settings, additional services and widgets." />
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 		{{-- <link rel="canonical" href="https://keenthemes.com/metronic" /> --}}
@@ -1557,11 +1557,11 @@ License: You must have a valid license purchased only from themeforest(the above
 						<i class="symbol-badge bg-success"></i>
 					</div>
 					<div class="d-flex flex-column">
-                        @if(auth('managers')->check())
+                        {{-- @if(auth('managers')->check())
 						 <a href="#" class="font-weight-bold font-size-h5 text-dark-75 text-hover-primary">{{ auth('managers')->user()->f_name. '' .auth()->user()->l_name }}</a>
                         @else
                             <a href="#" class="font-weight-bold font-size-h5 text-dark-75 text-hover-primary">{{ auth('brokers')->user()->f_name. '' .auth()->user()->l_name }}</a>
-                        @endif
+                        @endif --}}
                             <div class="text-muted mt-1">Application Developer</div>
 						<div class="navi mt-2">
 							<a href="#" class="navi-item">

@@ -148,13 +148,13 @@
 								<tr>
 									<td>{{++$loop->index}}</td>
 									<td>{{$tag->name}}</td>
-									@foreach ($parentCategories as $parentTag)
-										@if ($tag->parent_id == $parentTag->id)
+									{{-- @foreach ($parentTags as $parentTag) --}}
+										{{-- @if ($tag->parent_id == $parentTag->id)
 											<td>{{$parentTag->name}}</td>
-											@else
-												<td>-----</td>
-										@endif
-                                    @endforeach
+											@else --}}
+											<td>{{$tag->parent_id}}</td>
+										{{-- @endif --}}
+                                    {{-- @endforeach --}}
 									<td>
 										<div class="d-flex">
 											<a href="{{route('tags.edit',$tag->id)}}" class="btn-sm btn-primary btn mx-1" data-toggle="tooltip" data-placement="bottom" title="ویرایش دسته">

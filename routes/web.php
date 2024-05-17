@@ -20,10 +20,16 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware('auth:managers')->group(function () {
-    Route::get('panel', function () {
+// Route::middleware('auth:managers')->group(function () {
+
+    Route::get('admin-panel', function () {
         return view('panel.managers.index');
     });
+
+    Route::get('broker-panel', function () {
+        return view('panel.brokers.index');
+    })->name('broker-panel');
+
     Route::resource('users', UserController::class);
 
     Route::get('users_status/{id}/{status}',[UserController::class,'changeStatus'])->name('change-status-user');
@@ -34,7 +40,7 @@ Route::middleware('auth:managers')->group(function () {
 
     Route::resource('tags', TagController::class);
 
-});
+// });
 
 Route::get('admin-login',function(){
     if (auth('managers')->check() or auth('brokers')->check()){

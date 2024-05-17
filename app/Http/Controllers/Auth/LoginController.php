@@ -23,7 +23,7 @@ class LoginController extends Controller
             if (Auth::guard('managers')->attempt($credentials, $request->remember)) {
                 $request->session()->regenerate();
 
-                return redirect('panel');
+                return redirect('admin-panel');
             }
             return back()->withErrors([
                 'email'=> 'email or password is false'
@@ -37,7 +37,7 @@ class LoginController extends Controller
         if (Auth::guard('brokers')->attempt($credentials, $request->remember)) {
             $request->session()->regenerate();
 
-            return redirect('/');
+            return redirect('broker-panel');
         }
         return back()->withErrors([
             'national_code'=> 'national_code or password is false'
