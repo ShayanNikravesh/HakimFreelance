@@ -121,7 +121,7 @@
 		</div>
 		<!--end::Subheader-->
 		<!--begin::Entry-->
-			<!--begin::Container-->
+		<!--begin::Container-->
 		<div class="card card-custom">
 			<div class="card-header">
 				<div class="card-title">
@@ -148,13 +148,21 @@
 								<tr>
 									<td>{{++$loop->index}}</td>
 									<td>{{$tag->name}}</td>
-									{{-- @foreach ($parentTags as $parentTag) --}}
-										{{-- @if ($tag->parent_id == $parentTag->id)
+									@php
+										$found = false;
+									@endphp
+									@foreach ($parentTags as $parentTag)
+										@if ($parentTag->id == $tag->parent_id)
 											<td>{{$parentTag->name}}</td>
-											@else --}}
-											<td>{{$tag->parent_id}}</td>
-										{{-- @endif --}}
-                                    {{-- @endforeach --}}
+											@php
+												$found = true;
+											@endphp
+											@break
+										@endif
+									@endforeach
+									@if (!$found)
+										<td>-------</td>
+									@endif
 									<td>
 										<div class="d-flex">
 											<a href="{{route('tags.edit',$tag->id)}}" class="btn-sm btn-primary btn mx-1" data-toggle="tooltip" data-placement="bottom" title="ویرایش دسته">
@@ -181,7 +189,7 @@
 				<!--end: Datatable-->
 			</div>
 		</div>
-			<!--end::Container-->
+		<!--end::Container-->
 	</div>
     <!--end::Entry-->
 @endsection

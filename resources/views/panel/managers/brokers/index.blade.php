@@ -121,7 +121,7 @@
 		</div>
 		<!--end::Subheader-->
 		<!--begin::Entry-->
-			<!--begin::Container-->
+		<!--begin::Container-->
 		<div class="card card-custom">
 			<div class="card-header">
 				<div class="card-title">
@@ -210,7 +210,7 @@
 				<!--end: Datatable-->
 			</div>
 		</div>
-			<!--end::Container-->
+		<!--end::Container-->
 	</div>
     <!--end::Entry-->
 @endsection
