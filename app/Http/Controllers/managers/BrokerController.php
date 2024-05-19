@@ -13,7 +13,7 @@ class BrokerController extends Controller
      */
     public function index()
     {
-        $brokers = Broker::all();
+        $brokers = Broker::whereIn('status', ['active', 'banned'])->get();
         return view('panel.managers.brokers.index',compact('brokers'));
     }
 
@@ -60,9 +60,12 @@ class BrokerController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        $broker = Broker::findOrFail($id);
+        $broker->forceDelete();
+
+        return redirect()->back();
     }
 
     public function changeStatus(Request $request,string $id)
@@ -74,5 +77,11 @@ class BrokerController extends Controller
         $broker->save();
 
         return redirect()->back();
+    }
+
+    public function signupReq()
+    {
+        $brokers = Broker::where('status','inactive')->get();
+        return view('panel.managers.brokers.request',compact('brokers'));
     }
 }

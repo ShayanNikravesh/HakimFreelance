@@ -31,14 +31,19 @@ Route::middleware('auth:brokers')->group(function () {
         return view('panel.managers.index');
     });
 
+    //users
     Route::resource('users', UserController::class);
 
-    Route::get('users_status/{id}/{status}',[UserController::class,'changeStatus'])->name('change-status-user');
+    Route::get('user_status/{id}/{status}',[UserController::class,'changeStatus'])->name('change-status-user');
 
+    //brokers
     Route::resource('brokers', BrokerController::class);
 
     Route::get('broker_status/{id}/{status}',[BrokerController::class,'changeStatus'])->name('change-status-broker');
 
+    Route::get('brokers_request',[BrokerController::class,'signupReq'])->name('brokers-request');
+
+    //tags
     Route::resource('tags', TagController::class);
  });
 
