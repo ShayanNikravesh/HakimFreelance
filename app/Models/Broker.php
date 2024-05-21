@@ -28,4 +28,9 @@ class Broker extends Authenticatable
         'password',
         'status'
     ];
+
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
+    }
 }

@@ -139,9 +139,9 @@
 							<th>#</th>
 							<th>نام</th>
 							<th>نام خانوادگی</th>
-							<th>کد ملی</th>
+							{{-- <th>کد ملی</th> --}}
 							<th>موبایل</th>
-							<th>جنسیت</th>
+							{{-- <th>جنسیت</th> --}}
 							<th>وضعیت</th>
 							<th>تغییر وضعیت</th>
 						</tr>
@@ -151,11 +151,11 @@
 							@foreach ($users as $user)
 								<tr>
 									<td>{{++$loop->index}}</td>
-									<td>{{$user->first_name}}</td>
-									<td>{{$user->last_name}}</td>
-									<td>{{$user->national_code}}</td>
+									<td>{{$user->f_name}}</td>
+									<td>{{$user->l_name}}</td>
+									{{-- <td>{{$user->national_code}}</td> --}}
 									<td>{{$user->mobile}}</td>
-										@switch($user->gender)
+										{{-- @switch($user->gender)
 											@case('male')
 												<td>آقا</td>
 												@break
@@ -164,7 +164,7 @@
 											@break
 											@default
 											<td>نا مشخص</td>
-										@endswitch
+										@endswitch --}}
 										@switch($user->status)
 											@case('active')
 												<td>فعال</td>

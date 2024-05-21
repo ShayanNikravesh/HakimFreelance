@@ -64,7 +64,7 @@ class BrokerController extends Controller
     {
         $broker = Broker::findOrFail($id);
         $broker->forceDelete();
-
+        
         return redirect()->back();
     }
 

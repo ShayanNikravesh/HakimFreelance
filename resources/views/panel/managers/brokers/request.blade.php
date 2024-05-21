@@ -139,10 +139,11 @@
 							<th>#</th>
 							<th>نام</th>
 							<th>نام خانوادگی</th>
-							<th>ایمیل</th>
+							<th>موبایل</th>
+							<th>کد ملی</th>
 							<th>توضیحات</th>
 							<th>دسنه</th>
-							{{-- <th>وضعیت</th> --}}
+							<th>وضعیت</th>
 							<th>آدرس</th>
 							<th>عکس</th>
 							<th>تغییر وضعیت</th>
@@ -153,12 +154,13 @@
 							@foreach ($brokers as $broker)
 								<tr>
 									<td>{{++$loop->index}}</td>
-									<td>{{$broker->first_name}}</td>
-									<td>{{$broker->last_name}}</td>
-									<td>{{$broker->email}}</td>
-									<td>{{$broker->description}}</td>
+									<td>{{$broker->f_name}}</td>
+									<td>{{$broker->l_name}}</td>
+									<td>{{$broker->mobile}}</td>
+									<td>{{$broker->national_code}}</td>
+									<td>{{$broker->desc}}</td>
 									<td>دسته</td>
-										{{-- @switch($broker->status)
+										@switch($broker->status)
 											@case('active')
 												<td>فعال</td>
 												@break
@@ -170,9 +172,9 @@
 												@break
 											@default
 											<td>نا مشخص</td>
-										@endswitch --}}
+										@endswitch
 									<td>{{$broker->address}}</td>
-									<td>{{$broker->image}}</td>
+									<td>{{$broker->photo}}</td>
 									<td>
 										<div class="d-flex">
 											<a href="{{route('change-status-broker',[$broker->id,'status'=>'active'])}}" class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top" title="پذیرش درخواست">
