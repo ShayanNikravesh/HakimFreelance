@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\managers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Manager;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class ManagerController extends Controller
 {
@@ -12,7 +14,7 @@ class ManagerController extends Controller
      */
     public function index()
     {
-        return view('admin.index');
+        return view('panel.managers.index');
     }
 
     /**
@@ -20,7 +22,7 @@ class ManagerController extends Controller
      */
     public function create()
     {
-        //
+        return view('panel.managers.create');
     }
 
     /**
@@ -28,7 +30,24 @@ class ManagerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request -> validate([
+            'first_name' => ['required'],
+            'last_name' => ['required'],
+            'email'=>['email','required'],
+            'password'=>['required','min:6'],
+            'level'=>['required'],
+        ]);
+
+        $manager = new Manager();
+        $manager->f_name = $request->first_name;
+        $manager->l_name = $request->last_name;
+        $manager->email = $request->email;
+        $manager->password = Hash::make($request->password);
+        $manager->level = $request->level;
+
+        $manager->save();
+
+        return redirect()->route('managers.index');
     }
 
     /**

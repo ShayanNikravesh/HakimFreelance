@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\managers\BrokerController;
+use App\Http\Controllers\managers\ManagerController;
 use App\Http\Controllers\managers\TagController;
 use App\Http\Controllers\managers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -26,10 +27,13 @@ Route::middleware('auth:brokers')->group(function () {
     })->name('broker-panel');
 });
 
- Route::middleware('auth:managers')->prefix('admin')->group(function () {
+Route::middleware('auth:managers')->prefix('admin')->group(function () {
     Route::get('panel', function () {
         return view('panel.managers.index');
     });
+
+    //managers
+    Route::resource('managers', ManagerController::class);
 
     //users
     Route::resource('users', UserController::class);
@@ -45,7 +49,7 @@ Route::middleware('auth:brokers')->group(function () {
 
     //tags
     Route::resource('tags', TagController::class);
- });
+});
 
 Route::get('admin-login',function(){
     if (auth('managers')->check() or auth('brokers')->check()){

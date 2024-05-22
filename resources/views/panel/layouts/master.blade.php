@@ -1417,86 +1417,16 @@ License: You must have a valid license purchased only from themeforest(the above
 								</div>
 								<!--end::Chat-->
 								<!--begin::Languages-->
-								<div class="dropdown">
-									<!--begin::Toggle-->
-									<div class="topbar-item" data-toggle="dropdown" data-offset="10px,0px">
-										<div class="btn btn-icon btn-clean btn-dropdown btn-lg mr-1">
-											<img class="h-20px w-20px rounded-sm" src="assets/media/svg/flags/226-united-states.svg" alt="" />
-										</div>
-									</div>
-									<!--end::Toggle-->
-									<!--begin::Dropdown-->
-									<div class="dropdown-menu p-0 m-0 dropdown-menu-anim-up dropdown-menu-sm dropdown-menu-right">
-										<!--begin::Nav-->
-										<ul class="navi navi-hover py-4">
-											<!--begin::Item-->
-											<li class="navi-item">
-												<a href="#" class="navi-link">
-													<span class="symbol symbol-20 mr-3">
-														<img src="assets/media/svg/flags/226-united-states.svg" alt="" />
-													</span>
-													<span class="navi-text">English</span>
-												</a>
-											</li>
-											<!--end::Item-->
-											<!--begin::Item-->
-											<li class="navi-item active">
-												<a href="#" class="navi-link">
-													<span class="symbol symbol-20 mr-3">
-														<img src="assets/media/svg/flags/128-spain.svg" alt="" />
-													</span>
-													<span class="navi-text">Spanish</span>
-												</a>
-											</li>
-											<!--end::Item-->
-											<!--begin::Item-->
-											<li class="navi-item">
-												<a href="#" class="navi-link">
-													<span class="symbol symbol-20 mr-3">
-														<img src="assets/media/svg/flags/162-germany.svg" alt="" />
-													</span>
-													<span class="navi-text">German</span>
-												</a>
-											</li>
-											<!--end::Item-->
-											<!--begin::Item-->
-											<li class="navi-item">
-												<a href="#" class="navi-link">
-													<span class="symbol symbol-20 mr-3">
-														<img src="assets/media/svg/flags/063-japan.svg" alt="" />
-													</span>
-													<span class="navi-text">Japanese</span>
-												</a>
-											</li>
-											<!--end::Item-->
-											<!--begin::Item-->
-											<li class="navi-item">
-												<a href="#" class="navi-link">
-													<span class="symbol symbol-20 mr-3">
-														<img src="assets/media/svg/flags/195-france.svg" alt="" />
-													</span>
-													<span class="navi-text">French</span>
-												</a>
-											</li>
-											<!--end::Item-->
-										</ul>
-										<!--end::Nav-->
-									</div>
-									<!--end::Dropdown-->
-								</div>
+								
 								<!--end::Languages-->
 								<!--begin::User-->
 								<div class="topbar-item">
 									<div class="btn btn-icon btn-icon-mobile w-auto btn-clean d-flex align-items-center btn-lg px-2" id="kt_quick_user_toggle">
-										<span class="text-muted font-weight-bold font-size-base d-none d-md-inline mr-1">Hi,</span>
                                         @if(auth('managers')->check())
-										 <span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">{{ auth('managers')->user()->f_name }}</span>
+										 <span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">{{ auth('managers')->user()->f_name. ' ' .auth()->user()->l_name }}</span>
                                         @else
-                                        <span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">{{ auth('brokers')->user()->f_name }}</span>
+                                        <span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3">{{ auth('brokers')->user()->f_name. ' ' .auth()->user()->l_name }}</span>
                                         @endif
-										<span class="symbol symbol-lg-35 symbol-25 symbol-light-success">
-											<span class="symbol-label font-size-h5 font-weight-bold">S</span>
-										</span>
 									</div>
 								</div>
 								<!--end::User-->
@@ -1557,12 +1487,13 @@ License: You must have a valid license purchased only from themeforest(the above
 						<i class="symbol-badge bg-success"></i>
 					</div>
 					<div class="d-flex flex-column">
-                        {{-- @if(auth('managers')->check())
-						 <a href="#" class="font-weight-bold font-size-h5 text-dark-75 text-hover-primary">{{ auth('managers')->user()->f_name. '' .auth()->user()->l_name }}</a>
+                        @if(auth('managers')->check())
+						 <a href="#" class="font-weight-bold font-size-h5 text-dark-75 text-hover-primary">{{ auth('managers')->user()->f_name. ' ' .auth()->user()->l_name }}</a>
+						 <div class="text-muted mt-1">مدیر</div>
                         @else
-                            <a href="#" class="font-weight-bold font-size-h5 text-dark-75 text-hover-primary">{{ auth('brokers')->user()->f_name. '' .auth()->user()->l_name }}</a>
-                        @endif --}}
-                            <div class="text-muted mt-1">Application Developer</div>
+                            <a href="#" class="font-weight-bold font-size-h5 text-dark-75 text-hover-primary">{{ auth('brokers')->user()->f_name. ' ' .auth()->user()->l_name }}</a>
+							<div class="text-muted mt-1">کارگزار</div>
+                        @endif
 						<div class="navi mt-2">
 							<a href="#" class="navi-item">
 								<span class="navi-link p-0 pb-2">
@@ -1586,7 +1517,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                     @endif
                                 </span>
 							</a>
-							<a href="{{ route('logout') }}" class="btn btn-sm btn-light-primary font-weight-bolder py-2 px-5">Sign Out</a>
+							<a href="{{ route('logout') }}" class="btn btn-sm btn-light-primary font-weight-bolder py-2 px-5">خروج</a>
 						</div>
 					</div>
 				</div>
