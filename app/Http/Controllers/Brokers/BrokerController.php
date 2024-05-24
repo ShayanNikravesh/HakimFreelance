@@ -13,8 +13,7 @@ class BrokerController extends Controller
      */
     public function index()
     {
-        $brokers = Broker::whereIn('status', ['active', 'banned'])->get();
-        return view('panel.managers.brokers.index',compact('brokers'));
+        //
     }
 
     /**
@@ -46,7 +45,8 @@ class BrokerController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $broker = Broker::findOrfail($id);
+        return view('panel.brokers.edit',compact('broker'));
     }
 
     /**

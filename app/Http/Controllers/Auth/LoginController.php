@@ -37,7 +37,7 @@ class LoginController extends Controller
         if (Auth::guard('brokers')->attempt($credentials, $request->remember)) {
             $request->session()->regenerate();
 
-            return redirect('broker-panel');
+            return redirect('broker/panel');
         }
         return back()->withErrors([
             'national_code'=> 'national_code or password is false'

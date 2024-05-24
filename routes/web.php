@@ -25,11 +25,13 @@ Route::get('/', function () {
 });
 
 Route::middleware('auth:brokers')->prefix('broker')->group(function () {
-    Route::get('broker-panel', function () {
-        return view('panel.brokers.index');
-    })->name('broker-panel');
 
-    Route::resource('brokers', brokers_BrokerController::class);
+    Route::get('panel', function () {
+        return view('panel.brokers.index');
+    });
+
+    Route::resource('broker', brokers_BrokerController::class);
+    
 });
 
 Route::middleware('auth:managers')->prefix('admin')->group(function () {
