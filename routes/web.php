@@ -33,6 +33,7 @@ Route::middleware('auth:brokers')->group(function () {
 });
 
 Route::middleware('auth:managers')->prefix('admin')->group(function () {
+    
     Route::get('panel', function () {
         return view('panel.managers.index');
     });

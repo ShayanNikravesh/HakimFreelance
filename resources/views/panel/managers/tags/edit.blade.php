@@ -138,7 +138,7 @@
                 @endif
                 <div class="card-body">
                     <!--begin::Form-->
-                    <form class="form" method="POST" action="{{route('categories.update',$category)}}" id="kt_form">
+                    <form class="form" method="POST" action="{{route('tags.update',$tag)}}" id="kt_form">
                         @csrf
 						@method('PUT')
                         <div class="row">
@@ -148,7 +148,7 @@
                                     <div class="form-group row">
                                         <label class="col-3">عنوان</label>
                                         <div class="col-9">
-                                            <input class="form-control form-control-solid" type="text" name="name" value="{{$category->name}}" />
+                                            <input class="form-control form-control-solid" type="text" name="name" value="{{$tag->name}}" />
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -156,8 +156,8 @@
                                         <div class="col-9">
                                             <select class="form-control form-control-solid" type="text" name="parent_id">
                                                 <option value="">انتخاب کنید.</option>
-                                                @foreach ($parentCategories as $parentcategory)
-												<option {{$parentcategory->id == $category->parent_id ? 'selected' : ''}} value="{{$parentcategory->id}}">{{$parentcategory->name}}</option>
+                                                @foreach ($parentTags as $parentTag)
+												<option {{$parentTag->id == $tag->parent_id ? 'selected' : ''}} value="{{$parentTag->id}}">{{$parentTag->name}}</option>
                                                 @endforeach
                                             </select>
                                         </div>

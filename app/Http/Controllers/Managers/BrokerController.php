@@ -46,7 +46,7 @@ class BrokerController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        dd('bye');
     }
 
     /**

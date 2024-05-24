@@ -8,11 +8,11 @@
 			<!--begin::Info-->
 			<div class="d-flex align-items-center flex-wrap mr-2">
 				<!--begin::Page Title-->
-				<h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">ایجاد مدیر</h5>
+				<h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">ویرایش اطلاعات</h5>
 				<!--end::Page Title-->
 				<!--begin::Actions-->
 				<div class="subheader-separator subheader-separator-ver mt-2 mb-2 mr-4 bg-gray-200"></div>
-				<span class="font-weight-bold mr-4">در این صفحه می توانید مدیر جدید کنید.</span>
+				<span class="font-weight-bold mr-4">در این صفحه می توانید اطلاعات خود را ویرایش کنید.</span>
 				<!--end::Actions-->
 			</div>
 			<!--end::Info-->
@@ -140,28 +140,29 @@
                     <!--begin::Form-->
                     <div class="card card-custom">
                         <!--begin::Form-->
-                        <form method="POST" action="{{route('managers.store')}}">
+                        <form method="POST" action="{{route('managers.update',$manager)}}">
                             @csrf
+							@method('PUT')
                          <div class="card-body">
                           <div class="form-group row">
                             <div class="col-lg-6">
-                                <label>نام:<span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" name="first_name" placeholder="نام مدیر را وارد کنید."/>
+                                <label>نام:</label>
+                                <input type="text" class="form-control" name="first_name" value="{{$manager->f_name}}"/>
                             </div>
                             <div class="col-lg-6">
-                                <label>نام خانوادگی: <span class="text-danger">*</span></label>
-                                <input type="text" class="form-control" name="last_name" placeholder="نام خانوادگی مدیر را وارد کنید."/>
+                                <label>نام خانوادگی:</label>
+                                <input type="text" class="form-control" name="last_name" value="{{$manager->l_name}}"/>
                             </div>
                           </div>
                           <div class="form-group row">
                             <div class="col-lg-6">
-                                <label>ایمیل:<span class="text-danger">*</span></label>
-                                <input type="email" class="form-control" id="exampleInputPassword1" name="email" placeholder="ایمیل را وارد کنید."/>
+                                <label>ایمیل:</label>
+                                <input type="email" class="form-control" id="exampleInputPassword1" name="email" value="{{$manager->email}}"/>
                             </div>
 							<div class="col-lg-6">
-                                <label for="exampleSelect1">سطح<span class="text-danger">*</span></label>
+                                <label for="exampleSelect1">سطح</label>
                                 <select class="form-control form-control-solid" id="exampleSelect1" name="level">
-                                    <option value="">انتخاب کنید.</option>
+                                    <option value="{{$manager->level}}">{{$manager->level}}</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                 </select>
@@ -169,12 +170,12 @@
                           </div>
                           <div class="form-group row">
                             <div class="col-lg-6">
-                                <label>رمز:<span class="text-danger">*</span></label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="رمز را وارد کنید."/>
+                                <label>رمز:</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="رمز جدید را وارد کنید."/>
                             </div>
 							<div class="col-lg-6">
-                                <label>تکرار رمز:<span class="text-danger">*</span></label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" name="password_confirmation" placeholder="تکرار رمز را وارد کنید."/>
+                                <label>تکرار رمز:</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" name="password_confirmation" placeholder="تکرار رمز جدید را وارد کنید ."/>
                             </div>
                           </div>
                          </div>

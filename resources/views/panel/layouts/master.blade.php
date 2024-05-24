@@ -1511,13 +1511,18 @@ License: You must have a valid license purchased only from themeforest(the above
 										</span>
 									</span>
                                     @if(auth('managers')->check())
-									 <span class="navi-text text-muted text-hover-primary">{{ auth('managers')->user()->email }}</span>
+									 	<span class="navi-text text-muted text-hover-primary">{{ auth('managers')->user()->email }}</span>
                                     @else
                                         <span class="navi-text text-muted text-hover-primary">{{ auth('brokers')->user()->email }}</span>
                                     @endif
                                 </span>
 							</a>
-							<a href="{{ route('logout') }}" class="btn btn-sm btn-light-primary font-weight-bolder py-2 px-5">خروج</a>
+							<a href="{{ route('logout') }}" class="btn btn-sm btn-light-danger font-weight-bolder py-2 px-5">خروج</a>
+							@if(auth('managers')->check())
+								<a href="{{ route('managers.edit',auth('managers')->user()->id) }}" class="btn btn-sm btn-light-primary font-weight-bolder py-2 px-5">ویرایش پروفایل</a>
+							@else
+								<a href="{{ route('brokers.edit',auth('brokers')->user()->id) }}" class="btn btn-sm btn-light-primary font-weight-bolder py-2 px-5">ویرایش پروفایل</a>
+							@endif	
 						</div>
 					</div>
 				</div>

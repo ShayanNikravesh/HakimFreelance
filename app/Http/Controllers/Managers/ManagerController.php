@@ -33,8 +33,8 @@ class ManagerController extends Controller
         $request -> validate([
             'first_name' => ['required'],
             'last_name' => ['required'],
-            'email'=>['email','required'],
-            'password'=>['required','min:6'],
+            'email'=>'required|string|email|max:255|unique:managers,email',
+            'password'=>['required','min:6','confirmed'],
             'level'=>['required'],
         ]);
 
@@ -63,7 +63,8 @@ class ManagerController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $manager = Manager::findOrfail($id);
+        return view('panel.managers.edit',compact('manager'));
     }
 
     /**
@@ -71,7 +72,26 @@ class ManagerController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $manager = Manager::findOrfail($id);
+
+        $request -> validate([
+            'first_name' => ['required'],
+            'last_name' => ['required'],
+            'email'=>'exclude_if:email,' . auth('managers')->user()->email . '|string|email|max:255|unique:managers,email,' . auth('managers')->id(),
+            'password'=>['nullable','min:6','confirmed'],
+            'level'=>['required'],
+        ]);
+
+        $manager->f_name = $request->first_name;
+        $manager->l_name = $request->last_name;
+        $manager->email = $request->email;
+        $manager->password = Hash::make($request->password);
+        $manager->level = $request->level;
+
+        $manager->save();
+
+        return redirect()->route('managers.index');
+
     }
 
     /**
