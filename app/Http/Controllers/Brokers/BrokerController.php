@@ -13,7 +13,7 @@ class BrokerController extends Controller
      */
     public function index()
     {
-        //
+        return view('panel.brokers.index');
     }
 
     /**

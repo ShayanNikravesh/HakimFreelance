@@ -2,9 +2,15 @@
     <!--begin::Brand-->
     <div class="brand flex-column-auto" id="kt_brand">
         <!--begin::Logo-->
-        <a href="index.html" class="brand-logo">
-            <img alt="Logo" src="{{asset('adminassets/media/logos/logo-light.png')}}" />
-        </a>
+        @if(auth('managers')->check())
+            <a href="{{ route('managers.index')}}">
+                <img alt="Logo" src="{{asset('adminassets/media/logos/logo-light.png')}}" />
+            </a>
+        @else
+            <a href="{{ route('broker.index')}}">
+                <img alt="Logo" src="{{asset('adminassets/media/logos/logo-light.png')}}" />
+            </a>
+        @endif
         <!--end::Logo-->
         <!--begin::Toggle-->
         <button class="brand-toggle btn btn-sm px-0" id="kt_aside_toggle">
@@ -30,7 +36,7 @@
             <!--begin::Menu Nav-->
             <ul class="menu-nav">
                 <li class="menu-item menu-item-active" aria-haspopup="true">
-                   <a href="" class="menu-link">
+                   <a href="javascript:;" class="menu-link">
                         <span class="svg-icon menu-icon">
                             <!--begin::Svg Icon | path:assets/media/svg/icons/Design/Layers.svg-->
                             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
