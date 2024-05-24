@@ -24,7 +24,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware('auth:brokers')->group(function () {
+Route::middleware('auth:brokers')->prefix('broker')->group(function () {
     Route::get('broker-panel', function () {
         return view('panel.brokers.index');
     })->name('broker-panel');
