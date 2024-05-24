@@ -1,9 +1,12 @@
 <?php
 
-use App\Http\Controllers\managers\BrokerController;
-use App\Http\Controllers\managers\ManagerController;
-use App\Http\Controllers\managers\TagController;
-use App\Http\Controllers\managers\UserController;
+use App\Http\Controllers\Managers\BrokerController as manager_BrokerController;
+use App\Http\Controllers\Managers\ManagerController as manager_ManagerController;
+use App\Http\Controllers\Managers\TagController as manager_TagController;
+use App\Http\Controllers\Managers\UserController as manager_UserController;
+
+use App\Http\Controllers\Brokers\BrokerController as brokers_BrokerController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,6 +28,8 @@ Route::middleware('auth:brokers')->group(function () {
     Route::get('broker-panel', function () {
         return view('panel.brokers.index');
     })->name('broker-panel');
+
+    Route::resource('brokers', brokers_BrokerController::class);
 });
 
 Route::middleware('auth:managers')->prefix('admin')->group(function () {
@@ -33,22 +38,22 @@ Route::middleware('auth:managers')->prefix('admin')->group(function () {
     });
 
     //managers
-    Route::resource('managers', ManagerController::class);
+    Route::resource('managers', manager_ManagerController::class);
 
     //users
-    Route::resource('users', UserController::class);
+    Route::resource('users', manager_UserController::class);
 
-    Route::get('user_status/{id}/{status}',[UserController::class,'changeStatus'])->name('change-status-user');
+    Route::get('user_status/{id}/{status}',[manager_UserController::class,'changeStatus'])->name('change-status-user');
 
     //brokers
-    Route::resource('brokers', BrokerController::class);
+    Route::resource('brokers', manager_BrokerController::class);
 
-    Route::get('broker_status/{id}/{status}',[BrokerController::class,'changeStatus'])->name('change-status-broker');
+    Route::get('broker_status/{id}/{status}',[manager_BrokerController::class,'changeStatus'])->name('change-status-broker');
 
-    Route::get('brokers_request',[BrokerController::class,'signupReq'])->name('brokers-request');
+    Route::get('brokers_request',[manager_BrokerController::class,'signupReq'])->name('brokers-request');
 
     //tags
-    Route::resource('tags', TagController::class);
+    Route::resource('tags', manager_TagController::class);
 });
 
 Route::get('admin-login',function(){

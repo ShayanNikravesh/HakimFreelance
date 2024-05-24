@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\managers;
+namespace App\Http\Controllers\Managers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Broker;
@@ -64,7 +64,7 @@ class BrokerController extends Controller
     {
         $broker = Broker::findOrFail($id);
         $broker->forceDelete();
-        
+
         return redirect()->back();
     }
 

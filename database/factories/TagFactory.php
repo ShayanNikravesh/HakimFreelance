@@ -19,7 +19,7 @@ class TagFactory extends Factory
     {
         return [
             'name' => fake()->name(),
-            'parent_id' => fake()->boolean(50) ? null : rand(0,9),
+            'parent_id' => fake()->boolean(50) ? null : random_int(0,9),
         ];
     }
 }

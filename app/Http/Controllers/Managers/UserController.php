@@ -1,20 +1,21 @@
 <?php
 
-namespace App\Http\Controllers\managers;
+namespace App\Http\Controllers\Managers;
 
 use App\Http\Controllers\Controller;
-use App\Models\Manager;
+use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 
-class ManagerController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('panel.managers.index');
+        $users = User::all();
+
+        return view('panel.managers.users.index',compact('users'));
     }
 
     /**
@@ -22,7 +23,7 @@ class ManagerController extends Controller
      */
     public function create()
     {
-        return view('panel.managers.create');
+        //
     }
 
     /**
@@ -30,24 +31,7 @@ class ManagerController extends Controller
      */
     public function store(Request $request)
     {
-        $request -> validate([
-            'first_name' => ['required'],
-            'last_name' => ['required'],
-            'email'=>['email','required'],
-            'password'=>['required','min:6'],
-            'level'=>['required'],
-        ]);
-
-        $manager = new Manager();
-        $manager->f_name = $request->first_name;
-        $manager->l_name = $request->last_name;
-        $manager->email = $request->email;
-        $manager->password = Hash::make($request->password);
-        $manager->level = $request->level;
-
-        $manager->save();
-
-        return redirect()->route('managers.index');
+        //
     }
 
     /**
@@ -80,5 +64,16 @@ class ManagerController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+
+    public function changeStatus(Request $request,string $id)
+    {
+        $user = User::findOrFail($id);
+        $status = $request->status;
+
+        $user->status = $status;
+        $user->save();
+
+        return redirect()->back();
     }
 }
