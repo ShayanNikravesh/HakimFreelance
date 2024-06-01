@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\managers;
+namespace App\Http\Controllers\Brokers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Broker;
@@ -13,8 +13,7 @@ class BrokerController extends Controller
      */
     public function index()
     {
-        $brokers = Broker::all();
-        return view('panel.managers.brokers.index',compact('brokers'));
+        return view('panel.brokers.index');
     }
 
     /**
@@ -46,7 +45,8 @@ class BrokerController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $broker = Broker::findOrfail($id);
+        return view('panel.brokers.edit',compact('broker'));
     }
 
     /**
@@ -60,9 +60,12 @@ class BrokerController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        $broker = Broker::findOrFail($id);
+        $broker->forceDelete();
+
+        return redirect()->back();
     }
 
     public function changeStatus(Request $request,string $id)
@@ -74,5 +77,11 @@ class BrokerController extends Controller
         $broker->save();
 
         return redirect()->back();
+    }
+
+    public function signupReq()
+    {
+        $brokers = Broker::where('status','inactive')->get();
+        return view('panel.managers.brokers.request',compact('brokers'));
     }
 }

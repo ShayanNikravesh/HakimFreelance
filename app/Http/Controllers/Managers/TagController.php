@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\managers;
+namespace App\Http\Controllers\Managers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Tag;
@@ -57,10 +57,10 @@ class TagController extends Controller
      */
     public function edit(string $id)
     {
-        $tags = Tag::findOrFail($id);
+        $tag = Tag::findOrFail($id);
 
         $parentTags = Tag::whereNull('parent_id')->get();
-        return view('panel.managers.tags.edit',compact('tags','parentTags'));
+        return view('panel.managers.tags.edit',compact('tag','parentTags'));
     }
 
     /**

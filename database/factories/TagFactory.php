@@ -18,8 +18,8 @@ class TagFactory extends Factory
     public function definition(): array
     {
         return [
-            'tag' => fake()->name(),
-            'parent_id' => fake()->boolean(50) ? null : rand(0,9),
+            'name' => fake()->name(),
+            'parent_id' => fake()->boolean(50) ? null : random_int(0,9),
         ];
     }
 }

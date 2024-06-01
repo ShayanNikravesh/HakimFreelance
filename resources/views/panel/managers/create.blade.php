@@ -8,11 +8,11 @@
 			<!--begin::Info-->
 			<div class="d-flex align-items-center flex-wrap mr-2">
 				<!--begin::Page Title-->
-				<h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">ویرایش دسته</h5>
+				<h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">ایجاد مدیر</h5>
 				<!--end::Page Title-->
 				<!--begin::Actions-->
 				<div class="subheader-separator subheader-separator-ver mt-2 mb-2 mr-4 bg-gray-200"></div>
-				<span class="font-weight-bold mr-4">در این صفحه می توانید دسته مورد نظر را ویرایش کنید.</span>
+				<span class="font-weight-bold mr-4">در این صفحه می توانید مدیر جدید کنید.</span>
 				<!--end::Actions-->
 			</div>
 			<!--end::Info-->
@@ -128,7 +128,7 @@
             <div class="card card-custom card-sticky" id="kt_page_sticky_card">
                 <div class="card-header">
                     <div class="card-title">
-                        <h3 class="card-label">مشخصات دسته</h3>
+                        <h3 class="card-label">مشخصات مدیر</h3>
                     </div>
                 </div>
                 @if ($errors->any())
@@ -138,39 +138,53 @@
                 @endif
                 <div class="card-body">
                     <!--begin::Form-->
-                    <form class="form" method="POST" action="{{route('tags.update',$tag)}}" id="kt_form">
-                        @csrf
-						@method('PUT')
-                        <div class="row">
-                            <div class="col-xl-2"></div>
-                            <div class="col-xl-8">
-                                <div class="my-5">
-                                    <div class="form-group row">
-                                        <label class="col-3">عنوان</label>
-                                        <div class="col-9">
-                                            <input class="form-control form-control-solid" type="text" name="name" value="{{$tag->name}}" />
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
-                                        <label class="col-3">دسته والد</label>
-                                        <div class="col-9">
-                                            <select class="form-control form-control-solid" type="text" name="parent_id">
-                                                <option value="">انتخاب کنید.</option>
-                                                @foreach ($parentTags as $parentTag)
-												<option {{$parentTag->id == $tag->parent_id ? 'selected' : ''}} value="{{$parentTag->id}}">{{$parentTag->name}}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                    </div>
-                                </div>
+                    <div class="card card-custom">
+                        <!--begin::Form-->
+                        <form method="POST" action="{{route('managers.store')}}">
+                            @csrf
+                         <div class="card-body">
+                          <div class="form-group row">
+                            <div class="col-lg-6">
+                                <label>نام:<span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" name="first_name" placeholder="نام مدیر را وارد کنید."/>
                             </div>
-                            <div class="col-xl-2"></div>
-                        </div>
-                        <div class="card-footer">
-                            <button type="submit" class="btn btn-primary mr-2">ثبت</button>
-                            <button type="reset" class="btn btn-secondary">پاک کردن</button>
-                        </div>
-                    </form>
+                            <div class="col-lg-6">
+                                <label>نام خانوادگی: <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" name="last_name" placeholder="نام خانوادگی مدیر را وارد کنید."/>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-lg-6">
+                                <label>ایمیل:<span class="text-danger">*</span></label>
+                                <input type="email" class="form-control" id="exampleInputPassword1" name="email" placeholder="ایمیل را وارد کنید."/>
+                            </div>
+							<div class="col-lg-6">
+                                <label for="exampleSelect1">سطح<span class="text-danger">*</span></label>
+                                <select class="form-control form-control-solid" id="exampleSelect1" name="level">
+                                    <option value="">انتخاب کنید.</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                </select>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-lg-6">
+                                <label>رمز:<span class="text-danger">*</span></label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="رمز را وارد کنید."/>
+                            </div>
+							<div class="col-lg-6">
+                                <label>تکرار رمز:<span class="text-danger">*</span></label>
+                                <input type="password" class="form-control" id="exampleInputPassword1" name="password_confirmation" placeholder="تکرار رمز را وارد کنید."/>
+                            </div>
+                          </div>
+                         </div>
+                         <div class="card-footer">
+                          <button type="reset" class="btn btn-secondary">پاک کردن</button>
+                          <button type="submit" class="btn btn-primary mr-2">ثبت</button>
+                         </div>
+                        </form>
+                        <!--end::Form-->
+                       </div>
                     <!--end::Form-->
                 </div>
             </div>

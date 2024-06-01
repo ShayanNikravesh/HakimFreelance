@@ -19,8 +19,8 @@ class BrokerTagFactory extends Factory
     public function definition(): array
     {
         return [
-            'tag_id' => fake()->unique()->numberBetween(1, Tag::count()),
-            'broker_id' => fake()->unique()->numberBetween(1, Broker::count()),
+            'tag_id' => fake()->numberBetween(1, Tag::count()),
+            'broker_id' => fake()->numberBetween(1, Broker::count()),
         ];
     }
 }

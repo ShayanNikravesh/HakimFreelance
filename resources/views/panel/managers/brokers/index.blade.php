@@ -121,7 +121,7 @@
 		</div>
 		<!--end::Subheader-->
 		<!--begin::Entry-->
-			<!--begin::Container-->
+		<!--begin::Container-->
 		<div class="card card-custom">
 			<div class="card-header">
 				<div class="card-title">
@@ -139,7 +139,8 @@
 							<th>#</th>
 							<th>نام</th>
 							<th>نام خانوادگی</th>
-							<th>ایمیل</th>
+							<th>موبایل</th>
+							<th>کد ملی</th>
 							<th>توضیحات</th>
 							<th>دسنه</th>
 							<th>وضعیت</th>
@@ -153,10 +154,11 @@
 							@foreach ($brokers as $broker)
 								<tr>
 									<td>{{++$loop->index}}</td>
-									<td>{{$broker->first_name}}</td>
-									<td>{{$broker->last_name}}</td>
-									<td>{{$broker->email}}</td>
-									<td>{{$broker->description}}</td>
+									<td>{{$broker->f_name}}</td>
+									<td>{{$broker->l_name}}</td>
+									<td>{{$broker->mobile}}</td>
+									<td>{{$broker->national_code}}</td>
+									<td>{{$broker->desc}}</td>
 									<td>دسته</td>
 										@switch($broker->status)
 											@case('active')
@@ -172,7 +174,7 @@
 											<td>نا مشخص</td>
 										@endswitch
 									<td>{{$broker->address}}</td>
-									<td>{{$broker->image}}</td>
+									<td>{{$broker->photo}}</td>
 									<td>
 										<button type="button" class="btn-sm btn-primary btn mx-1" data-toggle="modal" data-target="#ModalCenter">
 											<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-vcard-fill" viewBox="0 0 16 16">
@@ -193,7 +195,7 @@
 										</div>
 										<div class="modal-body text-center">
 											<a href="{{route('change-status-broker',[$broker->id,'status'=>'active'])}}" class="btn btn-success btn-sm">فعال</a>
-											<a href="{{route('change-status-broker',[$broker->id,'status'=>'inactive'])}}" class="btn btn-warning btn-sm">غیر فعال</a>
+											{{-- <a href="{{route('change-status-broker',[$broker->id,'status'=>'inactive'])}}" class="btn btn-warning btn-sm">غیر فعال</a> --}}
 											<a href="{{route('change-status-broker',[$broker->id,'status'=>'banned'])}}" class="btn btn-danger btn-sm">مسدود شده</a>
 										</div>
 										<div class="modal-footer">
@@ -210,7 +212,7 @@
 				<!--end: Datatable-->
 			</div>
 		</div>
-			<!--end::Container-->
+		<!--end::Container-->
 	</div>
     <!--end::Entry-->
 @endsection
