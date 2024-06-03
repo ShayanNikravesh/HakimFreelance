@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+
+@import url(../public/yekanbakh/fontiran.css);
+html{
+    @apply font-bodys;
+}
+
+
+
+@tailwind utilities;
