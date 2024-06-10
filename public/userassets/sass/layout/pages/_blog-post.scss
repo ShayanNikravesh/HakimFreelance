@@ -1,0 +1,139 @@
+/**=====================
+    Blog Post css start
+==========================**/
+.blog-post {
+  .blog-post-wrapper {
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12);
+    padding: 5px 30px;
+    .blog-post-header {
+      .blog-post-header-detail {
+        .blog-post-header-detail-right {
+          .blog-post-author {
+            img {
+              width: 35px;
+              height: 35px;
+            }
+          }
+        }
+      }
+    }
+
+    .blog-post-content {
+      p {
+        text-align: justify;
+        line-height: 35px;
+      }
+    }
+
+    .blog-comments {
+      .blog-already-comments {
+        .blog-already-comments-header {
+          strong {
+            background-color: $white;
+          }
+
+          .border-blog {
+            top: 12px;
+            width: 100%;
+            height: 1px;
+            background-color: $gray-300;
+            z-index: -1;
+          }
+        }
+
+        .comments {
+          .comment-box {
+            .comment-box-right {
+              img {
+                width: 35px;
+                height: 35px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  aside {
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, .2), 0 1px 1px 0 rgba(0, 0, 0, .14), 0 1px 3px 0 rgba(0, 0, 0, .12);
+
+    .aside-item {
+      border-top: 1px solid $gray-150;
+
+      img {
+        width: 50px;
+        height: 50px;
+      }
+    }
+    .item-box {
+      background-color: $white;
+      border: 1px solid $gray-200;
+      border-radius: 3px;
+      border-bottom: 0;
+      form {
+        padding: 10px;
+
+        input {
+          &:focus {
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px !important;
+          }
+
+        }
+
+        button {
+          left: 7px;
+          top: 11px;
+          font: {
+            weight: 500 !important;
+          }
+          color: $gray-300;
+        }
+      }
+    }
+  }
+}
+
+//responsive codes
+@media screen and (max-width: 991px) {
+  .blog-post {
+    aside {
+      margin-top: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .blog-post {
+    .breadcrumb {
+      .active{
+        display: none;
+      }
+    }
+
+    .blog-post-header {
+      .blog-post-header-title {
+        h1 {
+          font: {
+            size: 14px !important;
+          }
+          line-height: 25px;
+        }
+      }
+
+      .blog-post-header-detail {
+        display: none !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .blog-post {
+    .comments {
+      .span-time {
+        display: none;
+      }
+    }
+  }
+}

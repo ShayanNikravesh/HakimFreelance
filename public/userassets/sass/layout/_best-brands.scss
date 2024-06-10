@@ -1,0 +1,15 @@
+/**=====================
+    Best Brands css start
+==========================**/
+.best-brands{
+  .swiper-slide{
+    height: 100%;
+    .brands-item{
+      border-right: 1px solid $gray-150;
+      img{
+        object-fit: contain;
+        height: 100px !important;
+      }
+    }
+  }
+}

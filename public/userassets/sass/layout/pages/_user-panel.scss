@@ -1,0 +1,235 @@
+/**=====================
+    User Panel css start
+==========================**/
+.user-panel-wrapper{
+  .user-panel-aside{
+    .user-panel-aside-menu{
+      ul{
+        li{
+          padding: 14px 20px;
+          border-bottom: 1px solid $gray-200;
+          &:last-child{
+            border-bottom: 0;
+          }
+          &.active{
+            border-right: 3px solid rgb(var(--theme-color-red));
+          }
+          &:hover{
+            background-color: $gray-200;
+          }
+          a{
+            color: $black;
+            display: block;
+            svg{
+              vertical-align: -1px;
+              transform: scale(1.3);
+            }
+          }
+        }
+      }
+    }
+  }
+  .user-panel-content{
+    .user-panel-verify-identity{
+      p{
+        color: $yellow-600;
+      }
+    }
+    .user-panel-status{
+      .user-panel-wallet{
+        background-size: cover;
+        background: url("../img/wallet-bg.png") center center;
+
+        h4{
+          border-bottom: 1px dashed $gray-600;
+          display: inline-block;
+          padding-bottom: 15px;
+        }
+        .btn{
+          color: $white;
+          border: 1px solid $white;
+          border-radius: 30px;
+          background-color: #3F3F48;
+          transition: background-color .4s ease;
+          &:hover{
+            background-color: transparent;
+          }
+        }
+      }
+      .user-panel-current-status,.user-all-club-points{
+        color: $white;
+      }
+      .user-panel-current-status{
+          .user-all-buys{
+            background: $red;
+            span{
+              background: $red-300;
+              width: 60px;
+              height: 60px;
+            }
+          }
+      }
+      .user-all-club-points{
+          background: #F3AF3D;
+      }
+    }
+    .user-panel-state{
+      .wrapper{
+        border: 1px solid $gray-300;
+        div{
+          &:last-child{
+            border-bottom: 0;
+          }
+        }
+        img{
+          width: 70px;
+        }
+        .btn-danger,.btn-secondary{
+          border-radius: 30px;
+        }
+      }
+    }
+    .user-panel-orders{
+      .dataTables_length{
+        margin-bottom: 30px;
+      }
+      .dataTables_info{
+        margin-top: 30px;
+      }
+      thead{
+        background-color: #292933;
+        color: $white;
+      }
+      table.dataTable thead th, table.dataTable thead td, table.dataTable tfoot th, table.dataTable tfoot td{
+        text-align: right !important;
+      }
+      .paginate_button{
+        &:hover{
+          border-radius: 10px;
+          background-color: #292933 !important;
+          color: $white !important;
+        }
+        &.current{
+          border-radius: 10px;
+          background-color: #292933;
+          color: $white !important;
+        }
+      }
+    }
+    .user-panel-order-detail{
+      a{
+        color: $black;
+      }
+      .user-panel-order-detail-content{
+        span {
+          color: $black;
+        }
+      }
+    }
+    .user-panel-comments{
+      .user-panel-comments-content{
+        .user-panel-comment-item,.user-panel-address-item{
+          .user-panel-comment-item-image{
+            img{
+              width: 120px;
+            }
+          }
+          .user-panel-comment-item-header{
+            span{
+              &.bg-green{
+                background-color: $green-500;
+              }
+            }
+          }
+        }
+      }
+    }
+    .user-panel-address-item{
+      .dropdown{
+        .dropdown-toggle{
+          span{
+            background-color: transparent !important;
+          }
+        }
+        .dropdown-menu{
+          box-shadow: 0 1px 5px rgba(0,0,0,.2);
+          border: 0 !important;
+        }
+        .dropdown-toggle::after {
+          display: none;
+        }
+      }
+    }
+    .wallet-boxes{
+      .wallet-box{
+        &.custom-wallet-bg{
+          background-color: #292933;
+          color: $white;
+        }
+        &.bg-gray-200{
+          transition: all .4s ease-in-out;
+          button{
+            color: #292933;
+            span{
+              i{
+                padding: 12px;
+                background-color: #292933;
+                width: 55px;
+                height: 55px;
+                border-radius: 50% ;
+              }
+            }
+          }
+          &:hover{
+            background-color: $gray-300;
+          }
+        }
+      }
+    }
+    .user-panel-profile{
+      .user-panel-profile-content{
+        .input-group{
+          .modal{
+            .modal-content{
+              border: 0;
+              border-radius: 0;
+              .modal-header{
+                background-color: #F5F5F5;
+              }
+              .modal-body{
+                .nav-link{
+                  color: $gray-800;
+                }
+                img{
+                  width: 150px;
+                  height: 150px;
+                }
+                .file-upload{
+                  border: 1px dashed $gray-300;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+//responsive codes for user panel
+@media screen and (max-width: 530px){
+  .user-panel-wrapper{
+    .user-panel-content{
+      .user-panel-comments{
+        .user-panel-comments-content{
+          .user-panel-comment-item{
+            display: block !important;
+            .user-panel-comment-item-image{
+              text-align: center
+            }
+          }
+        }
+      }
+    }
+  }
+}

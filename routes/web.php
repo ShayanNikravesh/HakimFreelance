@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Users\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('users.index');
+});
+
+Route::resource('users',UserController::class);
+
+Route::get('login',function(){
+    return view('users.login');
+})->name('Login');
+
+Route::get('single-broker',function(){
+    return view('users.singlebroker');
+});
+
+Route::get('404',function(){
+    return view('users.404');
 });

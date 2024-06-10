@@ -1,0 +1,27 @@
+/**=====================
+    404 css start
+==========================**/
+.wrapper-404{
+  h2{
+    font: {
+      size: 22px !important;
+    }
+  }
+  a{
+    i{
+      vertical-align: -2px;
+    }
+  }
+}
+
+//responsive codes
+
+@media screen and (max-width: 371px){
+  .wrapper-404{
+    h2{
+      font: {
+        size: 16px !important;
+      }
+    }
+  }
+}

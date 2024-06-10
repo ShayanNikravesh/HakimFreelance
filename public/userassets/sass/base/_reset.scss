@@ -1,0 +1,34 @@
+/**=====================
+    Reset css start
+==========================**/
+* {
+  padding: 0;
+  margin: 0;
+  font: {
+    family: $font-name, "Aldhabi";
+  }
+  box-sizing: border-box;
+}
+html{
+  scroll-behavior: smooth;
+}
+input, button, select, textarea, a {
+  &:focus {
+    box-shadow: none !important;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,ol{
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+p{
+  margin: 0;
+  line-height: 28px;
+}
+

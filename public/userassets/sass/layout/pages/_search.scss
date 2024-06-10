@@ -1,0 +1,77 @@
+/**=====================
+    Search css start
+==========================**/
+.search {
+  .search-filters {
+    .accordion {
+      .accordion-button {
+        &:focus {
+          background-color: transparent;
+        }
+      }
+
+      ul {
+        li {
+          margin: 10px;
+          border-bottom: 1px solid $gray-300;
+          padding-bottom: 12px;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          a {
+            color: $black;
+            display: block;
+          }
+        }
+      }
+
+      .price-range {
+        input {
+          border-top: 0;
+          border-right: 0;
+          border-left: 0;
+        }
+      }
+    }
+  }
+
+  .products {
+    .product-item {
+      border-left: 1px solid $gray-150;
+      border-bottom: 1px solid $gray-150;
+
+      .product-item-img {
+        margin-bottom: 10px;
+      }
+
+      &:hover {
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.14), 0 0px 5px rgba(0, 0, 0, 0.3);
+      }
+    }
+
+  }
+  .pagination{
+    .page-link{
+      color: rgb(var(--theme-color-red));
+    }
+    .page-item{
+      &.active{
+        .page-link{
+          background-color: rgba(var(--theme-color-red) , .3);
+          border-color: transparent;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .search {
+    .product-ordering {
+      .count-of-comments {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,16 @@
+/**=====================
+    Compare css start
+==========================**/
+.compare{
+  .compare-content{
+    .compare-item{
+      border: 1px solid $gray-200;
+      .product-image{
+        img{
+          width: 100%;
+          max-height: 300px;
+        }
+      }
+    }
+  }
+}

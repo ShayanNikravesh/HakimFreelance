@@ -1,0 +1,59 @@
+/**=====================
+    Contact Us css start
+==========================**/
+.contact-us {
+  .contact-us-wrapper {
+    border: 1px solid $gray-150;
+    padding: 30px;
+
+    .contact-us-header {
+      .vertical-line {
+        background-color: $red-300;
+      }
+
+      .btn-outline-info {
+        &:hover {
+          color: $cyan;
+          background-color: transparent;
+        }
+      }
+    }
+
+    .contact-us-content {
+      input, textarea {
+        border-color: $gray-300;
+        padding: 7px 18px;
+      }
+
+      textarea {
+        resize: none;
+      }
+
+      .holiday-box {
+        border: 1px solid $gray-150;
+
+        span {
+          border-top: 1px solid $gray-150;
+        }
+      }
+    }
+  }
+}
+
+//responsive codes
+@media screen and (max-width: 767px) {
+  .contact-us {
+    .contact-us-wrapper {
+      .contact-us-header {
+        p{
+          font: {
+            size: 12px;
+          }
+        }
+        .btn-outline-info{
+          display: none;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+/**=====================
+    Payment Status css start
+==========================**/
+.failed-to-payment-info{
+  .payment-table{
+    overflow-x: auto;
+  }
+}
+@media screen and (max-width: 992px) {
+  .payment-status {
+    h2 {
+      font: {
+        size: 16px !important;
+      }
+    }
+
+    .payment-status-img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      img {
+        margin-bottom: 20px;
+        float: none !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .payment-status {
+    border: 0 !important;
+    .payment-header{
+      h2{
+        font: {
+          size: 14px !important;
+        }
+      }
+    }
+    .payment-details{
+      a{
+        display: block;
+        text-align: center;
+        margin: 10px 0;
+      }
+    }
+  }
+}

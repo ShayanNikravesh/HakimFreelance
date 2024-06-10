@@ -1,0 +1,32 @@
+/**=====================
+    Faq css start
+==========================**/
+
+.faq{
+  .faq-header{
+    background: linear-gradient(180deg,#e0e0e2,hsla(0,0%,100%,0));
+    .faq-header-content{
+      background: url("../img/faq-pattern.svg") top no-repeat;
+      background-size: cover;
+      input{
+        max-width: 500px;
+        margin: 0 auto;
+      }
+      .question-icon{
+        background-color: $white;
+        width: 50px;
+        height: 50px;
+        margin: 30px 0;
+        i{
+          padding: 16px 7px;
+        }
+      }
+    }
+  }
+  .faq-content{
+    p{
+      text-align: justify;
+      line-height: 35px;
+    }
+  }
+}

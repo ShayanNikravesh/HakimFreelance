@@ -1,0 +1,60 @@
+/**=====================
+    Vendor css start
+==========================**/
+.vendor-shops{
+  .vendor-item{
+    .vendor-item-header{
+      h4{
+        .svg-icon{
+          vertical-align: 3px;
+        }
+        a{
+          color: $black;
+        }
+        .vendor-level{
+          font: {
+            size: 14px;
+          }
+          background-color: $green-100;
+          color: $green-500;
+          padding: 1px 6px;
+        }
+      }
+      a{
+        i{
+          vertical-align: -1px;
+        }
+      }
+    }
+    .vendor-shop-items{
+      .vendor-shop-item{
+        &:last-child{
+          border: 0;
+        }
+      }
+    }
+  }
+}
+
+//responsive codes
+@media screen and (max-width: 991px){
+  .vendor-shops{
+    .col-xl-4{
+      border-left: 0;
+    }
+  }
+}
+@media screen and (max-width: 380px){
+  .vendor-shops{
+    .vendor-item-header{
+      a,h4{
+        font: {
+          size: 14px;
+        }
+        span{
+          display: none;
+        }
+      }
+    }
+  }
+}
