@@ -1,9 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Managers;
+namespace App\Http\Controllers\Users;
 
 use App\Http\Controllers\Controller;
-use App\Models\Broker;
 use Illuminate\Http\Request;
 
 class BrokerController extends Controller
@@ -13,8 +12,7 @@ class BrokerController extends Controller
      */
     public function index()
     {
-        $brokers = Broker::whereIn('status', ['active', 'banned'])->get();
-        return view('panel.managers.brokers.index',compact('brokers'));
+        //
     }
 
     /**
@@ -22,7 +20,7 @@ class BrokerController extends Controller
      */
     public function create()
     {
-        //
+        return view('users.brokersregister');
     }
 
     /**
@@ -46,7 +44,7 @@ class BrokerController extends Controller
      */
     public function edit(string $id)
     {
-        
+        //
     }
 
     /**
@@ -60,28 +58,8 @@ class BrokerController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy($id)
+    public function destroy(string $id)
     {
-        $broker = Broker::findOrFail($id);
-        $broker->forceDelete();
-
-        return redirect()->back();
-    }
-
-    public function changeStatus(Request $request,string $id)
-    {
-        $broker = Broker::findOrFail($id);
-        $status = $request->status;
-
-        $broker->status = $status;
-        $broker->save();
-
-        return redirect()->back();
-    }
-
-    public function signupReq()
-    {
-        $brokers = Broker::where('status','inactive')->get();
-        return view('panel.managers.brokers.request',compact('brokers'));
+        //
     }
 }

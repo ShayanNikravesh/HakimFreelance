@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Users\UserController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Users\BrokerController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -31,3 +33,5 @@ Route::get('single-broker',function(){
 Route::get('404',function(){
     return view('users.404');
 });
+
+Route::resource('Broker',BrokerController::class);
