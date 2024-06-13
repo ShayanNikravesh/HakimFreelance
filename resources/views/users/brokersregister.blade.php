@@ -72,7 +72,7 @@
                 </div>
               </div>
             <div class="d-grid gap-2 mt-3">
-                <button type="submit" class="btn btn-danger btn-block border-radius-xl fw-bold">ثبت نام</button>
+                <button type="submit" class="btn btn-primary btn-block border-radius-xl fw-bold">ثبت نام</button>
             </div>
         </form>
     </div>

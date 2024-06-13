@@ -3,7 +3,7 @@
 use App\Http\Controllers\Users\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Users\BrokerController;
-
+use App\Models\Tag;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,10 +17,12 @@ use App\Http\Controllers\Users\BrokerController;
 */
 
 Route::get('/', function () {
-    return view('users.index');
+    $tags = Tag::whereNotNull('parent_id')->get();
+    $parentTags = Tag::whereNull('parent_id')->get();
+    return view('users.index',compact('tags','parentTags'));
 });
 
-Route::resource('users',UserController::class);
+Route::resource('Users',UserController::class);
 
 Route::get('login',function(){
     return view('users.login');
