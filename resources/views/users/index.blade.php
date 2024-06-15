@@ -4,105 +4,7 @@
 
 <!--Story Section:start-->
 <div class="container mt-xxxx-large">
-    <div class="story-section my-3 text-center px-5">
-        <div class="row">
-            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 d-flex justify-content-around align-items-center mb-3">
-                <!--                Story Item:start-->
-                <div class="story-item">
-                    <img src="{{asset('userassets/img/story-1.jpg')}}" alt="" class="img-fluid border-radius-circle"
-                         data-bs-toggle="modal" data-bs-target="#storyBanners">
-                    <strong class="fs-7">سشوار</strong>
-                </div>
-                <!--                Story Item:end-->
-
-                <!--                Story Item:start-->
-                <div class="story-item" data-bs-toggle="modal" data-bs-target="#story1">
-                    <img src="{{asset('userassets/img/story-2.jpg')}}" alt="" class="img-fluid border-radius-circle"
-                         data-bs-toggle="modal" data-bs-target="#storyBanners">
-                    <strong class="fs-7">دکوری</strong>
-                </div>
-                <!--                Story Item:end-->
-
-                <!--                Story Item:start-->
-                <div class="story-item" data-bs-toggle="modal" data-bs-target="#story1">
-                    <img src="{{asset('userassets/img/story-3.jpg')}}" alt="" class="img-fluid border-radius-circle"
-                         data-bs-toggle="modal" data-bs-target="#storyBanners">
-                    <strong class="fs-7">تخفیف پلاس</strong>
-                </div>
-                <!--                Story Item:end-->
-
-                <!--                Story Item:start-->
-                <div class="story-item" data-bs-toggle="modal" data-bs-target="#story1">
-                    <img src="{{asset('userassets/img/story-4.jpeg')}}" alt="" class="img-fluid border-radius-circle"
-                         data-bs-toggle="modal" data-bs-target="#storyBanners">
-                    <strong class="fs-7">بهداشتی</strong>
-                </div>
-                <!--                Story Item:end-->
-            </div>
-            <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 d-flex justify-content-around align-items-center mb-3">
-                <div class="story-item" data-bs-toggle="modal" data-bs-target="#story5">
-                    <img src="{{asset('userassets/img/story-5.jpeg')}}" alt="" class="img-fluid border-radius-circle"
-                         data-bs-toggle="modal" data-bs-target="#storyBanners">
-                    <strong class="fs-7">وقت سفر</strong>
-                </div>
-                <div class="story-item" data-bs-toggle="modal" data-bs-target="#story6">
-                    <img src="{{asset('userassets/img/story-7.jpeg')}}" alt="" class="img-fluid border-radius-circle"
-                         data-bs-toggle="modal" data-bs-target="#storyBanners">
-                    <strong class="fs-7">پیراهن</strong>
-                </div>
-                <div class="story-item" data-bs-toggle="modal" data-bs-target="#story7">
-                    <img src="{{asset('userassets/img/story-8.jpeg')}}" alt="" class="img-fluid border-radius-circle"
-                         data-bs-toggle="modal" data-bs-target="#storyBanners">
-                    <strong class="fs-7">آرایش صورت</strong>
-                </div>
-                <div class="story-item" data-bs-toggle="modal" data-bs-target="#story8">
-                    <img src="{{asset('userassets/img/story-6.jpeg')}}" alt="" class="img-fluid border-radius-circle"
-                         data-bs-toggle="modal" data-bs-target="#storyBanners">
-                    <strong class="fs-7">برترین ها</strong>
-                </div>
-            </div>
-        </div>
-        <!--        Show Story Details:start-->
-        <div class="modal fade" id="storyBanners" tabindex="-1" data-bs-backdrop="static"
-             data-bs-keyboard="false">
-            <div class="modal-dialog modal-dialog-centered modal-lg">
-                <div class="modal-content">
-                    <button type="button" data-bs-dismiss="modal" class="btn-close btn-close-white"></button>
-                    <div class="swiper storySlider w-100 position-relative">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <a href="" title=""><img src="{{asset('userassets/img/story-banner-2.jpeg')}}" alt=""/></a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="" title=""><img src="{{asset('userassets/img/story-banner-3.jpeg')}}" alt=""/></a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="" title=""><img src="{{asset('userassets/img/story-banner-4.jpeg')}}" alt=""/></a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="" title=""><img src="{{asset('userassets/img/story-banner-5.jpeg')}}" alt=""/></a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="" title=""><img src="{{asset('userassets/img/story-banner-6.jpg')}}" alt=""/></a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="" title=""><img src="{{asset('userassets/img/story-banner-7.jpg')}}" alt=""/></a>
-                            </div>
-                            <div class="swiper-slide">
-                                <a href="" title=""><img src="{{asset('userassets/img/story-banner-8.jpg')}}" alt=""/></a>
-                            </div>
-                        </div>
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
-                        <div class="swiper-pagination"></div>
-
-                    </div>
-
-                </div>
-            </div>
-        </div>
-        <!--        Show Story Details:end-->
-    </div>
+    
 </div>
 <!--Story Section:end-->
 
@@ -268,26 +170,79 @@
     </div>
     <!--    Banners:end-->
 
-    <!--    Suggestions:start-->
-   
-    <!--    Suggestions:end-->
+    <!-- Modal -->
+    <div class="modal fade" id="insertNewBrokerModal">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        ثبت نام
+                        <span class="d-block fs-7 gray-600 fw-lighter mt-2">مشخصات خود را کنید.</span>
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                @if ($errors->any())
+                    @foreach ($errors->all() as $error)
+                        <div class="alert alert-danger">{{$error}}</div>
+                    @endforeach
+                @endif
+                <div class="modal-body">
+                    <form action="{{route('Broker.store')}}" class="row g-3" method="POST">
+                        @csrf
+                        <div class="col-md-6">
+                            <label for="name" class="form-label fw-bold">نام</label>
+                            <input type="text" name="f_name" class="form-control border-radius-xl" id="name" placeholder="نام خود را وارد کنید ...">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="name" class="form-label fw-bold">نام خانوادگی</label>
+                            <input type="text" name="l_name" class="form-control border-radius-xl" id="name" placeholder="نام خانوادگی خود را وارد کنید ...">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="phoneNumber" class="form-label fw-bold">شماره موبایل</label>
+                            <input type="tel" name="mobile" class="form-control border-radius-xl" id="phoneNumber" placeholder="09xxxxxxxxx">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="gender" class="form-label fw-bold">انتخاب جنسیت</label>
+                            <select id="gender" class="wide border-radius-xl form-control">
+                                <option selected>جنسیت</option>
+                                <option value="1">مرد</option>
+                                <option value="2">زن</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="nationalCode" class="form-label fw-bold">کد ملی</label>
+                            <input name="national_code" type="text" class="form-control border-radius-xl" id="nationalCode" placeholder="کد ملی را وارد کنید ...">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="photo" class="form-label fw-bold">عکس</label>
+                            <input name="photo" type="file" class="form-control border-radius-xl" id="photo" placeholder="کد ملی را وارد کنید ...">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="password" class="form-label fw-bold">رمز</label>
+                            <input name="password" type="password" class="form-control border-radius-xl" id="password" placeholder="رمز را وارد کنید ...">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="password_confirmation" class="form-label fw-bold">نکرار رمز</label>
+                            <input name="password_confirmation" type="password" class="form-control border-radius-xl" id="password_confirmation" placeholder="تکرار رمز را وارد کنید ...">
+                        </div>
+                        <div class="col-md-12">
+                            <label for="desc" class="form-label fw-bold">توضیحات</label>
+                            <textarea name="desc" class="form-control border-radius-xl" id="desc" rows="2" placeholder="توضیحات را وارد کنید ..."></textarea>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="address" class="form-label fw-bold">آدرس</label>
+                            <textarea name="address" class="form-control border-radius-xl" id="address" rows="2" placeholder="آدرس را وارد کنید ..."></textarea>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn custom-btn-primary border-radius-xl">ثبت</button>
+                            <button type="button" class="text-info btn fw-lighter" data-bs-dismiss="modal">انصراف و برگشت</button>
+                        </div>
+                    </form>
+                </div>
 
-    <!--    Best Brands:start-->
-   
-    <!--    Best Brands:end-->
-
-    <!--    Some Products:start-->
-   
-    <!--    Some Products:end-->
-
-    <!--    Best Sales:start-->
-    
-    <!--    Best Sales:end-->
-
-
-    <!--    Some Products:start-->
-   
-    <!--    Some Products:end-->
+            </div>
+        </div>
+    </div>
 
     <!--    Blog Section:start-->
     <section class="blog mt-5">

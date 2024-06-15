@@ -20,7 +20,7 @@ class BrokerController extends Controller
      */
     public function create()
     {
-        return view('users.brokersregister');
+        //
     }
 
     /**
@@ -28,7 +28,7 @@ class BrokerController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd('hi');
     }
 
     /**

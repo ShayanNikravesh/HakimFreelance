@@ -452,9 +452,12 @@
                 </a>
                 <!--users Login and Register:end-->
 
+                {{-- <!--Horizontal Line:start-->
+                <span class="horizontal-line"></span>
+                <!--Horizontal Line:end--> --}}
+
                 <!-- brokers register start-->
-                <a href="{{route('Broker.create')}}"
-                   class="btn me-3 border-gray-300 border-radius-xl fs-7" title="">
+                <a href="" data-bs-toggle="modal" data-bs-target="#insertNewBrokerModal" class="btn me-3 border-gray-300 border-radius-xl fs-7" title="">
                     <!--begin::Svg Icon -->
                     <svg class="rotate-3d me-2" xmlns="http://www.w3.org/2000/svg"
                          xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
@@ -476,13 +479,6 @@
                     ثبت نام کارگزار
                 </a>
                 <!-- brokers register end-->
-
-                <!--Horizontal Line:start-->
-                <span class="horizontal-line"></span>
-                <!--Horizontal Line:end-->
-
-                
-
             </div>
             <!--Top Navbar Left:end-->
         </div>
