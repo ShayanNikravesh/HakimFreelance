@@ -13,7 +13,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        
+        $tags = Tag::whereNotNull('parent_id')->get();
+        $parentTags = Tag::whereNull('parent_id')->get();
+        return view('users.index',compact('tags','parentTags'));
     }
 
     /**

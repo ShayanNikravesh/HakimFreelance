@@ -735,59 +735,21 @@
 <footer class="footer mt-5">
     <div class="container">
         <div class="footer-top mt-4 mb-5">
-            <!--            Footer Top Detail:start-->
+            <!--Footer Top Detail:start-->
             <div class="footer-top-detial d-flex justify-content-between align-items-center">
                 <div class="">
                     <a href="" title=""><img src="{{asset('userassets/img/logo-md.png')}}" alt=""></a>
-                    <p class="mt-2 fs-7">تلفن پشتیبانی : 05144445697</p>
+                    <p class="mt-2 fs-7">تلفن پشتیبانی : 0000000</p>
                 </div>
                 <a href="#top" class="back-to-top border-radius-xl px-3 py-2 gray-600 fs-7">
                     برگشت به بالا
                     <i class="fa fa-angle-up ps-2"></i>
                 </a>
             </div>
-            <!--            Footer Top Detail:end-->
+            <!--Footer Top Detail:end-->
 
-            <!--            Footer Top Attr:start-->
-            <div class="footer-top-attr d-flex justify-content-between align-items-center my-5">
-                <!--                Top Right Item:start-->
-                <div class="top-right-item text-center">
-                    <img src="{{asset('userassets/img/express-delivery.svg')}}" alt="" title="">
-                    <p class="mt-2 fs-8">امکان تحویل اکسپرس</p>
-                </div>
-                <!--                Top Right Item:end-->
-
-                <!--                Top Right Item:start-->
-                <div class="top-right-item text-center">
-                    <img src="{{asset('userassets/img/cash-on-delivery.svg')}}" alt="" title="">
-                    <p class="mt-2 fs-8">امکان پرداخت در محل</p>
-                </div>
-                <!--                Top Right Item:end-->
-
-                <!--                Top Right Item:start-->
-                <div class="top-right-item text-center">
-                    <img src="{{asset('userassets/img/support.svg')}}" alt="" title="">
-                    <p class="mt-2 fs-8">7 روز هفته، 24 ساعته</p>
-                </div>
-                <!--                Top Right Item:end-->
-
-                <!--                Top Right Item:start-->
-                <div class="top-right-item text-center">
-                    <img src="{{asset('userassets/img/days-return.svg')}}" alt="" title="">
-                    <p class="mt-2 fs-8">هفت روز ضمانت بازگشت کالا</p>
-                </div>
-                <!--                Top Right Item:end-->
-
-                <!--                Top Right Item:start-->
-                <div class="top-right-item text-center">
-                    <img src="{{asset('userassets/img/original-products.svg')}}" alt="" title="">
-                    <p class="mt-2 fs-8">ضمانت اصالت کالا</p>
-                </div>
-                <!--                Top Right Item:end-->
-            </div>
-            <!--            Footer Top Attr:end-->
         </div>
-        <div class="footer-main my-5">
+        {{-- <div class="footer-main my-5">
             <div class="row">
                 <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 mb-4">
                     <p class="fw-bold fs-6">راهنمای خرید از برگشاپ</p>
@@ -839,23 +801,16 @@
                             </a>
                         </li>
                     </ul>
-                    <p class="fw-bold fs-6 mt-4">با ثبت ایمیل، از جدیدترین اخبار با خبر شوید</p>
-                    <div class="subscribe-in-newsletter mt-3">
-                        <form action="" class=" d-flex align-items-center justify-content-around">
-                            <input type="text" placeholder="ایمیل شما" class="form-control px-3 py-2 border-radius-xl">
-                            <button type="submit" class="btn text-white fw-bold ms-2 px-3 py-2 border-radius-xl">ثبت
-                            </button>
-                        </form>
-                    </div>
+                    
                 </div>
             </div>
-        </div>
+        </div> --}}
     </div>
     <div class="footer-info py-5">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8 mb-3">
-                    <h1 class="fw-bold fs-5">فروشگاه اینترنتی برگشاپ، بررسی، انتخاب و خرید آنلاین.</h1>
+                    <h1 class="fw-bold fs-5">فروشگاه اینترنتی، بررسی، انتخاب و خرید آنلاین.</h1>
                     <p class="gray-600 mt-3 fs-7">
                         خرید اینترنتی مطمئن، نیازمند فروشگاهی است که بتواند کالاهایی متنوع، باکیفیت و دارای قیمت مناسب
                         را در مدت زمانی کوتاه به دست مشتریان خود برساند و ضمانت بازگشت کالا هم داشته باشد؛ ویژگی‌هایی که
@@ -864,10 +819,8 @@
                     </p>
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 mb-3 d-flex justify-content-evenly align-items-center">
-                    <img src="{{asset('userassets/img/symbol-01.png')}}" alt="" title=""
-                         class="img-fluid border border-gray-200 border-radius-xl">
-                    <img src="{{asset('userassets/img/symbol-02.png')}}" alt="" title=""
-                         class="img-fluid border border-gray-200 border-radius-xl">
+                    <img src="{{asset('userassets/img/symbol-01.png')}}" alt="" title="" class="img-fluid border border-gray-200 border-radius-xl">
+                    <img src="{{asset('userassets/img/symbol-02.png')}}" alt="" title="" class="img-fluid border border-gray-200 border-radius-xl">
                 </div>
             </div>
         </div>
@@ -883,143 +836,6 @@
 </footer>
 <!--Footer:End-->
 
-<!--Chat Widget:start-->
-<div class="chat-widget border-radius-2xl custom-box-shadow-s-1">
-    <!--    Chat Widget Icon:start-->
-    <a href="javascript:void(0)" class="openChatBoxBtn">
-        <!--begin::Svg Icon-->
-        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
-             viewBox="0 0 24 24" version="1.1">
-            <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                <rect x="0" y="0" width="24" height="24"/>
-                <path d="M21.9999843,15.009808 L22.0249378,15 L22.0249378,19.5857864 C22.0249378,20.1380712 21.5772226,20.5857864 21.0249378,20.5857864 C20.7597213,20.5857864 20.5053674,20.4804296 20.317831,20.2928932 L18.0249378,18 L5,18 C3.34314575,18 2,16.6568542 2,15 L2,6 C2,4.34314575 3.34314575,3 5,3 L19,3 C20.6568542,3 22,4.34314575 22,6 L22,15 C22,15.0032706 21.9999948,15.0065399 21.9999843,15.009808 Z M6.16794971,10.5547002 C7.67758127,12.8191475 9.64566871,14 12,14 C14.3543313,14 16.3224187,12.8191475 17.8320503,10.5547002 C18.1384028,10.0951715 18.0142289,9.47430216 17.5547002,9.16794971 C17.0951715,8.86159725 16.4743022,8.98577112 16.1679497,9.4452998 C15.0109146,11.1808525 13.6456687,12 12,12 C10.3543313,12 8.9890854,11.1808525 7.83205029,9.4452998 C7.52569784,8.98577112 6.90482849,8.86159725 6.4452998,9.16794971 C5.98577112,9.47430216 5.86159725,10.0951715 6.16794971,10.5547002 Z"
-                      fill="#000000"/>
-            </g>
-        </svg><!--end::Svg Icon-->
-    </a>
-    <!--    Chat Widget Icon:end-->
-
-    <!--    Chat Widget Box:start-->
-    <div class="chat-widget-box custom-box-shadow-s-3 border-radius-3xl">
-        <!--    Chat Widget Card:start-->
-        <div class="card text-center border-0 bg-white">
-            <!--    Chat Widget Card Header:start-->
-            <div class="card-header text-start p-3 border-0 fs-7">
-                سوالی دارید؟ به سرعت پاسخ بگیرید!
-                <a href="javascript:void(0)" class="text-white closeChatWidgetBoxBtn">
-                    <i class="fa fa-times float-end border-radius-circle"></i>
-                </a>
-            </div>
-            <!--    Chat Widget Card Header:end-->
-
-            <!--    Chat Widget Card Body:start-->
-            <div class="card-body py-4 bg-white ChatBodyWrapper">
-                <!--    Chat Widget Card Body Item:start-->
-                <div class="chat-widget-msg mb-3 float-end chat-info border-radius-xl">
-                    <p class="py-2 px-3 fs-7">
-                        با پشتیبانی آنلاین برگ شاپ بهترین تجربه یک خرید و سفارش آنلاین را داشته باشید!
-                    </p>
-                    <div class="chat-info-details ltr py-2 px-3">
-                        <div class="detail">
-                            <i class="fa fa-envelope ps-1"></i>
-                            <span>test@gmail.com</span>
-                        </div>
-                        <div class="detail">
-                            <i class="fa fa-phone ps-1"></i>
-                            <span>09305138848</span>
-                        </div>
-                        <div class="detail">
-                            <i class="fab fa-whatsapp ps-1"></i>
-                            <span>09305138848</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="clearfix"></div>
-                <!--    Chat Widget Card Body Item:end-->
-                <!--    Chat Widget Card Body Item:start-->
-                <div class="chat-widget-msg mb-3 customer-msg float-start">
-                    <p class="py-2 px-3 border-radius-3-1-br">
-                        سلام و خسته نباشید
-                    </p>
-                </div>
-                <div class="clearfix"></div>
-                <!--    Chat Widget Card Body Item:end-->
-
-                <!--    Chat Widget Card Body Item:start-->
-                <div class="chat-widget-msg mb-3 customer-msg float-start">
-                    <p class="py-2 px-3 border-radius-3-1-br">
-                        راجب پشتیبانی سوال داشتم!
-                    </p>
-                </div>
-                <div class="clearfix"></div>
-                <!--    Chat Widget Card Body Item:end-->
-
-                <!--    Chat Widget Card Body Item:start-->
-                <div class="chat-widget-msg mb-3 operator-msg float-end">
-                    <p class="py-2 px-3 border-radius-3-1-bl">
-                        در خدمتم هر سوالی دارید بپرسید.
-                    </p>
-                </div>
-                <div class="clearfix"></div>
-                <!--    Chat Widget Card Body Item:end-->
-            </div>
-            <!--    Chat Widget Card Body:end-->
-
-            <!--    Chat Widget Card Footer:start-->
-            <div class="card-footer text-muted d-flex justify-content-between align-items-center">
-                <span class="svg-icon svg-icon-primary svg-icon-2x sendChatToCardBodyBtn">
-                    <!--begin::Svg Icon-->
-                    <svg
-                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
-                            height="24px" viewBox="0 0 24 24" version="1.1">
-                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                            <rect x="0" y="0" width="24" height="24"/>
-                            <path d="M3,13.5 L19,12 L3,10.5 L3,3.7732928 C3,3.70255344 3.01501031,3.63261921 3.04403925,3.56811047 C3.15735832,3.3162903 3.45336217,3.20401298 3.70518234,3.31733205 L21.9867539,11.5440392 C22.098181,11.5941815 22.1873901,11.6833905 22.2375323,11.7948177 C22.3508514,12.0466378 22.2385741,12.3426417 21.9867539,12.4559608 L3.70518234,20.6826679 C3.64067359,20.7116969 3.57073936,20.7267072 3.5,20.7267072 C3.22385763,20.7267072 3,20.5028496 3,20.2267072 L3,13.5 Z"
-                                  fill="#000000"/>
-                        </g>
-                    </svg><!--end::Svg Icon-->
-                </span>
-                <input type="text" class="form-control border-0 WriteMsgInput fs-7" placeholder="اینجا تایپ کنید ...">
-                <span class="svg-icon svg-icon-primary svg-icon-2x chatSendFile">
-                    <!--begin::Svg Icon-->
-                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
-                         height="24px" viewBox="0 0 24 24" version="1.1">
-                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                            <rect x="0" y="0" width="24" height="24"/>
-                            <path d="M12.4644661,14.5355339 L9.46446609,14.5355339 C8.91218134,14.5355339 8.46446609,14.9832492 8.46446609,15.5355339 C8.46446609,16.0878187 8.91218134,16.5355339 9.46446609,16.5355339 L12.4644661,16.5355339 L12.4644661,17.5355339 C12.4644661,18.6401034 11.5690356,19.5355339 10.4644661,19.5355339 L6.46446609,19.5355339 C5.35989659,19.5355339 4.46446609,18.6401034 4.46446609,17.5355339 L4.46446609,13.5355339 C4.46446609,12.4309644 5.35989659,11.5355339 6.46446609,11.5355339 L10.4644661,11.5355339 C11.5690356,11.5355339 12.4644661,12.4309644 12.4644661,13.5355339 L12.4644661,14.5355339 Z"
-                                  fill="#000000" opacity="0.3"
-                                  transform="translate(8.464466, 15.535534) rotate(-45.000000) translate(-8.464466, -15.535534) "/>
-                            <path d="M11.5355339,9.46446609 L14.5355339,9.46446609 C15.0878187,9.46446609 15.5355339,9.01675084 15.5355339,8.46446609 C15.5355339,7.91218134 15.0878187,7.46446609 14.5355339,7.46446609 L11.5355339,7.46446609 L11.5355339,6.46446609 C11.5355339,5.35989659 12.4309644,4.46446609 13.5355339,4.46446609 L17.5355339,4.46446609 C18.6401034,4.46446609 19.5355339,5.35989659 19.5355339,6.46446609 L19.5355339,10.4644661 C19.5355339,11.5690356 18.6401034,12.4644661 17.5355339,12.4644661 L13.5355339,12.4644661 C12.4309644,12.4644661 11.5355339,11.5690356 11.5355339,10.4644661 L11.5355339,9.46446609 Z"
-                                  fill="#000000"
-                                  transform="translate(15.535534, 8.464466) rotate(-45.000000) translate(-15.535534, -8.464466) "/>
-                        </g>
-                    </svg>
-                    <!--end::Svg Icon-->
-                </span>
-            </div>
-            <!--    Chat Widget Card Footer:end-->
-
-            <!--                Send File To Chat Box:start-->
-            <div class="send-file-to-chat-box d-none">
-                <div class="send-file-to-chat-box-select-file">
-                    <button class="d-block btn text-white" id="closeSendFileBoxBtn"><i
-                            class="fa fa-times fa-lg pe-2"></i>بستن
-                    </button>
-                    <label class="border-radius-xl custom-box-shadow-s-1">
-                        <i class="fa fa-file d-block fs-2 mb-3 gray-600"></i>
-                        <span id="fileName" class="fs-7">برای انتخاب فایل خود کلیک کنید</span>
-                        <input type="file" name="" class="form-control d-none" id="fileInputGetter">
-                    </label>
-                    <button class="btn btn-primary d-block mt-3 w-100 d-none" id="sendFileBtn">ارسال فایل</button>
-                </div>
-            </div>
-            <!--                Send File To Chat Box:end-->
-        </div>
-        <!--    Chat Widget Card:end-->
-    </div>
-    <!--    Chat Widget Box:end-->
-</div>
-<!--Chat Widget:end-->
 
 <!--Scroll To Top:start-->
 <div class="to-top border-radius-circle text-center">

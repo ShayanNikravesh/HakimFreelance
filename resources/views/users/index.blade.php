@@ -169,9 +169,19 @@
         </div>
     </div>
     <!--    Banners:end-->
-
+    @if ($message = Session::get('success'))
+        <div class="alert alert-success alert-block">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <strong>{{ $message }}</strong>
+        </div>
+    @endif
     <!-- Modal -->
     <div class="modal fade" id="insertNewBrokerModal">
+        @if ($errors->any())
+            @foreach ($errors->all() as $error)
+                <div class="alert alert-danger">{{$error}}</div>
+            @endforeach
+        @endif
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
@@ -181,13 +191,8 @@
                     </h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                @if ($errors->any())
-                    @foreach ($errors->all() as $error)
-                        <div class="alert alert-danger">{{$error}}</div>
-                    @endforeach
-                @endif
                 <div class="modal-body">
-                    <form action="{{route('Broker.store')}}" class="row g-3" method="POST">
+                    <form action="{{route('Broker.store')}}" class="row g-3" method="POST" enctype="multipart/form-data">
                         @csrf
                         <div class="col-md-6">
                             <label for="name" class="form-label fw-bold">نام</label>
@@ -203,7 +208,7 @@
                         </div>
                         <div class="col-md-6">
                             <label for="gender" class="form-label fw-bold">انتخاب جنسیت</label>
-                            <select id="gender" class="wide border-radius-xl form-control">
+                            <select name="gender" id="gender" class="wide border-radius-xl form-control">
                                 <option selected>جنسیت</option>
                                 <option value="1">مرد</option>
                                 <option value="2">زن</option>
@@ -215,7 +220,7 @@
                         </div>
                         <div class="col-md-6">
                             <label for="photo" class="form-label fw-bold">عکس</label>
-                            <input name="photo" type="file" class="form-control border-radius-xl" id="photo" placeholder="کد ملی را وارد کنید ...">
+                            <input name="photo" type="file" class="form-control border-radius-xl" id="photo">
                         </div>
                         <div class="col-md-6">
                             <label for="password" class="form-label fw-bold">رمز</label>

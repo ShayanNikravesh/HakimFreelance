@@ -27,13 +27,13 @@
             <h1 class="fw-bold fs-5">ورود | ثبت نام</h1>
             <div class="form-info-text my-4 gray-600">
                 <p class="fs-7">سلام!</p>
-                <p class="fs-7">لطفا شماره موبایل خود را وارد کنید</p>
+                <p class="fs-7">لطفا شماره موبایل خود را وارد کنید.</p>
             </div>
         </div>
         <form action="">
             <input type="text" class="form-control border-radius-xl ltr">
             <div class="d-grid gap-2 mt-3">
-                <button type="submit" class="btn btn-danger btn-block border-radius-xl fw-bold">ورود</button>
+                <button type="submit" class="btn btn-primary btn-block border-radius-xl fw-bold">ورود</button>
             </div>
         </form>
     </div>
