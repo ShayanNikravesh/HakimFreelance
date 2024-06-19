@@ -17,13 +17,13 @@ Route::prefix('user-monitoring')->as('user-monitoring.')->group(function ($route
     $router->delete('actions-monitoring/{actionMonitoring}', [ActionMonitoringController::class, 'destroy'])->name('actions-monitoring-delete');
 
     // Authentication Monitoring
-    Route::prefix('managers')->group(function ($router) {
+    Route::prefix('managers')->as('managers.')->group(function ($router) {
         //for managers
         $router->get('authentications-monitoring', [manager_AuthenticationMonitoringController::class, 'index'])->name('authentications-monitoring');
         $router->delete('authentications-monitoring/{authenticationMonitoring}', [manager_AuthenticationMonitoringController::class, 'destroy'])->name('authentications-monitoring-delete');
     });
 
-    Route::prefix('brokers')->group(function ($router) {
+    Route::prefix('brokers')->as('brokers.')->group(function ($router) {
         //for brokers
         $router->get('authentications-monitoring', [broker_AuthenticationMonitoringController::class, 'index'])->name('authentications-monitoring');
         $router->delete('authentications-monitoring/{authenticationMonitoring}', [broker_AuthenticationMonitoringController::class, 'destroy'])->name('authentications-monitoring-delete');

@@ -41,7 +41,7 @@
                             </div>
                         </a>
                         <a class="rounded-full focus:outline-none focus:ring-2 focus:bg-indigo-50 focus:ring-indigo-800 ml-4 sm:ml-8"
-                           href="{{ route('user-monitoring.authentications-monitoring') }}">
+                           href="{{ route('user-monitoring.managers.authentications-monitoring') }}">
                             <div class="py-2 px-8 text-indigo-700 rounded-full hover:text-indigo-700 hover:bg-indigo-100
                                 {{ request()->routeIs('user-monitoring.authentications-monitoring') ? 'bg-indigo-100' : '' }}">
                                 <p>Authentication Monitoring</p>
@@ -61,16 +61,25 @@
                             </svg>
                         </a>
                         <label for="consumers"></label>
-                        <select id="consumers" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                            <option value="US">مدیر</option>
-                            <option value="CA">کارگذاران</option>
-                            <option value="FR">کاربران عادی</option>
-                        </select>
-
+                        @yield('consumers')
                     </div>
                 </div>
                 @yield('content')
             </div>
         </div>
+        <script>
+            document.getElementById('consumers').addEventListener('change', function() {
+                const selectedOption = this.value;
+
+                // در اینجا می توانید کد مورد نظر خود را برای هر گزینه انتخاب شده اضافه کنید
+                if (selectedOption === 'admin') {
+                    window.location.href = "{{ route('user-monitoring.managers.authentications-monitoring') }}";
+                } else if (selectedOption === 'broker') {
+                    window.location.href = "{{ route('user-monitoring.brokers.authentications-monitoring') }}";
+                } else if (selectedOption === 'user') {
+                    {{--window.location.href = "{{ route('user-monitoring.users.authentications-monitoring') }}";--}}
+                }
+            });
+        </script>
     </body>
 </html>

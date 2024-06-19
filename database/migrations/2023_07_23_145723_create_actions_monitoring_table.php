@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('ip');
             $table->text('page');
             $table->timestamps();
+            $table->unsignedBigInteger('new_column_id');
             #One to One (Polymorphic)
             $table->unsignedBigInteger('consumer_id')->nullable();
             $table->string('consumer_type')->nullable();

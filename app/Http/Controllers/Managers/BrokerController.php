@@ -68,12 +68,11 @@ class BrokerController extends Controller
         return redirect()->back();
     }
 
-    public function changeStatus(Request $request,string $id)
+    public function changeStatus(Request $request,string $id, string $Status)
     {
         $broker = Broker::findOrFail($id);
-        $status = $request->status;
 
-        $broker->status = $status;
+        $broker->status = $Status;
         $broker->save();
 
         return redirect()->back();
