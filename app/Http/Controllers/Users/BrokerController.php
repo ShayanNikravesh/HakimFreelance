@@ -72,7 +72,10 @@ class BrokerController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $tags = Tag::whereNotNull('parent_id')->get();
+        $parentTags = Tag::whereNull('parent_id')->get();
+        $broker = Broker::with('tags')->findOrfail($id);
+        return view('users.singlebroker',compact('tags','parentTags','broker'));
     }
 
     /**

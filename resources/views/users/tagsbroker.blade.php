@@ -8,7 +8,7 @@
     <div class="compare">
         <!--Header:start-->
         <div class="compare-header d-flex justify-content-between align-items-center">
-            <h2 class="fs-5 fw-bold">دسته</h2>
+            <h2 class="fs-5 fw-bold">دسته {{$tagsBroker->name}}</h2>
         </div>
         <!--Header:end-->
 
@@ -43,7 +43,7 @@
 
                             <!--Product Add To Cart:start-->
                             <div class="p-3 d-grid gap-2">
-                                <a href="" class="btn btn-primary">مشاهده جزئیات</a>
+                                <a href="{{route('Broker.show',$broker->id)}}" class="btn btn-primary">مشاهده جزئیات</a>
                             </div>
                             <!--Product Add To Cart:end-->
                         </div>
