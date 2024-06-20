@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Users;
 
 use App\Http\Controllers\Controller;
 use App\Models\Broker;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -38,6 +39,7 @@ class BrokerController extends Controller
             'national_code' => ['required','numeric','unique:brokers,national_code'],
             'photo' => ['required','max:2028','image','mimes:jpeg,png,jpg'],
             'password'=>['required','min:8','confirmed'],
+            'tag'=>['required'],
             'desc' => ['required','max:250'],
             'address' => ['required','max:250'],
         ]);
@@ -57,6 +59,9 @@ class BrokerController extends Controller
         $broker->photo = 'storage/'.$filePath;
 
         $broker->save();
+
+        $tag = Tag::find($request->tag);
+        $broker->tags()->attach($tag);
 
         return redirect()->back()->with('success','product decremented successfully!');
 

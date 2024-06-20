@@ -601,7 +601,7 @@
                             @foreach ($parentTags as $parentTag)
                                 <!--Navbar Item Child:start-->
                             <li class="nav-item-submenu-child">
-                                <a href="single-product.html" class="fw-bold" title="">
+                                <a href="javascript:;" class="fw-bold" title="">
                                     <!--begin::Svg Icon-->
                                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
                                          width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
@@ -626,14 +626,13 @@
                                     <!--Navbar Item Sub Child:start-->
                                     @if ($tag->parent_id == $parentTag->id)
                                         <li>
-                                            <a href="" title="">
+                                            <a href="{{route('Tags.show',$tag->id)}}" title="">
                                                 {{$tag->name}} 
                                             </a>
                                         </li>
                                         @php
 											$found = true;
 										@endphp
-                                        @break
                                     @endif
                                     <!--Navbar Item Sub Child:end-->
                                     @endforeach

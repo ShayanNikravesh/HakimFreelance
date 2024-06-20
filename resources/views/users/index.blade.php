@@ -209,7 +209,7 @@
                         <div class="col-md-6">
                             <label for="gender" class="form-label fw-bold">انتخاب جنسیت</label>
                             <select name="gender" id="gender" class="wide border-radius-xl form-control">
-                                <option selected>جنسیت</option>
+                                <option selected>انتخاب کنید</option>
                                 <option value="1">مرد</option>
                                 <option value="2">زن</option>
                             </select>
@@ -230,7 +230,16 @@
                             <label for="password_confirmation" class="form-label fw-bold">نکرار رمز</label>
                             <input name="password_confirmation" type="password" class="form-control border-radius-xl" id="password_confirmation" placeholder="تکرار رمز را وارد کنید ...">
                         </div>
-                        <div class="col-md-12">
+                        <div class="col-md-6">
+                            <label for="tag" class="form-label fw-bold">انتخاب دسته</label>
+                            <select name="tag" id="tag" class="wide border-radius-xl form-control">
+                                <option selected>انتخاب کنید</option>
+                                @foreach ($tags as $tag)
+                                    <option value="{{$tag->id}}">{{$tag->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="col-md-6">
                             <label for="desc" class="form-label fw-bold">توضیحات</label>
                             <textarea name="desc" class="form-control border-radius-xl" id="desc" rows="2" placeholder="توضیحات را وارد کنید ..."></textarea>
                         </div>

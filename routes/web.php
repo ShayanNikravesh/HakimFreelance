@@ -3,6 +3,7 @@
 use App\Http\Controllers\Users\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Users\BrokerController;
+use App\Http\Controllers\Users\TagController;
 use App\Models\Tag;
 
 /*
@@ -37,3 +38,5 @@ Route::get('404',function(){
 });
 
 Route::resource('Broker',BrokerController::class);
+
+Route::resource('Tags',TagController::class);
