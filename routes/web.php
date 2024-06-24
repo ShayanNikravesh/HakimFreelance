@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Users\BrokerController;
 use App\Http\Controllers\Users\LoginController;
 use App\Http\Controllers\Users\TagController;
+use App\Jobs\Email;
+use App\Mail\RegisterMail;
 use App\Models\Tag;
 use Illuminate\Support\Facades\Mail;
 
@@ -48,3 +50,7 @@ Route::get('send-mail',function(){
 });
 
 Route::get('search',[BrokerController::class,'search'])->name('search');
+
+Route::get('mail',function(){
+    Email::dispatch();
+});

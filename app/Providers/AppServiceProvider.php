@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Models\Broker;
 use App\Models\Tag;
+use App\Observers\RegisterObserver;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -20,6 +22,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+
+        Broker::observe(RegisterObserver::class);
+
         $tags = Tag::whereNotNull('parent_id')->get();
         $parentTags = Tag::whereNull('parent_id')->get();
 
