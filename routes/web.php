@@ -3,8 +3,10 @@
 use App\Http\Controllers\Users\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Users\BrokerController;
+use App\Http\Controllers\Users\LoginController;
 use App\Http\Controllers\Users\TagController;
 use App\Models\Tag;
+use Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,16 +20,14 @@ use App\Models\Tag;
 */
 
 Route::get('/', function () {
-    $tags = Tag::whereNotNull('parent_id')->get();
-    $parentTags = Tag::whereNull('parent_id')->get();
-    return view('users.index',compact('tags','parentTags'));
+    return view('users.index');
 });
 
 Route::resource('Users',UserController::class);
 
-Route::get('login',function(){
-    return view('users.login');
-})->name('Login');
+Route::get('login',[LoginController::class,'index'])->name('Login');
+
+Route::post('verify',[LoginController::class,'verify'])->name('Verify');
 
 Route::get('single-broker',function(){
     return view('users.singlebroker');
@@ -40,3 +40,11 @@ Route::get('404',function(){
 Route::resource('Broker',BrokerController::class);
 
 Route::resource('Tags',TagController::class);
+
+Route::get('send-mail',function(){
+    Mail::raw('hi',function($message){
+        $message->to('shayannik80@gmail.com')->subject('register');
+    });
+});
+
+Route::get('search',[BrokerController::class,'search'])->name('search');

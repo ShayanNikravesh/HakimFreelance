@@ -72,10 +72,8 @@ class BrokerController extends Controller
      */
     public function show(string $id)
     {
-        $tags = Tag::whereNotNull('parent_id')->get();
-        $parentTags = Tag::whereNull('parent_id')->get();
         $broker = Broker::with('tags')->findOrfail($id);
-        return view('users.singlebroker',compact('tags','parentTags','broker'));
+        return view('users.singlebroker',compact('broker'));
     }
 
     /**
@@ -100,5 +98,15 @@ class BrokerController extends Controller
     public function destroy(string $id)
     {
         //
+    }
+    
+    public function search(Request $request)
+    {
+        
+        $search = $request->search;
+        $results = Broker::where('desc', 'like', "%$search%")->get();
+
+        return view('users.search',compact('results'));
+
     }
 }

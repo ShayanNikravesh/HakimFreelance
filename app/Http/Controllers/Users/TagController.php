@@ -37,10 +37,8 @@ class TagController extends Controller
      */
     public function show(string $id)
     {
-        $tags = Tag::whereNotNull('parent_id')->get();
-        $parentTags = Tag::whereNull('parent_id')->get();
         $tagsBroker = Tag::with('brokers')->findOrFail($id);
-        return view('users.tagsbroker',compact('tags','parentTags','tagsBroker'));
+        return view('users.tagsbroker',compact('tagsBroker'));
         
     }
 

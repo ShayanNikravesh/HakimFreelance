@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Tag;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -19,6 +20,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        $tags = Tag::whereNotNull('parent_id')->get();
+        $parentTags = Tag::whereNull('parent_id')->get();
+
+        view()->share([
+            'tags' => $tags,
+            'parentTags' => $parentTags
+        ]);
     }
 }

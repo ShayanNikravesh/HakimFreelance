@@ -22,7 +22,7 @@
 <body>
 <div class="action-wrapper d-flex justify-content-center align-items-center h-100">
     <div class="form p-4 border border-radius-3xl border-gray-200">
-        <img src="{{assset('userassets/img/logo.png')}}" alt="" title="" class="mx-auto d-block">
+        <img src="{{asset('userassets/img/logo.png')}}" alt="" title="" class="mx-auto d-block">
         <a href="login.html"><i class="fa fa-arrow-right position-absolute"></i></a>
         <div class="form-info text-right my-3">
             <h1 class="fw-bold fs-5">کد تایید را وارد کنید</h1>

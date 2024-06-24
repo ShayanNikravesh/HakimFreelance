@@ -30,8 +30,9 @@
                 <p class="fs-7">لطفا شماره موبایل خود را وارد کنید.</p>
             </div>
         </div>
-        <form action="">
-            <input type="text" class="form-control border-radius-xl ltr">
+        <form action="{{route('Verify')}}" method="POST">
+            @csrf
+            <input type="text" name="mobile" class="form-control border-radius-xl ltr">
             <div class="d-grid gap-2 mt-3">
                 <button type="submit" class="btn btn-primary btn-block border-radius-xl fw-bold">ورود</button>
             </div>
