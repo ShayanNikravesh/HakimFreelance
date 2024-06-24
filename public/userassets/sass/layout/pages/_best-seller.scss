@@ -1,0 +1,22 @@
+/**=====================
+    Best Selling Products css start
+==========================**/
+.best-selling{
+  .best-selling-header{
+    .text-danger{
+      background: $white;
+      z-index: 2;
+      position: relative;
+      display: inline-block;
+    }
+    .best-selling-bg{
+      background: url("../img/bestSellingPattern.svg");
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      opacity: .2;
+      background-size: contain;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+/**=====================
+    Best Sales css start
+==========================**/
+.best-sales{
+
+  .best-sale-item{
+    img{
+      width: 86px;
+      height: 86px !important;
+    }
+    .best-sale-title{
+      color: $black;
+      border-bottom: 1px solid $gray-150;
+      width: 150px;
+    }
+  }
+}

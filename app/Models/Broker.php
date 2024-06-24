@@ -33,6 +33,7 @@ class Broker extends Authenticatable
         'status'
     ];
     protected $table = 'brokers';
+    
     public function tags(): BelongsToMany
     {
         return $this->belongsToMany(Tag::class, 'broker_tag', 'broker_id', 'tag_id');

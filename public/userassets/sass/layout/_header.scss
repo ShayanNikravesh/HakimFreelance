@@ -1,0 +1,47 @@
+/**=====================
+    Header css start
+==========================**/
+.header{
+  &:hover{
+    .swiper-button-next,.swiper-button-prev{
+      @include hiddenOrShow(1,visible);
+    }
+  }
+  .swiper-button-next,.swiper-button-prev{
+    @include hiddenOrShow(0,hidden);
+    transition: all .2s ease;
+    bottom: 40px !important;
+    top: inherit;
+  }
+  .swiper-button-next{
+    right: 105px;
+  }
+  .swiper-button-prev{
+    right: 50px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .swiper{
+    .swiper-slide{
+      img{
+        height: 400px !important;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .swiper{
+    .swiper-slide{
+      img{
+        height: 300px !important;
+        object-fit: cover;
+      }
+    }
+    .swiper-button-next,.swiper-button-prev{
+      display: none;
+    }
+  }
+}

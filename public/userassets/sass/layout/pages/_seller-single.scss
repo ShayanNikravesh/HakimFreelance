@@ -1,0 +1,47 @@
+/**=====================
+    Single Seller css start
+==========================**/
+.seller-info{
+  .seller-info-right{
+    span.svg-icon{
+      padding: 16px 26px 22px 26px;
+      svg{
+        transform: scale(2);
+      }
+    }
+  }
+  .seller-info-left{
+    div{
+      border-left: 1px solid $gray-200;
+      &:last-child{
+        border: 0;
+      }
+    }
+  }
+}
+
+//responsive codes
+@media screen and (max-width: 767px){
+  .seller-info{
+    display: block !important;
+    .seller-info-left{
+      margin-top: 30px !important;
+      justify-content: center !important;
+    }
+  }
+}
+
+@media screen and (max-width: 380px){
+  .seller-info{
+    display: block !important;
+    .seller-info-left{
+      p{
+        &:last-child{
+          font: {
+            size: 12px;
+          }
+        }
+      }
+    }
+  }
+}

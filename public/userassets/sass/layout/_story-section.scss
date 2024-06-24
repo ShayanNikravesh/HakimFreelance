@@ -1,0 +1,59 @@
+/**=====================
+    Story Section css start
+==========================**/
+.story-section {
+  .row {
+    --bs-gutter-x: 0;
+
+    .story-item {
+      display: inline-block;
+      width: 80px;
+      cursor: pointer;
+
+      .img-fluid {
+        border: 2px solid rgb(var(--theme-color-red));
+        padding: 5px;
+      }
+
+      strong {
+        display: inline-block;
+        margin-top: 10px;
+      }
+    }
+  }
+  .modal{
+    .modal-content{
+      background: transparent;
+      border: 0;
+      button{
+        margin-bottom: 5px;
+      }
+      .swiper{
+        img{
+          width: 100%;
+        }
+        .swiper-button-next,.swiper-button-prev{
+          color: $white;
+          background-color: $gray-700;
+          border-radius:50%;
+          top: 90%;
+        }
+      }
+    }
+  }
+}
+
+//responsive codes for story section
+@media only screen and (max-width: 500px) {
+  .story-section {
+    padding: 0 !important;
+
+    .row {
+      .story-item {
+        &:last-child {
+          display: none !important;
+        }
+      }
+    }
+  }
+}

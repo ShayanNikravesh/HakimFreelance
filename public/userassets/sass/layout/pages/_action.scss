@@ -1,0 +1,75 @@
+/**=====================
+    Login css start
+==========================**/
+
+.action-wrapper {
+  margin-top: 200px;
+  .form {
+    width: 400px;
+    @include centerScreen();
+    &.no-center{
+      transform: none;
+      position: static;
+    }
+    img {
+      width: 140px;
+    }
+    i{
+      top: 40px;
+      color: $black;
+    }
+    form {
+      input, button {
+        padding: 10px;
+      }
+      .pin{
+        display: inline-block;
+        margin: 0 2px;
+      }
+    }
+  }
+}
+
+//responsive codes
+@media screen and (max-width: 420px) {
+  .action-wrapper {
+    .form {
+      width: 350px;
+    }
+  }
+}
+
+@media screen and (max-width: 380px) {
+  .action-wrapper {
+    .form {
+      width: 320px;
+      border: 0 !important;
+    }
+  }
+}
+
+@media screen and (max-width: 332px) {
+  .action-wrapper {
+    .form {
+      width: 280px;
+    }
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .action-wrapper {
+    .form {
+      width: 240px;
+      p {
+        font: {
+          size: 12px;
+        }
+      }
+      form {
+        input, button {
+          padding: 5px;
+        }
+      }
+    }
+  }
+}

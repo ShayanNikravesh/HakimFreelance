@@ -1,0 +1,167 @@
+/**=====================
+    Payment Method css start
+==========================**/
+
+.payment {
+  .payment-header {
+    border: 1px solid $gray-300;
+
+    .payment-img {
+      width: 180px;
+    }
+
+    .payment-timeline {
+      .basket {
+        opacity: .6;
+      }
+
+      .shipping, .pay {
+        &:before {
+          content: '';
+          width: 95px;
+          opacity: .6;
+          height: 1px;
+          display: block;
+          margin: 0 10px 0 20px;
+        }
+      }
+
+      .shipping {
+        &:before {
+          background-color: rgb(var(--theme-color-red));
+        }
+      }
+
+      .pay {
+        &:before {
+          background-color: $gray-600;
+        }
+      }
+    }
+  }
+
+  .payment-transfer-time {
+    .payment-products {
+      .payment-products-image {
+        img {
+          width: 90px;
+        }
+      }
+    }
+
+    .payment-time {
+      .nav-pills .nav-link.active {
+        background-color: $white !important;
+        color: $cyan-300 !important;
+
+        .data-span {
+          color: $black;
+          border-bottom: 4px solid $cyan-300;
+        }
+      }
+    }
+  }
+
+  .payment-details {
+    .payment-methods {
+      form {
+        label{
+          i{
+            vertical-align: -5px;
+          }
+        }
+        .form-check-input{
+          border: 2px solid $gray-600;
+        }
+        .form-check-input:checked{
+          border: 3px solid $cyan-500;
+          background-color: $cyan-500;
+        }
+        .form-check-input:checked ~ label , .form-check-input:checked ~ label i{
+          color: $cyan-500;
+        }
+      }
+    }
+    .payment-discount{
+      form{
+        input{
+          &:focus{
+            border-color: $cyan-500;
+          }
+        }
+        input:focus ~ .btn{
+          color: $cyan-500;
+        }
+        .btn{
+          top: 2px;
+          left: 0;
+        }
+      }
+    }
+  }
+}
+
+//responsive codes
+@media screen and (max-width: 768px) {
+  .payment {
+    .payment-header {
+      .shipping, .pay {
+        p, span {
+          font: {
+            size: 14px !important;
+          }
+        }
+      }
+
+      .shipping, .pay {
+        &:before {
+          width: 25px !important;
+        }
+      }
+    }
+
+    .payment-details {
+      .payment-address {
+        flex-direction: column;
+
+        .address-details {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 518px) {
+  .payment {
+    .payment-header {
+      .shipping, .pay {
+        &:before {
+          width: 15px !important;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 497px) {
+  .payment {
+    .payment-header {
+      border: 0 !important;
+
+      i {
+        display: none;
+      }
+
+      .text-danger, .text-secondary {
+        margin: 0 5px !important;
+      }
+    }
+
+    .payment-details {
+      .payment-address {
+        border: 0 !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+/**=====================
+    Some Products css start
+==========================**/
+.some-products{
+  .some-products-box{
+    border-left: 1px solid $gray-200;
+    .some-products-title{
+      h4{
+        color: $blue-900;
+      }
+    }
+    .some-products-images{
+      display: grid;
+      gap: 2px;
+      grid-template-columns: auto auto;
+      flex: 1 1;
+      background-color: $gray-100;
+      a{
+        background-color: $white;
+      }
+    }
+  }
+}

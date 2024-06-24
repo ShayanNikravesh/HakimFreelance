@@ -1,0 +1,27 @@
+/**=====================
+    Suggestions css start
+==========================**/
+.suggestions {
+  .wrapper {
+    .row {
+      .suggest-item {
+        border-left: 1px solid $gray-200;
+        position: relative;
+        border-bottom: 1px solid $gray-150;
+        text-align: center;
+
+        a {
+          img {
+            height: 80px !important;
+            width: 80px;
+            object-fit: contain;
+          }
+
+          h4 {
+            color: $blue-900;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,106 @@
+/**=====================
+    Footer css start
+==========================**/
+.footer{
+  border-top: 1px solid $gray-150;
+  .footer-top{
+    .footer-top-detial{
+      .back-to-top{
+        border: 1px solid $gray-200;
+        &:hover{
+          color: inherit;
+        }
+      }
+    }
+  }
+  .footer-main{
+    ul{
+      li{
+        a{
+          color: $gray-600;
+          font: {
+            size: 14px;
+          }
+        }
+      }
+    }
+    .social-list{
+      li{
+        &.instagram, &.twitter,&.telegram,&.linkedin{
+          &:hover{
+            background-size: 100%;
+            background-repeat: repeat;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -moz-background-clip: text;
+            -moz-text-fill-color: transparent;
+          }
+        }
+        &.instagram{
+          &:hover{
+            background-color: red;
+            background-image: linear-gradient(45deg, #f3ec78, #af4261);
+          }
+        }
+        &.twitter{
+          &:hover{
+            background-color: #1da1f2;
+            background-image: linear-gradient(45deg, #1da1f2, #0673b5);
+          }
+        }
+        &.linkedin{
+          &:hover{
+            background-color: #027cbd;
+            background-image: linear-gradient(45deg, #027cbd, #0290ce);
+          }
+        }
+        &.telegram{
+          &:hover{
+            background-color: #28a4e4;
+            background-image: linear-gradient(45deg, #28a4e4, #1389c7);
+          }
+        }
+      }
+    }
+    .subscribe-in-newsletter{
+      form{
+        input{
+          background-color: $gray-200;
+          border: 0;
+        }
+        button{
+          background-color: $gray-500;
+        }
+      }
+    }
+  }
+  .footer-copyright , .footer-info{
+    border-top: 1px solid $gray-200;
+  }
+  .footer-info{
+    p{
+      text-align: justify;
+    }
+    img{
+      width: 125px;
+    }
+  }
+}
+
+//responsive codes
+@media screen and (max-width: 810px){
+  .footer{
+    .footer-top-attr{
+      display: none !important;
+    }
+  }
+}
+@media screen and (max-width: 365px){
+  .footer{
+    .footer-top-detial{
+      .back-to-top{
+        display: none;
+      }
+    }
+  }
+}

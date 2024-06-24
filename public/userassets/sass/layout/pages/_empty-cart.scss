@@ -1,0 +1,36 @@
+/**=====================
+    Empty Cart css start
+==========================**/
+
+.cart{
+  .nav-link {
+    color: $gray-700;
+  }
+
+  .nav-tabs .nav-link {
+    border-top: 0 !important;
+    border-right: 0 !important;
+    border-left: 0 !important;
+    border-bottom: 2px solid transparent;
+  }
+
+  .nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link {
+    border-color: rgb(var(--theme-color-red));
+  }
+  .next-cart-empty{
+    img{
+      width: 250px;
+    }
+  }
+}
+
+@media screen and (max-width:1199px) {
+  .cart{
+    .next-cart-empty,.cart-empty{
+      border-top: 0 !important;
+      border-left: 0 !important;
+      border-right: 0 !important;
+      border-radius: 0;
+    }
+  }
+}

@@ -1,0 +1,87 @@
+/**=====================
+    Best Suggestion css start
+==========================**/
+.best-suggestions{
+  background-color: $red-500;
+  padding-left: 2px;
+  .swiper{
+    .swiper-slide {
+      background-color: $white;
+      padding: 10px;
+      &:first-child{
+        background-color: $red-500;
+      }
+      &:not(:first-child){
+        img{
+          object-fit: contain;
+          width: 100px;
+          height: 180px !important;
+          margin: 0 auto;
+          display: block;
+        }
+      }
+      .amazing-img{
+        width: 80px;
+        height: 80px !important;
+      }
+      .box-img{
+        width: 130px;
+        height: 120px !important;
+      }
+      .product-details{
+        .discount-amount{
+          background-color: $red-500;
+        }
+        .discounted_price{
+          span{
+            font: {
+              size: 12px;
+            }
+          }
+        }
+      }
+      &.border-radius-1-tl-bl{
+        padding: 109px 0;
+        i{
+          font: {
+            size: 30px;
+          }
+        }
+      }
+    }
+    .swiper-button-disabled{
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width:320px){
+  .swiper{
+   .swiper-slide{
+     .box-img{
+       object-fit: contain !important;
+       width: 100px !important;
+       height: 90px !important;
+     }
+     .product-details{
+       display: inherit !important;
+       .discounted_price{
+         display: block;
+       }
+     }
+   }
+  }
+}
+@media screen and (max-width:361px){
+  .swiper{
+    .swiper-slide{
+      .product-details{
+        .discount-amount,.discounted_price{
+          font: {
+            size: 14px !important;
+          }
+        }
+      }
+    }
+  }
+}

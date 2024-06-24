@@ -1,0 +1,11 @@
+@keyframes loader {
+  0% {
+    transform: translateZ(0);
+    background-position: -468px 0;
+  }
+
+  to {
+    transform: translateZ(0);
+    background-position: 468px 0;
+  }
+}

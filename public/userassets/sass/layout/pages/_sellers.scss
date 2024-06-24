@@ -1,0 +1,22 @@
+/**=====================
+    Sellers css start
+==========================**/
+
+.sellers{
+  .row{
+    border-left: 1px solid $gray-200;
+    border-top: 1px solid $gray-200;
+    .seller-box{
+      border-right: 1px solid $gray-200;
+      border-bottom: 1px solid $gray-200;
+      transition: all .4s ease;
+      .seller-image{
+        width: 100px;
+        height: 100px;
+      }
+      &:hover{
+        box-shadow: 0 10px 30px 0 rgb(31, 45, 61, 10%);
+      }
+    }
+  }
+}

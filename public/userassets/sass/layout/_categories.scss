@@ -1,0 +1,21 @@
+/**=====================
+    Categories css start
+==========================**/
+
+.categories{
+  a{
+    strong{
+      margin-top: 6px;
+      color: $black !important;
+    }
+  }
+}
+
+//responsive codes for categories
+@media screen and (max-width:991px) {
+  .categories{
+    .clearfix{
+      display: none!important;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+/**=====================
+    Buttons css start
+==========================**/
+
+.custom-btn-danger{
+  background-color: rgb(var(--theme-color-red));
+  color: $white;
+  &:hover{
+    color: $white;
+  }
+}
+
+.custom-btn-secondary{
+  background-color: $white;
+  color: $gray-800;
+  border-color: $gray-300;
+  &:hover{
+    color: $gray-800;
+  }
+  &.active{
+    border-color: rgb(var(--theme-color-red));
+    color: rgb(var(--theme-color-red));
+    background-color: rgba(var(--theme-color-red),.04);
+  }
+}
+
+
+.custom-btn-success{
+  background-color: #25D366;
+  color: $white;
+  &:hover{
+    color: $white;
+  }
+}
+
+.custom-btn-primary{
+  background-color: #00ACEE;
+  color: $white;
+  &:hover{
+    color: $white;
+  }
+}
+
+.custom-btn-info{
+  background-color: #3B5998;
+  color: $white;
+  &:hover{
+    color: $white;
+  }
+}

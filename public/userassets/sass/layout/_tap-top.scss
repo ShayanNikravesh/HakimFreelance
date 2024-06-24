@@ -1,0 +1,25 @@
+/**=====================
+    Tap Top css start
+==========================**/
+.to-top{
+  position: fixed;
+  left: 30px;
+  bottom: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: rgb(var(--theme-color-red));
+  cursor: pointer;
+  @include hiddenOrShow(0,hidden);
+  transition: all .4s ease;
+  z-index: 99;
+  a{
+    svg{
+      margin: 10px;
+
+      path{
+        fill: $white;
+      }
+    }
+  }
+
+}

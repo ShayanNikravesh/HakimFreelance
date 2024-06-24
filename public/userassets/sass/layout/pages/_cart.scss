@@ -1,0 +1,75 @@
+/**=====================
+    Cart css start
+==========================**/
+.cart {
+  .nav-tabs {
+    li {
+      &.active {
+        a {
+          color: rgb(var(--theme-color-red));
+        }
+      }
+    }
+  }
+
+  .cart-header {
+    .dropdown-toggle {
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  .cart-content {
+    .shopping-cart-box {
+      .card-body {
+        .noProductInCart {
+          display: none;
+        }
+
+        .shopping-cart-item {
+          &:last-child {
+            border: 0;
+            padding-bottom: 0;
+          }
+
+          .shopping-cart-item-right {
+            img {
+              height: 115px;
+            }
+
+            .shop-item-edit-box {
+              border: 1px solid $gray-200;
+              padding-top: 13px;
+              max-width: 130px;
+              margin: 0 auto;
+
+              span {
+                cursor: pointer;
+                color: rgb(var(--theme-color-red));
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .cart-cal {
+    border: 1px solid $gray-200;
+  }
+}
+
+//responsive codes
+@media screen and (max-width: 767px) {
+  .cart{
+    .nav-tabs {
+      .nav-item{
+        flex-basis: 0;
+        flex-grow: 1;
+        text-align: center;
+        width: 100%;
+      }
+    }
+  }
+}

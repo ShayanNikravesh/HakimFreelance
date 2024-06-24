@@ -1,0 +1,495 @@
+/**=====================
+    Utilities css start
+==========================**/
+
+//transform utilities
+.rotate-0 {
+  transform: rotate(0);
+}
+
+.rotate-45 {
+  transform: rotate(45deg);
+}
+
+.rotate-90 {
+  transform: rotate(90deg);
+}
+
+.rotate-180 {
+  transform: rotate(180deg);
+}
+
+.rotate-270 {
+  transform: rotate(270deg);
+}
+
+.rotate-3d {
+  transform: rotate3d(0, 14, 0, 198deg) !important;
+}
+
+//etc utilities
+.horizontal-line {
+  display: block;
+  width: 1px;
+  height: 24px;
+  margin-bottom: 2px;
+  background-color: $gray-200;
+}
+
+
+.vertical-line {
+  display: block;
+  width: 100px;
+  height: 2px;
+  margin-bottom: 2px;
+}
+//box shadow utilities
+.custom-box-shadow-s-1 {
+  box-shadow: 0 1px 1px rgb(0, 0, 0, 14%), 0 4px 8px rgb(0, 0, 0, 30%);
+}
+
+.custom-box-shadow-s-2 {
+  box-shadow: 0 10px 30px 0 rgb(31, 45, 61, 10%);
+}
+
+.custom-box-shadow-s-3 {
+  box-shadow: rgb(148, 149, 150, 30%) 0 7px 40px 2px !important;
+}
+.custom-box-shadow-s-4 {
+  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+
+}
+
+.custom-box-shadow-s-1-bottom {
+  box-shadow: 0 1px 0 rgb(0, 0, 0, 14%), 0 2px 0 rgb(0, 0, 0, 5%);
+}
+
+//object fit utilities
+.object-cover {
+  object-fit: cover;
+}
+
+.object-contain {
+  object-fit: contain;
+}
+
+//border utilities
+.border-radius-md {
+  border-radius: $border-radius-md;
+}
+
+.border-radius-lg {
+  border-radius: $border-radius-lg;
+}
+
+.border-radius-xl {
+  border-radius: $border-radius-xl;
+}
+
+.border-radius-2xl {
+  border-radius: $border-radius-2xl;
+}
+
+.border-radius-3xl {
+  border-radius: $border-radius-3xl;
+}
+
+.border-radius-circle {
+  border-radius: 50%;
+}
+
+.border-radius-3-1-br {
+  border-radius: 10px 10px 0 10px;
+}
+
+.border-radius-3-1-bl {
+  border-radius: 10px 10px 10px 0;
+}
+
+.border-radius-1-tr-br {
+  border-radius: 0 10px 10px 0;
+}
+
+.border-radius-1-tl-bl {
+  border-radius: 10px 0 0 10px;
+}
+
+.border-gray-100 {
+  border-color: $gray-100;
+}
+
+.border-gray-150 {
+  border-color: $gray-150;
+}
+
+.border-gray-200 {
+  border-color: $gray-200;
+}
+
+.border-gray-300 {
+  border-color: $gray-300;
+}
+
+.border-gray-400 {
+  border: 1px solid $gray-400;
+}
+
+.border-gray-500 {
+  border-color: $gray-500;
+}
+
+.border-gray-600 {
+  border-color: $gray-600;
+}
+
+.border-gray-700 {
+  border-color: $gray-700;
+}
+
+.border-gray-800 {
+  border-color: $gray-800;
+}
+
+.border-gray-900 {
+  border-color: $gray-900;
+}
+
+.border-bottom-gray-150 {
+  border-bottom: 1px solid $gray-150;
+}
+
+.border-bottom-gray-300 {
+  border-bottom: 1px solid $gray-300;
+}
+.border-bottom-gray-200 {
+  border-bottom: 1px solid $gray-200;
+}
+.border-left-gray-150{
+  border-left: 1px solid $gray-150;
+}
+.border-left-gray-400{
+  border-left: 1px solid $gray-400;
+}
+//color utilities
+.gray-100 {
+  color: $gray-100;
+}
+
+.gray-150 {
+  color: $gray-150;
+}
+
+.gray-200 {
+  color: $gray-200;
+}
+
+.gray-300 {
+  color: $gray-300;
+}
+
+.gray-400 {
+  color: $gray-400;
+}
+
+.gray-500 {
+  color: $gray-500;
+}
+
+.gray-600 {
+  color: $gray-600;
+}
+
+.gray-700 {
+  color: $gray-700;
+}
+
+.gray-800 {
+  color: $gray-800;
+}
+
+.gray-900 {
+  color: $gray-900;
+}
+
+.cyan-100 {
+  color: $cyan-100;
+}
+
+.cyan-200 {
+  color: $cyan-200;
+}
+
+.cyan-300 {
+  color: $cyan-300;
+}
+
+.cyan-400 {
+  color: $cyan-400;
+}
+
+.cyan-500 {
+  color: $cyan-500 !important;
+}
+
+.cyan-600 {
+  color: $cyan-600;
+}
+
+.cyan-700 {
+  color: $cyan-700;
+}
+
+.cyan-800 {
+  color: $cyan-800;
+}
+
+.cyan-900 {
+  color: $cyan-900;
+}
+
+//bg color utilities
+.bg-gray-100 {
+  background-color: $gray-100;
+}
+
+.bg-gray-150 {
+  background-color: $gray-150;
+}
+
+.bg-gray-200 {
+  background-color: $gray-200;
+}
+
+.bg-gray-300 {
+  background-color: $gray-300;
+}
+
+.bg-gray-400 {
+  background-color: $gray-400;
+}
+
+.bg-gray-500 {
+  background-color: $gray-500;
+}
+
+.bg-gray-600 {
+  background-color: $gray-600;
+}
+
+.bg-gray-700 {
+  background-color: $gray-700;
+}
+
+.bg-gray-800 {
+  background-color: $gray-800;
+}
+
+.bg-gray-900 {
+  background-color: $gray-900;
+}
+.bg-purple {
+  background-color: #5D53C1 !important;
+}
+//overlay utilities
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .4);
+  transition: all .3s ease;
+  @include hiddenOrShow(0, hidden);
+  z-index: 10;
+}
+
+//show elements utilities
+.showElem {
+  @include hiddenOrShow(1 !important, visible !important);
+}
+
+//swiper utilities
+.swiper {
+  .swiper-button-next, .swiper-button-prev {
+    color: $black;
+    padding: 21px;
+
+    &:after {
+      font: {
+        size: 16px;
+      }
+    }
+  }
+
+  .swiper-pagination {
+    .swiper-pagination-bullet-active {
+      background-color: $white;
+    }
+  }
+}
+
+//img utilities
+.img-opacity {
+  transition: all .4s ease;
+
+  &:hover {
+    opacity: .8;
+  }
+}
+
+//navbar utilities
+
+
+.fixed {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+//margin padding utilities
+.mt-xxxx-large {
+  margin-top: 200px;
+}
+.mt-xxx-large {
+  margin-top: 186px;
+}
+.mt-xx-large {
+  margin-top: 150px;
+}
+//direction utilities
+.ltr {
+  direction: ltr;
+}
+.rtl {
+  direction: ltr;
+}
+
+//visibility utilities
+.hidden{
+  display: none;
+}
+
+//general utilities
+.section-title{
+  i{
+      color: #ffe440;
+  }
+}
+//breadcrumb utilities
+.breadcrumb{
+  .breadcrumb-item{
+    a{
+      color: $gray-600;
+    }
+  }
+}
+
+//cursor utilities
+.c-pointer{
+  cursor: pointer;
+}
+//font-size utilities
+.cfs-1{
+  font: {
+    size: 90px;
+  }
+}
+.fs-7{
+  font: {
+    size: 14px;
+  }
+}
+.fs-8{
+  font: {
+    size: 12px;
+  }
+}
+.fs-9{
+  font: {
+    size: 10px;
+  }
+}
+.fs-10{
+  font: {
+    size: 8px;
+  }
+}
+.fs-11{
+  font: {
+    size: 6px;
+  }
+}
+
+//nice select
+.nice-select{
+  &.wide{
+    text-align: right !important;
+  }
+  ul{
+    li{
+      text-align: right !important;
+    }
+  }
+}
+
+//products utilities
+.product-item-s2{
+  border: 1px solid $gray-300;
+  transition: box-shadow .6s ease;
+  .product-item-s2-img{
+    img{
+      max-width: 160px;
+      max-height: 160px;
+    }
+    .product-item-s2-delete,.product-item-s2-add-to-cart{
+      z-index: 2;
+      transition: all .3s ease;
+      @include hiddenOrShow(0,hidden);
+    }
+    .product-item-s2-delete{
+      top: 10px;
+      right: 0;
+      background-color: $white;
+      a{
+        color: $black;
+        box-shadow: 0px 2px 10px rgb(0 0 0 / 15%);
+        width: 36px;
+        height: 36px;
+        display: block;
+      }
+    }
+    .product-item-s2-add-to-cart{
+      transform: translateY(0);
+      .btn{
+        background-color: $gray-900;
+        color: $white;
+      }
+    }
+  }
+  .product-item-s2-name{
+    a{
+      color: $black;
+    }
+  }
+  &:hover{
+    box-shadow: 0px 20px 40px rgb(0 0 0 / 16%) !important;
+    .product-item-s2-delete{
+      @include  hiddenOrShow(1,visible);
+      right: 10px;
+    }
+    .product-item-s2-add-to-cart{
+      transform: translateY(-10px);
+      @include  hiddenOrShow(1,visible);
+    }
+  }
+}
+//modal utilities
+.modal{
+  z-index: 999999;
+}
+.modal-backdrop{
+  z-index: 99999;
+}

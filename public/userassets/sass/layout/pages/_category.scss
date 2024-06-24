@@ -1,0 +1,31 @@
+/**=====================
+    Category css start
+==========================**/
+
+.category{
+  .header{
+    img{
+      min-height: 400px;
+    }
+  }
+  .best-suggestions{
+    .swiper{
+      .swiper-slide{
+        &:first-child{
+          background-color: transparent !important;
+        }
+      }
+    }
+  }
+}
+
+//responsive codes
+@media screen and (max-width: 1280px){
+  .category {
+    .header {
+      img {
+        min-height: 300px;
+      }
+    }
+  }
+}
