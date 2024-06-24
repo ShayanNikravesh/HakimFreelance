@@ -1,13 +1,32 @@
-@extends('LaravelUserMonitoring::layouts.master')
+@if(view()->exists('vendor.laravel-user-monitoring.layouts.master'))
+    @extends('vendor.laravel-user-monitoring.layouts.master')
+@else
+    @extends('LaravelUserMonitoring::layouts.master')
+@endif
 
 @section('title', 'Authentication Monitoring')
+
+@php
+    $index = -1;
+    $url = url()->current();
+    $type = '';
+    $segments = explode('/', $url);
+    foreach (array_keys(config('user-monitoring.guards')) as $key => $value) {
+        if (($value === $segments[count($segments)-2])) {
+            $index = $key;
+            $type = config('user-monitoring.guards')[$value];
+            break;
+        }
+    }
+@endphp
 
 @section('content')
     <div class="mt-7 overflow-x-auto">
         <table class="w-full whitespace-nowrap">
             <tbody>
             @foreach ($authentications as $authentication)
-                @if ($authentication->consumer instanceof \App\Models\Manager)
+                {{ \Illuminate\Support\Facades\Log::error($authentication->consumer) }}
+                @if ($authentication->consumer instanceof $type)
                     <tr tabindex="0" class="focus:outline-none h-16 border border-gray-100 rounded">
                         <td class="pl-24">
                             <div class="flex items-center">
@@ -82,3 +101,4 @@
 {{--        <option value="user">کاربران عادی</option>--}}
     </select>
 @endsection
+

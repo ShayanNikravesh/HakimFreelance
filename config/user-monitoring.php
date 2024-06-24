@@ -10,6 +10,9 @@ return [
         ],
     ],
 
+    'guard_numbers'=>'3',
+
+
     /*
      * User properties.
      *
@@ -40,12 +43,7 @@ return [
         'guard2' => 'brokers',
         'guard3' => 'web',
 
-        /*
-         * If you are using uuid or ulid you can change it for the type of foreign_key.
-         *
-         * When you are using ulid or uuid, you need to add related traits into the models.
-         */
-        'foreign_key_type' => 'id', // uuid, ulid, id
+
     ],
 
     /*

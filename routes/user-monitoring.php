@@ -1,9 +1,7 @@
 <?php
 
 use Binafy\LaravelUserMonitoring\Controllers\ActionMonitoringController;
-use Binafy\LaravelUserMonitoring\Controllers\Managers\AuthenticationMonitoringController as manager_AuthenticationMonitoringController;
-use Binafy\LaravelUserMonitoring\Controllers\Brokers\AuthenticationMonitoringController as broker_AuthenticationMonitoringController;
-
+use Binafy\LaravelUserMonitoring\Controllers\AuthenticationMonitoringController;
 use Binafy\LaravelUserMonitoring\Controllers\VisitMonitoringController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,21 +15,10 @@ Route::prefix('user-monitoring')->as('user-monitoring.')->group(function ($route
     $router->delete('actions-monitoring/{actionMonitoring}', [ActionMonitoringController::class, 'destroy'])->name('actions-monitoring-delete');
 
     // Authentication Monitoring
-    Route::prefix('managers')->as('managers.')->group(function ($router) {
-        //for managers
-        $router->get('authentications-monitoring', [manager_AuthenticationMonitoringController::class, 'index'])->name('authentications-monitoring');
-        $router->delete('authentications-monitoring/{authenticationMonitoring}', [manager_AuthenticationMonitoringController::class, 'destroy'])->name('authentications-monitoring-delete');
-    });
-
-    Route::prefix('brokers')->as('brokers.')->group(function ($router) {
-        //for brokers
-        $router->get('authentications-monitoring', [broker_AuthenticationMonitoringController::class, 'index'])->name('authentications-monitoring');
-        $router->delete('authentications-monitoring/{authenticationMonitoring}', [broker_AuthenticationMonitoringController::class, 'destroy'])->name('authentications-monitoring-delete');
-    });
-
-//    Route::prefix('users')->group(function ($router) {
-//        //for users
-//        $router->get('authentications-monitoring', [AuthenticationMonitoringController::class, 'index'])->name('authentications-monitoring');
-//        $router->delete('authentications-monitoring/{authenticationMonitoring}', [AuthenticationMonitoringController::class, 'destroy'])->name('authentications-monitoring-delete');
-//    });
+    foreach (array_keys(config('user-monitoring.guards')) as $guards_name) {
+        Route::prefix($guards_name)->as($guards_name.'.')->group(function ($router) {
+            $router->get('authentications-monitoring', [AuthenticationMonitoringController::class, 'index'])->name('authentications-monitoring');
+            $router->delete('authentications-monitoring/{authenticationMonitoring}', [AuthenticationMonitoringController::class, 'destroy'])->name('authentications-monitoring-delete');
+        });
+    }
 });
