@@ -727,73 +727,14 @@
             <!--Footer Top Detail:end-->
 
         </div>
-        {{-- <div class="footer-main my-5">
-            <div class="row">
-                <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 mb-4">
-                    <p class="fw-bold fs-6">راهنمای خرید از برگشاپ</p>
-                    <ul>
-                        <li class="my-2"><a href="">نحوه ثبت سفارش</a></li>
-                        <li class="my-2"><a href="">رویه ارسال سفارش</a></li>
-                        <li class="my-2"><a href="">شیوه های پرداخت</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 mb-4">
-                    <p class="fw-bold fs-6">خدمات مشتریان</p>
-                    <ul>
-                        <li class="my-2"><a href="">پاسخ به پرسش های متدوال</a></li>
-                        <li class="my-2"><a href="">رویه های بازگشت کالا</a></li>
-                        <li class="my-2"><a href="">شرایط استفاده</a></li>
-                        <li class="my-2"><a href="">حریم خصوصی</a></li>
-                        <li class="my-2"><a href="">گزارش باگ</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 mb-4">
-                    <p class="fw-bold fs-6">راهنمای خرید از برگشاپ</p>
-                    <ul>
-                        <li class="my-2"><a href="">نحوه ثبت سفارش</a></li>
-                        <li class="my-2"><a href="">رویه ارسال سفارش</a></li>
-                        <li class="my-2"><a href="">شیوه های پرداخت</a></li>
-                    </ul>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 mb-4">
-                    <p class="fw-bold fs-6">همراه ما باشید!</p>
-                    <ul class="social-list d-flex justify-content-around align-items-center mt-3">
-                        <li class="my-2 instagram">
-                            <a href="">
-                                <i class="fab fa-instagram fa-2x gray-500"></i>
-                            </a>
-                        </li>
-                        <li class="my-2 twitter">
-                            <a href="">
-                                <i class="fab fa-twitter fa-2x gray-500"></i>
-                            </a>
-                        </li>
-                        <li class="my-2 linkedin">
-                            <a href="">
-                                <i class="fab fa-linkedin fa-2x gray-500"></i>
-                            </a>
-                        </li>
-                        <li class="my-2 telegram">
-                            <a href="">
-                                <i class="fab fa-telegram fa-2x gray-500"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    
-                </div>
-            </div>
-        </div> --}}
     </div>
     <div class="footer-info py-5">
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8 mb-3">
-                    <h1 class="fw-bold fs-5">فروشگاه اینترنتی، بررسی، انتخاب و خرید آنلاین.</h1>
+                    <h1 class="fw-bold fs-5">تیم برنامه نویسی:</h1>
                     <p class="gray-600 mt-3 fs-7">
-                        خرید اینترنتی مطمئن، نیازمند فروشگاهی است که بتواند کالاهایی متنوع، باکیفیت و دارای قیمت مناسب
-                        را در مدت زمانی کوتاه به دست مشتریان خود برساند و ضمانت بازگشت کالا هم داشته باشد؛ ویژگی‌هایی که
-                        فروشگاه اینترنتی دیجی‌کالا سال‌هاست بر روی آن‌ها کار کرده و توانسته از این طریق مشتریان ثابت خود
-                        را داشته باشد.
+                        شایان نیک روش ، پوریا آزاد
                     </p>
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 mb-3 d-flex justify-content-evenly align-items-center">
@@ -803,14 +744,14 @@
             </div>
         </div>
     </div>
-    <div class="footer-copyright text-center py-4">
+    {{-- <div class="footer-copyright text-center py-4">
         <div class="container">
             <p class="fs-8 gray-600">
                 برای استفاده از مطالب برگشاپ، داشتن «هدف غیرتجاری» و ذکر «منبع» کافیست. تمام حقوق اين وب‌سايت نیز برای
                 شرکت برگزیت است.
             </p>
         </div>
-    </div>
+    </div> --}}
 </footer>
 <!--Footer:End-->
 
