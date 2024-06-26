@@ -13,7 +13,7 @@ class BrokerController extends Controller
      */
     public function index()
     {
-        $brokers = Broker::whereIn('status', ['active', 'banned'])->get();
+        $brokers = Broker::with('tags')->whereIn('status', ['active', 'banned'])->get();
         return view('panel.managers.brokers.index',compact('brokers'));
     }
 
