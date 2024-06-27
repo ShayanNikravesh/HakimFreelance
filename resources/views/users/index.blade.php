@@ -196,11 +196,11 @@
                         @csrf
                         <div class="col-md-6">
                             <label for="name" class="form-label fw-bold">نام</label>
-                            <input type="text" name="f_name" class="form-control border-radius-xl" id="name" placeholder="نام خود را وارد کنید ...">
+                            <input type="text" name="f_name" class="form-control border-radius-xl" id="f_name" placeholder="نام خود را وارد کنید ...">
                         </div>
                         <div class="col-md-6">
                             <label for="name" class="form-label fw-bold">نام خانوادگی</label>
-                            <input type="text" name="l_name" class="form-control border-radius-xl" id="name" placeholder="نام خانوادگی خود را وارد کنید ...">
+                            <input type="text" name="l_name" class="form-control border-radius-xl" id="l_name" placeholder="نام خانوادگی خود را وارد کنید ...">
                         </div>
                         <div class="col-md-6">
                             <label for="phoneNumber" class="form-label fw-bold">شماره موبایل</label>
@@ -290,7 +290,7 @@
             <div class="col-sm-12 col-md-6 col-lg-3 col-xl-4">
                 <div class="blog-item border-radius-2xl overflow-hidden mb-3">
                     <div class="blog-item-img">
-                        <a href=""><img src="{{asset('userssets/img/blog-3.jpg')}}a" alt="" title="" class="img-fluid card-img"></a>
+                        <a href=""><img src="{{asset('userassets/img/blog-3.jpg')}}" alt="" title="" class="img-fluid card-img"></a>
                     </div>
                     <div class="blog-item-contents px-2 pb-3">
                         <h2 class="mt-1">

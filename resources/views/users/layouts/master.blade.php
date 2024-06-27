@@ -532,7 +532,7 @@
                                 <li class="cyan-500 fs-6">دسته بندی خدمات</li>
                                 @foreach ($parentTags as $parentTag)
                                 <li class="border-bottom-gray-150 px-2 py-3">
-                                    <a href="javascript:;" class="fs-6 fw-bold d-block showSubMenu" onclick="openSubmenu()">
+                                    <a href="javascript:;" class="fs-6 fw-bold d-block showSubMenu" onclick="openSubmenu({{$parentTag->id}})">
                                         <!--begin::Svg-->
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                              xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -550,14 +550,14 @@
                                         <i class="fa fa-angle-left float-end"></i>
                                     </a>
                                     <!--Navbar Items Child:start-->
-                                    <ul class="first-child-parent p-3">
+                                    @php
+                                        $Found = false;
+                                    @endphp
+                                    <ul class="first-child-parent p-3" id="{{$parentTag->id}}">
                                         <li class="fs-5 border-bottom-gray-300 pb-2 fw-bold text-center">
                                             {{$parentTag->name}}
                                         </li>
-                                        @php
-									        $Found = false;
-								        @endphp
-                                        <li class="py-3"><a href="javascript:;" class="cyan-500 fs-6 backToProductCategories" onclick="closeSubmenu()"><i class="fa fa-arrow-right me-2"></i>بازگشت به دسته بندی کالاها</a></li>
+                                        <li class="py-3"><a href="javascript:;" class="cyan-500 fs-6 backToProductCategories" onclick="closeSubmenu({{$parentTag->id}})"><i class="fa fa-arrow-right me-2"></i>بازگشت به دسته بندی کالاها</a></li>
                                         @foreach ($tags as $tag)
                                         <!--Navbar Item Sub Child:start-->
                                         @if ($tag->parent_id == $parentTag->id)
@@ -583,7 +583,6 @@
                                     <!--Navbar Items Child:end-->
                                 </li>
                                 @endforeach
-                                    
                             </ul>
                         </div>
                         <!--Navbar Items Mobile Body:end-->
@@ -879,13 +878,13 @@
     subMenu.classList.remove("showElem");
     }
 
-    function openSubmenu() {
-        var subMenu = document.querySelector(".first-child-parent");
+    function openSubmenu(elementId) {
+        var subMenu = document.getElementById(elementId);
         subMenu.classList.add("showElem");
     }
 
-    function closeSubmenu() {
-        var subMenu = document.querySelector(".first-child-parent");
+    function closeSubmenu(elementId) {
+        var subMenu = document.getElementById(elementId);
         subMenu.classList.remove("showElem");
     }
 
