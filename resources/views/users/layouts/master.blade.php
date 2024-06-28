@@ -9,19 +9,27 @@
     <meta name="keywords" content="">
     <title>خدمت</title>
 
-    <!--    Bootstrap 5 RTL-->
+    <!--Bootstrap 5 RTL-->
     <link rel="stylesheet" href="{{asset('userassets/css/vendors/bootstrap/bootstrap.rtl.css')}}">
-    <!--    Fontawesome 5-->
+    <!--Fontawesome 5-->
     <link rel="stylesheet" href="{{asset('userassets/css/vendors/fontawesome/fontawesome.min.css')}}">
-    <!--    SwiperJs Styles-->
+    <!--SwiperJs Styles-->
     <link rel="stylesheet" href="{{asset('userassets/css/vendors/swiper/swiper-bundle.min.css')}}">
-    <!--    Main Styles-->
+    <!--Main Styles-->
     <link rel="stylesheet" href="{{asset('userassets/css/style.css')}}">
+
+    <!--sweet alert-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 </head>
 <!--Head::end-->
 
 <!--Body::start-->
 <body>
+
+<!--Sweet alert::start-->
+@include('sweetalert::alert')
+<!--Sweet alert::end-->
 
 <!--Loader:start-->
 <div class="loader mt-5">

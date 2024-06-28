@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Managers;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class UserController extends Controller
 {
@@ -73,6 +74,8 @@ class UserController extends Controller
 
         $user->status = $status;
         $user->save();
+
+        Alert::success('عملیات موفق', 'وضعیت تغییر کرد');
 
         return redirect()->back();
     }

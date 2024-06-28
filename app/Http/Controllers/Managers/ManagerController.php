@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Manager;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class ManagerController extends Controller
 {
@@ -46,6 +47,8 @@ class ManagerController extends Controller
         $manager->level = $request->level;
 
         $manager->save();
+
+        Alert::success('عملیات موفق.', 'مدیر جدید ثبت شد.');
 
         return redirect()->route('managers.index');
     }
@@ -89,6 +92,8 @@ class ManagerController extends Controller
         $manager->level = $request->level;
 
         $manager->save();
+
+        Alert::success('عملیات موفق.', 'اطلاعات ویرایش شد.');
 
         return redirect()->route('managers.index');
 

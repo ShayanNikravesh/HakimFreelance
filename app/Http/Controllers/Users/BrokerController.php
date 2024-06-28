@@ -7,6 +7,7 @@ use App\Models\Broker;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class BrokerController extends Controller
 {
@@ -34,7 +35,7 @@ class BrokerController extends Controller
         $request -> validate([
             'f_name' => ['required','max:120'],
             'l_name' => ['required','max:120'],
-            'mobile' => ['required','numeric','starts_with:09'],
+            'mobile' => ['required','numeric','starts_with:09','unique:brokers,mobile'],
             'gender' => ['required'],
             'national_code' => ['required','numeric','unique:brokers,national_code'],
             'photo' => ['required','max:2028','image','mimes:jpeg,png,jpg'],
@@ -63,7 +64,9 @@ class BrokerController extends Controller
         $tag = Tag::find($request->tag);
         $broker->tags()->attach($tag);
 
-        return redirect()->back()->with('success','product decremented successfully!');
+        Alert::success('اطلاعات ثبت شد.', 'پس از تایید مدیریت ثبت نام انجام می شود.');
+
+        return redirect()->back();
 
     }
 

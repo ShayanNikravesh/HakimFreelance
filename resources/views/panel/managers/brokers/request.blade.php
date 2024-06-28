@@ -146,7 +146,7 @@
 							<th>وضعیت</th>
 							<th>آدرس</th>
 							<th>عکس</th>
-							<th>تغییر وضعیت</th>
+							<th>عملیات</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -159,7 +159,9 @@
 									<td>{{$broker->mobile}}</td>
 									<td>{{$broker->national_code}}</td>
 									<td>{{$broker->desc}}</td>
-									<td>دسته</td>
+									@foreach ($broker->tags as $tag)
+										<td>{{$tag->name}}</td>
+									@endforeach
 										@switch($broker->status)
 											@case('active')
 												<td>فعال</td>
@@ -174,7 +176,7 @@
 											<td>نا مشخص</td>
 										@endswitch
 									<td>{{$broker->address}}</td>
-									<td>{{$broker->photo}}</td>
+									<td><img src="{{asset($broker->photo)}}" class="w-100"></td>
 									<td>
 										<div class="d-flex">
 											<a href="{{route('change-status-broker',[$broker->id,'status'=>'active'])}}" class="btn btn-success btn-sm" data-toggle="tooltip" data-placement="top" title="پذیرش درخواست">

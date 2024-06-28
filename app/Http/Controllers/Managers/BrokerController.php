@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Managers;
 use App\Http\Controllers\Controller;
 use App\Models\Broker;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class BrokerController extends Controller
 {
@@ -65,6 +66,8 @@ class BrokerController extends Controller
         $broker = Broker::findOrFail($id);
         $broker->forceDelete();
 
+        Alert::success('عملیات موفق', 'درخواست حذف شد');
+
         return redirect()->back();
     }
 
@@ -76,12 +79,14 @@ class BrokerController extends Controller
         $broker->status = $status;
         $broker->save();
 
+        Alert::success('عملیات موفق', 'وضعیت تغییر کرد.');
+
         return redirect()->back();
     }
 
     public function signupReq()
     {
-        $brokers = Broker::where('status','inactive')->get();
+        $brokers = Broker::with('tags')->where('status','inactive')->get();
         return view('panel.managers.brokers.request',compact('brokers'));
     }
 }
