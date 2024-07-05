@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "36d47ca0654f6d7aa9d0c9fbc7ef90a4",
+    "content-hash": "cd2c07b8267857ca51c62d6e221ea353",
     "packages": [
         {
             "name": "brick/math",
@@ -3274,6 +3274,131 @@
                 }
             ],
             "time": "2024-06-15T16:17:23+00:00"
+        },
+        {
+            "name": "salehhashemi/laravel-configurable-cache",
+            "version": "v1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/salehhashemi1992/laravel-configurable-cache.git",
+                "reference": "4b7049f7a01f2832581a60f4eb4cc3a6151a5ee0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/salehhashemi1992/laravel-configurable-cache/zipball/4b7049f7a01f2832581a60f4eb4cc3a6151a5ee0",
+                "reference": "4b7049f7a01f2832581a60f4eb4cc3a6151a5ee0",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^9.0|^10.0|^11.0",
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.8",
+                "orchestra/testbench": "^7.0|^8.0|^9.0",
+                "phpstan/phpstan": "^1.10",
+                "phpunit/phpunit": "^9.0|^10.0|^11.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Salehhashemi\\ConfigurableCache\\ConfigurableCacheServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Salehhashemi\\ConfigurableCache\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Saleh Hashemi",
+                    "email": "salpars2004@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Configurable Laravel cache manager",
+            "homepage": "https://github.com/salehhashemi1992/laravel-configurable-cache",
+            "keywords": [
+                "CacheManager",
+                "cache",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/salehhashemi1992/laravel-configurable-cache/issues",
+                "source": "https://github.com/salehhashemi1992/laravel-configurable-cache/tree/v1.4.0"
+            },
+            "time": "2024-05-19T07:21:53+00:00"
+        },
+        {
+            "name": "salehhashemi/laravel-otp-manager",
+            "version": "v1.5.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/salehhashemi1992/laravel-otp-manager.git",
+                "reference": "62815ace560d9e9bbade642d2574dd2e707dedc7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/salehhashemi1992/laravel-otp-manager/zipball/62815ace560d9e9bbade642d2574dd2e707dedc7",
+                "reference": "62815ace560d9e9bbade642d2574dd2e707dedc7",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^9.0|^10.0|^11.0",
+                "php": "^8.1",
+                "salehhashemi/laravel-configurable-cache": "^1.1"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.8",
+                "phpstan/phpstan": "^1.10",
+                "phpunit/phpunit": "^9.0|^10.0|^11.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Salehhashemi\\OtpManager\\OtpManagerServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Salehhashemi\\OtpManager\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Saleh Hashemi",
+                    "email": "salpars2004@gmail.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Laravel OTP manager",
+            "homepage": "https://github.com/salehhashemi1992/laravel-otp-manager",
+            "keywords": [
+                "Authentication",
+                "laravel",
+                "otp",
+                "security",
+                "sms",
+                "two-factor"
+            ],
+            "support": {
+                "issues": "https://github.com/salehhashemi1992/laravel-otp-manager/issues",
+                "source": "https://github.com/salehhashemi1992/laravel-otp-manager/tree/v1.5.1"
+            },
+            "time": "2024-05-22T17:39:15+00:00"
         },
         {
             "name": "symfony/console",

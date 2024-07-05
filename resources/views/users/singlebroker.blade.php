@@ -58,15 +58,52 @@
                                 </div>
                             </div>
                             <!--broker Details Right:end-->
-                            <button class="btn btn-primary">ارسال پیام</button>
+                            <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#meesage">ارسال پیام</a>
                         </div>
                     </div>
                 </div>
-                <!--Product Details:end-->
+                <!--broker Details:end-->
             </div>
         </div>
     </section>
-    <!--Product Details:end-->
+    <!--broker Details:end-->
+
+    <!--modal-->
+    <div class="modal fade" id="meesage">
+        @if ($errors->any())
+            @foreach ($errors->all() as $error)
+                <div class="alert alert-danger">{{$error}}</div>
+            @endforeach
+        @endif
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">پیام جدید:</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">گیرنده:</label>
+                        <span class="form-control" id="recipient-name">{{$broker->f_name.' '.$broker->l_name}}</span>
+                    </div>
+                    <form action="{{route('message.store')}}" class="row g-3" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <input type="hidden" name="broker_id" value="{{$broker->id}}">
+                        <input type="hidden" name="user_id" value="1">
+                        <div class="form-group">
+                            <label for="message-text" class="col-form-label">پیام:</label>
+                            <textarea class="form-control" name="message" id="message-text"></textarea>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn custom-btn-primary border-radius-xl">ثبت</button>
+                            <button type="button" class="text-info btn fw-lighter" data-bs-dismiss="modal">انصراف و برگشت</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
 </main>
 <!--Main:end-->
 

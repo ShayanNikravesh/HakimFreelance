@@ -27,15 +27,11 @@
         <div class="form-info text-right my-3">
             <h1 class="fw-bold fs-5">کد تایید را وارد کنید</h1>
         </div>
-        <form action="">
-            <div class="enter-code d-flex justify-content-between align-items-center ltr">
-                <input type="text" class="pin form-control text-center fs-4 border-radius-2xl">
-                <input type="text" class="pin form-control text-center fs-4 border-radius-2xl">
-                <input type="text" class="pin form-control text-center fs-4 border-radius-2xl">
-                <input type="text" class="pin form-control text-center fs-4 border-radius-2xl">
-                <input type="text" class="pin form-control text-center fs-4 border-radius-2xl">
-                <input type="text" class="pin form-control text-center fs-4 border-radius-2xl">
-            </div>
+        <form action="{{route('register')}}" method="POST">
+            @csrf
+            {{$sentOtp->code}}
+            <input type="hidden" name="mobile" class="form-control border-radius-xl ltr" value="{{$mobile}}">
+            <input type="text" name="code" class="form-control border-radius-xl ltr">
             <div class="d-grid gap-2 mt-3">
                 <button type="submit" class="btn btn-primary btn-block border-radius-xl fw-bold">ادامه</button>
             </div>
