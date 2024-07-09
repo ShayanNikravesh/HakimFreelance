@@ -153,7 +153,7 @@
     
     <!--    Categories:end-->
 
-    <!--    Banners:start-->
+    <!--Banners:start-->
     <div class="banners my-5">
         <div class="row">
             <div class="col-6">
@@ -168,97 +168,15 @@
             </div>
         </div>
     </div>
-    <!--    Banners:end-->
-    @if ($message = Session::get('success'))
+    <!--Banners:end-->
+    {{-- @if ($message = Session::get('success'))
         <div class="alert alert-success alert-block">
             <button type="button" class="close" data-dismiss="alert">×</button>
             <strong>{{ $message }}</strong>
         </div>
-    @endif
-    <!-- Modal -->
-    <div class="modal fade" id="insertNewBrokerModal">
-        @if ($errors->any())
-            @foreach ($errors->all() as $error)
-                <div class="alert alert-danger">{{$error}}</div>
-            @endforeach
-        @endif
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">
-                        ثبت نام
-                        <span class="d-block fs-7 gray-600 fw-lighter mt-2">مشخصات خود را کنید.</span>
-                    </h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form action="{{route('Broker.store')}}" class="row g-3" method="POST" enctype="multipart/form-data">
-                        @csrf
-                        <div class="col-md-6">
-                            <label for="name" class="form-label fw-bold">نام</label>
-                            <input type="text" name="f_name" class="form-control border-radius-xl" id="f_name" placeholder="نام خود را وارد کنید ...">
-                        </div>
-                        <div class="col-md-6">
-                            <label for="name" class="form-label fw-bold">نام خانوادگی</label>
-                            <input type="text" name="l_name" class="form-control border-radius-xl" id="l_name" placeholder="نام خانوادگی خود را وارد کنید ...">
-                        </div>
-                        <div class="col-md-6">
-                            <label for="phoneNumber" class="form-label fw-bold">شماره موبایل</label>
-                            <input type="tel" name="mobile" class="form-control border-radius-xl" id="phoneNumber" placeholder="09xxxxxxxxx">
-                        </div>
-                        <div class="col-md-6">
-                            <label for="gender" class="form-label fw-bold">انتخاب جنسیت</label>
-                            <select name="gender" id="gender" class="wide border-radius-xl form-control">
-                                <option selected>انتخاب کنید</option>
-                                <option value="1">مرد</option>
-                                <option value="2">زن</option>
-                            </select>
-                        </div>
-                        <div class="col-md-6">
-                            <label for="nationalCode" class="form-label fw-bold">کد ملی</label>
-                            <input name="national_code" type="text" class="form-control border-radius-xl" id="nationalCode" placeholder="کد ملی را وارد کنید ...">
-                        </div>
-                        <div class="col-md-6">
-                            <label for="photo" class="form-label fw-bold">عکس</label>
-                            <input name="photo" type="file" class="form-control border-radius-xl" id="photo">
-                        </div>
-                        <div class="col-md-6">
-                            <label for="password" class="form-label fw-bold">رمز</label>
-                            <input name="password" type="password" class="form-control border-radius-xl" id="password" placeholder="رمز را وارد کنید ...">
-                        </div>
-                        <div class="col-md-6">
-                            <label for="password_confirmation" class="form-label fw-bold">نکرار رمز</label>
-                            <input name="password_confirmation" type="password" class="form-control border-radius-xl" id="password_confirmation" placeholder="تکرار رمز را وارد کنید ...">
-                        </div>
-                        <div class="col-md-6">
-                            <label for="tag" class="form-label fw-bold">انتخاب دسته</label>
-                            <select name="tag" id="tag" class="wide border-radius-xl form-control">
-                                <option selected>انتخاب کنید</option>
-                                @foreach ($tags as $tag)
-                                    <option value="{{$tag->id}}">{{$tag->name}}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        <div class="col-md-6">
-                            <label for="desc" class="form-label fw-bold">توضیحات</label>
-                            <textarea name="desc" class="form-control border-radius-xl" id="desc" rows="2" placeholder="توضیحات را وارد کنید ..."></textarea>
-                        </div>
-                        <div class="col-md-12">
-                            <label for="address" class="form-label fw-bold">آدرس</label>
-                            <textarea name="address" class="form-control border-radius-xl" id="address" rows="2" placeholder="آدرس را وارد کنید ..."></textarea>
-                        </div>
-                        <div class="col-12">
-                            <button type="submit" class="btn custom-btn-primary border-radius-xl">ثبت</button>
-                            <button type="button" class="text-info btn fw-lighter" data-bs-dismiss="modal">انصراف و برگشت</button>
-                        </div>
-                    </form>
-                </div>
+    @endif --}}
 
-            </div>
-        </div>
-    </div>
-
-    <!--    Blog Section:start-->
+    <!--Blog Section:start-->
     <section class="blog mt-5">
         <div class="d-flex justify-content-between align-items-baseline mb-3">
             <h2 class="fw-bold fs-6">خواندنی ها</h2>

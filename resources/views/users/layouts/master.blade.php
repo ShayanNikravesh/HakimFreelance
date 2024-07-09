@@ -373,7 +373,7 @@
                         <span class="py-2 px-3 d-block fs-7">نتایج جست و جو :</span>
 
                         <!--Search Item:start-->
-                        <div class="search-result-item position-relative border-bottom p-3">
+                        {{-- <div class="search-result-item position-relative border-bottom p-3">
                             <i class="fab fa-sistrix fw-md fs-5 gray-500 d-inline-block"></i>
                             <div class="d-inline-block ms-2">
                                 <span class="d-inline-block fw-bold ms-1">سلفون </span>
@@ -382,7 +382,7 @@
                             <!--Search Link:start-->
                             <a href="search.html" class="stretched-link"></a>
                             <!--Search Link:end-->
-                        </div>
+                        </div> --}}
                         <!--Search Item:end-->
 
                         <!--Search Item:start-->
@@ -400,7 +400,7 @@
 
 
                         <!--Search Best Searching Items:start-->
-                        <div class="search-result-item position-relative border-bottom p-3 best-searching">
+                        {{-- <div class="search-result-item position-relative border-bottom p-3 best-searching">
                             <div class="d-flex">
                                 <i class="fa fa-fire gray-500"></i>
                                 <span class="d-inline-block fw-bold ms-2">جست و جوهای پرطرفدار </span>
@@ -414,7 +414,7 @@
                                 <a href="#" title="" class="badge bg-primary fs-7 rounded-pill">لپ تاپ</a>
                             </div>
                             <!--Searches Items:end-->
-                        </div>
+                        </div> --}}
                         <!--Search Best Searching Items:end-->
 
                         <!--See All Results:start-->
@@ -423,21 +423,21 @@
                                 <span class="d-inline-block fw-bold ms-1">مشاهده همه نتایج </span>
                                 <i class="fa fa-arrow-left"></i>
                             </div>
-                            <!--                            Search Link:start-->
+                            <!--Search Link:start-->
                             <a href="search.html" class="stretched-link"></a>
-                            <!--                            Search Link:end-->
+                            <!--Search Link:end-->
                         </div>
-                        <!--                        See All Results:end-->
+                        <!--See All Results:end-->
                     </div>
                 </div>
-                <!--            Search Form:end-->
+                <!--Search Form:end-->
             </div>
             <!--Top Navbar Right:end-->
 
             <!--Top Navbar Left:start-->
             <div class="top-nav-left d-flex justify-content-between align-items-center">
 
-                <!--users Login and Register:start-->
+                <!--users Login start-->
                 <a href="{{route('Login')}}"
                    class="btn me-3 border-gray-300 border-radius-xl fs-7" title="">
                     <!--begin::Svg Icon -->
@@ -458,13 +458,33 @@
                         </g>
                     </svg>
                     <!--end::Svg Icon-->
-                    ورود | ثبت نام
+                    ورود کاربر
                 </a>
-                <!--users Login and Register:end-->
-
-                {{-- <!--Horizontal Line:start-->
-                <span class="horizontal-line"></span>
-                <!--Horizontal Line:end--> --}}
+                <!--users Login end-->
+                
+                <!-- users register start -->
+                <a href="" data-bs-toggle="modal" data-bs-target="#insertNewUserModal" class="btn me-3 border-gray-300 border-radius-xl fs-7" title="">
+                    <!--begin::Svg Icon -->
+                    <svg class="rotate-3d me-2" xmlns="http://www.w3.org/2000/svg"
+                         xmlns:xlink="http://www.w3.org/1999/xlink" width="24px"
+                         height="24px" viewBox="0 0 24 24" version="1.1">
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <rect x="0" y="0" width="24" height="24"/>
+                            <path d="M14.0069431,7.00607258 C13.4546584,7.00607258 13.0069431,6.55855153 13.0069431,6.00650634 C13.0069431,5.45446114 13.4546584,5.00694009 14.0069431,5.00694009 L15.0069431,5.00694009 C17.2160821,5.00694009 19.0069431,6.7970243 19.0069431,9.00520507 L19.0069431,15.001735 C19.0069431,17.2099158 17.2160821,19 15.0069431,19 L3.00694311,19 C0.797804106,19 -0.993056895,17.2099158 -0.993056895,15.001735 L-0.993056895,8.99826498 C-0.993056895,6.7900842 0.797804106,5 3.00694311,5 L4.00694793,5 C4.55923268,5 5.00694793,5.44752105 5.00694793,5.99956624 C5.00694793,6.55161144 4.55923268,6.99913249 4.00694793,6.99913249 L3.00694311,6.99913249 C1.90237361,6.99913249 1.00694311,7.89417459 1.00694311,8.99826498 L1.00694311,15.001735 C1.00694311,16.1058254 1.90237361,17.0008675 3.00694311,17.0008675 L15.0069431,17.0008675 C16.1115126,17.0008675 17.0069431,16.1058254 17.0069431,15.001735 L17.0069431,9.00520507 C17.0069431,7.90111468 16.1115126,7.00607258 15.0069431,7.00607258 L14.0069431,7.00607258 Z"
+                                  fill="#000000" fill-rule="nonzero" opacity="0.3"
+                                  transform="translate(9.006943, 12.000000) scale(-1, 1) rotate(-90.000000) translate(-9.006943, -12.000000) "/>
+                            <rect fill="#000000" opacity="0.3"
+                                  transform="translate(14.000000, 12.000000) rotate(-270.000000) translate(-14.000000, -12.000000) "
+                                  x="13" y="6" width="2" height="12" rx="1"/>
+                            <path d="M21.7928932,9.79289322 C22.1834175,9.40236893 22.8165825,9.40236893 23.2071068,9.79289322 C23.5976311,10.1834175 23.5976311,10.8165825 23.2071068,11.2071068 L20.2071068,14.2071068 C19.8165825,14.5976311 19.1834175,14.5976311 18.7928932,14.2071068 L15.7928932,11.2071068 C15.4023689,10.8165825 15.4023689,10.1834175 15.7928932,9.79289322 C16.1834175,9.40236893 16.8165825,9.40236893 17.2071068,9.79289322 L19.5,12.0857864 L21.7928932,9.79289322 Z"
+                                  fill="#000000" fill-rule="nonzero"
+                                  transform="translate(19.500000, 12.000000) rotate(-90.000000) translate(-19.500000, -12.000000) "/>
+                        </g>
+                    </svg>
+                    <!--end::Svg Icon-->
+                    ثبت نام کاربر
+                </a>
+                <!-- users register end -->
 
                 <!-- brokers register start-->
                 <a href="" data-bs-toggle="modal" data-bs-target="#insertNewBrokerModal" class="btn me-3 border-gray-300 border-radius-xl fs-7" title="">
@@ -794,7 +814,146 @@
 </div>
 <!--Navbar:end-->
 
+<!-- Modal start-->
 
+    <!-- broker register-->
+    <div class="modal fade" id="insertNewBrokerModal">
+        @if ($errors->any())
+            @foreach ($errors->all() as $error)
+                <div class="alert alert-danger">{{$error}}</div>
+            @endforeach
+        @endif
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        ثبت نام
+                        <span class="d-block fs-7 gray-600 fw-lighter mt-2">مشخصات خود را وارد کنید.</span>
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="{{route('Broker.store')}}" class="row g-3" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="col-md-6">
+                            <label for="name" class="form-label fw-bold">نام</label>
+                            <input type="text" name="f_name" class="form-control border-radius-xl" id="f_name" placeholder="نام خود را وارد کنید ...">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="name" class="form-label fw-bold">نام خانوادگی</label>
+                            <input type="text" name="l_name" class="form-control border-radius-xl" id="l_name" placeholder="نام خانوادگی خود را وارد کنید ...">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="phoneNumber" class="form-label fw-bold">شماره موبایل</label>
+                            <input type="tel" name="mobile" class="form-control border-radius-xl" id="phoneNumber" placeholder="09xxxxxxxxx">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="gender" class="form-label fw-bold">انتخاب جنسیت</label>
+                            <select name="gender" id="gender" class="wide border-radius-xl form-control">
+                                <option selected>انتخاب کنید</option>
+                                <option value="1">مرد</option>
+                                <option value="2">زن</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="nationalCode" class="form-label fw-bold">کد ملی</label>
+                            <input name="national_code" type="text" class="form-control border-radius-xl" id="nationalCode" placeholder="کد ملی را وارد کنید ...">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="photo" class="form-label fw-bold">عکس</label>
+                            <input name="photo" type="file" class="form-control border-radius-xl" id="photo">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="password" class="form-label fw-bold">رمز</label>
+                            <input name="password" type="password" class="form-control border-radius-xl" id="password" placeholder="رمز را وارد کنید ...">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="password_confirmation" class="form-label fw-bold">نکرار رمز</label>
+                            <input name="password_confirmation" type="password" class="form-control border-radius-xl" id="password_confirmation" placeholder="تکرار رمز را وارد کنید ...">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="tag" class="form-label fw-bold">انتخاب دسته</label>
+                            <select name="tag" id="tag" class="wide border-radius-xl form-control">
+                                <option selected>انتخاب کنید</option>
+                                @foreach ($tags as $tag)
+                                    <option value="{{$tag->id}}">{{$tag->name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="desc" class="form-label fw-bold">توضیحات</label>
+                            <textarea name="desc" class="form-control border-radius-xl" id="desc" rows="2" placeholder="توضیحات را وارد کنید ..."></textarea>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="address" class="form-label fw-bold">آدرس</label>
+                            <textarea name="address" class="form-control border-radius-xl" id="address" rows="2" placeholder="آدرس را وارد کنید ..."></textarea>
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn custom-btn-primary border-radius-xl">ثبت</button>
+                            <button type="button" class="text-info btn fw-lighter" data-bs-dismiss="modal">انصراف و برگشت</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- user register-->
+    <div class="modal fade" id="insertNewUserModal">
+        @if ($errors->any())
+            @foreach ($errors->all() as $error)
+                <div class="alert alert-danger">{{$error}}</div>
+            @endforeach
+        @endif
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        ثبت نام
+                        <span class="d-block fs-7 gray-600 fw-lighter mt-2">مشخصات خود را وارد کنید.</span>
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="{{route('Users.store')}}" class="row g-3" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <div class="col-md-6">
+                            <label for="name" class="form-label fw-bold">نام</label>
+                            <input type="text" name="f_name" class="form-control border-radius-xl" id="f_name" placeholder="نام خود را وارد کنید ...">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="name" class="form-label fw-bold">نام خانوادگی</label>
+                            <input type="text" name="l_name" class="form-control border-radius-xl" id="l_name" placeholder="نام خانوادگی خود را وارد کنید ...">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="phoneNumber" class="form-label fw-bold">شماره موبایل</label>
+                            <input type="tel" name="mobile" class="form-control border-radius-xl" id="phoneNumber" placeholder="09xxxxxxxxx">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="nationalCode" class="form-label fw-bold">کد ملی</label>
+                            <input name="national_code" type="text" class="form-control border-radius-xl" id="nationalCode" placeholder="کد ملی را وارد کنید ...">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="password" class="form-label fw-bold">رمز</label>
+                            <input name="password" type="password" class="form-control border-radius-xl" id="password" placeholder="رمز را وارد کنید ...">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="password_confirmation" class="form-label fw-bold">نکرار رمز</label>
+                            <input name="password_confirmation" type="password" class="form-control border-radius-xl" id="password_confirmation" placeholder="تکرار رمز را وارد کنید ...">
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn custom-btn-primary border-radius-xl">ثبت</button>
+                            <button type="button" class="text-info btn fw-lighter" data-bs-dismiss="modal">انصراف و برگشت</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+<!-- Modal end-->
 <!-- content -->
 
     @yield('content')

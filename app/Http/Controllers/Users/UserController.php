@@ -4,7 +4,10 @@ namespace App\Http\Controllers\Users;
 
 use App\Http\Controllers\Controller;
 use App\Models\Tag;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class UserController extends Controller
 {
@@ -29,7 +32,25 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'f_name' => ['required','max:120'],
+            'l_name' => ['required','max:120'],
+            'mobile' => ['required','numeric','starts_with:09','unique:users,mobile'],
+            'national_code' => ['required','numeric','unique:users,national_code'],
+            'password'=>['required','min:8','confirmed'],
+        ]);
+
+        $user = new User();
+        $user->f_name = $request->f_name;
+        $user->l_name = $request->l_name;
+        $user->mobile = $request->mobile;
+        $user->national_code = $request->national_code;
+        $user->password = Hash::make($request->password);
+        $user->save();
+
+        Alert::success('اطلاعات ثبت شد.', 'پس از تایید مدیریت ثبت نام انجام می شود.');
+
+        return redirect()->back();
     }
 
     /**
