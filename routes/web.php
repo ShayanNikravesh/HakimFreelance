@@ -9,6 +9,7 @@ use App\Http\Controllers\Users\TagController;
 use App\Jobs\Email;
 use App\Mail\RegisterMail;
 use App\Models\Tag;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 
 /*
@@ -30,17 +31,9 @@ Route::resource('Users',UserController::class);
 
 Route::get('login',[LoginController::class,'index'])->name('Login');
 
-Route::post('verify',[LoginController::class,'verify'])->name('Verify');
+Route::post('authenticate',[LoginController::class,'authenticate'])->name('Authenticate');
 
-Route::post('register',[LoginController::class,'register'])->name('register');
-
-Route::get('single-broker',function(){
-    return view('users.singlebroker');
-});
-
-// Route::get('404',function(){
-//     return view('users.404');
-// });
+Route::get('exit',[LoginController::class,'exit'])->name('Exit');
 
 Route::resource('Broker',BrokerController::class);
 
@@ -53,3 +46,13 @@ Route::get('mail',function(){
 });
 
 Route::resource('message', MessageController::class);
+
+Route::get('check',function(){
+    if (Auth::check()) {
+        // کاربر لاگین کرده است
+        dd('yes');
+    } else {
+        // کاربر لاگین نکرده است
+        dd('no');
+    }
+});

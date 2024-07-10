@@ -5,11 +5,13 @@ use Salehhashemi\OtpManager\Facade\OtpManager;
 
 use App\Http\Controllers\Controller;
 use App\Jobs\Email;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Session;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class LoginController extends Controller
 {
@@ -18,42 +20,37 @@ class LoginController extends Controller
         return view('users.login');
     }
 
-    public function verify(Request $request)
+    public function authenticate(Request $request)
     {
         $request->validate([
-            'mobile'=>['required','numeric']
+            'national_code'=> ['required',],
+            'password'=> ['required',],
         ]);
 
-        $mobile = $request->mobile;
-        $sentOtp = OtpManager::send($mobile);
-        Session::put($mobile,$sentOtp);
+        $credentials = $request->only('national_code', 'password');
 
-        // Redis::set($mobile,$sentOtp);
+        $user = User::where('national_code', $request->national_code)->first();
 
-        return view('users.verify',compact('mobile','sentOtp'));
-    }
-
-    public function register(Request $request)
-    {
-        $request->validate([
-            'code'=>['required','numeric']
-        ]);
-
-        $mobile = $request->mobile;
-        $verify = Session::get($mobile);
-
-
-        $isVerified = OtpManager::verify($mobile,$request->code,$verify->trackingCode);
-
-        if($isVerified == true){
-            //login or register codes
-            // if (Auth::guard('managers')->attempt($mobile, $request->remember)) {
-            //     $request->session()->regenerate();
-
-            //     return redirect('/');
-            // }
-            dd('hi');
+        if($user->status == 'active'){
+            if (Auth::attempt($credentials)) {
+                // کاربر با موفقیت وارد سایت شد
+                Alert::success('عملیات موفق.', 'خوش آمدید.');
+                return redirect()->intended('/');
+                
+            }
+            return back()->withErrors([
+                'message'=> 'کد ملی یا رمز اشتباه است.'
+            ]);
         }
         
+        Alert::warning('عملیات ناموفق.', 'ثبت نام شما تایید نشده است.');
+        return redirect('/');
+
+    }
+
+    public function exit()
+    {
+        Auth::logout();
+        return redirect()->intended('/');
     }
 }
