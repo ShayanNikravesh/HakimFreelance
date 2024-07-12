@@ -1,8 +1,5 @@
-@if(view()->exists('vendor.laravel-user-monitoring.layouts.master'))
-    @extends('vendor.laravel-user-monitoring.layouts.master')
-@else
-    @extends('LaravelUserMonitoring::layouts.master')
-@endif
+@extends('vendor.laravel-user-monitoring.layouts.master')
+
 @section('title', 'Visit Monitoring')
 
 @section('content')

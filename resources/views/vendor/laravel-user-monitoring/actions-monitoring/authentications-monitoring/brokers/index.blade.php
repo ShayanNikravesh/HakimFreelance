@@ -1,32 +1,13 @@
-@if(view()->exists('vendor.laravel-user-monitoring.layouts.master'))
-    @extends('vendor.laravel-user-monitoring.layouts.master')
-@else
-    @extends('LaravelUserMonitoring::layouts.master')
-@endif
+@extends('vendor.laravel-user-monitoring.layouts.master')
 
 @section('title', 'Authentication Monitoring')
-
-@php
-    $index = -1;
-    $url = url()->current();
-    $type = '';
-    $segments = explode('/', $url);
-    foreach (array_keys(config('user-monitoring.guards')) as $key => $value) {
-        if (($value === $segments[count($segments)-2])) {
-            $index = $key;
-            $type = config('user-monitoring.guards')[$value];
-            break;
-        }
-    }
-@endphp
 
 @section('content')
     <div class="mt-7 overflow-x-auto">
         <table class="w-full whitespace-nowrap">
             <tbody>
             @foreach ($authentications as $authentication)
-                {{ \Illuminate\Support\Facades\Log::error($authentication->consumer) }}
-                @if ($authentication->consumer instanceof $type)
+                @if ($authentication->consumer instanceof \App\Models\Broker)
                     <tr tabindex="0" class="focus:outline-none h-16 border border-gray-100 rounded">
                         <td class="pl-24">
                             <div class="flex items-center">
@@ -74,7 +55,7 @@
                             </button>
                         </td>
                         <td class="pl-4">
-                            <form method="post" action="{{ route('user-monitoring.managers.authentications-monitoring-delete', $authentication->id) }}">
+                            <form method="post" action="{{ route('user-monitoring.brokers.authentications-monitoring-delete', $authentication->id) }}">
                                 @csrf
                                 @method('DELETE')
 
@@ -94,11 +75,10 @@
     </div>
 @endsection
 
-@section('consumers')
+@section('button')
     <select id="consumers" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-        <option value="admin" selected>مدیر</option>
-        <option value="broker">کارگذاران</option>
+        <option value="admin">مدیر</option>
+        <option value="broker" selected>کارگذاران</option>
 {{--        <option value="user">کاربران عادی</option>--}}
     </select>
 @endsection
-

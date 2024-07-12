@@ -1,6 +1,5 @@
 @extends('vendor.laravel-user-monitoring.layouts.master')
 
-
 @section('title', 'Action Monitoring')
 
 @section('content')
