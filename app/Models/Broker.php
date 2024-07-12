@@ -2,15 +2,18 @@
 
 namespace App\Models;
 
+use Binafy\LaravelUserMonitoring\Models\ActionMonitoring;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Binafy\LaravelUserMonitoring\Traits\Actionable;
 
 class Broker extends Authenticatable
 {
-    use HasApiTokens, HasFactory, Notifiable;
+    use HasApiTokens, HasFactory, Notifiable, Actionable;
 
     /**
      * The attributes that are mass assignable.
@@ -34,5 +37,10 @@ class Broker extends Authenticatable
     public function tags(): BelongsToMany
     {
         return $this->belongsToMany(Tag::class, 'broker_tag', 'broker_id', 'tag_id');
+    }
+
+    public function actions(): MorphMany
+    {
+        return $this->morphMany(ActionMonitoring::class, 'consumer');
     }
 }

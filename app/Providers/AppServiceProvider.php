@@ -6,6 +6,7 @@ use App\Models\Broker;
 use App\Models\Tag;
 use App\Observers\RegisterObserver;
 use Illuminate\Support\ServiceProvider;
+use Illuminate\View\View;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -32,5 +33,27 @@ class AppServiceProvider extends ServiceProvider
             'tags' => $tags,
             'parentTags' => $parentTags
         ]);
+        $this->viewComposer();
     }
+
+
+    /**
+     * View Composer.
+     *
+     * @return void
+     */
+    private function viewComposer()
+    {
+        view()->composer([
+            'vendor.laravel-user-monitoring.layouts.master',
+            'vendor.laravel-user-monitoring.visit-monitoring.index',
+            'vendor.laravel-user-monitoring.actions-monitoring.index',
+            'vendor.laravel-user-monitoring.authentications-monitoring.index',
+        ], function (View $view) {
+            $title = 'Laravel User Monitoring';
+
+            $view->with('title', $title);
+        });
+    }
+
 }
