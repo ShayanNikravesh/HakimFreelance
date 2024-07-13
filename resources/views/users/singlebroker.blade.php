@@ -136,7 +136,7 @@
                                     </p>
                                 </div>
                                 <div class="comment-details my-3 border-bottom-gray-150 pb-3 mx-5">
-                                    <span class="fs-8 gray-600">1 فروردین 1402</span>
+                                    <span class="fs-8 gray-600"><?php echo verta($comment->created_at)->format('Y.m.d');?></span>
                                     <i class="fa fa-circle fs-11 gray-400"></i>
                                     <span class="fs-8 gray-600">{{$comment->user->f_name.' '.$comment->user->l_name}}</span>
                                 </div>

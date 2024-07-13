@@ -54,7 +54,7 @@ class BrokerController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        dd($request);
     }
 
     /**

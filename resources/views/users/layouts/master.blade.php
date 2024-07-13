@@ -1102,7 +1102,6 @@
             </div>
         </div>
     </div>
-
     <!-- user register-->
     <div class="modal fade" id="insertNewUserModal">
         @if ($errors->any())
