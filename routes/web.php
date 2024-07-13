@@ -3,6 +3,7 @@
 use App\Http\Controllers\Users\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Users\BrokerController;
+use App\Http\Controllers\Users\CommentController;
 use App\Http\Controllers\Users\LoginController;
 use App\Http\Controllers\Users\MessageController;
 use App\Http\Controllers\Users\TagController;
@@ -44,6 +45,10 @@ Route::get('search',[BrokerController::class,'search'])->name('search');
 Route::get('mail',function(){
     Email::dispatch();
 });
+
+Route::resource('comments',CommentController::class);
+
+Route::get('confirm/{id}/{status}', [CommentController::class,'confirm'])->name('confirm');
 
 Route::resource('message', MessageController::class);
 

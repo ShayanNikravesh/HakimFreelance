@@ -4,7 +4,7 @@ use App\Http\Controllers\Managers\BrokerController;
 use App\Http\Controllers\Managers\ManagerController;
 use App\Http\Controllers\Managers\TagController;
 use App\Http\Controllers\Managers\UserController;
-
+use App\Http\Controllers\Users\UserController as UsersUserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,6 +30,8 @@ Route::middleware('auth:managers')->prefix('admin')->group(function () {
     Route::resource('users', UserController::class);
 
     Route::get('user_status/{id}/{status}',[UserController::class,'changeStatus'])->name('change-status-user');
+
+    Route::get('users_request',[UserController::class,'signupReq'])->name('users-request');
 
     //brokers
     Route::resource('brokers', BrokerController::class);

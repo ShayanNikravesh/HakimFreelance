@@ -66,7 +66,7 @@ class BrokerController extends Controller
         $broker = Broker::findOrFail($id);
         $broker->forceDelete();
 
-        Alert::success('عملیات موفق', 'درخواست حذف شد');
+        Alert::success('عملیات موفق', 'درخواست حذف شد.');
 
         return redirect()->back();
     }
