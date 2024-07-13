@@ -88,7 +88,9 @@ class ManagerController extends Controller
         $manager->f_name = $request->first_name;
         $manager->l_name = $request->last_name;
         $manager->email = $request->email;
-        $manager->password = Hash::make($request->password);
+        if ($request->filled('password')) {
+            $manager->password = Hash::make($request->password);
+        }
         $manager->level = $request->level;
 
         $manager->save();

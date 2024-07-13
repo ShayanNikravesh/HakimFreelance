@@ -39,7 +39,10 @@ class LoginController extends Controller
                     // کاربر با موفقیت وارد سایت شد
                     Alert::success('عملیات موفق.', 'خوش آمدید.');
                     return redirect()->intended('/');
-                }
+                }else
+                    return back()->withErrors([
+                        'message'=> 'کد ملی یا رمز اشتباه است.'
+                    ]);
             }else
                 Alert::warning('عملیات ناموفق.', 'ثبت نام شما تایید نشده است.');
                 return redirect('/');

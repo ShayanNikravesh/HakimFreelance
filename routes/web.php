@@ -11,6 +11,7 @@ use App\Jobs\Email;
 use App\Mail\RegisterMail;
 use App\Models\Tag;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 
 /*
@@ -60,4 +61,9 @@ Route::get('check',function(){
         // کاربر لاگین نکرده است
         dd('no');
     }
+});
+
+Route::get('Hash',function(){
+    $hash = Hash::make(1234);
+    dd($hash);
 });
