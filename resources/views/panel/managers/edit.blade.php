@@ -140,7 +140,7 @@
                     <!--begin::Form-->
                     <div class="card card-custom">
                         <!--begin::Form-->
-                        <form method="POST" action="{{route('managers.update',$manager)}}">
+                        <form method="POST" action="{{route('managers.update','manager')}}">
                             @csrf
 							@method('PUT')
                          <div class="card-body">
