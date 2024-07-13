@@ -64,7 +64,6 @@ class UserController extends Controller
      */
     public function show(string $id)
     {
-        $this->middleware('Auth');
         $user = User::findOrfail(auth()->user()->id);
         return view('users.profile',compact('user'));
     }
@@ -74,7 +73,6 @@ class UserController extends Controller
      */
     public function edit(string $id)
     {
-        $this->middleware('Auth');
         $user = User::findOrfail(auth()->user()->id);
         return view('users.edit',compact('user'));   
     }
