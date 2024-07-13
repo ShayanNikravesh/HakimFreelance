@@ -14,6 +14,12 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+    public function __construct()
+    {
+        $this->middleware('Auth')->except(['index','store']);
+    } 
+
     public function index()
     {
         return view('users.index');
@@ -58,6 +64,7 @@ class UserController extends Controller
      */
     public function show(string $id)
     {
+        $this->middleware('Auth');
         $user = User::findOrfail(auth()->user()->id);
         return view('users.profile',compact('user'));
     }
@@ -67,6 +74,7 @@ class UserController extends Controller
      */
     public function edit(string $id)
     {
+        $this->middleware('Auth');
         $user = User::findOrfail(auth()->user()->id);
         return view('users.edit',compact('user'));   
     }

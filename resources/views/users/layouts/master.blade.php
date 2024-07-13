@@ -496,7 +496,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item  py-2 fw-bold" href="">
+                                <a class="dropdown-item  py-2 fw-bold" href="{{route('Comments')}}">
                                     <span class="pe-1">
                                         <!--begin::Svg Icon-->
                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -509,7 +509,7 @@
                                             </g>
                                         </svg><!--end::Svg Icon-->
                                     </span>
-                                    دیدگاه ها
+                                    نظرات
                                 </a>
                             </li>
                             <li>
@@ -894,7 +894,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item fw-bold" href="">
+                                <a class="dropdown-item fw-bold" href="{{route('Comments')}}">
                                     <span class="pe-1">
                                         <!--begin::Svg Icon-->
                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -907,7 +907,7 @@
                                             </g>
                                         </svg><!--end::Svg Icon-->
                                     </span>
-                                    دیدگاه ها
+                                    نظرات
                                 </a>
                             </li>
                             <li>

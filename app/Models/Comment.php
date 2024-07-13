@@ -14,4 +14,8 @@ class Comment extends Model
     {
         return $this->belongsTo(User::class);
     }
+    public function broker()
+    {
+        return $this->belongsTo(Broker::class);
+    }
 }

@@ -12,6 +12,12 @@ class CommentController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+    public function __construct()
+    {
+        $this->middleware('Auth')->except(['destroy','confirm']);
+    } 
+
     public function index()
     {
         //
@@ -101,4 +107,10 @@ class CommentController extends Controller
         return redirect()->back();
     }
 
+    public function userComments()
+    {
+        $id = auth()->user()->id;
+        $comments = Comment::with('broker')->where('user_id',$id)->get();
+        return view('users.usercomments',compact('comments'));
+    }
 }

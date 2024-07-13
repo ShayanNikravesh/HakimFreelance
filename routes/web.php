@@ -43,13 +43,11 @@ Route::resource('Tags',TagController::class);
 
 Route::get('search',[BrokerController::class,'search'])->name('search');
 
-Route::get('mail',function(){
-    Email::dispatch();
-});
-
 Route::resource('comments',CommentController::class);
 
 Route::get('confirm/{id}/{status}', [CommentController::class,'confirm'])->name('confirm');
+
+Route::get('userComments',[CommentController::class,'userComments'])->name('Comments')->middleware('Auth');
 
 Route::resource('message', MessageController::class);
 
