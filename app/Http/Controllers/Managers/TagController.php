@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Managers;
 use App\Http\Controllers\Controller;
 use App\Models\Tag;
 use Illuminate\Http\Request;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class TagController extends Controller
 {
@@ -41,7 +42,9 @@ class TagController extends Controller
         $Tag->parent_id = $request->parent_id;
         $Tag->save();
 
-        return redirect()->route('categories.index');
+        Alert::success('عملیات موفق', 'دسته ثبت شد.');
+
+        return redirect()->back();
     }
 
     /**
@@ -77,6 +80,8 @@ class TagController extends Controller
         $Tag->name = $request->name;
         $Tag->parent_id = $request->parent_id;
         $Tag->save();
+
+        Alert::success('عملیات موفق', 'دسته ویرایش شد.');
 
         return redirect()->route('panel.managers.tags.index');
     }
