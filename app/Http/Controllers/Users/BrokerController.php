@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Users;
 
 use App\Http\Controllers\Controller;
 use App\Models\Broker;
+use App\Models\Comment;
 use App\Models\Tag;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
@@ -76,7 +77,8 @@ class BrokerController extends Controller
     public function show(string $id)
     {
         $broker = Broker::with('tags')->findOrfail($id);
-        return view('users.singlebroker',compact('broker'));
+        $comments = Comment::with('user')->where('broker_id',$id)->where('status','active')->get();
+        return view('users.singlebroker',compact('broker','comments'));
     }
 
     /**

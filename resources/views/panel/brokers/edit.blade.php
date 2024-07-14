@@ -18,103 +18,10 @@
 			<!--end::Info-->
 			<!--begin::Toolbar-->
 			<div class="d-flex align-items-center">
-				<!--begin::Actions-->
-				<a href="#" class="btn btn-clean btn-sm font-weight-bold font-size-base mr-1">Today</a>
-				<a href="#" class="btn btn-clean btn-sm font-weight-bold font-size-base mr-1">Month</a>
-				<a href="#" class="btn btn-clean btn-sm font-weight-bold font-size-base mr-1">Year</a>
-				<!--end::Actions-->
 				<!--begin::Daterange-->
-				<a href="#" class="btn btn-sm btn-light font-weight-bold mr-2" id="kt_dashboard_daterangepicker" data-toggle="tooltip" title="Select dashboard daterange" data-placement="left">
-					<span class="text-muted font-size-base font-weight-bold mr-2" id="kt_dashboard_daterangepicker_title">Today</span>
-					<span class="text-primary font-size-base font-weight-bolder" id="kt_dashboard_daterangepicker_date">Aug 16</span>
-				</a>
+					<span class="text-muted font-size-base font-weight-bold mr-2">تاریخ:</span>
+					<span class="text-primary font-size-base font-weight-bolder"><?php echo verta()->format('Y.m.d');?></span>
 				<!--end::Daterange-->
-				<!--begin::Dropdowns-->
-				<div class="dropdown dropdown-inline" data-toggle="tooltip" title="Quick actions" data-placement="left">
-					<a href="#" class="btn btn-sm btn-clean btn-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						<span class="svg-icon svg-icon-success svg-icon-lg">
-							<!--begin::Svg Icon | path:assets/media/svg/icons/Files/File-plus.svg-->
-							<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px" viewBox="0 0 24 24" version="1.1">
-								<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-									<polygon points="0 0 24 0 24 24 0 24" />
-									<path d="M5.85714286,2 L13.7364114,2 C14.0910962,2 14.4343066,2.12568431 14.7051108,2.35473959 L19.4686994,6.3839416 C19.8056532,6.66894833 20,7.08787823 20,7.52920201 L20,20.0833333 C20,21.8738751 19.9795521,22 18.1428571,22 L5.85714286,22 C4.02044787,22 4,21.8738751 4,20.0833333 L4,3.91666667 C4,2.12612489 4.02044787,2 5.85714286,2 Z" fill="#000000" fill-rule="nonzero" opacity="0.3" />
-									<path d="M11,14 L9,14 C8.44771525,14 8,13.5522847 8,13 C8,12.4477153 8.44771525,12 9,12 L11,12 L11,10 C11,9.44771525 11.4477153,9 12,9 C12.5522847,9 13,9.44771525 13,10 L13,12 L15,12 C15.5522847,12 16,12.4477153 16,13 C16,13.5522847 15.5522847,14 15,14 L13,14 L13,16 C13,16.5522847 12.5522847,17 12,17 C11.4477153,17 11,16.5522847 11,16 L11,14 Z" fill="#000000" />
-								</g>
-							</svg>
-							<!--end::Svg Icon-->
-						</span>
-					</a>
-					<div class="dropdown-menu p-0 m-0 dropdown-menu-md dropdown-menu-right py-3">
-						<!--begin::Navigation-->
-						<ul class="navi navi-hover py-5">
-							<li class="navi-item">
-								<a href="#" class="navi-link">
-									<span class="navi-icon">
-										<i class="flaticon2-drop"></i>
-									</span>
-									<span class="navi-text">New Group</span>
-								</a>
-							</li>
-							<li class="navi-item">
-								<a href="#" class="navi-link">
-									<span class="navi-icon">
-										<i class="flaticon2-list-3"></i>
-									</span>
-									<span class="navi-text">Contacts</span>
-								</a>
-							</li>
-							<li class="navi-item">
-								<a href="#" class="navi-link">
-									<span class="navi-icon">
-										<i class="flaticon2-rocket-1"></i>
-									</span>
-									<span class="navi-text">Groups</span>
-									<span class="navi-link-badge">
-										<span class="label label-light-primary label-inline font-weight-bold">new</span>
-									</span>
-								</a>
-							</li>
-							<li class="navi-item">
-								<a href="#" class="navi-link">
-									<span class="navi-icon">
-										<i class="flaticon2-bell-2"></i>
-									</span>
-									<span class="navi-text">Calls</span>
-								</a>
-							</li>
-							<li class="navi-item">
-								<a href="#" class="navi-link">
-									<span class="navi-icon">
-										<i class="flaticon2-gear"></i>
-									</span>
-									<span class="navi-text">Settings</span>
-								</a>
-							</li>
-							<li class="navi-separator my-3"></li>
-							<li class="navi-item">
-								<a href="#" class="navi-link">
-									<span class="navi-icon">
-										<i class="flaticon2-magnifier-tool"></i>
-									</span>
-									<span class="navi-text">Help</span>
-								</a>
-							</li>
-							<li class="navi-item">
-								<a href="#" class="navi-link">
-									<span class="navi-icon">
-										<i class="flaticon2-bell-2"></i>
-									</span>
-									<span class="navi-text">Privacy</span>
-									<span class="navi-link-badge">
-										<span class="label label-light-danger label-rounded font-weight-bold">5</span>
-									</span>
-								</a>
-							</li>
-						</ul>
-						<!--end::Navigation-->
-					</div>
-				</div>
-				<!--end::Dropdowns-->
 			</div>
 			<!--end::Toolbar-->
 		</div>
@@ -140,47 +47,70 @@
                     <!--begin::Form-->
                     <div class="card card-custom">
                         <!--begin::Form-->
-                        <form method="POST" action="{{route('broker.update',$broker)}}">
-                            @csrf
-							@method('PUT')
-                         <div class="card-body">
-                          <div class="form-group row">
-                            <div class="col-lg-6">
-                                <label>نام:</label>
-                                <input type="text" class="form-control" name="first_name" value="{{$broker->f_name}}"/>
-                            </div>
-                            <div class="col-lg-6">
-                                <label>نام خانوادگی:</label>
-                                <input type="text" class="form-control" name="last_name" value="{{$broker->l_name}}"/>
-                            </div>
-                          </div>
-                          <div class="form-group row">
-                            <div class="col-lg-6">
-                                <label>کد ملی:</label>
-                                <input type="text" class="form-control" id="exampleInputPassword1" name="national_code" value="{{$broker->national_code}}"/>
-                            </div>
-							<div class="col-lg-6">
-                                <div class="col-lg-6">
-									<label>توضیحات:</label>
-									<input type="text" class="form-control" id="exampleInputPassword1" name="desc" value="{{$broker->desc}}"/>
-								</div>
-                            </div>
-                          </div>
-                          <div class="form-group row">
-                            <div class="col-lg-6">
-                                <label>رمز:</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" name="password" placeholder="رمز جدید را وارد کنید."/>
-                            </div>
-							<div class="col-lg-6">
-                                <label>تکرار رمز:</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" name="password_confirmation" placeholder="تکرار رمز جدید را وارد کنید ."/>
-                            </div>
-                          </div>
-                         </div>
-                         <div class="card-footer">
-                          <button type="reset" class="btn btn-secondary">پاک کردن</button>
-                          <button type="submit" class="btn btn-primary mr-2">ثبت</button>
-                         </div>
+                        <form method="POST" action="{{route('broker.update','broker')}}">
+								@csrf
+								@method('PUT')
+							<div class="card-body">
+								<div class="form-group row">
+									<div class="col-lg-6">
+										<label>نام:</label>
+										<input type="text" class="form-control" name="first_name" value="{{$broker->f_name}}"/>
+									</div>
+									<div class="col-lg-6">
+										<label>نام خانوادگی:</label>
+										<input type="text" class="form-control" name="last_name" value="{{$broker->l_name}}"/>
+									</div>
+									<div class="col-md-6">
+										<label for="phoneNumber" class="form-label fw-bold">شماره موبایل:</label>
+										<input type="tel" name="mobile" class="form-control border-radius-xl" id="phoneNumber" placeholder="09xxxxxxxxx" value="{{$broker->mobile}}">
+									</div>
+									<div class="col-md-6">
+										<label for="gender" class="form-label fw-bold">انتخاب جنسیت:</label>
+										<select name="gender" id="gender" class="wide border-radius-xl form-control">
+											<option selected value="{{$broker->gender}}"></option>
+											<option value="1">مرد</option>
+											<option value="2">زن</option>
+										</select>
+									</div>
+									<div class="col-md-6">
+										<label for="nationalCode" class="form-label fw-bold">کد ملی:</label>
+										<input name="national_code" type="text" class="form-control border-radius-xl" id="nationalCode" placeholder="کد ملی را وارد کنید ...">
+									</div>
+									<div class="col-md-6">
+										<label for="photo" class="form-label fw-bold">عکس:</label>
+										<input name="photo" type="file" class="form-control border-radius-xl" id="photo">
+									</div>
+									<div class="col-md-6">
+										<label for="password" class="form-label fw-bold">رمز:</label>
+										<input name="password" type="password" class="form-control border-radius-xl" id="password" placeholder="رمز را وارد کنید ...">
+									</div>
+									<div class="col-md-6">
+										<label for="password_confirmation" class="form-label fw-bold">نکرار رمز:</label>
+										<input name="password_confirmation" type="password" class="form-control border-radius-xl" id="password_confirmation" placeholder="تکرار رمز را وارد کنید ...">
+									</div>
+									<div class="col-md-6">
+										<label for="tag" class="form-label fw-bold">انتخاب دسته:</label>
+										<select name="tag" id="tag" class="wide border-radius-xl form-control">
+											<option selected>انتخاب کنید</option>
+											@foreach ($tags as $tag)
+												<option value="{{$tag->id}}">{{$tag->name}}</option>
+											@endforeach
+										</select>
+									</div>
+									<div class="col-md-6">
+										<label for="desc" class="form-label fw-bold">توضیحات:</label>
+										<textarea name="desc" class="form-control border-radius-xl" id="desc" rows="2" placeholder="توضیحات را وارد کنید ..."></textarea>
+									</div>
+									<div class="col-md-12">
+										<label for="address" class="form-label fw-bold">آدرس:</label>
+										<textarea name="address" class="form-control border-radius-xl" id="address" rows="2" placeholder="آدرس را وارد کنید ..."></textarea>
+									</div>
+								</div>	
+							</div>
+							<div class="card-footer">
+							<button type="reset" class="btn btn-secondary">پاک کردن</button>
+							<button type="submit" class="btn btn-primary mr-2">ثبت</button>
+							</div>
                         </form>
                         <!--end::Form-->
                        </div>

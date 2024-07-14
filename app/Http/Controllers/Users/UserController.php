@@ -14,9 +14,15 @@ class UserController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+    public function __construct()
+    {
+        $this->middleware('Auth')->except(['index','store']);
+    } 
+
     public function index()
     {
-        return view('users.index',compact('tags','parentTags'));
+        return view('users.index');
     }
 
     /**
@@ -58,7 +64,8 @@ class UserController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $user = User::findOrfail(auth()->user()->id);
+        return view('users.profile',compact('user'));
     }
 
     /**
@@ -66,7 +73,8 @@ class UserController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $user = User::findOrfail(auth()->user()->id);
+        return view('users.edit',compact('user'));   
     }
 
     /**
@@ -74,7 +82,29 @@ class UserController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $user = User::findOrfail(auth()->user()->id);
+
+        $request->validate([
+            'f_name' => ['required','max:120'],
+            'l_name' => ['required','max:120'],
+            'mobile' => 'exclude_if:mobile,' . auth()->user()->mobile . '|numeric|max:255|starts_with:09|unique:users,mobile,' . auth()->id(),
+            'national_code' => 'exclude_if:national_code,' . auth()->user()->national_code . '|numeric|max:255|unique:users,national_code,' . auth()->id(),
+            'password'=>['min:8','confirmed','nullable'],
+        ]);
+
+        $user->f_name = $request->f_name;
+        $user->l_name = $request->l_name;
+        $user->mobile = $request->mobile;
+        $user->national_code = $request->national_code;
+        if ($request->filled('password')) {
+            $user->password = Hash::make($request->password);
+        }
+        $user->save();
+
+        Alert::success('عملیات موفق.', 'اطلاعات ویرایش شد.');
+
+        return redirect()->back();
+
     }
 
     /**

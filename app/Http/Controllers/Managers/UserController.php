@@ -64,7 +64,12 @@ class UserController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        $user = User::findOrFail($id);
+        $user->forceDelete();
+
+        Alert::success('عملیات موفق', 'درخواست حذف شد.');
+
+        return redirect()->back();
     }
 
     public function changeStatus(Request $request,string $id)
@@ -75,8 +80,14 @@ class UserController extends Controller
         $user->status = $status;
         $user->save();
 
-        Alert::success('عملیات موفق', 'وضعیت تغییر کرد');
+        Alert::success('عملیات موفق', 'وضعیت تغییر کرد.');
 
         return redirect()->back();
+    }
+
+    public function signupReq()
+    {
+        $users = User::where('status','inactive')->get();
+        return view('panel.managers.users.request',compact('users'));
     }
 }

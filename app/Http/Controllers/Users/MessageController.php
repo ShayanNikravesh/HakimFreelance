@@ -12,9 +12,13 @@ class MessageController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function __construct()
+    {
+        $this->middleware('Auth')->except(['store']);
+    } 
     public function index()
     {
-        //
+        return view('users.usermessages');
     }
 
     /**

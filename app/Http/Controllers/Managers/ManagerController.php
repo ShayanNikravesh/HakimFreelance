@@ -66,7 +66,7 @@ class ManagerController extends Controller
      */
     public function edit(string $id)
     {
-        $manager = Manager::findOrfail($id);
+        $manager = Manager::findOrfail(auth('managers')->id());
         return view('panel.managers.edit',compact('manager'));
     }
 
@@ -75,7 +75,7 @@ class ManagerController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $manager = Manager::findOrfail($id);
+        $manager = Manager::findOrfail(auth('managers')->id());
 
         $request -> validate([
             'first_name' => ['required'],
@@ -88,7 +88,9 @@ class ManagerController extends Controller
         $manager->f_name = $request->first_name;
         $manager->l_name = $request->last_name;
         $manager->email = $request->email;
-        $manager->password = Hash::make($request->password);
+        if ($request->filled('password')) {
+            $manager->password = Hash::make($request->password);
+        }
         $manager->level = $request->level;
 
         $manager->save();

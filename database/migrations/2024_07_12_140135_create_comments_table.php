@@ -11,14 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('comments', function (Blueprint $table) {
             $table->id();
-            $table->string('f_name');
-            $table->string('l_name');
-            $table->unsignedBigInteger('mobile');
+            $table->unsignedBigInteger('broker_id');
+            $table->foreign('broker_id')->references('id')->on('brokers')->onDelete('cascade');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->text('comment');
             $table->enum('status',['active','inactive','banned'])->default('inactive');
-            //for authentication
-            $table->rememberToken();
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('comments');
     }
 };

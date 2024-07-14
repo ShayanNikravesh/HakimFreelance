@@ -23,29 +23,37 @@ class LoginController extends Controller
     public function authenticate(Request $request)
     {
         $request->validate([
-            'national_code'=> ['required',],
+            'national_code'=> ['required','numeric'],
             'password'=> ['required',],
         ]);
 
-        $credentials = $request->only('national_code', 'password');
-
         $user = User::where('national_code', $request->national_code)->first();
 
-        if($user->status == 'active'){
-            if (Auth::attempt($credentials)) {
-                // کاربر با موفقیت وارد سایت شد
-                Alert::success('عملیات موفق.', 'خوش آمدید.');
-                return redirect()->intended('/');
-                
-            }
-            return back()->withErrors([
-                'message'=> 'کد ملی یا رمز اشتباه است.'
-            ]);
-        }
-        
-        Alert::warning('عملیات ناموفق.', 'ثبت نام شما تایید نشده است.');
-        return redirect('/');
+        $credentials = $request->only('national_code', 'password');
 
+        
+
+        if(!empty($user)){
+            if($user->status == 'active'){
+                if (Auth::attempt($credentials)) {
+                    // کاربر با موفقیت وارد سایت شد
+                    Alert::success('عملیات موفق.', 'خوش آمدید.');
+                    return redirect()->intended('/');
+                }else
+                    return back()->withErrors([
+                        'message'=> 'کد ملی یا رمز اشتباه است.'
+                    ]);
+            }else
+                Alert::warning('عملیات ناموفق.', 'ثبت نام شما تایید نشده است.');
+                return redirect('/');
+
+        }
+
+
+        return back()->withErrors([
+            'message'=> 'کد ملی یا رمز اشتباه است.'
+        ]);
+        
     }
 
     public function exit()

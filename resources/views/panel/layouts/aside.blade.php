@@ -103,7 +103,7 @@
                                 </svg>
                                 <!--end::Svg Icon-->
                             </span>
-                            <span class="menu-text font-weight">نمایش کاربران</span>
+                            <span class="menu-text font-weight">لیست کاربران</span>
                             <i class="menu-arrow"></i>
                         </a>
                         <div class="menu-submenu">
@@ -114,7 +114,7 @@
                                         <i class="menu-bullet menu-bullet-line">
                                             <span></span>
                                         </i>
-                                        <span class="menu-text font-weight">نمایش کاربران عادی</span>
+                                        <span class="menu-text font-weight">لیست کاربران عادی</span>
                                     </a>
                                 </li>
                                 <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
@@ -122,7 +122,7 @@
                                         <i class="menu-bullet menu-bullet-line">
                                             <span></span>
                                         </i>
-                                        <span class="menu-text font-weight">نمایش کارگزاران</span>
+                                        <span class="menu-text font-weight">لیست کارگزاران</span>
                                     </a>
                                 </li>
                             </ul>
@@ -190,17 +190,17 @@
                                         <i class="menu-bullet menu-bullet-line">
                                             <span></span>
                                         </i>
-                                        <span class="menu-text font-weight">درخواست ثبت نام کارگزار جدید</span>
+                                        <span class="menu-text font-weight">درخواست ثبت نام کارگزاران جدید</span>
                                     </a>
                                 </li>
-                                {{-- <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-                                    <a href="{{route('tags.index')}}" class="menu-link">
+                                <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                                    <a href="{{route('users-request')}}" class="menu-link">
                                         <i class="menu-bullet menu-bullet-line">
                                             <span></span>
                                         </i>
-                                        <span class="menu-text font-weight">نمایش دسته ها</span>
+                                        <span class="menu-text font-weight">درخواست ثبت نام کاربران جدید</span>
                                     </a>
-                                </li> --}}
+                                </li>
                             </ul>
                         </div>
                     </li>
