@@ -10914,7 +10914,7 @@ var KTLayoutQuickUser = function() {
             baseClass: 'offcanvas',
             placement: 'right',
             closeBy: 'kt_quick_user_close',
-            toggleBy: 'kt_quick_user_toggle'
+            toggleBy: ['kt_quick_user_toggle','kt_quick_user_mobile_toggle'],
         });
 
         KTUtil.scrollInit(content, {

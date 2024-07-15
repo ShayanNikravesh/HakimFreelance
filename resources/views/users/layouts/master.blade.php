@@ -63,7 +63,7 @@
                     <div class="top-mobile-navbar-middle d-flex justify-content-between align-items-center">
                         <!--Logo:start-->
                         <a href="{{route('Users.index')}}" class="navbar-brand">
-                            <img src="{{asset('userassets/img/logo.png')}}" alt="لوگوی برگ شاپ" class="blur-up">
+                            <img src="{{asset('userassets/img/hakimlogo.PNG')}}" alt="لوگوی برگ شاپ" class="blur-up w-25">
                         </a>
                         <!--Logo:end-->
                     </div>
@@ -197,7 +197,7 @@
                 <div class="top-nav-right d-flex justify-content-between align-items-center">
                     <!--Logo:start-->
                     <a href="{{route('Users.index')}}" class="navbar-brand">
-                        <img src="{{asset('userassets/img/logo-md.png')}}" alt="لوگوی برگ شاپ" class="blur-up">
+                        <img src="{{asset('userassets/img/hakimlogo.PNG')}}" alt="لوگوی برگ شاپ" class="blur-up w-25">
                     </a>
                     <!--Logo:end-->
 
@@ -378,7 +378,7 @@
             <div class="top-nav-right d-flex justify-content-between align-items-center">
                 <!--Logo:start-->
                 <a href="{{route('Users.index')}}" class="navbar-brand" title="">
-                    <img src="{{asset('userassets/img/logo-md.png')}}" alt="لوگوی برگ شاپ">
+                    <img src="{{asset('userassets/img/hakimlogo.PNG')}}" class="w-25" alt="لوگوی برگ شاپ">
                 </a>
                 <!--Logo:end-->
 
@@ -679,7 +679,7 @@
                 <div class="top-mobile-navbar-middle d-flex justify-content-between align-items-center">
                     <!--Logo:start-->
                     <a href="{{route('Users.index')}}" class="navbar-brand pb-2" title="">
-                        <img src="{{asset('userassets/img/logo.png')}}" alt="لوگوی برگ شاپ">
+                        <img src="{{asset('userassets/img/hakimlogo.PNG')}}" class="w-25" alt="لوگوی برگ شاپ">
                     </a>
                     <!--Logo:end-->
                 </div>

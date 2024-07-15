@@ -52,7 +52,7 @@ Route::get('userComments',[CommentController::class,'userComments'])->name('Comm
 Route::resource('message', MessageController::class);
 
 Route::get('check',function(){
-    if (Auth::check()) {
+    if (auth('managers')->check()) {
         // کاربر لاگین کرده است
         dd('yes');
     } else {

@@ -5,6 +5,7 @@ use App\Http\Controllers\Managers\ManagerController;
 use App\Http\Controllers\Managers\TagController;
 use App\Http\Controllers\Managers\UserController;
 use App\Http\Controllers\Users\UserController as UsersUserController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,4 +43,5 @@ Route::middleware('auth:managers')->prefix('admin')->group(function () {
 
     //tags
     Route::resource('tags', TagController::class);
+
 });
