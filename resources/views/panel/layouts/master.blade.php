@@ -57,15 +57,6 @@ License: You must have a valid license purchased only from themeforest(the above
 		<!--begin::Header Mobile-->
 		<div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed">
 			<!--begin::Logo-->
-			@if(auth('managers')->check())
-				<a href="{{ route('managers.index')}}">
-					<img alt="Logo" src="{{asset('adminassets/media/logos/logo-light.png')}}" />
-				</a>
-			@else
-				<a href="{{ route('broker.index')}}">
-					<img alt="Logo" src="{{asset('adminassets/media/logos/logo-light.png')}}" />
-				</a>
-			@endif	
 			<!--end::Logo-->
 
 			<!--begin::Toolbar-->
@@ -173,7 +164,7 @@ License: You must have a valid license purchased only from themeforest(the above
 					<!--begin::Header-->
 					<div class="d-flex align-items-center mt-5">
 						<div class="symbol symbol-100 mr-5">
-							<div class="symbol-label" style="background-image:url('{{asset('adminassets/media/users/300_21.jpg')}}')"></div>
+							<div class="symbol-label" style="background-image:url('{{asset('adminassets/media/users/default.jpg')}}')"></div>
 							<i class="symbol-badge bg-success"></i>
 						</div>
 						<div class="d-flex flex-column">
