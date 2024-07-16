@@ -9,6 +9,7 @@ use App\Http\Controllers\Users\MessageController;
 use App\Http\Controllers\Users\TagController;
 use App\Jobs\Email;
 use App\Mail\RegisterMail;
+use App\Models\Banner;
 use App\Models\Tag;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -26,7 +27,11 @@ use Illuminate\Support\Facades\Mail;
 */
 
 Route::get('/', function () {
-    return view('users.index');
+    
+    $banners = Banner::all();
+
+    return view('users.index',compact('banners'));
+
 });
 
 Route::resource('Users',UserController::class);

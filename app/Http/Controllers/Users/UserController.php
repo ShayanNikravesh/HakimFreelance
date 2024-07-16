@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Users;
 
 use App\Http\Controllers\Controller;
+use App\Models\Banner;
 use App\Models\Tag;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -22,7 +23,8 @@ class UserController extends Controller
 
     public function index()
     {
-        return view('users.index');
+        $banners = Banner::all();
+        return view('users.index',compact('banners'));
     }
 
     /**

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Managers\BannerController;
 use App\Http\Controllers\Managers\BrokerController;
 use App\Http\Controllers\Managers\ManagerController;
 use App\Http\Controllers\Managers\TagController;
@@ -43,5 +44,13 @@ Route::middleware('auth:managers')->prefix('admin')->group(function () {
 
     //tags
     Route::resource('tags', TagController::class);
+
+    Route::get('create',[BannerController::class,'create'])->name('new-banner');
+
+    Route::post('store',[BannerController::class,'store'])->name('store-banner');
+
+    Route::get('index',[BannerController::class,'index'])->name('index');
+
+    Route::get('delete/{id}',[BannerController::class,'delete'])->name('delete-banner');
 
 });
