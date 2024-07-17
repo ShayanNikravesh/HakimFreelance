@@ -143,9 +143,6 @@
         .card{
             height: 100%;
             margin: 0;
-            background: #7F7FD5;
-            background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
-            background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
         }
 
         .card .chat{
@@ -155,7 +152,6 @@
         .card{
             height: 100%;
             border-radius: 15px !important;
-            background-color: rgba(0,0,0,0.4) !important;
         }
         .card .contacts_body{
             padding:  0.75rem 0 !important;

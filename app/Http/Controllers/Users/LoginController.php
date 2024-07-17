@@ -23,20 +23,26 @@ class LoginController extends Controller
     public function authenticate(Request $request)
     {
         $credentials = $request->validate([
-            'mobile'=> ['required','numeric'],
+            'national_code'=> ['required','numeric'],
             'password'=> ['required',],
         ]);
 
-        if (Auth::guard('web')->attempt($credentials)) {
-            $request->session()->regenerate();
-            Alert::success('عملیات موفق.', 'خوش آمدید.');
-            return redirect('/');
+        $user = User::where('national_code', $request->national_code)->first();
+
+        if($user->status == 'active'){
+            if (Auth::attempt($credentials)) {
+                // کاربر با موفقیت وارد سایت شد
+                Alert::success('عملیات موفق.', 'خوش آمدید.');
+                return redirect()->intended('/');
+
+            }
+            return back()->withErrors([
+                'message'=> 'کد ملی یا رمز اشتباه است.'
+            ]);
         }
 
         Alert::warning('عملیات ناموفق.', 'ثبت نام شما تایید نشده است.');
-        return back()->withErrors([
-            'email'=> 'mobile or password is false'
-        ])->onlyInput('mobile');
+        return redirect('/');
     }
 
     public function exit()

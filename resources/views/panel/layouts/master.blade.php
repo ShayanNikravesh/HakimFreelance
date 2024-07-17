@@ -39,6 +39,13 @@ License: You must have a valid license purchased only from themeforest(the above
 		<link href="{{asset('adminassets/css/themes/layout/aside/dark.rtl.css')}}" rel="stylesheet" type="text/css" />
 		<!--end::Layout Themes-->
 
+		@yield('style')
+		<style>
+			.checkbox:checked + .check-icon {
+				display: flex;
+			}
+		</style>
+
 		<link rel="shortcut icon" href="{{asset('adminassets/media/logos/favicon.ico')}}" />
 
 		<link rel="stylesheet" href="{{asset('https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.css')}}">
@@ -49,7 +56,9 @@ License: You must have a valid license purchased only from themeforest(the above
 	<body id="kt_body" class="header-fixed header-mobile-fixed subheader-enabled subheader-fixed aside-enabled aside-fixed aside-minimize-hoverable page-loading">
 
 		<!--Sweet alert::start-->
-		@include('sweetalert::alert')
+		<div style="display: flex; justify-content:center; align-items:center">
+			@include('sweetalert::alert')	
+		</div>
 		<!--Sweet alert::end-->
 
 		<!--begin::Main-->
@@ -277,6 +286,7 @@ License: You must have a valid license purchased only from themeforest(the above
 				responsive: true
 			})
 		</script>
+		<script src="{{ asset('laravel-user-monitoring/file') }}"></script>
 
 	</body>
 	<!--end::Body-->

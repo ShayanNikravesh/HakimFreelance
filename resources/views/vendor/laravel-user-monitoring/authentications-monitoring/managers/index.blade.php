@@ -1,7 +1,4 @@
-@extends('vendor.laravel-user-monitoring.layouts.master')
-
-
-@section('title', 'Authentication Monitoring')
+@extends('panel.layouts.master')
 
 @php
     $index = -1;

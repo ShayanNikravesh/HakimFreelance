@@ -33,8 +33,8 @@
         </div>
         <form action="{{route('Authenticate')}}" method="POST">
             @csrf
-            <label for="national_code" class="form-label fw-bold">شماره موبایل:</label>
-            <input type="text" name="mobile" class="form-control border-radius-xl mb-1" placeholder="شماره موبایل را وارد کنید.">
+            <label for="national_code" class="form-label fw-bold">کد ملی:</label>
+            <input type="text" name="national_code" class="form-control border-radius-xl mb-1" placeholder="شماره موبایل را وارد کنید.">
             <label for="password" class="form-label fw-bold">رمز عبور:</label>
             <input type="password" name="password" class="form-control border-radius-xl mt-2" placeholder="رمز عبور را وارد کنید.">
             <div class="d-grid gap-2 mt-3">
