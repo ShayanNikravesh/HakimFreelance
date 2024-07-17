@@ -292,77 +292,11 @@
             <!--Container:end-->
         </div>
         <!--Top Navbar In Loader::end-->
-
-        <!--Navbar In Loader::start-->
-        <nav class="main-navbar navbar navbar-expand-lg navbar-light bg-light custom-box-shadow-s-1-bottom py-1">
-            <!--    Container:start-->
-            <div class="container d-flex justify-content-between align-items-center">
-                <!--        Navbar Right:start-->
-                <div class="navbar-right">
-                    <!--        Navbar Wrapper:start-->
-                    <ul class="navbar-nav mb-2 mb-lg-0 d-flex justify-content-between align-items-center position-relative">
-                        <!--Navbar Item:start-->
-                        <li class="nav-item d-flex justify-content-between align-items-center position-relative">
-                            <!--begin::Svg Icon-->
-                            <svg class="blur-up" xmlns="http://www.w3.org/2000/svg"
-                                 xmlns:xlink="http://www.w3.org/1999/xlink"
-                                 width="24px"
-                                 height="24px" viewBox="0 0 24 24" version="1.1">
-                                <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                    <rect x="0" y="0" width="24" height="24"/>
-                                    <rect fill="#000000" x="4" y="4" width="7" height="7" rx="1.5"/>
-                                    <path d="M5.5,13 L9.5,13 C10.3284271,13 11,13.6715729 11,14.5 L11,18.5 C11,19.3284271 10.3284271,20 9.5,20 L5.5,20 C4.67157288,20 4,19.3284271 4,18.5 L4,14.5 C4,13.6715729 4.67157288,13 5.5,13 Z M14.5,4 L18.5,4 C19.3284271,4 20,4.67157288 20,5.5 L20,9.5 C20,10.3284271 19.3284271,11 18.5,11 L14.5,11 C13.6715729,11 13,10.3284271 13,9.5 L13,5.5 C13,4.67157288 13.6715729,4 14.5,4 Z M14.5,13 L18.5,13 C19.3284271,13 20,13.6715729 20,14.5 L20,18.5 C20,19.3284271 19.3284271,20 18.5,20 L14.5,20 C13.6715729,20 13,19.3284271 13,18.5 L13,14.5 C13,13.6715729 13.6715729,13 14.5,13 Z"
-                                          fill="#000000" opacity="0.3"/>
-                                </g>
-                            </svg><!--end::Svg Icon-->
-                            <a class="mx-2 py-2" href="javascript:void(0)">دسته بندی کالاها</a>
-                            <!--Navbar Item:start-->
-                            <span class="horizontal-line mx-1 me-2"></span>
-                            <!--Navbar Item:end-->
-                        </li>
-                        <!--Navbar Item:end-->
-                    </ul>
-                    <!--Navbar Wrapper:end-->
-                </div>
-                <!--Navbar Right:end-->
-
-            </div>
-            <!--    Container:end-->
-        </nav>
-        <!--Navbar In Loader::end-->
     </div>
 
     <!--    Header In Loader:start-->
     <header class="header"></header>
     <!--    Header In Loader:end-->
-
-    <!--    Banners In Loader:start don't change if you only the back-end programmer-->
-    <div class="banners-loader mt-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-4">
-                    <div class="contain-banners p-5">
-                        <div>
-                            <h4></h4>
-                            <h3></h3>
-                            <h6></h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-12 col-md-6 col-lg-6 col-xl-6 mb-4">
-                    <div class="contain-banners p-5">
-                        <div>
-                            <h4></h4>
-                            <h3></h3>
-                            <h6></h6>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--    Banners In Loader:end don't change if you only the back-end programmer-->
-
 
 </div>
 <!--Loader:end-->
@@ -391,52 +325,6 @@
                         </button>
                     </form>
                     <div class="search-results custom-box-shadow-s-2">
-                        <span class="py-2 px-3 d-block fs-7">نتایج جست و جو :</span>
-
-                        <!--Search Item:start-->
-                        {{-- <div class="search-result-item position-relative border-bottom p-3">
-                            <i class="fab fa-sistrix fw-md fs-5 gray-500 d-inline-block"></i>
-                            <div class="d-inline-block ms-2">
-                                <span class="d-inline-block fw-bold ms-1">سلفون </span>
-                                <span class="d-block">در دسته <strong>زیبایی و سلامت</strong></span>
-                            </div>
-                            <!--Search Link:start-->
-                            <a href="search.html" class="stretched-link"></a>
-                            <!--Search Link:end-->
-                        </div> --}}
-                        <!--Search Item:end-->
-
-                        <!--Search Item:start-->
-                        <div class="search-result-item position-relative border-bottom p-3">
-                            <i class="fab fa-sistrix fw-md fs-5 gray-500 d-inline-block"></i>
-                            <div class="d-inline-block ms-2">
-                                <span class="d-inline-block fw-bold ms-1">سلفون </span>
-                                <span class="d-block">در دسته <strong>زیبایی و سلامت</strong></span>
-                            </div>
-                            <!--Search Link:start-->
-                            <a href="search.html" class="stretched-link"></a>
-                            <!--Search Link:end-->
-                        </div>
-                        <!--Search Item:end-->
-
-                        <!--Search Best Searching Items:start-->
-                        {{-- <div class="search-result-item position-relative border-bottom p-3 best-searching">
-                            <div class="d-flex">
-                                <i class="fa fa-fire gray-500"></i>
-                                <span class="d-inline-block fw-bold ms-2">جست و جوهای پرطرفدار </span>
-                            </div>
-
-                            <!--Searches Items:start-->
-                            <div class="searches mt-2">
-                                <a href="#" title="" class="badge bg-primary fs-7 rounded-pill">لباس شویی</a>
-                                <a href="#" title="" class="badge bg-primary fs-7 rounded-pill">گوشی</a>
-                                <a href="#" title="" class="badge bg-primary fs-7 rounded-pill">شلوار</a>
-                                <a href="#" title="" class="badge bg-primary fs-7 rounded-pill">لپ تاپ</a>
-                            </div>
-                            <!--Searches Items:end-->
-                        </div> --}}
-                        <!--Search Best Searching Items:end-->
-
                         <!--See All Results:start-->
                         <div class="search-result-item position-relative border-bottom p-3">
                             <div class="d-flex justify-content-between align-items-center ms-2 text-center">
@@ -1209,9 +1097,8 @@
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8 mb-3">
                     <h1 class="fw-bold fs-5">تیم برنامه نویسی:</h1>
-                    <p class="gray-600 mt-3 fs-7">
-                        شایان نیک روش ، پوریا آزاد
-                    </p>
+                    <a class="btn" href="https://shayannikravesh.ir/">شایان نیک روش</a>
+                    <a class="btn" href="https://pouria-azad.ir/">پوریا آزاد</a>
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 mb-3 d-flex justify-content-evenly align-items-center">
                     <img src="{{asset('userassets/img/symbol-01.png')}}" alt="" title="" class="img-fluid border border-gray-200 border-radius-xl">

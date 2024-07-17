@@ -23,8 +23,9 @@ class UserController extends Controller
 
     public function index()
     {
+        $latestTags = Tag::orderBy("id", "desc")->take(10)->get();
         $banners = Banner::all();
-        return view('users.index',compact('banners'));
+        return view('users.index',compact('banners','latestTags'));
     }
 
     /**

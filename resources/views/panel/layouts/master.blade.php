@@ -56,9 +56,9 @@ License: You must have a valid license purchased only from themeforest(the above
 	<body id="kt_body" class="header-fixed header-mobile-fixed subheader-enabled subheader-fixed aside-enabled aside-fixed aside-minimize-hoverable page-loading">
 
 		<!--Sweet alert::start-->
-		<div style="display: flex; justify-content:center; align-items:center">
-			@include('sweetalert::alert')	
-		</div>
+		<div style="all: initial;">
+		@include('sweetalert::alert')
+		</div>	
 		<!--Sweet alert::end-->
 
 		<!--begin::Main-->
