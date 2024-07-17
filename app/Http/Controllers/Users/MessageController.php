@@ -57,9 +57,9 @@ class MessageController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Broker $broker)
+    public function show(string $broker)
     {
-
+        return view('users.usermessages');
         if($broker->usersMessage()->where('id', Auth('web')->id())->first()) {
             $messages = Message::where("broker_id", $broker->id)->where("user_id", Auth('web')->id())->get();
             return view('users.usermessages', compact('messages'));

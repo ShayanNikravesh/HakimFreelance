@@ -34,7 +34,7 @@
                                                 <span class="online_icon"></span>
                                             </div>
                                             <div class="user_info">
-                                                <span>{{ $messages[0]->broker()->first() }}</span>
+{{--                                                <span>{{ $messages[0]->broker()->first() }}</span>--}}
                                                 <p>1767 Messages</p>
                                             </div>
 
