@@ -105,11 +105,12 @@ License: You must have a valid license purchased only from themeforest(the above
 							<div class="topbar">
 								<!--begin::User-->
 								<div class="topbar-item">
+									
 									<div class="btn btn-icon btn-icon-mobile w-auto btn-clean d-flex align-items-center btn-lg px-2" id="kt_quick_user_toggle">
                                         @if(auth('managers')->check())
-										<span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3 btn">{{ auth('managers')->user()->f_name. ' ' .auth()->user()->l_name }}</span>
+										<span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3 btn">{{ auth('managers')->user()->f_name. ' ' .auth('managers')->user()->l_name }}</span>
                                         @else
-                                        <span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3 btn">{{ auth('brokers')->user()->f_name. ' ' .auth()->user()->l_name }}</span>
+                                        <span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3 btn">{{ auth('brokers')->user()->f_name. ' ' .auth('brokers')->user()->l_name }}</span>
                                         @endif
 									</div>
 								</div>
@@ -169,10 +170,10 @@ License: You must have a valid license purchased only from themeforest(the above
 						</div>
 						<div class="d-flex flex-column">
 							@if(auth('managers')->check())
-							 <a href="#" class="font-weight-bold font-size-h5 text-dark-75 text-hover-primary">{{ auth('managers')->user()->f_name. ' ' .auth()->user()->l_name }}</a>
+							 <a href="#" class="font-weight-bold font-size-h5 text-dark-75 text-hover-primary">{{ auth('managers')->user()->f_name. ' ' .auth('managers')->user()->l_name }}</a>
 							 <div class="text-muted mt-1">مدیر</div>
 							@else
-								<a href="#" class="font-weight-bold font-size-h5 text-dark-75 text-hover-primary">{{ auth('brokers')->user()->f_name. ' ' .auth()->user()->l_name }}</a>
+								<a href="#" class="font-weight-bold font-size-h5 text-dark-75 text-hover-primary">{{ auth('brokers')->user()->f_name. ' ' .auth('brokers')->user()->l_name }}</a>
 								<div class="text-muted mt-1">کارگزار</div>
 							@endif
 							<div class="navi mt-2">
