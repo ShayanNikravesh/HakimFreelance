@@ -28,7 +28,17 @@
 	</div>
 	<!--end::Subheader-->
 	<!--begin::Entry-->
-
+	<div class="d-flex flex-column-fluid">
+        <!--begin::Container-->
+        <div class="container" style="background: url('{{asset('adminassets/media/logos/hakimlogo2.PNG')}}') no-repeat center center; background-size: 200px">
+            <!--begin::Card-->
+            <div class="card card-custom card-sticky" id="kt_page_sticky_card">
+				{{-- <img src="{{asset('adminassets/media/logos/hakimlogo.PNG')}}" class="w-75"> --}}
+            </div>
+            <!--end::Card-->
+        </div>
+        <!--end::Container-->
+    </div>
 	<!--end::Entry-->
 </div>
 @endsection

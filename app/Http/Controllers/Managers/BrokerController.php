@@ -4,7 +4,9 @@ namespace App\Http\Controllers\Managers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Broker;
+use Illuminate\Contracts\Cache\Store;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class BrokerController extends Controller
@@ -64,6 +66,8 @@ class BrokerController extends Controller
     public function destroy($id)
     {
         $broker = Broker::findOrFail($id);
+        Storage::disk('public')->delete($broker->photo);
+        unlink(public_path($broker->photo));
         $broker->forceDelete();
 
         Alert::success('عملیات موفق', 'درخواست حذف شد.');

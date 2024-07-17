@@ -13,7 +13,7 @@ class RegisterObserver
      */
     public function created(Broker $broker): void
     {
-        Email::dispatch();
+        //
     }
 
     /**

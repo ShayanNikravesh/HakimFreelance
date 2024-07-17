@@ -13,18 +13,11 @@
     <!-- Slider:start -->
     <div class="swiper headerSlider">
         <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <a href="" title=""><img src="{{asset('userassets/img/header-slider-1.jpg')}}" class="img-fluid"alt=""></a>
-            </div>
-            <div class="swiper-slide">
-                <a href="" title=""><img src="{{asset('userassets/img/header-slider-2.jpg')}}" class="img-fluid"alt=""></a>
-            </div>
-            <div class="swiper-slide">
-                <a href="" title=""><img src="{{asset('userassets/img/header-slider-3.jpg')}}" class="img-fluid"alt=""></a>
-            </div>
-            <div class="swiper-slide">
-                <a href="" title=""><img src="{{asset('userassets/img/header-slider-4.jpg')}}" class="img-fluid"alt=""></a>
-            </div>
+            @foreach ($banners as $banner)
+                <div class="swiper-slide">
+                    <a href="javascript:;" title=""><img src="{{asset($banner->photo)}}" class="img-fluid"alt=""></a>
+                </div>
+            @endforeach
         </div>
         <div class="swiper-button-next bg-light border-radius-circle"></div>
         <div class="swiper-button-prev bg-light border-radius-circle"></div>

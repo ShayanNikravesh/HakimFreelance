@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Banner;
 use App\Models\Broker;
 use App\Models\Tag;
 use App\Observers\RegisterObserver;
@@ -24,14 +25,14 @@ class AppServiceProvider extends ServiceProvider
     public function boot(): void
     {
 
-        Broker::observe(RegisterObserver::class);
+        // Broker::observe(RegisterObserver::class);
 
         $tags = Tag::whereNotNull('parent_id')->get();
         $parentTags = Tag::whereNull('parent_id')->get();
 
         view()->share([
             'tags' => $tags,
-            'parentTags' => $parentTags
+            'parentTags' => $parentTags,
         ]);
         $this->viewComposer();
     }
