@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Users;
+namespace App\Http\Controllers\Brokers;
 
 use App\Http\Controllers\Controller;
 use App\Http\Middleware\Auth;
 use App\Models\Broker;
 use App\Models\Message;
+use App\Models\User;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -16,13 +17,13 @@ class MessageController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('Auth')->except(['store']);
+        $this->middleware('Auth:managers')->except(['store']);
     }
     public function index()
     {
-        $brokers = auth()->user()->brokersMessage()->distinct()->get();
+        $users = auth('brokers')->user()->usersMessage()->distinct()->get();
 
-        return view('users.messages', compact('brokers'));
+            return view('panel.brokers.messages', compact('users'));
     }
 
     /**
@@ -30,7 +31,7 @@ class MessageController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -38,17 +39,15 @@ class MessageController extends Controller
      */
     public function store(Request $request)
     {
-
         $request->validate([
-            'broker_id' => ['required'],
             'user_id' => ['required'],
-            'message' => ['required','max:250']
+            'message_content' => ['required','max:250']
         ]);
 
         $message = new Message();
-        $message->broker_id = $request->broker_id;
+        $message->broker_id = auth('brokers')->user()->id;
         $message->user_id = $request->user_id;
-        $message->message = $request->message;
+        $message->message_content = $request->message_content;
 
         $message->save();
 
@@ -59,14 +58,15 @@ class MessageController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $broker)
+    public function show(string $user)
     {
-
-        if(Broker::find($broker)->usersMessage()->where('users.id', '=',Auth('web')->id())->first()) {
-            $messages = Message::where("broker_id", Broker::find($broker)->id)->where("user_id", Auth('web')->id())->get();
-            return view('users.usermessages', compact('messages'));
+        if(User::find($user)->brokersMessage()->where('brokers.id', '=',Auth('brokers')->id())->first())
+        {
+            $messages = Message::where("broker_id", Auth('brokers')->id())->where("user_id", $user)->get();
+            $user_id = $user;
+            return view('panel.brokers.usermessages', compact('messages', 'user_id'));
         }
-        return 'k';
+        return 0;
     }
 
     /**

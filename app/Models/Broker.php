@@ -46,6 +46,6 @@ class Broker extends Authenticatable
 
     public function UsersMessage(): BelongsToMany
     {
-        return $this->belongsToMany(User::class, 'messages');
+        return $this->belongsToMany(User::class, 'messages', 'broker_id' , 'user_id');
     }
 }

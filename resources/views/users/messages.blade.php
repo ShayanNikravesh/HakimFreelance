@@ -27,14 +27,14 @@
                                     <!--User Panel Comments Header:end-->
                                     <!--User Panel Comments Content:start-->
                                     <div class="user-panel-comments-content p-4">
-
+                                        @foreach($brokers as $broker)
                                         <!--                                User Panel Comment Item:start-->
                                         <div class="user-panel-comment-item bg-gray-150 p-2 mb-3 custom-box-shadow-s-4 border">
 
                                             <!--                                User Panel Comment Item Header:start-->
                                             <div class="user-panel-comment-item-header d-flex justify-content-between align-items-center border-bottom-gray-300 pb-2">
                                                 <p class="fw-bold">
-                                                    بهترین تخفیف سال
+                                                    {{ $broker->f_name. ' ' .$broker->l_name  }}
                                                 </p>
                                                 <div class="d-flex justify-content-between align-items-center">
                                                     <span class="badge d-block custom-box-shadow-s-1 bg-info">14 فروردین 1401</span>
@@ -44,17 +44,15 @@
 
                                             <!--                                    User Panel Comment Item Content:start-->
                                             <div class="user-panel-comment-item-content d-flex justify-content-between align-items-center">
-                                                <p class="py-3 gray-900 fw-light">
-                                                    آخرین فرصت استفاده از تخفیف شگفت انگیز عیدانه!!!!
-                                                </p>
-                                                <a href="" class="btn badge d-block custom-box-shadow-s-1 bg-danger">مشاهده سریع</a>
+
+                                                <a href="{{ route('messages.show' , $broker->id) }}" class="btn badge d-block custom-box-shadow-s-1 bg-danger">مشاهده پیام ها</a>
 
                                             </div>
                                             <!--                                    User Panel Comment Item Content:end-->
 
                                         </div>
                                         <!--                                User Panel Comment Item:end-->
-
+                                        @endforeach
                                     </div>
 
                                     <!--User Panel Comments Content:end-->

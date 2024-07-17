@@ -24,4 +24,6 @@ Route::middleware('auth:brokers')->prefix('broker')->group(function () {
 
     Route::resource('broker', BrokerController::class);
 
+    Route::resource('messagess', \App\Http\Controllers\Brokers\MessageController::class);
+
 });

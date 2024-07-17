@@ -15,28 +15,29 @@ License: You must have a valid license purchased only from themeforest(the above
 <html lang="fa" direction="rtl" dir="rtl" style="direction: rtl" >
 	<!--begin::Head-->
 	<head><base href="">
-		<meta charset="utf-8" />
-		<title>پنل</title>
-		<meta name="description" content="Metronic admin dashboard live demo. Check out all the features of the admin panel. A large number of settings, additional services and widgets." />
-		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-		{{-- <link rel="canonical" href="https://keenthemes.com/metronic" /> --}}
-		<!--begin::Fonts-->
-		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
-		<!--end::Fonts-->
-		<!--begin::Page Vendors Styles(used by this page)-->
-		<link href="{{asset('adminassets/plugins/custom/fullcalendar/fullcalendar.bundle.rtl.css')}}" rel="stylesheet" type="text/css" />
-		<!--end::Page Vendors Styles-->
-		<link href="{{asset('adminassets/plugins/custom/datatables/datatables.bundle.css')}}" rel="stylesheet" type="text/css" />
-		<!--begin::Global Theme Styles(used by all pages)-->
-		<link href="{{asset('adminassets/plugins/global/plugins.bundle.rtl.css')}}" rel="stylesheet" type="text/css" />
-		<link href="{{asset('adminassets/plugins/custom/prismjs/prismjs.bundle.rtl.css')}}" rel="stylesheet" type="text/css" />
-		<link href="{{asset('adminassets/css/style.bundle.rtl.css')}}" rel="stylesheet" type="text/css" />
-		<!--end::Global Theme Styles-->
-		<!--begin::Layout Themes(used by all pages)-->
-		<link href="{{asset('adminassets/css/themes/layout/header/base/light.rtl.css')}}" rel="stylesheet" type="text/css" />
-		<link href="{{asset('adminassets/css/themes/layout/header/menu/light.rtl.css')}}" rel="stylesheet" type="text/css" />
-		<link href="{{asset('adminassets/css/themes/layout/brand/dark.rtl.css')}}" rel="stylesheet" type="text/css" />
-		<link href="{{asset('adminassets/css/themes/layout/aside/dark.rtl.css')}}" rel="stylesheet" type="text/css" />
+        @yield('head')
+        <meta charset="utf-8" />
+        <title>پنل</title>
+        <meta name="description" content="Metronic admin dashboard live demo. Check out all the features of the admin panel. A large number of settings, additional services and widgets." />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        {{-- <link rel="canonical" href="https://keenthemes.com/metronic" /> --}}
+        <!--begin::Fonts-->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+        <!--end::Fonts-->
+        <!--begin::Page Vendors Styles(used by this page)-->
+        <link href="{{asset('adminassets/plugins/custom/fullcalendar/fullcalendar.bundle.rtl.css')}}" rel="stylesheet" type="text/css" />
+        <!--end::Page Vendors Styles-->
+        <link href="{{asset('adminassets/plugins/custom/datatables/datatables.bundle.css')}}" rel="stylesheet" type="text/css" />
+        <!--begin::Global Theme Styles(used by all pages)-->
+        <link href="{{asset('adminassets/plugins/global/plugins.bundle.rtl.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset('adminassets/plugins/custom/prismjs/prismjs.bundle.rtl.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset('adminassets/css/style.bundle.rtl.css')}}" rel="stylesheet" type="text/css" />
+        <!--end::Global Theme Styles-->
+        <!--begin::Layout Themes(used by all pages)-->
+        <link href="{{asset('adminassets/css/themes/layout/header/base/light.rtl.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset('adminassets/css/themes/layout/header/menu/light.rtl.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset('adminassets/css/themes/layout/brand/dark.rtl.css')}}" rel="stylesheet" type="text/css" />
+        <link href="{{asset('adminassets/css/themes/layout/aside/dark.rtl.css')}}" rel="stylesheet" type="text/css" />
 		<!--end::Layout Themes-->
 
 		<link rel="shortcut icon" href="{{asset('adminassets/media/logos/favicon.ico')}}" />
@@ -276,7 +277,8 @@ License: You must have a valid license purchased only from themeforest(the above
 				responsive: true
 			})
 		</script>
-
+        @yield('script')
+        @yield('style')
 	</body>
 	<!--end::Body-->
 </html>
