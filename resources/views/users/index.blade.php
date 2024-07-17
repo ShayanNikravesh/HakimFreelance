@@ -4,7 +4,7 @@
 
 <!--Story Section:start-->
 <div class="container mt-xxxx-large">
-    
+
 </div>
 <!--Story Section:end-->
 
@@ -139,11 +139,11 @@
     <!--Best Suggestions:End-->
 
     <!--    Banners:start-->
-    
+
     <!--    Banners:end-->
 
     <!--    Categories:start-->
-    
+
     <!--    Categories:end-->
 
     <!--Banners:start-->
@@ -168,6 +168,41 @@
             <strong>{{ $message }}</strong>
         </div>
     @endif --}}
+
+    <!--    Best Brands:start-->
+    <section class="best-brands border-radius-3xl border border-gray-300 mt-4 pb-4">
+        <!--        Section Title:start-->
+        <h2 class="text-center my-4 section-title fs-4">
+            <i class="fa fa-star"></i>
+            مشاغل اخیر
+        </h2>
+        <!--        Section Title:end-->
+
+        <!--            Slider:start-->
+        <div class="swiper brandsSlider">
+            <div class="swiper-wrapper">
+
+                @foreach($latestTag as $tag)
+                    <!--            Brands Item:start-->
+                    <div class="swiper-slide position-relative">
+                        <div class="brands-item d-flex justify-content-center align-items-center">
+                            <a href="" title="" class="stretched-link">
+                                <p>{{ $tag->name }}</p>
+                            </a>
+                        </div>
+                    </div>
+                    <!--            Brands Item:end-->
+                @endforeach
+
+
+
+            </div>
+            <div class="swiper-button-next bg-light border-radius-circle"></div>
+            <div class="swiper-button-prev bg-light border-radius-circle"></div>
+        </div>
+        <!--            Slider:end-->
+    </section>
+    <!--    Best Brands:end-->
 
     <!--Blog Section:start-->
     <section class="blog mt-5">
@@ -240,3 +275,4 @@
 <!--Main:end-->
 
 @endsection
+

@@ -46,4 +46,13 @@ class Handler extends ExceptionHandler
             //
         });
     }
+
+    public function render($request, Throwable $exception){
+        if($this->isHttpException($exception)){
+            if ($exception->getStatusCode() === 404){
+                return redirect()->route('not_found');
+            }
+        }
+        return parent::render($request, $exception);
+    }
 }

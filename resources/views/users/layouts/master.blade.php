@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="{{asset('userassets/css/style.css')}}">
 
     <link rel="stylesheet" href="{{asset('https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.css')}}">
-    
+    @yield('head')
 </head>
 <!--Head::end-->
 
@@ -121,7 +121,7 @@
                                     <!--end::Svg Icon-->
                                     ثبت نام
                                 </a>
-        
+
                                 <!--Navbar Child Wrapper:start-->
                                 <ul class="position-absolute nav-item-submenu bg-white custom-box-shadow-s-2">
                                     <!--Navbar Item Child:start-->
@@ -172,7 +172,7 @@
                                             <!--end::Svg Icon-->
                                             ثبت نام کارگزار
                                         </a>
-                                    </li>    
+                                    </li>
                                     <!--Navbar Item Child:end-->
                                 </ul>
                                 <!--Navbar Child Wrapper:end-->
@@ -227,7 +227,7 @@
                                 <!--end::Svg Icon-->
                                 ثبت نام
                             </a>
-    
+
                             <!--Navbar Child Wrapper:start-->
                             <ul class="position-absolute nav-item-submenu bg-white custom-box-shadow-s-2">
                                 <!--Navbar Item Child:start-->
@@ -278,7 +278,7 @@
                                         <!--end::Svg Icon-->
                                         ثبت نام کارگزار
                                     </a>
-                                </li>    
+                                </li>
                                 <!--Navbar Item Child:end-->
                             </ul>
                             <!--Navbar Child Wrapper:end-->
@@ -418,7 +418,7 @@
                             <!--Search Link:end-->
                         </div>
                         <!--Search Item:end-->
-                        
+
                         <!--Search Best Searching Items:start-->
                         {{-- <div class="search-result-item position-relative border-bottom p-3 best-searching">
                             <div class="d-flex">
@@ -512,7 +512,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item  py-2 fw-bold" href="{{route('message.index')}}">
+                                <a class="dropdown-item  py-2 fw-bold" href="{{route('messages.index')}}">
                                     <span class="pe-1">
                                         <!--begin::Svg Icon-->
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-text-fill" viewBox="0 0 16 16">
@@ -571,7 +571,7 @@
                         </svg>
                         <!--end::Svg Icon-->
                         ورود
-                    </a>    
+                    </a>
                 @endif
             </div>
             <!--Top Navbar Left:end-->
@@ -647,7 +647,7 @@
                                         @if ($tag->parent_id == $parentTag->id)
                                             <li>
                                                 <a href="{{route('Tags.show',$tag->id)}}" class="fs-6 fw-bold d-block" title="">
-                                                    {{$tag->name}} 
+                                                    {{$tag->name}}
                                                 </a>
                                             </li>
                                             @php
@@ -659,7 +659,7 @@
                                         @if (!$Found)
                                             <li>
                                                 <a href="javascript:;" title="">
-                                                    زیر مجوعه ندارد. 
+                                                    زیر مجوعه ندارد.
                                                 </a>
                                             </li>
                                         @endif
@@ -741,7 +741,7 @@
                                     @if ($tag->parent_id == $parentTag->id)
                                         <li>
                                             <a href="{{route('Tags.show',$tag->id)}}" title="">
-                                                {{$tag->name}} 
+                                                {{$tag->name}}
                                             </a>
                                         </li>
                                         @php
@@ -753,7 +753,7 @@
                                     @if (!$found)
                                         <li>
                                             <a href="javascript:;" title="">
-                                                زیر مجوعه ندارد. 
+                                                زیر مجوعه ندارد.
                                             </a>
                                         </li>
                                     @endif
@@ -838,7 +838,7 @@
                                     <!--end::Svg Icon-->
                                     ثبت نام کارگزار
                                 </a>
-                            </li>    
+                            </li>
                             <!--Navbar Item Child:end-->
                         </ul>
                         <!--Navbar Child Wrapper:end-->
@@ -922,7 +922,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item  py-2 fw-bold" href="{{route('message.index')}}">
+                                <a class="dropdown-item  py-2 fw-bold" href="{{route('messages.index')}}">
                                     <span class="pe-1">
                                         <!--begin::Svg Icon-->
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-text-fill" viewBox="0 0 16 16">
@@ -1183,7 +1183,7 @@
 <!-- content -->
 
     @yield('content')
-    
+
 <!-- end content -->
 
 <!--Footer:start-->
@@ -1257,6 +1257,8 @@
 <div class="overlay"></div>
 <!--Overlay:end-->
 
+@yield('style')
+
 <!--sub menu:start-->
 <script>
 
@@ -1281,6 +1283,7 @@
     }
 
 </script>
+@yield('script')
 <!--sub menu:end-->
 
 <!--sweet alert-->

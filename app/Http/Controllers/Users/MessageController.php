@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Users;
 
 use App\Http\Controllers\Controller;
+use App\Http\Middleware\Auth;
+use App\Models\Broker;
 use App\Models\Message;
 use Illuminate\Http\Request;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -15,10 +17,10 @@ class MessageController extends Controller
     public function __construct()
     {
         $this->middleware('Auth')->except(['store']);
-    } 
+    }
     public function index()
     {
-        return view('users.usermessages');
+        return view('users.messages');
     }
 
     /**
@@ -55,9 +57,14 @@ class MessageController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Broker $broker)
     {
-        //
+
+        if($broker->usersMessage()->where('id', Auth('web')->id())->first()) {
+            $messages = Message::where("broker_id", $broker->id)->where("user_id", Auth('web')->id())->get();
+            return view('users.usermessages', compact('messages'));
+        }
+        return 0;
     }
 
     /**

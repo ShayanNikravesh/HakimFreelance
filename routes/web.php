@@ -27,7 +27,7 @@ use Illuminate\Support\Facades\Mail;
 */
 
 Route::get('/', function () {
-    
+
     $banners = Banner::all();
 
     return view('users.index',compact('banners'));
@@ -54,7 +54,7 @@ Route::get('confirm/{id}/{status}', [CommentController::class,'confirm'])->name(
 
 Route::get('userComments',[CommentController::class,'userComments'])->name('Comments')->middleware('Auth');
 
-Route::resource('message', MessageController::class);
+Route::resource('messages', MessageController::class);
 
 Route::get('check',function(){
     if (auth('managers')->check()) {
@@ -65,6 +65,8 @@ Route::get('check',function(){
         dd('no');
     }
 });
+
+Route::view('/not_found', 'users.404', [], 404)->name('not_found');
 
 Route::get('Hash',function(){
     $hash = Hash::make(1234);

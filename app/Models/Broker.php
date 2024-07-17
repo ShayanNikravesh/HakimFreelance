@@ -33,7 +33,7 @@ class Broker extends Authenticatable
         'status'
     ];
     protected $table = 'brokers';
-    
+
     public function tags(): BelongsToMany
     {
         return $this->belongsToMany(Tag::class, 'broker_tag', 'broker_id', 'tag_id');
@@ -42,5 +42,10 @@ class Broker extends Authenticatable
     public function actions(): MorphMany
     {
         return $this->morphMany(ActionMonitoring::class, 'consumer');
+    }
+
+    public function UsersMessage(): BelongsToMany
+    {
+        return $this->belongsToMany(User::class, 'messages');
     }
 }

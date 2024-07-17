@@ -66,7 +66,7 @@ License: You must have a valid license purchased only from themeforest(the above
 					<span></span>
 				</button>
 				<!--end::Aside Mobile Toggle-->
-				
+
 				<!--begin::Topbar Mobile Toggle-->
 				<button class="btn btn-hover-text-primary p-0 ml-2" id="kt_quick_user_mobile_toggle">
 					<span class="svg-icon svg-icon-xl">
@@ -82,7 +82,7 @@ License: You must have a valid license purchased only from themeforest(the above
 					</span>
 				</button>
 				<!--end::Topbar Mobile Toggle-->
-				
+
 			</div>
 			<!--end::Toolbar-->
 		</div>
@@ -203,7 +203,7 @@ License: You must have a valid license purchased only from themeforest(the above
 									<a href="{{ route('managers.edit','manager') }}" class="btn btn-sm btn-light-primary font-weight-bolder py-2 px-5">ویرایش پروفایل</a>
 								@else
 									<a href="{{ route('broker.edit','broker') }}" class="btn btn-sm btn-light-primary font-weight-bolder py-2 px-5">ویرایش پروفایل</a>
-								@endif	
+								@endif
 							</div>
 						</div>
 					</div>

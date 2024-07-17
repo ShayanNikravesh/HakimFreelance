@@ -27,9 +27,7 @@
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^7.0",
         "phpunit/phpunit": "^10.0",
-        "spatie/laravel-ignition": "^2.0"
-    },
-    "require-dev": {
+        "spatie/laravel-ignition": "^2.0",
         "pouria/user-logs": "1.x-dev"
     },
     "autoload": {
