@@ -15,7 +15,7 @@ class CommentController extends Controller
 
     public function __construct()
     {
-        $this->middleware('Auth')->except(['destroy','confirm']);
+        $this->middleware('Auth')->except(['destroy','confirm','show']);
     } 
 
     public function index()
