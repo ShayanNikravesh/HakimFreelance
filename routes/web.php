@@ -10,6 +10,7 @@ use App\Http\Controllers\Users\TagController;
 use App\Jobs\Email;
 use App\Mail\RegisterMail;
 use App\Models\Banner;
+use App\Models\Broker;
 use App\Models\Tag;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -28,9 +29,11 @@ use Illuminate\Support\Facades\Mail;
 
 Route::get('/', function () {
 
+    $brokers = Broker::orderBy("id", "desc")->take(10)->get();
+    $latestTags = Tag::orderBy("id", "desc")->take(10)->get();
     $banners = Banner::all();
 
-    return view('users.index',compact('banners'));
+    return view('users.index',compact('banners','latestTags','brokers'));
 
 });
 

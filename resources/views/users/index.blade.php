@@ -32,7 +32,7 @@
 <main class="container mt-5">
 
     <!--Best Suggestions:start-->
-    <div class="best-suggestions border-radius-2xl py-1">
+    {{-- <div class="best-suggestions border-radius-2xl py-1">
         <!-- Slider:start -->
         <div class="swiper bestSuggestionsSlider">
             <div class="swiper-wrapper p-2">
@@ -127,15 +127,13 @@
                     <i class="fa fa-angle-left border-gray-300 text-info"></i>
                     <a href="#" class="stretched-link d-block text-black-50" title="">مشاهده همه</a>
                 </div>
-
             </div>
             <div class="swiper-button-next bg-light border-radius-circle border-gray-400"></div>
             <div class="swiper-button-prev bg-light border-radius-circle border-gray-400"></div>
             <div class="swiper-pagination"></div>
-
         </div>
         <!-- Slider:end -->
-    </div>
+    </div> --}}
     <!--Best Suggestions:End-->
 
     <!--    Banners:start-->
@@ -146,7 +144,7 @@
 
     <!--    Categories:end-->
 
-    <!--Banners:start-->
+    {{-- <!--Banners:start-->
     <div class="banners my-5">
         <div class="row">
             <div class="col-6">
@@ -161,48 +159,37 @@
             </div>
         </div>
     </div>
-    <!--Banners:end-->
-    {{-- @if ($message = Session::get('success'))
-        <div class="alert alert-success alert-block">
-            <button type="button" class="close" data-dismiss="alert">×</button>
-            <strong>{{ $message }}</strong>
-        </div>
-    @endif --}}
+    <!--Banners:end--> --}}
 
-    <!--    Best Brands:start-->
+    <!--Best Brands:start-->
     <section class="best-brands border-radius-3xl border border-gray-300 mt-4 pb-4">
-        <!--        Section Title:start-->
+        <!--Section Title:start-->
         <h2 class="text-center my-4 section-title fs-4">
-            <i class="fa fa-star"></i>
             مشاغل اخیر
         </h2>
-        <!--        Section Title:end-->
+        <!--Section Title:end-->
 
-        <!--            Slider:start-->
+        <!--Slider:start-->
         <div class="swiper brandsSlider">
             <div class="swiper-wrapper">
-
-                @foreach($latestTag as $tag)
-                    <!--            Brands Item:start-->
+                @foreach($latestTags as $tag)
+                    <!--Brands Item:start-->
                     <div class="swiper-slide position-relative">
                         <div class="brands-item d-flex justify-content-center align-items-center">
-                            <a href="" title="" class="stretched-link">
+                            <a href="{{route('Tags.show',$tag->id)}}" title="" class="btn">
                                 <p>{{ $tag->name }}</p>
                             </a>
                         </div>
                     </div>
-                    <!--            Brands Item:end-->
+                    <!--Brands Item:end-->
                 @endforeach
-
-
-
             </div>
             <div class="swiper-button-next bg-light border-radius-circle"></div>
             <div class="swiper-button-prev bg-light border-radius-circle"></div>
         </div>
-        <!--            Slider:end-->
+        <!--Slider:end-->
     </section>
-    <!--    Best Brands:end-->
+    <!--Best Brands:end-->
 
     <!--Blog Section:start-->
     <section class="blog mt-5">
@@ -214,21 +201,21 @@
             </a>
         </div>
 
-        <!--        Blog Items:start-->
+        <!-- Blog Items:start-->
         <div class="row">
             <div class="col-sm-12 col-md-6 col-lg-3 col-xl-4">
                 <div class="blog-item border-radius-2xl overflow-hidden mb-3">
                     <div class="blog-item-img">
-                        <a href=""><img src="{{asset('userassets/img/blog-2.jpg')}}" alt="" title="" class="img-fluid card-img"></a>
+                        <a href="javascript:;"><img src="{{asset('userassets/img/register.png')}}" alt="" title="" class="img-fluid card-img"></a>
                     </div>
                     <div class="blog-item-contents px-2 pb-3">
                         <h2 class="mt-1">
-                            <a href="" title="" class="fs-6 fw-bold">
-                                چگونه برنامه نویس شویم؟
+                            <a href="javascript:;" title="" class="fs-6 fw-bold">
+                                 ثبت نام کاربر:
                             </a>
                         </h2>
                         <p class="fs-8">
-                            بهترین راهکار های موجود برای تبدیل به برنامه نویس شدن حرفه ای و ماندگار شدن در این کار
+                            افرادی که می خواهند از خدمات کارگزاران بهره مند شوند باید اطلاعات مورد نیاز را وارد کنند در صورت تایید مدیریت ثبت نام می شوند.
                         </p>
                     </div>
                 </div>
@@ -236,16 +223,16 @@
             <div class="col-sm-12 col-md-6 col-lg-3 col-xl-4">
                 <div class="blog-item border-radius-2xl overflow-hidden mb-3">
                     <div class="blog-item-img">
-                        <a href=""><img src="{{asset('userassets/img/blog-3.jpg')}}" alt="" title="" class="img-fluid card-img"></a>
+                        <a href="javascript:;"><img src="{{asset('userassets/img/register.png')}}" alt="" title="" class="img-fluid card-img"></a>
                     </div>
                     <div class="blog-item-contents px-2 pb-3">
                         <h2 class="mt-1">
-                            <a href="" title="" class="fs-6 fw-bold">
-                                چگونه برنامه نویس شویم؟
+                            <a href="javascript:;" title="" class="fs-6 fw-bold">
+                                ثبت نام کارگزار:
                             </a>
                         </h2>
                         <p class="fs-8">
-                            بهترین راهکار های موجود برای تبدیل به برنامه نویس شدن حرفه ای و ماندگار شدن در این کار
+                            کارگزارانی که می خواهند خدمات ارائه دهند باید اطلاعات مورد نظر را در سایت وارد کنند و پس از بررسی و تایید مدیریت می توانند در سایت به فعالیت بپردازند.
                         </p>
                     </div>
                 </div>
@@ -253,24 +240,24 @@
             <div class="col-sm-12 col-md-6 col-lg-3 col-xl-4">
                 <div class="blog-item border-radius-2xl overflow-hidden mb-3">
                     <div class="blog-item-img">
-                        <a href=""><img src="{{asset('userassets/img/blog-1.jpg')}}" alt="" title="" class="img-fluid card-img"></a>
+                        <a href="javascript:;"><img src="{{asset('userassets/img/info.jpg')}}" alt="" title="" class="img-fluid card-img"></a>
                     </div>
                     <div class="blog-item-contents px-2 pb-3">
                         <h2 class="mt-1">
-                            <a href="" title="" class="fs-6 fw-bold">
-                                چگونه برنامه نویس شویم؟
+                            <a href="javascript:;" title="" class="fs-6 fw-bold">
+                                درباره:
                             </a>
                         </h2>
                         <p class="fs-8">
-                            بهترین راهکار های موجود برای تبدیل به برنامه نویس شدن حرفه ای و ماندگار شدن در این کار
+                            این سایت فرصتی برای برنامه نویسان و گرافیست ها و دیگر مشاغل برای معرفی خود و مهارت هایشان است.
                         </p>
                     </div>
                 </div>
             </div>
         </div>
-        <!--        Blog Items:end-->
+        <!--Blog Items:end-->
     </section>
-    <!--    Blog Section:end-->
+    <!--Blog Section:end-->
 </main>
 <!--Main:end-->
 

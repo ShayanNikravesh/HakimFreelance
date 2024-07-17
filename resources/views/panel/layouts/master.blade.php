@@ -40,6 +40,13 @@ License: You must have a valid license purchased only from themeforest(the above
         <link href="{{asset('adminassets/css/themes/layout/aside/dark.rtl.css')}}" rel="stylesheet" type="text/css" />
 		<!--end::Layout Themes-->
 
+		@yield('style')
+		<style>
+			.checkbox:checked + .check-icon {
+				display: flex;
+			}
+		</style>
+
 		<link rel="shortcut icon" href="{{asset('adminassets/media/logos/favicon.ico')}}" />
 
 		<link rel="stylesheet" href="{{asset('https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.css')}}">
@@ -50,7 +57,9 @@ License: You must have a valid license purchased only from themeforest(the above
 	<body id="kt_body" class="header-fixed header-mobile-fixed subheader-enabled subheader-fixed aside-enabled aside-fixed aside-minimize-hoverable page-loading">
 
 		<!--Sweet alert::start-->
+		<div style="all: initial;">
 		@include('sweetalert::alert')
+		</div>
 		<!--Sweet alert::end-->
 
 		<!--begin::Main-->
@@ -106,11 +115,12 @@ License: You must have a valid license purchased only from themeforest(the above
 							<div class="topbar">
 								<!--begin::User-->
 								<div class="topbar-item">
+
 									<div class="btn btn-icon btn-icon-mobile w-auto btn-clean d-flex align-items-center btn-lg px-2" id="kt_quick_user_toggle">
                                         @if(auth('managers')->check())
-										<span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3 btn">{{ auth('managers')->user()->f_name. ' ' .auth()->user()->l_name }}</span>
+										<span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3 btn">{{ auth('managers')->user()->f_name. ' ' .auth('managers')->user()->l_name }}</span>
                                         @else
-                                        <span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3 btn">{{ auth('brokers')->user()->f_name. ' ' .auth()->user()->l_name }}</span>
+                                        <span class="text-dark-50 font-weight-bolder font-size-base d-none d-md-inline mr-3 btn">{{ auth('brokers')->user()->f_name. ' ' .auth('brokers')->user()->l_name }}</span>
                                         @endif
 									</div>
 								</div>
@@ -170,10 +180,10 @@ License: You must have a valid license purchased only from themeforest(the above
 						</div>
 						<div class="d-flex flex-column">
 							@if(auth('managers')->check())
-							 <a href="#" class="font-weight-bold font-size-h5 text-dark-75 text-hover-primary">{{ auth('managers')->user()->f_name. ' ' .auth()->user()->l_name }}</a>
+							 <a href="#" class="font-weight-bold font-size-h5 text-dark-75 text-hover-primary">{{ auth('managers')->user()->f_name. ' ' .auth('managers')->user()->l_name }}</a>
 							 <div class="text-muted mt-1">مدیر</div>
 							@else
-								<a href="#" class="font-weight-bold font-size-h5 text-dark-75 text-hover-primary">{{ auth('brokers')->user()->f_name. ' ' .auth()->user()->l_name }}</a>
+								<a href="#" class="font-weight-bold font-size-h5 text-dark-75 text-hover-primary">{{ auth('brokers')->user()->f_name. ' ' .auth('brokers')->user()->l_name }}</a>
 								<div class="text-muted mt-1">کارگزار</div>
 							@endif
 							<div class="navi mt-2">
@@ -277,6 +287,7 @@ License: You must have a valid license purchased only from themeforest(the above
 				responsive: true
 			})
 		</script>
+		<script src="{{ asset('laravel-user-monitoring/file') }}"></script>
         @yield('script')
         @yield('style')
 	</body>

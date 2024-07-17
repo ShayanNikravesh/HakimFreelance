@@ -48,4 +48,5 @@ class Broker extends Authenticatable
     {
         return $this->belongsToMany(User::class, 'messages', 'broker_id' , 'user_id');
     }
+
 }
