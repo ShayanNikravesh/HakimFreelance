@@ -29,11 +29,15 @@ class AppServiceProvider extends ServiceProvider
 
         $tags = Tag::whereNotNull('parent_id')->get();
         $parentTags = Tag::whereNull('parent_id')->get();
+        $latestTag = Tag::orderBy("id", "desc")->take(10)->get() ;
 
         view()->share([
             'tags' => $tags,
             'parentTags' => $parentTags,
+            'latestTag' => $latestTag
         ]);
+
+
         $this->viewComposer();
     }
 
