@@ -15,9 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('f_name');
             $table->string('l_name');
-            $table->varchar('mobile');
+            $table->unsignedBigInteger('mobile');
             $table->enum('gender',['male','female']);
-            $table->vachar('national_code');
+            $table->unsignedBigInteger('national_code');
             $table->text('desc');
             $table->string('address');
             $table->text('photo');

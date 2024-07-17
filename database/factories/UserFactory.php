@@ -24,6 +24,7 @@ class UserFactory extends Factory
             'mobile' => rand(0,100),
             'password' => Hash::make(1234), // password
             'status' => fake()->randomElement(['active','inactive','banned']),
+            'national_code' => rand(0,100),
             'remember_token' => Str::random(10),
         ];
     }

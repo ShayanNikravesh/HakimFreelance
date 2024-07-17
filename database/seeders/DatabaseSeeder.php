@@ -7,6 +7,7 @@ namespace Database\Seeders;
 use App\Models\Broker;
 use App\Models\BrokerTag;
 use App\Models\Manager;
+use App\Models\Message;
 use App\Models\Tag;
 use App\Models\User;
 use Database\Factories\BrokerTagFactory;
@@ -27,6 +28,7 @@ class DatabaseSeeder extends Seeder
         Tag::factory(10)->create();
         Manager::factory(10)->create();
         BrokerTag::factory(10)->create();
+        Message::factory(20)->create();
         //////////////////////////////////////
 
         // \App\Models\User::factory()->create([

@@ -15,7 +15,6 @@ License: You must have a valid license purchased only from themeforest(the above
 <html lang="fa" direction="rtl" dir="rtl" style="direction: rtl" >
 	<!--begin::Head-->
 	<head><base href="">
-        @yield('head')
         <meta charset="utf-8" />
         <title>پنل</title>
         <meta name="description" content="Metronic admin dashboard live demo. Check out all the features of the admin panel. A large number of settings, additional services and widgets." />
@@ -38,7 +37,8 @@ License: You must have a valid license purchased only from themeforest(the above
         <link href="{{asset('adminassets/css/themes/layout/header/menu/light.rtl.css')}}" rel="stylesheet" type="text/css" />
         <link href="{{asset('adminassets/css/themes/layout/brand/dark.rtl.css')}}" rel="stylesheet" type="text/css" />
         <link href="{{asset('adminassets/css/themes/layout/aside/dark.rtl.css')}}" rel="stylesheet" type="text/css" />
-		<!--end::Layout Themes-->
+        @yield('head')
+        <!--end::Layout Themes-->
 
 		@yield('style')
 		<style>

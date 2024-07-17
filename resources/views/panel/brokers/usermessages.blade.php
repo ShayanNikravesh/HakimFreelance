@@ -29,7 +29,7 @@
 
 
                                             @foreach($messages as $message)
-                                                @if($message->sender === 'user')
+                                                @if($message->sender === 'broker')
                                                     <div class=" msg_card_body">
                                                         <div class="d-flex justify-content-start mb-4">
                                                             <div class="msg_cotainer">

@@ -13,9 +13,13 @@ return new class extends Migration
     {
         Schema::create('messages', function (Blueprint $table) {
             $table->id();
+            $table->enum('sender', ['broker', 'user']);
             $table->unsignedBigInteger('broker_id');
+            $table->foreign('broker_id')->references('id')->on('brokers');
             $table->unsignedBigInteger('user_id');
-            $table->text('message');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->text('message_content');
+            $table->enum('status',['active','inactive','banned'])->default('inactive');
             $table->timestamps();
         });
     }

@@ -38,17 +38,17 @@ class MessageController extends Controller
      */
     public function store(Request $request)
     {
-
         $request->validate([
             'broker_id' => ['required'],
-            'user_id' => ['required'],
-            'message' => ['required','max:250']
+            'message_content' => ['required','max:250']
         ]);
 
+
         $message = new Message();
-        $message->broker_id = $request->broker_id;
-        $message->user_id = $request->user_id;
-        $message->message = $request->message;
+        $message->broker_id =  $request->broker_id;
+        $message->user_id = auth()->user()->id;
+        $message->sender = 'user';
+        $message->message_content = $request->message_content;
 
         $message->save();
 
@@ -64,7 +64,8 @@ class MessageController extends Controller
 
         if(Broker::find($broker)->usersMessage()->where('users.id', '=',Auth('web')->id())->first()) {
             $messages = Message::where("broker_id", Broker::find($broker)->id)->where("user_id", Auth('web')->id())->get();
-            return view('users.usermessages', compact('messages'));
+            $broker_id = $broker;
+            return view('users.usermessages', compact('messages', 'broker_id'));
         }
         return 'k';
     }

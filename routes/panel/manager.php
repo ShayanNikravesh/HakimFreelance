@@ -28,6 +28,10 @@ Route::middleware('auth:managers')->prefix('admin')->group(function () {
         return view('panel.managers.index');
     });
 
+    //Message
+    Route::resource('message_val', \App\Http\Controllers\Managers\MessageController::class)->only(['index', 'show', 'update']);
+
+
     //managers
     Route::resource('managers', ManagerController::class);
 
@@ -60,11 +64,11 @@ Route::middleware('auth:managers')->prefix('admin')->group(function () {
         // Visit Monitoring
         $router->get('visits-monitoring', [VisitMonitoringController::class, 'index'])->name('visits-monitoring');
         $router->delete('visits-monitoring/{visitMonitoring}', [VisitMonitoringController::class, 'destroy'])->name('visits-monitoring-delete');
-    
+
         // Action Monitoring
         $router->get('actions-monitoring', [ActionMonitoringController::class, 'index'])->name('actions-monitoring');
         $router->delete('actions-monitoring/{actionMonitoring}', [ActionMonitoringController::class, 'destroy'])->name('actions-monitoring-delete');
-    
+
         // Authentication Monitoring
         foreach (array_keys(config('user-monitoring.guards')) as $guards_name) {
             Route::prefix($guards_name)->as($guards_name.'.')->group(function ($router) {
@@ -73,5 +77,5 @@ Route::middleware('auth:managers')->prefix('admin')->group(function () {
             });
         }
     });
-    
+
 });
