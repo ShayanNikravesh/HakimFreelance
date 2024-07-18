@@ -16,6 +16,9 @@ class TagController extends Controller
     {
        $tags = Tag::all();
        $parentTags = Tag::whereNull('parent_id')->get();
+       $title = 'حذف دسته!';
+       $text = "آیا از حذف این دسته اطمینان دارید؟";
+       confirmDelete($title, $text);
        return view('panel.managers.tags.index',compact('tags','parentTags'));
     }
 
@@ -91,6 +94,6 @@ class TagController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        dd('hi');
     }
 }

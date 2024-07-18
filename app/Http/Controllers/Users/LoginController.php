@@ -33,7 +33,7 @@ class LoginController extends Controller
             if (Auth::attempt($credentials)) {
                 // کاربر با موفقیت وارد سایت شد
                 Alert::success('عملیات موفق.', 'خوش آمدید.');
-                return redirect()->intended('/');
+                return redirect('/');
 
             }
             return back()->withErrors([
@@ -45,9 +45,12 @@ class LoginController extends Controller
         return redirect('/');
     }
 
-    public function exit()
+    public function exit(Request $request)
     {
-        Auth::logout();
-        return redirect()->intended('/');
+        $request->session()->flush();
+        return redirect('/');
+
+        // Auth::logout();
+        // return redirect()->back()->away();
     }
 }
