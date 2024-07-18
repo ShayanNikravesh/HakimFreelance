@@ -94,6 +94,27 @@ class TagController extends Controller
      */
     public function destroy(string $id)
     {
-        dd('hi');
+        $child = Tag::where('parent_id',$id)->get();
+        $tag = Tag::with('brokers')->findOrFail($id);
+
+        if(count($child) == 0)
+        {
+            if(count($tag->brokers) == 0){
+                $Tag = Tag::findOrFail($id);
+                $Tag->forceDelete();
+
+                Alert::success('عملیات موفق','دسته حذف شد.');
+                return redirect()->back();
+
+            }else
+            {
+                Alert::warning('اخطار','در این دسته کارگزار ثبت شده است.');
+                return redirect()->back();
+            }
+        }
+        
+        Alert::warning('اخطار','دسته دارای زیرمجموعه است.');
+        return redirect()->back(); 
+        
     }
 }
