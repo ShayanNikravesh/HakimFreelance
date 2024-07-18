@@ -16,7 +16,10 @@
         <div class="compare-content mt-4">
             <div class="row">
                 <!--Item:start-->
-                @foreach ($tagsBroker->brokers as $broker)
+                @if (count($tagsBroker->brokers) == 0)
+                    <span class="bg-danger">هنوز کارگزاری در این دسته ثبت نشده است.</span>
+                    @else
+                    @foreach ($tagsBroker->brokers as $broker)
                     <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3 mb-4">
                         <div class="compare-item">
                             <!--Broker Name:start-->
@@ -48,7 +51,8 @@
                             <!--Product Add To Cart:end-->
                         </div>
                     </div>
-                @endforeach
+                    @endforeach
+                @endif
                 <!--Item:end-->
             </div>
         </div>
