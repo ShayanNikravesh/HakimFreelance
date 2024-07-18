@@ -168,7 +168,7 @@
                         <label for="recipient-name" class="col-form-label">گیرنده:</label>
                         <span class="form-control" id="recipient-name">{{$broker->f_name.' '.$broker->l_name}}</span>
                     </div>
-                    <form action="{{route('message.store')}}" class="row g-3" method="POST" enctype="multipart/form-data">
+                    <form action="{{route('messages.store')}}" class="row g-3" method="POST" enctype="multipart/form-data">
                         @csrf
                         <input type="hidden" name="broker_id" value="{{$broker->id}}">
                         <input type="hidden" name="user_id" value="1">
