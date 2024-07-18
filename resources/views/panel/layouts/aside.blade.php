@@ -141,11 +141,19 @@
                                     </a>
                                 </li>
                                 <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-                                    <a href="#" class="menu-link">
+                                    <a href="{{route('user-monitoring.managers.authentications-monitoring')}}" class="menu-link">
                                         <i class="menu-bullet menu-bullet-line">
                                             <span></span>
                                         </i>
-                                        <span class="menu-text font-weight">ورودها</span>
+                                        <span class="menu-text font-weight">ورود مدیر ها</span>
+                                    </a>
+                                </li>
+                                <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                                    <a href="{{route('user-monitoring.brokers.authentications-monitoring')}}" class="menu-link">
+                                        <i class="menu-bullet menu-bullet-line">
+                                            <span></span>
+                                        </i>
+                                        <span class="menu-text font-weight">ورود کارگذاران</span>
                                     </a>
                                 </li>
                             </ul>
