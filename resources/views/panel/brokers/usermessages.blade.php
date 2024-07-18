@@ -37,7 +37,7 @@
                                                                 <span class="msg_time">{{ $message->created_at }}</span>
                                                             </div>
                                                         </div>
-                                                        @else
+                                                        @elseif($message->status === 'active')
                                                             <div class="d-flex justify-content-end mb-4">
                                                                 <div class="msg_cotainer_send">
                                                                     {{ $message->message_content }}

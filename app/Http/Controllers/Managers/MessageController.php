@@ -66,11 +66,11 @@ class MessageController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request,string $id, string $Status)
+    public function update(Request $request,string $id)
     {
         $message = Message::findOrFail($id);
 
-        $message->status = $Status;
+        $message->status = $request->status;
         $message->save();
 
         Alert::success('عملیات موفق', 'وضعیت تغییر کرد.');
