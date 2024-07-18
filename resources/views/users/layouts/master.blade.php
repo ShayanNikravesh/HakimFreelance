@@ -412,7 +412,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item  py-3 fw-bold" href="{{route('Exit')}}">
+                                <a class="dropdown-item  py-3 fw-bold" href="{{route('logout', 'web')}}">
                                     <span class="pe-1">
                                         <!--begin::Svg Icon-->
                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -822,7 +822,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a class="dropdown-item fw-bold" href="{{route('Exit')}}">
+                                <a class="dropdown-item fw-bold" href="{{ route('logout', 'web')}}">
                                     <span class="pe-1">
                                         <!--begin::Svg Icon-->
                                         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"

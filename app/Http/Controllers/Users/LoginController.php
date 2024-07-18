@@ -45,12 +45,4 @@ class LoginController extends Controller
         return redirect('/');
     }
 
-    public function exit(Request $request)
-    {
-        $request->session()->flush();
-        return redirect('/');
-
-        // Auth::logout();
-        // return redirect()->back()->away();
-    }
 }

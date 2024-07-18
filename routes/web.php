@@ -43,8 +43,6 @@ Route::get('login',[LoginController::class,'index'])->name('Login');
 
 Route::post('authenticate',[LoginController::class,'authenticate'])->name('Authenticate');
 
-Route::get('exit',[LoginController::class,'exit'])->name('Exit');
-
 Route::resource('Broker',BrokerController::class);
 
 Route::resource('Tags',TagController::class);

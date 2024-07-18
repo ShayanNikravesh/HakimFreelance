@@ -21,5 +21,5 @@ Route::get('admin-login',function(){
 })->name('login');
 
 Route::post('admin-login', [\App\Http\Controllers\Auth\LoginController::class, 'authenticate'])->name('login-p');
-Route::get('logout', [\App\Http\Controllers\Auth\LogoutController::class, 'logout'])->name('logout');
+Route::get('logout/{type}', [\App\Http\Controllers\Auth\LogoutController::class, 'logout'])->name('logout');
 

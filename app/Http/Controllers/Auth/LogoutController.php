@@ -11,14 +11,15 @@ use function App\Helpers\get_guard;
 
 class LogoutController extends Controller
 {
-    public function logout(Request $request): RedirectResponse
+    public function logout(Request $request, string $type='admin-login'): RedirectResponse
     {
         Auth::guard(get_guard())->logout();
 
         $request->session()->invalidate();
 
         $request->session()->regenerateToken();
-
-        return redirect('admin-login');
+        if($type === 'web')
+            $type = '';
+        return redirect($type);
     }
 }
