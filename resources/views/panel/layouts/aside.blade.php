@@ -156,6 +156,14 @@
                                         <span class="menu-text font-weight">ورود کارگذاران</span>
                                     </a>
                                 </li>
+                                <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                                    <a href="{{route('user-monitoring.web.authentications-monitoring')}}" class="menu-link">
+                                        <i class="menu-bullet menu-bullet-line">
+                                            <span></span>
+                                        </i>
+                                        <span class="menu-text font-weight">ورود کاربر ها</span>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </li>
