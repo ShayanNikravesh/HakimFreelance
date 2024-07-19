@@ -35,6 +35,8 @@ Route::middleware('auth:managers')->prefix('admin')->group(function () {
     //managers
     Route::resource('managers', ManagerController::class);
 
+    Route::get('showall',[ManagerController::class,'showall'])->name('show-managers');
+
     //users
     Route::resource('users', UserController::class);
 

@@ -61,7 +61,7 @@
 						@if ($brokers)
 							@foreach ($brokers as $broker)
 								<tr>
-									<td>{{$broker->id}}</td>
+									<td>{{++$loop->index}}</td>
 									<td>{{$broker->f_name}}</td>
 									<td>{{$broker->l_name}}</td>
 									<td>{{$broker->mobile}}</td>

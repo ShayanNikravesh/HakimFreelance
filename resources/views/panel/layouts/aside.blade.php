@@ -95,7 +95,7 @@
                                     </a>
                                 </li>
                                 <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
-                                    <a href="" class="menu-link">
+                                    <a href="{{route('show-managers')}}" class="menu-link">
                                         <i class="menu-bullet menu-bullet-line">
                                             <span></span>
                                         </i>
@@ -105,7 +105,7 @@
                             </ul>
                         </div>
                     </li>
-                    <li class="menu-section">
+                    {{-- <li class="menu-section">
                         <h4 class="menu-text font-weight">پایش سایت</h4>
                         <i class="menu-icon ki ki-bold-more-hor icon-md"></i>
                     </li>
@@ -166,7 +166,7 @@
                                 </li>
                             </ul>
                         </div>
-                    </li>
+                    </li> --}}
                     <li class="menu-section">
                         <h4 class="menu-text font-weight">بنرها</h4>
                         <i class="menu-icon ki ki-bold-more-hor icon-md"></i>

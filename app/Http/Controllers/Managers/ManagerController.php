@@ -108,4 +108,11 @@ class ManagerController extends Controller
     {
         //
     }
+    
+    public function showall()
+    {
+        $managers = Manager::all();
+        return view('panel.managers.show',compact('managers'));  
+    }
+    
 }
