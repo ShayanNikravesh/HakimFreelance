@@ -29,20 +29,27 @@ class LoginController extends Controller
 
         $user = User::where('national_code', $request->national_code)->first();
 
-        if($user->status == 'active'){
-            if (Auth::attempt($credentials)) {
-                // کاربر با موفقیت وارد سایت شد
-                Alert::success('عملیات موفق.', 'خوش آمدید.');
-                return redirect('/');
-
+        if(!empty($user))
+        {
+            if($user->status == 'active'){
+                if (Auth::attempt($credentials)) {
+                    // کاربر با موفقیت وارد سایت شد
+                    Alert::success('عملیات موفق.', 'خوش آمدید.');
+                    return redirect('/');
+    
+                }
+                return back()->withErrors([
+                    'message'=> 'کد ملی یا رمز اشتباه است.'
+                ]);
             }
             return back()->withErrors([
-                'message'=> 'کد ملی یا رمز اشتباه است.'
+                'message'=> 'ثبت نام شما تایید نشده است.'
             ]);
         }
-
-        Alert::warning('عملیات ناموفق.', 'ثبت نام شما تایید نشده است.');
-        return redirect('/');
+        
+        return back()->withErrors([
+            'message'=> 'کد ملی یا رمز اشتباه است'
+        ]);
     }
 
 }

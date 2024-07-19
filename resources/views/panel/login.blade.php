@@ -62,13 +62,9 @@ License: You must have a valid license purchased only from themeforest(the above
 								{{-- <div class="text-muted font-weight-bold">Enter your details to login to your account:</div> --}}
 							</div>
 							@if ($errors->any())
-								<div class="alert alert-danger">
-									<ul>
-										@foreach ($errors->all() as $error)
-											<li>{{ $error }}</li>
-										@endforeach
-									</ul>
-								</div>
+								@foreach ($errors->all() as $error)
+									<div class="alert alert-danger">{{$error}}</div>
+								@endforeach
 							@endif
 							<form class="form" id="kt_login_signin_form" action="{{ route('login-p') }}" method="post">
                                 @csrf
