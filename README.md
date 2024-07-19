@@ -1,66 +1,33 @@
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+# Project Description:
+HakimFreelance is a job search platform developed using the Laravel framework, allowing users to register their resumes and receive job offers from employers. This platform has the following features:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- Resume Registration and Management: Users can easily register and manage their resumes.
+- Job Offers: Employers can send job offers to users and make decisions based on their resumes.
+- Messaging System: Messaging between employers and users is facilitated.
+- Activity Logging: All user and employer activities, including login, logout, page visits, and database changes, are recorded and stored.
+- Security and Monitoring: All user activities are logged for future review and monitoring.
+## This project was developed by Pouria and Shayan for Hakim University.
+HakimFreelance is a comprehensive solution for improving the job search and resume management processes at the university, developed with a focus on user-friendliness and security.
+<hr>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+# توضیحات پروژه:
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+<div dir="rtl">
+HakimFreelance یک پلتفرم کاریابی است که با استفاده از فریمورک لاراول توسعه یافته و به کاربران این امکان را می‌دهد تا رزومه‌های خود را ثبت کنند و از طرف کارفرمایان درخواست‌های شغلی دریافت کنند. این پلتفرم دارای ویژگی‌های زیر است:
 
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- ثبت و مدیریت رزومه: کاربران می‌توانند رزومه‌های خود را به‌راحتی ثبت و مدیریت کنند.
+- درخواست های شغلی: کارفرمایان می‌توانند به کاربران درخواست‌های شغلی ارسال کنند و بر اساس رزومه‌های آن‌ها تصمیم‌گیری کنند.
+- سیستم پیام‌رسانی: امکان تبادل پیام بین کارفرمایان و کاربران فراهم است.
+- ثبت فعالیت‌ها: تمامی فعالیت‌های کاربران و کارفرمایان شامل لاگین، لاگ‌اوت، بازدید صفحات و تغییرات در دیتابیس ثبت و ذخیره می‌شود.
+- امنیت و نظارت: تمامی فعالیت‌های کابران برای نظارت و بررسی‌های بعدی ثبت می‌گردد.
+   </div>
+## این پروژه با مشارکت پوریا و شایان برای دانشگاه حکیم توسعه داده شده است.
+<div dir="rtl">
+HakimFreelance یک راهکار کامل برای بهبود فرایندهای کاریابی و مدیریت رزومه‌ها دانشگاه می‌باشد که با تمرکز بر کاربرپسندی و امنیت توسعه یافته است.
+ </div>
