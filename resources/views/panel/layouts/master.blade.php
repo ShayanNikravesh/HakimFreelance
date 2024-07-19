@@ -47,7 +47,7 @@ License: You must have a valid license purchased only from themeforest(the above
 			}
 		</style>
 
-		<link rel="shortcut icon" href="{{asset('adminassets/media/logos/favicon.ico')}}" />
+		<link rel="shortcut icon" href="{{asset('adminassets/media/logos/Hakim.ico')}}" />
 
 		{{-- <link rel="stylesheet" href="{{asset('https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.9/sweetalert2.min.css')}}"> --}}
 
@@ -207,7 +207,7 @@ License: You must have a valid license purchased only from themeforest(the above
 										@endif
 									</span>
 								</a>
-								<a href="{{ route('logout') }}" class="btn btn-sm btn-light-danger font-weight-bolder py-2 px-5">خروج</a>
+								<a href="{{ route('logout', 'admin-login') }}" class="btn btn-sm btn-light-danger font-weight-bolder py-2 px-5">خروج</a>
 								@if(auth('managers')->check())
 									<a href="{{ route('managers.edit','manager') }}" class="btn btn-sm btn-light-primary font-weight-bolder py-2 px-5">ویرایش پروفایل</a>
 								@else
@@ -266,7 +266,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
 		<!--sweet alert-->
 		{{-- <script src="{{asset('https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js')}}" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> --}}
-		
+
 		<!--begin::Global Theme Bundle(used by all pages)-->
 		<script src="{{asset('adminassets/plugins/global/plugins.bundle.js')}}"></script>
 		<script src="{{asset('adminassets/plugins/custom/prismjs/prismjs.bundle.js')}}"></script>

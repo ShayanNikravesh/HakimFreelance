@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="keywords" content="">
-    <title>خدمت</title>
-
+    <title>حکیم فریلنس</title>
+    <link rel="shortcut icon" href="{{asset('adminassets/media/logos/Hakim.ico')}}" />
     <!--Bootstrap 5 RTL-->
     <link rel="stylesheet" href="{{asset('userassets/css/vendors/bootstrap/bootstrap.rtl.css')}}">
     <!--Fontawesome 5-->
@@ -63,7 +63,7 @@
                     <div class="top-mobile-navbar-middle d-flex justify-content-between align-items-center">
                         <!--Logo:start-->
                         <a href="{{route('Users.index')}}" class="navbar-brand">
-                            <img src="{{asset('userassets/img/hakimlogo.PNG')}}" alt="لوگوی برگ شاپ" class="blur-up w-25">
+                            <img src="{{asset('adminassets/media/logos/HakimFreelance.png')}}" alt="لوگوی حکیم فریلنس" class="blur-up w-25">
                         </a>
                         <!--Logo:end-->
                     </div>
@@ -197,7 +197,7 @@
                 <div class="top-nav-right d-flex justify-content-between align-items-center">
                     <!--Logo:start-->
                     <a href="{{route('Users.index')}}" class="navbar-brand">
-                        <img src="{{asset('userassets/img/hakimlogo.PNG')}}" alt="لوگوی برگ شاپ" class="blur-up w-25">
+                        <img src="{{asset('adminassets/media/logos/HakimFreelance.png')}}" alt="لوگوی حکیم فریلنس" class="blur-up w-25">
                     </a>
                     <!--Logo:end-->
 
@@ -312,7 +312,7 @@
             <div class="top-nav-right d-flex justify-content-between align-items-center">
                 <!--Logo:start-->
                 <a href="{{route('Users.index')}}" class="navbar-brand" title="">
-                    <img src="{{asset('userassets/img/hakimlogo.PNG')}}" class="w-25" alt="لوگوی برگ شاپ">
+                    <img src="{{asset('adminassets/media/logos/HakimFreelance.png')}}" alt="لوگوی حکیم فریلنس" class="blur-up w-25">
                 </a>
                 <!--Logo:end-->
 
@@ -567,7 +567,7 @@
                 <div class="top-mobile-navbar-middle d-flex justify-content-between align-items-center">
                     <!--Logo:start-->
                     <a href="{{route('Users.index')}}" class="navbar-brand pb-2" title="">
-                        <img src="{{asset('userassets/img/hakimlogo.PNG')}}" class="w-25" alt="لوگوی برگ شاپ">
+                        <img src="{{asset('adminassets/media/logos/HakimFreelance.png')}}" alt="لوگوی حکیم فریلنس" class="blur-up w-25">
                     </a>
                     <!--Logo:end-->
                 </div>
