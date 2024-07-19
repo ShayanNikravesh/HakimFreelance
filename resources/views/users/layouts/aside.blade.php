@@ -55,7 +55,7 @@
                 </a>
             </li> --}}
             <li>
-                <a href="{{route('Exit')}}">
+                <a href="{{route('logout', 'web')}}">
                     <i class="fa fa-sign-out-alt"></i>
                     <span class="ps-2">
                         خروج
