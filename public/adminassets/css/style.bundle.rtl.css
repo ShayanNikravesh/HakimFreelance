@@ -89749,7 +89749,7 @@ select.select2 {
     border-color: #F64E60;
 }
 
-html.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown),
+/* html.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown),
 body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) {
     overflow-y: initial !important;
 }
@@ -89847,7 +89847,7 @@ body.swal2-height-auto {
 .swal2-icon.swal2-question {
     border-color: #3699FF;
     color: #3699FF;
-}
+} */
 
 .tagify {
     border-radius: 0.42rem;

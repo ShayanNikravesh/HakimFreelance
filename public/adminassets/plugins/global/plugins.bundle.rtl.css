@@ -13382,7 +13382,7 @@ button.toast-close-button {
   height: 200%;
 }
 
-.swal2-popup.swal2-toast {
+/* .swal2-popup.swal2-toast {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
@@ -14538,8 +14538,8 @@ button.toast-close-button {
 
   .swal2-range output {
     display: none;
-  }
-}
+  } */
+/* }
 @-webkit-keyframes swal2-toast-show {
   0% {
     -webkit-transform: translateY(-0.625em) rotateZ(2deg);
@@ -15141,7 +15141,7 @@ body.swal2-toast-shown .swal2-container.swal2-bottom-end, body.swal2-toast-shown
   right: 0;
   bottom: 0;
   left: auto;
-}
+} */
 
 .la,
 .las,
