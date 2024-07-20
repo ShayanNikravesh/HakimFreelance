@@ -53,7 +53,7 @@ class MessageController extends Controller
         $message->save();
 
         Alert::success('عملیات موفق.', 'پیام ارسال شد.');
-        return redirect()->back();
+        return redirect()->route('messages.show', $request->broker_id);
     }
 
     /**
@@ -67,7 +67,7 @@ class MessageController extends Controller
             $broker_id = $broker;
             return view('users.usermessages', compact('messages', 'broker_id'));
         }
-        return 'k';
+        return 0;
     }
 
     /**
