@@ -38,7 +38,7 @@ class BrokerController extends Controller
         $request -> validate([
             'f_name' => ['required','max:120'],
             'l_name' => ['required','max:120'],
-            'mobile' => ['required','numeric','starts_with:09','unique:brokers,mobile'],
+            'mobile' => ['required','numeric', 'regex:/^(\+98|0)?9\d{9}$/', 'unique:brokers'],
             'gender' => ['required'],
             'national_code' => ['required','numeric','unique:brokers,national_code'],
             'photo' => ['required','max:2028','image','mimes:jpeg,png,jpg'],
