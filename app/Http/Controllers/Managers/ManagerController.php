@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Managers;
 use App\Http\Controllers\Controller;
 use App\Models\Manager;
 use Illuminate\Http\Request;
+use App\Http\Requests\ValidationRequest;
 use Illuminate\Support\Facades\Hash;
 use RealRashid\SweetAlert\Facades\Alert;
 
@@ -39,6 +40,16 @@ class ManagerController extends Controller
             'email'=>'required|string|email|max:255|unique:managers,email',
             'password'=>['required','min:6','confirmed'],
             'level'=>['required'],
+        ],[
+            'first_name.required'=>'وارد کردن نام الزامی است.',
+            'last_name.required'=>'وارد کردن نام خانوادگی الزامی است.',
+            'email.required'=>'وارد کردن ایمل الزامی است.',
+            'email.email'=>'ایمیل را به درستی وارد کنید.',
+            'email.unique:managers,email'=>'ایمیل قبلا استفاده شده است.',
+            'password.required'=>'وارد کردن رمز الزامی است.',
+            'password.confirmed'=>'رمز باید با تکرار رمز برابر باشد.',
+            'password.min:6'=>'رمز باید بیشتر از 6 کاراکتر باشد.',
+            'level.required'=>'وارد کردن سطح الزامی است.',
         ]);
 
         $manager = new Manager();
