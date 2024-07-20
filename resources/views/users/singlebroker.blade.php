@@ -69,21 +69,19 @@
     <section class="product-tabs mt-5">
         <ul class="nav nav-tabs">
             <li class="nav-item fs-7">
-                <a class="nav-link custom-link" href="#questions" data-bs-toggle="tab">
                     نظرات
-                </a>
             </li>
         </ul>
-        <div class="tab-content p-3">
+        <div class="p-3">
             <!--Comments:start-->
-            <div class="tab-pane fade" id="questions">
+            <div class="" >
                 <div class="row">
                     <div class="col-sm-12 col-md-12 col-lg-3 col-xl-3 mb-3">
                         <div class="product-score">
                             <div class="stars">
                                 <!--Broker Insert New Comment:start-->
                                 <div class="mt-2">
-                                    <p class="fs-8">ثبت نظر جدید</p>
+                                    <p class="fs-8">ثبت نظر جدید:</p>
                                     <div class="d-grid gap-2 mt-3">
                                         @if (auth()->check())
                                             <a href="" class="btn btn-primary fs-8" data-bs-toggle="modal" data-bs-target="#CommentModal">ثبت نظر</a>
