@@ -935,11 +935,11 @@
 
     <!-- broker register-->
     <div class="modal fade" id="insertNewBrokerModal">
-        @if ($errors->any())
-            @foreach ($errors->all() as $error)
-                <div class="alert alert-danger">{{$error}}</div>
-            @endforeach
-        @endif
+{{--        @if ($errors->any())--}}
+{{--            @foreach ($errors->all() as $error)--}}
+{{--                <div class="alert alert-danger">{{$error}}</div>--}}
+{{--            @endforeach--}}
+{{--        @endif--}}
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
@@ -947,7 +947,7 @@
                         ثبت نام
                         <span class="d-block fs-7 gray-600 fw-lighter mt-2">مشخصات خود را وارد کنید.</span>
                     </h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
                 </div>
                 <div class="modal-body">
                     <form action="{{route('Broker.store')}}" class="row g-3" method="POST" enctype="multipart/form-data">
@@ -1017,11 +1017,11 @@
     </div>
     <!-- user register-->
     <div class="modal fade" id="insertNewUserModal">
-        @if ($errors->any())
-            @foreach ($errors->all() as $error)
-                <div class="alert alert-danger">{{$error}}</div>
-            @endforeach
-        @endif
+{{--        @if ($errors->any())--}}
+{{--            @foreach ($errors->all() as $error)--}}
+{{--                <div class="alert alert-danger">{{$error}}</div>--}}
+{{--            @endforeach--}}
+{{--        @endif--}}
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
@@ -1148,6 +1148,24 @@
 
 @yield('style')
 
+@if ($errors->any())
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            Swal.fire({
+                icon: 'error',
+                title: 'خطا',
+                html: `
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                        @endforeach
+                </ul>
+`
+            });
+        });
+    </script>
+@endif
+
 <!--sub menu:start-->
 <script>
 
@@ -1176,8 +1194,8 @@
 <!--sub menu:end-->
 
 <!--sweet alert-->
-<script src="{{asset('https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js')}}" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+{{--<script src="{{asset('https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js')}}" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>--}}
+<script src="{{ asset('adminassets/js/pages/features/miscellaneous/sweetalert2.js') }}"></script>
 <!--Main Script::start-->
 <script src="{{asset('userassets/js/main.js')}}"></script>
 <!--Main Script::end-->

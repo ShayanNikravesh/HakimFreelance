@@ -20,6 +20,8 @@ class BannerController extends Controller
 
     public function store(Request $request)
     {
+        Alert::error();
+
         $request->validate([
             'photo' => ['required','max:2028','image','mimes:jpeg,png,jpg']
         ]);
@@ -34,7 +36,7 @@ class BannerController extends Controller
         Alert::success('عملیات موفق.', 'بنر ذخیره شد.');
 
         return redirect()->back();
-        
+
     }
 
     public function create()

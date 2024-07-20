@@ -257,7 +257,23 @@ License: You must have a valid license purchased only from themeforest(the above
 				<!--end::Content-->
 			</div>
 		<!-- end::User Panel-->
-
+        @if ($errors->any())
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'خطا',
+                        html: `
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                        @endforeach
+                        </ul>
+`
+                    });
+                });
+            </script>
+        @endif
 		<!--end::Demo Panel-->
 		{{-- <script>var HOST_URL = "https://preview.keenthemes.com/metronic/theme/html/tools/preview";</script> --}}
 		<!--begin::Global Config(global config for global JS scripts)-->
@@ -266,7 +282,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
 		<!--sweet alert-->
 		{{-- <script src="{{asset('https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js')}}" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> --}}
-
+        <script src="{{ asset('adminassets/js/pages/features/miscellaneous/sweetalert2.js') }}"></script>
 		<!--begin::Global Theme Bundle(used by all pages)-->
 		<script src="{{asset('adminassets/plugins/global/plugins.bundle.js')}}"></script>
 		<script src="{{asset('adminassets/plugins/custom/prismjs/prismjs.bundle.js')}}"></script>

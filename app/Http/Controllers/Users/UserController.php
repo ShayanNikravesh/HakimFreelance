@@ -19,7 +19,7 @@ class UserController extends Controller
     public function __construct()
     {
         $this->middleware('Auth')->except(['index','store']);
-    } 
+    }
 
     public function index()
     {
@@ -41,6 +41,8 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
+        Alert::error();
+
         $request->validate([
             'f_name' => ['required','max:120'],
             'l_name' => ['required','max:120'],
@@ -77,7 +79,7 @@ class UserController extends Controller
     public function edit(string $id)
     {
         $user = User::findOrfail(auth()->user()->id);
-        return view('users.edit',compact('user'));   
+        return view('users.edit',compact('user'));
     }
 
     /**

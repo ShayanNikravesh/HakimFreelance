@@ -36,6 +36,8 @@ class TagController extends Controller
      */
     public function store(Request $request)
     {
+        Alert::error();
+
         $request -> validate([
             'name' => ['required'],
         ]);
@@ -112,9 +114,9 @@ class TagController extends Controller
                 return redirect()->back();
             }
         }
-        
+
         Alert::warning('اخطار','دسته دارای زیرمجموعه است.');
-        return redirect()->back(); 
-        
+        return redirect()->back();
+
     }
 }

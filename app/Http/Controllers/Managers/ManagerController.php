@@ -31,6 +31,8 @@ class ManagerController extends Controller
      */
     public function store(Request $request)
     {
+        Alert::error();
+
         $request -> validate([
             'first_name' => ['required'],
             'last_name' => ['required'],
@@ -108,11 +110,11 @@ class ManagerController extends Controller
     {
         //
     }
-    
+
     public function showall()
     {
         $managers = Manager::all();
-        return view('panel.managers.show',compact('managers'));  
+        return view('panel.managers.show',compact('managers'));
     }
-    
+
 }

@@ -38,6 +38,8 @@ class MessageController extends Controller
      */
     public function store(Request $request)
     {
+        Alert::error();
+
         $request->validate([
             'broker_id' => ['required'],
             'message_content' => ['required','max:250']

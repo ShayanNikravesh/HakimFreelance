@@ -16,7 +16,7 @@ class CommentController extends Controller
     public function __construct()
     {
         $this->middleware(['Auth:web','Auth:managers'])->except(['destroy','confirm','show']);
-    } 
+    }
 
     public function index()
     {
@@ -36,6 +36,8 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
+        Alert::error();
+
         $request -> validate([
             'broker_id'=>['required','numeric'],
             'comment'=>['required','max:250']

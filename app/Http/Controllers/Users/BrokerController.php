@@ -33,6 +33,8 @@ class BrokerController extends Controller
      */
     public function store(Request $request)
     {
+        Alert::error();
+
         $request -> validate([
             'f_name' => ['required','max:120'],
             'l_name' => ['required','max:120'],
@@ -48,7 +50,7 @@ class BrokerController extends Controller
 
         $fileName = time().'_'.$request->photo->getClientOriginalName();
         $filePath = $request->photo->storeAs('brokersphoto',$fileName,'public');
-        
+
         $broker = new Broker();
         $broker->f_name = $request->f_name;
         $broker->l_name = $request->l_name;
@@ -104,10 +106,10 @@ class BrokerController extends Controller
     {
         //
     }
-    
+
     public function search(Request $request)
     {
-        
+
         $search = $request->search;
         $results = Broker::where('desc', 'like', "%$search%")->get();
 
