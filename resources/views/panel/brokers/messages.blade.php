@@ -60,7 +60,7 @@
                                 <td>{{++$loop->index}}</td>
                                 <td>{{$user->f_name}}</td>
                                 <td>{{$user->l_name}}</td>
-                                <td>{{$user->created_at}}</td>
+                                <td><?php echo verta($user->created_at)->format('Y.m.d');?></td>
                                 <td>
                                     <div class="d-flex">
                                         <a href="{{ route('messagess.show', $user->id) }}" class="btn-sm btn-success btn mx-1" data-toggle="tooltip" data-placement="top" title="مشاهده چت ها">

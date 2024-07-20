@@ -23,7 +23,7 @@ class MessageController extends Controller
     {
         $users = auth('brokers')->user()->usersMessage()->distinct()->get();
 
-            return view('panel.brokers.messages', compact('users'));
+        return view('panel.brokers.messages', compact('users'));
     }
 
     /**
