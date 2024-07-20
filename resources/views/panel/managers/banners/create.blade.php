@@ -38,11 +38,11 @@
                         <h3 class="card-label">بنر</h3>
                     </div>
                 </div>
-                @if ($errors->any())
+                {{-- @if ($errors->any())
                     @foreach ($errors->all() as $error)
                         <div class="alert alert-danger">{{$error}}</div>
                     @endforeach
-                @endif
+                @endif --}}
                 <div class="card-body">
                     <!--begin::Form-->
                     <div class="card card-custom">
