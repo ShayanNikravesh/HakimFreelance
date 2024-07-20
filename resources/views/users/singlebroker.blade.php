@@ -48,9 +48,13 @@
                                 </div>
                             </div>
                             <!--Broker Details Right:end-->
-                            @if (auth()->check())
-                                <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#meesage">ارسال پیام</a>
+                            @if (auth('web')->check())
+                                @if(\App\Models\Message::where("user_id", auth('web')->id())->where("broker_id",$broker->id)->first())
+                                    <a href="{{ route('messages.show', $broker->id) }}" class="btn btn-success">مشاهده پیام ها</a>
                                 @else
+                                    <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#meesage">ارسال پیام</a>
+                                @endif
+                            @else
                                 <span class="btn btn-danger">جهت ارسال پیام وارد سایت شوید.</span>
                             @endif
                         </div>
