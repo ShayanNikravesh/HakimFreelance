@@ -88,7 +88,7 @@ class TagController extends Controller
 
         Alert::success('عملیات موفق', 'دسته ویرایش شد.');
 
-        return redirect()->route('panel.managers.tags.index');
+        return redirect()->route('tags.index');
     }
 
     /**
