@@ -49,14 +49,16 @@
                             <div class="d-flex justify-content-start mb-4">
                                 <div class="bg-success p-1 rounded">
                                     {{ $message->message_content }}
-                                    <span class="text-light font-size-base mr-2"><?php echo verta($message->created_at);?></span>
+                                    <br>
+                                    <span class="text-light font-size-base mr-2" style="font-size: 10px"><?php echo verta($message->created_at);?></span>
                                 </div>
                             </div>
                         @elseif($message->status === 'active')
                             <div class="d-flex justify-content-end mb-4">
                                 <div class="bg-warning p-1 rounded">
                                     {{ $message->message_content }}
-                                    <span class="text-light font-size-base mr-2"><?php echo verta($message->created_at);?></span>
+                                    <br>
+                                    <span class="text-light font-size-base mr-2" style="font-size: 10px"><?php echo verta($message->created_at);?></span>
                                 </div>
                             </div>
                         @endif

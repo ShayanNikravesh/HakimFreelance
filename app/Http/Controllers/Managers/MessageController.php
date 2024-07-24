@@ -23,7 +23,7 @@ class MessageController extends Controller
     {
         $messages = Message::all();
 
-            return view('panel.managers.messages.index', compact('messages'));
+        return view('panel.managers.messages.index', compact('messages'));
     }
 
 
