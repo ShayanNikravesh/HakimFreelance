@@ -40,7 +40,8 @@ class CommentController extends Controller
 
         $request -> validate([
             'broker_id'=>['required','numeric'],
-            'comment'=>['required','max:250']
+            'comment'=>['required','max:250'],
+            'rating' => ['required'],
         ]);
 
         $user_id = auth()->user()->id;
@@ -48,6 +49,7 @@ class CommentController extends Controller
         $comment = new Comment();
         $comment->broker_id = $request->broker_id;
         $comment->user_id = $user_id;
+        $comment->rating = $request->rating;
         $comment->comment = $request->comment;
 
         $comment->save();
