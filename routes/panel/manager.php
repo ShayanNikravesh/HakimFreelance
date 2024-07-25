@@ -62,8 +62,6 @@ Route::middleware('auth:managers')->prefix('admin')->group(function () {
 
     Route::get('delete/{id}',[BannerController::class,'delete'])->name('delete-banner');
 
-    
-
     Route::prefix('user-monitoring')->as('user-monitoring.')->group(function ($router) {
         // Visit Monitoring
         $router->get('visits-monitoring', [VisitMonitoringController::class, 'index'])->name('visits-monitoring');

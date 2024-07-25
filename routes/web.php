@@ -67,7 +67,11 @@ Route::get('check',function(){
     }
 });
 
-Route::view('/not_found', 'users.404', [], 404)->name('not_found');
+// Route::view('/not_found', 'users.404', [], 404)->name('not_found');
+
+Route::fallback(function(){
+    return view('404');
+});
 
 Route::get('Hash',function(){
     $hash = Hash::make(1234);
