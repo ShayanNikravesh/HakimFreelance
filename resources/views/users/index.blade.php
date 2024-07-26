@@ -194,11 +194,7 @@
     <!--Blog Section:start-->
     <section class="blog mt-5">
         <div class="d-flex justify-content-between align-items-baseline mb-3">
-            <h2 class="fw-bold fs-6">خواندنی ها</h2>
-            <a href="" class="text-info fs-8">
-                مطالب بیشتر در برگ شاپ مگ
-                <i class="fa fa-angle-left ps-1"></i>
-            </a>
+            <h2 class="fw-bold fs-6">راهنما</h2>
         </div>
         <!-- Blog Items:start-->
         <div class="row">

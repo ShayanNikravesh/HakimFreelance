@@ -522,51 +522,52 @@
                         <div class="navbar-items-mobile-body p-3">
                             <ul class="navbar-parent">
                                 <li class="cyan-500 fs-6">دسته بندی خدمات</li>
-                                @foreach ($parentTags as $parentTag)
-                                <li class="border-bottom-gray-150 px-2 py-3">
-                                    <a href="javascript:;" class="fs-6 fw-bold d-block showSubMenu" onclick="openSubmenu({{$parentTag->id}})">
-                                        <!--begin::Svg-->
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
-                                            <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/>
-                                        </svg>
-                                        <!--end::Svg Icon-->
-                                        {{$parentTag->name}}
-                                        <i class="fa fa-angle-left float-end"></i>
-                                    </a>
-                                    <!--Navbar Items Child:start-->
-                                    @php
-                                        $Found = false;
-                                    @endphp
-                                    <ul class="first-child-parent p-3" id="{{$parentTag->id}}">
-                                        <li class="fs-5 border-bottom-gray-300 pb-2 fw-bold text-center">
+                                    @foreach ($parentTags as $parentTag)
+                                    <li class="border-bottom-gray-150 px-2 py-3">
+                                        <a href="javascript:;" class="fs-6 fw-bold d-block showSubMenu" onclick="openSubmenu({{$parentTag->id}})">
+                                            <!--begin::Svg-->
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dot" viewBox="0 0 16 16">
+                                                <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/>
+                                            </svg>
+                                            <!--end::Svg Icon-->
                                             {{$parentTag->name}}
-                                        </li>
-                                        <li class="py-3"><a href="javascript:;" class="cyan-500 fs-6 backToProductCategories" onclick="closeSubmenu({{$parentTag->id}})"><i class="fa fa-arrow-right me-2"></i>بازگشت به دسته بندی کالاها</a></li>
-                                        @foreach ($tags as $tag)
-                                        <!--Navbar Item Sub Child:start-->
-                                        @if ($tag->parent_id == $parentTag->id)
-                                            <li>
-                                                <a href="{{route('Tags.show',$tag->id)}}" class="fs-6 fw-bold d-block" title="">
-                                                    {{$tag->name}}
-                                                </a>
+                                            <i class="fa fa-angle-left float-end"></i>
+                                        </a>
+                                        <!--Navbar Items Child:start-->
+                                        @php
+                                            $Found = false;
+                                        @endphp
+                                        <ul class="first-child-parent p-3" id="{{$parentTag->id}}">
+                                            <li class="fs-5 border-bottom-gray-300 pb-2 fw-bold text-center">
+                                                {{$parentTag->name}}
                                             </li>
-                                            @php
-                                                $Found = true;
-                                            @endphp
-                                        @endif
-                                        <!--Navbar Item Sub Child:end-->
-                                        @endforeach
-                                        @if (!$Found)
-                                            <li>
-                                                <a href="javascript:;" title="">
-                                                    زیر مجوعه ندارد.
-                                                </a>
-                                            </li>
-                                        @endif
-                                    </ul>
-                                    <!--Navbar Items Child:end-->
+                                            <li class="py-3"><a href="javascript:;" class="cyan-500 fs-6 backToProductCategories" onclick="closeSubmenu({{$parentTag->id}})"><i class="fa fa-arrow-right me-2"></i>بازگشت به دسته بندی کالاها</a></li>
+                                            @foreach ($tags as $tag)
+                                            <!--Navbar Item Sub Child:start-->
+                                            @if ($tag->parent_id == $parentTag->id)
+                                                <li>
+                                                    <a href="{{route('Tags.show',$tag->id)}}" class="fs-6 fw-bold d-block" title="">
+                                                        {{$tag->name}}
+                                                    </a>
+                                                </li>
+                                                @php
+                                                    $Found = true;
+                                                @endphp
+                                            @endif
+                                            <!--Navbar Item Sub Child:end-->
+                                            @endforeach
+                                            @if (!$Found)
+                                                <li>
+                                                    <a href="javascript:;" title="">
+                                                        زیر مجوعه ندارد.
+                                                    </a>
+                                                </li>
+                                            @endif
+                                        </ul>
+                                        <!--Navbar Items Child:end-->
+                                    </li>
+                                    @endforeach
                                 </li>
-                                @endforeach
                             </ul>
                         </div>
                         <!--Navbar Items Mobile Body:end-->
@@ -668,8 +669,8 @@
                         <span class="horizontal-line mx-1 me-2"></span>
                         <!--Navbar Item:end-->
                     </li>
-                    {{-- <li class="nav-item d-flex justify-content-between align-items-center position-relative">
-                        <a class="mx-2 py-2" href="#guide" title="">
+                    <li class="nav-item d-flex justify-content-between align-items-center position-relative">
+                        <a class="mx-2 py-2" href="{{route('guide')}}" title="">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-journal-text" viewBox="0 0 16 16">
                                 <path d="M5 10.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5m0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5"/>
                                 <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2"/>
@@ -677,7 +678,7 @@
                             </svg>
                             راهنما
                         </a>
-                    </li> --}}
+                    </li>
                     <!--Navbar Item:end-->
                 </ul>           
                 <!--Navbar Wrapper:end-->
@@ -1111,7 +1112,7 @@
 <!-- end content -->
 
 <!--Footer:start-->
-<footer class="footer mt-5" id="guide">
+<footer class="footer mt-5">
     <div class="container">
         <div class="footer-top mt-4 mb-5">
             <!--Footer Top Detail:start-->

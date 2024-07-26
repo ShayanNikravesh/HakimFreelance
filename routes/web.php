@@ -60,23 +60,11 @@ Route::resource('messages', MessageController::class);
 
 Route::resource('ideas',IdeaController::class)->middleware('Auth');
 
-Route::get('check',function(){
-    if (auth('managers')->check()) {
-        // کاربر لاگین کرده است
-        dd('yes');
-    } else {
-        // کاربر لاگین نکرده است
-        dd('no');
-    }
-});
-
-// Route::view('/not_found', 'users.404', [], 404)->name('not_found');
+Route::get('guide',function(){
+    return view('users.guide');
+})->name('guide');
 
 Route::fallback(function(){
     return view('404');
 });
 
-Route::get('Hash',function(){
-    $hash = Hash::make(1234);
-    dd($hash);
-});
