@@ -1,7 +1,6 @@
 @extends('users.layouts.master')
 @section('head')
-    <link href="{{ asset('adminassets/css/star.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('adminassets/css/star-icon.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('userassets/css/star.css') }}" rel="stylesheet">
 @endsection
 @section('content')
 
@@ -46,6 +45,10 @@
                                         <li class="fs-6">
                                             <span class="gray-600">آدرس :</span>
                                             <p>{{$broker->address}}</p>
+                                        </li>
+                                        <li class="fs-6">
+                                            <span class="gray-600">عملکرد کاربر :</span>
+                                            <p>{{$ratingWord}}</p>
                                         </li>
                                     </ul>
                                 </div>
@@ -103,12 +106,8 @@
                                                                 <input type="hidden" name="broker_id" value="{{$broker->id}}">
                                                                 <textarea class="form-control border-radius-xl" name="comment" rows="4"></textarea>
                                                                 <div class="row">
-                                                                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 my-3">
-                                                                        <div class="d-grid gap-2">
-                                                                            <button class="btn custom-btn-primary" type="submit">ثبت</button>
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="container">
+
+                                                                    <div class="col-12 p-8 h-25" >
                                                                         <div class="rating"></div>
                                                                     </div>
                                                                     <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
@@ -116,6 +115,14 @@
                                                                             نظر شما پس از تایید مدیر ثبت خواهد شد.
                                                                         </p>
                                                                     </div>
+
+                                                                    <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 my-3">
+                                                                        <div class="d-grid gap-2">
+                                                                            <button class="btn custom-btn-primary" type="submit">ثبت</button>
+                                                                        </div>
+                                                                    </div>
+
+
                                                                 </div>
                                                             </form>
                                                         </div>
@@ -199,8 +206,8 @@
 @endsection
 
 @section('script')
-    <script src="{{asset('adminassets/js/jquery-3.6.0.slim.js')}}"></script>
-    <script src="{{asset('adminassets/js/jquery-star-rating.js')}}"></script>
+    <script src="{{asset('userassets/js/jquery-3.6.0.slim.js')}}"></script>
+    <script src="{{asset('userassets/js/jquery-star-rating.js')}}"></script>
     <script>
         $('.rating').starRating(
             {
@@ -210,7 +217,7 @@
 
         $(document).on('change', '.rating',
             function (e, stars, index) {
-                alert(`Thx for ${stars} stars!`);
+                alert(`${stars} ستاره برای این کاربر ثبت شد`);
             });
     </script>
     <script type="text/javascript">

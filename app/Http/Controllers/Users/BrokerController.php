@@ -80,7 +80,31 @@ class BrokerController extends Controller
     {
         $broker = Broker::with('tags')->findOrfail($id);
         $comments = Comment::with('user')->where('broker_id',$id)->where('status','active')->get();
-        return view('users.singlebroker',compact('broker','comments'));
+        if(comment::where('broker_id',$id)->where('status','active')->count()) {
+            $ratingAverage = ceil(comment::where('broker_id', $id)->where('status', 'active')->sum('rating') / comment::where('broker_id', $id)->where('status', 'active')->count());
+        }else{
+            $ratingAverage = 3;
+        }
+        $Case = ["عملکرد خیلی ضعیف", "عملکرد ضعیف", "عملکرد مناسب", "عمکرد خوب", "عملکرد خیلی خوب"];
+        switch ($ratingAverage){
+            case 1:
+                $ratingWord = $Case[1];
+                break;
+            case 2:
+                $ratingWord = $Case[2];
+                break;
+            case 3:
+                $ratingWord = $Case[3];
+                break;
+            case 4:
+                $ratingWord = $Case[4];
+                break;
+            case 5:
+                $ratingWord = $Case[5];
+                break;
+
+        }
+        return view('users.singlebroker',compact(['broker','comments', 'ratingWord']));
     }
 
     /**

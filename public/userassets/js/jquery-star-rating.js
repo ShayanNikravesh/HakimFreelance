@@ -9,7 +9,7 @@
             starsSize: 3, // em
             stars: 5,
             showInfo: true,
-            titles: ["very bad", "bad", "medium", "good", "very good"],
+            titles: ["عملکرد خیلی ضعیف", "عملکرد ضعیف", "عملکرد مناسب", "عمکرد خوب", "عملکرد خیلی خوب"],
             inputName: 'rating'
         }, setup || {});
 
@@ -76,7 +76,7 @@
                         css: {
                             marginTop: 0
                         },
-                        html: "Rate us!"
+                        html: "امتیاز کاربر"
                     }).insertBefore(starWrapper);
                 }
                 wrapper.css({
