@@ -12,6 +12,12 @@ class IdeaController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+    public function __construct()
+    {
+        $this->middleware(['Auth:web','Auth:managers'])->except(['destroy','confirm','show']);
+    }
+
     public function index()
     {
         $id = auth()->user()->id;
@@ -80,7 +86,7 @@ class IdeaController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        
     }
 
     public function ideas()
@@ -100,6 +106,16 @@ class IdeaController extends Controller
         $idea->save();
 
         Alert::success('عملیات موفق', 'وضعیت تغییر کرد.');
+
+        return redirect()->back();
+    }
+
+    public function delete($id)
+    {
+        $idea = Idea::findOrFail($id);
+        $idea->forceDelete();
+
+        Alert::success('عملیات موفق', 'ایده حذف شد.');
 
         return redirect()->back();
     }

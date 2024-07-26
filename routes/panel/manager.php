@@ -65,6 +65,8 @@ Route::middleware('auth:managers')->prefix('admin')->group(function () {
 
     Route::get('ideas',[IdeaController::class,'ideas'])->name('ideas');
 
+    Route::get('delete/{id}',[IdeaController::class,'delete'])->name('delete-idea');
+
     Route::get('idea_status/{id}/{status}',[IdeaController::class,'changeStatus'])->name('change-status-idea');
 
     Route::prefix('user-monitoring')->as('user-monitoring.')->group(function ($router) {
