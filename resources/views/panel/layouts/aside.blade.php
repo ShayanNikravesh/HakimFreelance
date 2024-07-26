@@ -326,6 +326,14 @@
                                         <span class="menu-text font-weight">لیست درخواست های پیام</span>
                                     </a>
                                 </li>
+                                <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                                    <a href="{{route('ideas')}}" class="menu-link">
+                                        <i class="menu-bullet menu-bullet-line">
+                                            <span></span>
+                                        </i>
+                                        <span class="menu-text font-weight">لیست ایده ها</span>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </li>

@@ -200,7 +200,6 @@
                 <i class="fa fa-angle-left ps-1"></i>
             </a>
         </div>
-
         <!-- Blog Items:start-->
         <div class="row">
             <div class="col-sm-12 col-md-6 col-lg-3 col-xl-4">

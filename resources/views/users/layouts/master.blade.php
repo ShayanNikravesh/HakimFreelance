@@ -412,6 +412,18 @@
                                 </a>
                             </li>
                             <li>
+                                <a class="dropdown-item  py-2 fw-bold" href="{{route('ideas.index')}}">
+                                    <span class="pe-1">
+                                        <!--begin::Svg Icon-->
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tools" viewBox="0 0 16 16">
+                                            <path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3q0-.405-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708M3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026z"/>
+                                        </svg>
+                                        <!--end::Svg Icon-->
+                                    </span>
+                                    ایده ها
+                                </a>
+                            </li>
+                            <li>
                                 <a class="dropdown-item  py-3 fw-bold" href="{{route('logout', 'web')}}">
                                     <span class="pe-1">
                                         <!--begin::Svg Icon-->
@@ -656,8 +668,18 @@
                         <span class="horizontal-line mx-1 me-2"></span>
                         <!--Navbar Item:end-->
                     </li>
+                    {{-- <li class="nav-item d-flex justify-content-between align-items-center position-relative">
+                        <a class="mx-2 py-2" href="#guide" title="">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-journal-text" viewBox="0 0 16 16">
+                                <path d="M5 10.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 0 1h-2a.5.5 0 0 1-.5-.5m0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5m0-2a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5"/>
+                                <path d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2"/>
+                                <path d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1z"/>
+                            </svg>
+                            راهنما
+                        </a>
+                    </li> --}}
                     <!--Navbar Item:end-->
-                </ul>
+                </ul>           
                 <!--Navbar Wrapper:end-->
             </div>
             <!--Navbar Right:end-->
@@ -785,8 +807,8 @@
                                     <a class="dropdown-item fw-bold" href="{{route('Users.show','User')}}">
                                         <span class="pe-1">
                                             <!--begin::Svg Icon-->
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-vcard-fill" viewBox="0 0 16 16">
-                                                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm9 1.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 0-1h-4a.5.5 0 0 0-.5.5M9 8a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 0-1h-4A.5.5 0 0 0 9 8m1 2.5a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 0-1h-3a.5.5 0 0 0-.5.5m-1 2C9 10.567 7.21 9 5 9c-2.086 0-3.8 1.398-3.984 3.181A1 1 0 0 0 2 13h6.96q.04-.245.04-.5M7 6a2 2 0 1 0-4 0 2 2 0 0 0 4 0"/>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-tools" viewBox="0 0 16 16">
+                                                <path d="M1 0 0 1l2.2 3.081a1 1 0 0 0 .815.419h.07a1 1 0 0 1 .708.293l2.675 2.675-2.617 2.654A3.003 3.003 0 0 0 0 13a3 3 0 1 0 5.878-.851l2.654-2.617.968.968-.305.914a1 1 0 0 0 .242 1.023l3.27 3.27a.997.997 0 0 0 1.414 0l1.586-1.586a.997.997 0 0 0 0-1.414l-3.27-3.27a1 1 0 0 0-1.023-.242L10.5 9.5l-.96-.96 2.68-2.643A3.005 3.005 0 0 0 16 3q0-.405-.102-.777l-2.14 2.141L12 4l-.364-1.757L13.777.102a3 3 0 0 0-3.675 3.68L7.462 6.46 4.793 3.793a1 1 0 0 1-.293-.707v-.071a1 1 0 0 0-.419-.814zm9.646 10.646a.5.5 0 0 1 .708 0l2.914 2.915a.5.5 0 0 1-.707.707l-2.915-2.914a.5.5 0 0 1 0-.708M3 11l.471.242.529.026.287.445.445.287.026.529L5 13l-.242.471-.026.529-.445.287-.287.445-.529.026L3 15l-.471-.242L2 14.732l-.287-.445L1.268 14l-.026-.529L1 13l.242-.471.026-.529.445-.287.287-.445.529-.026z"/>
                                             </svg>
                                             <!--end::Svg Icon-->
                                         </span>
@@ -820,6 +842,18 @@
                                             <!--end::Svg Icon-->
                                         </span>
                                         پیغام ها
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item  py-2 fw-bold" href="{{route('ideas.index')}}">
+                                        <span class="pe-1">
+                                            <!--begin::Svg Icon-->
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-left-text-fill" viewBox="0 0 16 16">
+                                                <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H4.414a1 1 0 0 0-.707.293L.854 15.146A.5.5 0 0 1 0 14.793zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1z"/>
+                                            </svg>
+                                            <!--end::Svg Icon-->
+                                        </span>
+                                        ایده ها
                                     </a>
                                 </li>
                                 <li>
@@ -1077,7 +1111,7 @@
 <!-- end content -->
 
 <!--Footer:start-->
-<footer class="footer mt-5">
+<footer class="footer mt-5" id="guide">
     <div class="container">
         <div class="footer-top mt-4 mb-5">
             <!--Footer Top Detail:start-->
@@ -1091,7 +1125,6 @@
                 </a>
             </div>
             <!--Footer Top Detail:end-->
-
         </div>
     </div>
     <div class="footer-info py-5">
@@ -1100,6 +1133,7 @@
                 <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8 mb-3">
                     <h1 class="fw-bold fs-5">تیم برنامه نویسی:</h1>
                     <a class="btn" href="https://shayannikravesh.ir/">شایان نیک روش</a>
+                    _
                     <a class="btn" href="https://pouria-azad.ir/">پوریا آزاد</a>
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4 mb-3 d-flex justify-content-evenly align-items-center">
@@ -1123,7 +1157,7 @@
 
 <!--Scroll To Top:start-->
 <div class="to-top border-radius-circle text-center">
-    <a href="#">
+    <a href="javascript:;">
         <!--begin::Svg Icon-->
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="24px" height="24px"
              viewBox="0 0 24 24" version="1.1">

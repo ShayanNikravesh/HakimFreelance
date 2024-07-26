@@ -4,6 +4,7 @@ use App\Http\Controllers\Users\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Users\BrokerController;
 use App\Http\Controllers\Users\CommentController;
+use App\Http\Controllers\Users\IdeaController;
 use App\Http\Controllers\Users\LoginController;
 use App\Http\Controllers\Users\MessageController;
 use App\Http\Controllers\Users\TagController;
@@ -56,6 +57,8 @@ Route::get('confirm/{id}/{status}', [CommentController::class,'confirm'])->name(
 Route::get('userComments',[CommentController::class,'userComments'])->name('Comments')->middleware('Auth');
 
 Route::resource('messages', MessageController::class);
+
+Route::resource('ideas',IdeaController::class)->middleware('Auth');
 
 Route::get('check',function(){
     if (auth('managers')->check()) {

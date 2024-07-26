@@ -5,6 +5,7 @@ use App\Http\Controllers\Managers\BrokerController;
 use App\Http\Controllers\Managers\ManagerController;
 use App\Http\Controllers\Managers\TagController;
 use App\Http\Controllers\Managers\UserController;
+use App\Http\Controllers\Users\IdeaController;
 use App\Http\Controllers\Users\UserController as UsersUserController;
 use Binafy\LaravelUserMonitoring\Controllers\ActionMonitoringController;
 use Binafy\LaravelUserMonitoring\Controllers\AuthenticationMonitoringController;
@@ -61,6 +62,10 @@ Route::middleware('auth:managers')->prefix('admin')->group(function () {
     Route::get('index',[BannerController::class,'index'])->name('index');
 
     Route::get('delete/{id}',[BannerController::class,'delete'])->name('delete-banner');
+
+    Route::get('ideas',[IdeaController::class,'ideas'])->name('ideas');
+
+    Route::get('idea_status/{id}/{status}',[IdeaController::class,'changeStatus'])->name('change-status-idea');
 
     Route::prefix('user-monitoring')->as('user-monitoring.')->group(function ($router) {
         // Visit Monitoring
