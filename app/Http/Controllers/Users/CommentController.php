@@ -41,7 +41,7 @@ class CommentController extends Controller
         $request -> validate([
             'broker_id'=>['required','numeric'],
             'comment'=>['required','max:250'],
-            'rating' => ['required'],
+            'rating' => ['nullable'],
         ]);
 
         $user_id = auth()->user()->id;
