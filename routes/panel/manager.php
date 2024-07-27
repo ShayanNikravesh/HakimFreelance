@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Managers\BannerController;
 use App\Http\Controllers\Managers\BrokerController;
+use App\Http\Controllers\Managers\ChallengeController;
 use App\Http\Controllers\Managers\ManagerController;
 use App\Http\Controllers\Managers\TagController;
 use App\Http\Controllers\Managers\UserController;
@@ -68,6 +69,10 @@ Route::middleware('auth:managers')->prefix('admin')->group(function () {
     Route::get('delete/{id}',[IdeaController::class,'delete'])->name('delete-idea');
 
     Route::get('idea_status/{id}/{status}',[IdeaController::class,'changeStatus'])->name('change-status-idea');
+
+    Route::resource('challenges',ChallengeController::class);
+
+    Route::get('challenge_status/{id}/{status}',[ChallengeController::class,'changeStatus'])->name('change-status-challenge');
 
     Route::prefix('user-monitoring')->as('user-monitoring.')->group(function ($router) {
         // Visit Monitoring

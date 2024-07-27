@@ -16,4 +16,9 @@ class challenge extends Model
         return $this->hasMany(challengeFile::class);
     }
 
+    public function user() 
+    {
+        return $this->belongsTo(User::class);
+    }
+
 }

@@ -165,11 +165,11 @@
     <!--    Product Tabs:end-->
     <!--modal-->
     <div class="modal fade" id="meesage">
-        @if ($errors->any())
+        {{-- @if ($errors->any())
             @foreach ($errors->all() as $error)
                 <div class="alert alert-danger">{{$error}}</div>
             @endforeach
-        @endif
+        @endif --}}
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header">

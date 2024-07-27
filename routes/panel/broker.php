@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Brokers\BrokerController;
-
+use App\Http\Controllers\Brokers\ChallengeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,5 +25,7 @@ Route::middleware('auth:brokers')->prefix('broker')->group(function () {
     Route::resource('broker', BrokerController::class);
 
     Route::resource('messagess', \App\Http\Controllers\Brokers\MessageController::class);
+
+    Route::get('challenges',[ChallengeController::class,'index'])->name('show-challenges');
 
 });

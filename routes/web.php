@@ -1,9 +1,9 @@
 <?php
 
-use App\Http\Controllers\ChallengeController;
 use App\Http\Controllers\Users\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Users\BrokerController;
+use App\Http\Controllers\Users\ChallengeController;
 use App\Http\Controllers\Users\CommentController;
 use App\Http\Controllers\Users\IdeaController;
 use App\Http\Controllers\Users\LoginController;
@@ -68,3 +68,7 @@ Route::post('challenges',[ChallengeController::class,'store'])->name('challenges
 Route::get('guide',function(){
     return view('users.guide');
 })->name('guide');
+
+Route::fallback(function(){
+    return view('errors.panel.404');
+});
