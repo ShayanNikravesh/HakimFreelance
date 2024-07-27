@@ -11,13 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ideas', function (Blueprint $table) {
+        Schema::create('challenge_file', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->text('idea');
-            $table->enum('status',['accept','reject','waiting'])->default('waiting');
-            $table->timestamps();
+            $table->unsignedBigInteger('challenge_id');
+            $table->foreign('challenge_id')->references('id')->on('challenges');
+            $table->text('file');
         });
     }
 
@@ -26,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('ideas');
+        Schema::dropIfExists('challenge_file');
     }
 };

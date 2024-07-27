@@ -43,13 +43,18 @@ class IdeaController extends Controller
         
         $request -> validate([
             'idea'=>['required','max:250'],
+            'file'=>['file','mimes:jpg,png,pdf','max:2048'],
         ]);
 
         $user_id = auth()->user()->id;
 
+        $fileName = time().'_'.$request->file->getClientOriginalName();
+        $filePath = $request->file->storeAs('file/idea',$fileName,'public');
+
         $idea = new Idea();
         $idea->user_id = $user_id;
         $idea->idea = $request->idea;
+        $idea->file = 'storage/'.$filePath;
         $idea->save();
 
         Alert::success('عملیات موفق.', 'ایده شما برای مدیر ارسال شد ، در این صفحه می توانید از وضعیت آن باخبر شوید.');

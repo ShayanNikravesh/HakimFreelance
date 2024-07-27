@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('ideas', function (Blueprint $table) {
+        Schema::create('challenges', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->text('idea');
+            $table->text('title');
+            $table->text('desc');
             $table->enum('status',['accept','reject','waiting'])->default('waiting');
             $table->timestamps();
         });
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('ideas');
+        Schema::dropIfExists('challenges');
     }
 };

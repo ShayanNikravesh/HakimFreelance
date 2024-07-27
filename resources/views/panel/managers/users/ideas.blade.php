@@ -48,6 +48,7 @@
 							<th>نام خانوادگی</th>
 							<th>وضعیت</th>
 							<th>متن</th>
+							<th>فایل</th>
 							<th>تاریخ</th>
 							<th>تعیین وضعیت</th>
 							<th>حذف</th>
@@ -74,6 +75,11 @@
 										<td>نا مشخص</td>
 									@endswitch
 									<td>{{$idea->idea}}</td>
+									@if ($idea->file)
+										<td><a href="{{ asset($idea->file) }}" class="btn btn-warning">a</a></td>
+									@else
+										<td>#</td>
+									@endif
 									<td><?php echo verta($idea->created_at)->format('Y.m.d');?></td>
 									<td>
 										<button type="button" class="btn-sm btn-primary btn mx-1" data-toggle="modal" data-target="#Modal{{$idea->id}}">

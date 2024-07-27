@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ChallengeController;
 use App\Http\Controllers\Users\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Users\BrokerController;
@@ -59,6 +60,10 @@ Route::get('userComments',[CommentController::class,'userComments'])->name('Comm
 Route::resource('messages', MessageController::class);
 
 Route::resource('ideas',IdeaController::class)->middleware('Auth');
+
+Route::get('challenges',[ChallengeController::class,'index'])->name('challenges');
+
+Route::post('challenges',[ChallengeController::class,'store'])->name('challenges.store');
 
 Route::get('guide',function(){
     return view('users.guide');
