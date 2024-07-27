@@ -63,8 +63,3 @@ Route::resource('ideas',IdeaController::class)->middleware('Auth');
 Route::get('guide',function(){
     return view('users.guide');
 })->name('guide');
-
-Route::fallback(function(){
-    return view('404');
-});
-

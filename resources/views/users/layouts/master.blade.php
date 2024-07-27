@@ -680,7 +680,7 @@
                         </a>
                     </li>
                     <!--Navbar Item:end-->
-                </ul>           
+                </ul>
                 <!--Navbar Wrapper:end-->
             </div>
             <!--Navbar Right:end-->
@@ -1183,7 +1183,7 @@
 
 @yield('style')
 
-@if ($errors->any())
+@if (isset($errors) and $errors->any())
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             Swal.fire({
