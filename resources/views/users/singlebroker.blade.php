@@ -1,6 +1,6 @@
 @extends('users.layouts.master')
 @section('head')
-    <link href="{{ asset('userassets/css/star.css') }}" rel="stylesheet">
+    <link href="{{ asset('userassets/css/star.css') }}" rel="stylesheet">   
 @endsection
 @section('content')
 
@@ -106,7 +106,6 @@
                                                                 <input type="hidden" name="broker_id" value="{{$broker->id}}">
                                                                 <textarea class="form-control border-radius-xl" name="comment" rows="4"></textarea>
                                                                 <div class="row">
-
                                                                     <div class="col-12 p-8 h-25" >
                                                                         <div class="rating"></div>
                                                                     </div>
@@ -115,7 +114,6 @@
                                                                             نظر شما پس از تایید مدیر ثبت خواهد شد.
                                                                         </p>
                                                                     </div>
-
                                                                     <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 my-3">
                                                                         <div class="d-grid gap-2">
                                                                             <button class="btn custom-btn-primary" type="submit">ثبت</button>
