@@ -38,21 +38,20 @@ class CommentController extends Controller
     {
         Alert::error();
 
-        $request -> validate([
+        $commnet = $request -> validate([
             'broker_id'=>['required','numeric'],
+            'user_id'=>['required','numeric'],
             'comment'=>['required','max:250'],
-            'rating' => ['nullable'],
+            'rating' => 'nullable|integer',
         ]);
 
-        $user_id = auth()->user()->id;
+        if (!isset($commnet['rating'])) {
+            unset($commnet['rating']);
+        }
 
-        $comment = new Comment();
-        $comment->broker_id = $request->broker_id;
-        $comment->user_id = $user_id;
-        $comment->rating = $request->rating;
-        $comment->comment = $request->comment;
 
-        $comment->save();
+        Comment::create($commnet);
+
 
         Alert::success('عملیات موفق.', 'پس از تایید مدیریت نظر شما ثبت خواهد شد.');
 
