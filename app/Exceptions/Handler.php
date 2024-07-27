@@ -47,15 +47,15 @@ class Handler extends ExceptionHandler
         });
     }
 
-     public function render($request, Throwable $exception){
-         if($this->isHttpException($exception)) {
-             if ($exception->getStatusCode() === 404) {
-                 if ($request->is('admin/*')) {
-                     return app('App\Http\Controllers\ErrorController')->notFoundPanel();
-                 }
-                 return app('App\Http\Controllers\ErrorController')->notFoundWeb();
-             }
-         }
-         return parent::render($request, $exception);
-     }
+    public function render($request, Throwable $exception){
+        if($this->isHttpException($exception)) {
+            if ($exception->getStatusCode() === 404) {
+                if ($request->is('admin/*')) {
+                    return app('App\Http\Controllers\ErrorController')->notFoundPanel();
+                }
+                return app('App\Http\Controllers\ErrorController')->notFoundWeb();
+            }
+        }
+        return parent::render($request, $exception);
+    }
 }

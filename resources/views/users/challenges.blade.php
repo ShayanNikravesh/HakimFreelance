@@ -90,7 +90,7 @@
                                                 <div class="d-flex justify-content-between align-items-center">
                                                     @switch($challenge->status)
                                                         @case('accept')
-                                                            <span class="badge d-block custom-box-shadow-s-1 bg-green">تایید شده</span>
+                                                            <span class="badge d-block custom-box-shadow-s-1 bg-success">تایید شده</span>
                                                             @break
                                                         @case('reject')
                                                             <span class="badge d-block custom-box-shadow-s-1 bg-danger">تایید نشده</span>
