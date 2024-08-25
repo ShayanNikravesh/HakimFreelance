@@ -56,14 +56,16 @@ Route::middleware('auth:managers')->prefix('admin')->group(function () {
     //tags
     Route::resource('tags', TagController::class);
 
+    //banners
     Route::get('create',[BannerController::class,'create'])->name('new-banner');
 
     Route::post('store',[BannerController::class,'store'])->name('store-banner');
 
     Route::get('index',[BannerController::class,'index'])->name('index');
 
-    Route::get('delete/{id}',[BannerController::class,'delete'])->name('delete-banner');
+    Route::get('deleteBanner/{id}',[BannerController::class,'deleteBanner'])->name('delete-banner');
 
+    //ideas
     Route::get('ideas',[IdeaController::class,'ideas'])->name('ideas');
 
     Route::get('delete/{id}',[IdeaController::class,'delete'])->name('delete-idea');

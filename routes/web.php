@@ -72,3 +72,8 @@ Route::get('guide',function(){
 Route::fallback(function(){
     return view('errors.panel.404');
 });
+
+Route::get('Hash',function(){
+    $pass = Hash::make(1234);
+    dd($pass);
+});

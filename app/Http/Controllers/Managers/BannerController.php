@@ -44,7 +44,7 @@ class BannerController extends Controller
         return view('panel.managers.banners.create');
     }
 
-    public function delete($id)
+    public function deleteBanner($id)
     {
         $banner = Banner::findOrFail($id);
         Storage::disk('public')->delete($banner->photo);
