@@ -518,7 +518,7 @@
                         <div class="navbar-items-mobile-header d-flex justify-content-between align-items-center border-bottom-gray-300 p-3">
                             <!--Navbar Items Mobile Title:start-->
                             <div class="navbar-items-mobile-title">
-                                <h5 class="fw-bold">منوی برگ شاپ</h5>
+                                <h5 class="fw-bold">منو</h5>
                             </div>
                             <!--Navbar Items Mobile Title:end-->
 
