@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->text('idea');
             $table->enum('status',['accept','reject','waiting'])->default('waiting');
+            $table->text('file')->nullable();
             $table->timestamps();
         });
     }

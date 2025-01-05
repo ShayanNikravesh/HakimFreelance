@@ -17,6 +17,8 @@ return new class extends Migration
             $table->string('l_name');
             $table->unsignedBigInteger('mobile');
             $table->enum('status',['active','inactive','banned'])->default('inactive');
+            $table->string('national_code');
+            $table->string('password');
             //for authentication
             $table->rememberToken();
             $table->timestamps();

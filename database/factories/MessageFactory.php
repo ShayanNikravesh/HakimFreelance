@@ -19,9 +19,9 @@ class MessageFactory extends Factory
     public function definition(): array
     {
         return [
-            'broker_id' => 2,
+            'broker_id' => Broker::inRandomOrder()->first()->id,
             'message_content' => fake()->text(),
-            'user_id' => 30,
+            'user_id' => User::inRandomOrder()->first()->id,
             'status' => fake()->randomElement(['active','inactive','banned']),
         ];
     }

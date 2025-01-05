@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->text('comment');
             $table->enum('status',['active','inactive','banned'])->default('inactive');
+            $table->unsignedTinyInteger('rating')->default(3);
             $table->timestamps();
         });
     }
