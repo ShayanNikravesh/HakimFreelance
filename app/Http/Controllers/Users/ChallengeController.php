@@ -16,13 +16,13 @@ class ChallengeController extends Controller
         $id = auth()->user()->id;
         $challenges = challenge::with('challengeFile')->where('user_id',$id)->get();
 
-        return view('users.challenges',compact('challenges'));
+        return view('main.profile.challenges.index' ,compact('challenges'));
     }
 
     public function store(Request $request)
     {
         Alert::error();
-        
+
         $request -> validate([
             'title'=>['required','max:250'],
             'desc'=>['required','max:250'],
@@ -43,14 +43,14 @@ class ChallengeController extends Controller
             foreach ($request->file('files') as $file) {
                 $fileName = time().'_'.$file->getClientOriginalName();
                 $filePath = $file->storeAs('file/challenge',$fileName,'public');
-                
+
                 $challengeFile = new challengeFile();
                 $challengeFile->challenge_id = $id;
                 $challengeFile->file = 'storage/'.$filePath;
                 $challengeFile->save();
 
             }
-        } 
+        }
 
         Alert::success('عملیات موفق.', 'چالش شما پس از بررسی مدیر یرای کارگزاران ارسال خواهد شد.');
 

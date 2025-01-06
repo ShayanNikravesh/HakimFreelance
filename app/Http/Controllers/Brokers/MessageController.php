@@ -23,7 +23,7 @@ class MessageController extends Controller
     {
         $users = auth('brokers')->user()->usersMessage()->distinct()->get();
 
-        return view('panel.brokers.messages', compact('users'));
+        return view('panel.brokers.profile.index', compact('users'));
     }
 
     /**
@@ -66,7 +66,7 @@ class MessageController extends Controller
         {
             $messages = Message::where("broker_id", Auth('brokers')->id())->where("user_id", $user)->get();
             $user_id = $user;
-            return view('panel.brokers.usermessages', compact('messages', 'user_id'));
+            return view('panel.brokers.profile.show', compact('messages', 'user_id'));
         }
         return 0;
     }

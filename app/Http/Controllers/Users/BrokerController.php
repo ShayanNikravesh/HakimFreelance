@@ -104,7 +104,7 @@ class BrokerController extends Controller
                 break;
 
         }
-        return view('users.singlebroker',compact(['broker','comments', 'ratingWord']));
+        return view('main.brokers.show',compact(['broker','comments', 'ratingWord']));
     }
 
     /**
@@ -137,7 +137,7 @@ class BrokerController extends Controller
         $search = $request->search;
         $results = Broker::where('desc', 'like', "%$search%")->get();
 
-        return view('users.search',compact('results'));
+        return view('main.search',compact('results'));
 
     }
 }

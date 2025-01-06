@@ -25,7 +25,7 @@ class UserController extends Controller
     {
         $latestTags = Tag::orderBy("id", "desc")->take(10)->get();
         $banners = Banner::all();
-        return view('users.index',compact('banners','latestTags'));
+        return view('main.index',compact('banners','latestTags'));
     }
 
     /**
@@ -70,7 +70,7 @@ class UserController extends Controller
     public function show(string $id)
     {
         $user = User::findOrfail(auth()->user()->id);
-        return view('users.profile',compact('user'));
+        return view('main.profile.profile',compact('user'));
     }
 
     /**
@@ -79,7 +79,7 @@ class UserController extends Controller
     public function edit(string $id)
     {
         $user = User::findOrfail(auth()->user()->id);
-        return view('users.edit',compact('user'));
+        return view('main.profile.users.edit',compact('user'));
     }
 
     /**

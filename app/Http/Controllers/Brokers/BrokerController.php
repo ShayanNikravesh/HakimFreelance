@@ -46,7 +46,7 @@ class BrokerController extends Controller
     public function edit(string $id)
     {
         $broker = Broker::findOrfail(auth('brokers')->id());
-        return view('panel.brokers.edit',compact('broker'));
+        return view('panel.brokers.profile.edit',compact('broker'));
     }
 
     /**

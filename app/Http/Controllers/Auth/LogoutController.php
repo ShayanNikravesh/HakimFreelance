@@ -24,12 +24,4 @@ class LogoutController extends Controller
         return redirect($type);
     }
 
-    // public function logout(Request $request)
-    // {
-    //     Auth::guard(get_guard())->logout();
-
-    //     $request->session()->invalidate();
-
-    //     return Route::permanentRedirect()->back()
-    // }
 }

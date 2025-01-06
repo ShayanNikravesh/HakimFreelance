@@ -23,7 +23,7 @@ class IdeaController extends Controller
         $id = auth()->user()->id;
         $ideas = Idea::where('user_id',$id)->get();
 
-        return view('users.userideas',compact('ideas'));
+        return view('main.profile.ideas.index' ,compact('ideas'));
     }
 
     /**
@@ -40,7 +40,7 @@ class IdeaController extends Controller
     public function store(Request $request)
     {
         Alert::error();
-        
+
         $request -> validate([
             'idea'=>['required','max:250'],
             'file'=>['file','mimes:jpg,png,pdf','max:2048'],
@@ -91,7 +91,7 @@ class IdeaController extends Controller
      */
     public function destroy(string $id)
     {
-        
+
     }
 
     public function ideas()

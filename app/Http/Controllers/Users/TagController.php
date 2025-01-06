@@ -13,7 +13,7 @@ class TagController extends Controller
      */
     public function index()
     {
-        
+
     }
 
     /**
@@ -38,8 +38,8 @@ class TagController extends Controller
     public function show(string $id)
     {
         $tagsBroker = Tag::with('brokers')->findOrFail($id);
-        return view('users.tagsbroker',compact('tagsBroker'));
-        
+        return view('main.tags.show',compact('tagsBroker'));
+
     }
 
     /**

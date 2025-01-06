@@ -17,7 +17,7 @@ Route::get('admin-login',function(){
     if (auth('managers')->check() or auth('brokers')->check()){
         return redirect('/panel');
     }
-    return view('panel.login');
+    return view('panel.auth.login');
 })->name('login');
 
 Route::post('admin-login', [\App\Http\Controllers\Auth\LoginController::class, 'authenticate'])->name('login-p');

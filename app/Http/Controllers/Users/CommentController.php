@@ -114,6 +114,6 @@ class CommentController extends Controller
     {
         $id = auth()->user()->id;
         $comments = Comment::with('broker')->where('user_id',$id)->get();
-        return view('users.usercomments',compact('comments'));
+        return view('main.profile.comments.index',compact('comments'));
     }
 }

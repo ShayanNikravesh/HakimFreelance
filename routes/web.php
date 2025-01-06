@@ -35,7 +35,7 @@ Route::get('/', function () {
     $latestTags = Tag::orderBy("id", "desc")->take(10)->get();
     $banners = Banner::all();
 
-    return view('users.index',compact('banners','latestTags','brokers'));
+    return view('main.index',compact('banners','latestTags','brokers'));
 
 });
 
@@ -66,7 +66,7 @@ Route::get('challenges',[ChallengeController::class,'index'])->name('challenges'
 Route::post('challenges',[ChallengeController::class,'store'])->name('challenges.store');
 
 Route::get('guide',function(){
-    return view('users.guide');
+    return view('main.guide');
 })->name('guide');
 
 Route::fallback(function(){
