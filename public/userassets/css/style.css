@@ -717,9 +717,9 @@ p {
   border: 0 !important;
   padding: 0 !important;
 }
-.custom-navbar .top-navbar .top-nav-left .user-panel-menu .dropdown-menu li {
+/* .custom-navbar .top-navbar .top-nav-left .user-panel-menu .dropdown-menu li {
   border-bottom: 1px solid #F1F2F4;
-}
+} */
 .custom-navbar .top-navbar .top-nav-left .user-panel-menu .dropdown-menu li a:active {
   background-color: inherit;
   color: #000;
@@ -2568,6 +2568,15 @@ p {
 }
 :root {
   --theme-color-red: 239, 86, 97;
+}
+
+@media (max-width: 950px) {
+  ul.dropdown-menu.show {
+    position: absolute;
+    inset: 0px auto auto 0px;
+    margin: 0px;
+    transform: translate3d(0px, 42px, 0px);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
