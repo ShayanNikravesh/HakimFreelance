@@ -70,7 +70,7 @@
                                 <!--User Panel Comments Header:end-->
 
                                 <!--User Panel Comments Content:start-->
-                                @if ($ideas)
+                                @if ($ideas->count())
                                     @foreach ($ideas as $idea)
                                         <div class="user-panel-comments-content p-4">
                                             <!--User Panel Comment Item:start-->

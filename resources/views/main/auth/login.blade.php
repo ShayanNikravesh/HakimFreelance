@@ -22,11 +22,11 @@
 <body>
 <div class="action-wrapper d-flex justify-content-center align-items-center h-100">
     <div class="form p-4 border border-radius-3xl border-gray-200">
-        {{-- @if ($errors->any())
+         @if ($errors->any())
             @foreach ($errors->all() as $error)
                 <div class="alert alert-danger">{{$error}}</div>
             @endforeach
-        @endif --}}
+        @endif
         <img src="{{asset('adminassets/media/logos/HakimFreelance.png')}}" alt="" title="" class="mx-auto d-block">
         <div class="form-info text-center my-3">
             <h1 class="fw-bold fs-5">ورود کاربران</h1>

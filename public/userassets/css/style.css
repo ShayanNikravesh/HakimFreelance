@@ -1050,7 +1050,7 @@ p {
     height: 40px;
   }
   .custom-navbar .main-navbar .main-mobile-navbar .main-mobile-navbar-right form {
-    width: 200px !important;
+    /*width: 200px !important;*/
   }
 }
 @media only screen and (max-width: 354px) {

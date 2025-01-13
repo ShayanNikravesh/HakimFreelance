@@ -28,7 +28,7 @@
                                 <!--User Panel Comments Header:end-->
 
                                 <!--User Panel Comments Content:start-->
-                                @if ($comments)
+                                @if ($comments->count())
                                     @foreach ($comments as $comment)
                                         <div class="user-panel-comments-content p-4">
                                             <!--User Panel Comment Item:start-->

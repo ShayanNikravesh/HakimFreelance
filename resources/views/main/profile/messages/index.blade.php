@@ -28,27 +28,34 @@
                                     <!--User Panel Comments Header:end-->
                                     <!--User Panel Comments Content:start-->
                                     <div class="user-panel-comments-content p-4">
-                                        @foreach($brokers as $broker)
-                                            <!--User Panel Comment Item:start-->
-                                            <div
-                                                class="user-panel-comment-item bg-gray-150 p-2 mb-3 custom-box-shadow-s-4 border">
-                                                <!--User Panel Comment Item Header:start-->
+                                        @if($brokers->count())
+                                            @foreach($brokers as $broker)
+                                                <!--User Panel Comment Item:start-->
                                                 <div
-                                                    class="user-panel-comment-item-header d-flex justify-content-between align-items-center pb-2">
-                                                    <p class="fw-bold">
-                                                        {{ $broker->f_name. ' ' .$broker->l_name  }}
-                                                    </p>
+                                                    class="user-panel-comment-item bg-gray-150 p-2 mb-3 custom-box-shadow-s-4 border">
+                                                    <!--User Panel Comment Item Header:start-->
                                                     <div
-                                                        class="user-panel-comment-item-content d-flex justify-content-between align-items-center">
-                                                        <a href="{{ route('messages.show' , $broker->id) }}"
-                                                           class="btn badge d-block custom-box-shadow-s-1 bg-primary">مشاهده
-                                                            پیام ها</a>
+                                                        class="user-panel-comment-item-header d-flex justify-content-between align-items-center pb-2">
+                                                        <p class="fw-bold">
+                                                            {{ $broker->f_name. ' ' .$broker->l_name  }}
+                                                        </p>
+                                                        <div
+                                                            class="user-panel-comment-item-content d-flex justify-content-between align-items-center">
+                                                            <a href="{{ route('messages.show' , $broker->id) }}"
+                                                               class="btn badge d-block custom-box-shadow-s-1 bg-primary">مشاهده
+                                                                پیام ها</a>
+                                                            </div>
                                                     </div>
+                                                    <!--User Panel Comment Item Header:end-->
                                                 </div>
-                                                <!--User Panel Comment Item Header:end-->
+                                                <!--User Panel Comment Item:end-->
+                                            @endforeach
+                                        @else
+                                            <div class="text-center my-5">
+                                                <img src="assets/img/order-empty.svg" alt="">
+                                                <p class="fs-8">مکالمه ای ندارید.</p>
                                             </div>
-                                            <!--User Panel Comment Item:end-->
-                                        @endforeach
+                                        @endif
                                     </div>
 
                                     <!--User Panel Comments Content:end-->

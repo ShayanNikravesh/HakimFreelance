@@ -71,7 +71,7 @@
                                 <!--User Panel Comments Header:end-->
 
                                 <!--User Panel Comments Content:start-->
-                                @if ($challenges)
+                                @if ($challenges->count())
                                     @foreach ($challenges as $challenge)
                                         <div class="user-panel-comments-content p-4">
                                             <!--User Panel Comment Item:start-->
