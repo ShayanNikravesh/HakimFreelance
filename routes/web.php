@@ -13,6 +13,7 @@ use App\Jobs\Email;
 use App\Mail\RegisterMail;
 use App\Models\Banner;
 use App\Models\Broker;
+use App\Models\Info;
 use App\Models\Tag;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -34,8 +35,8 @@ Route::get('/', function () {
     $brokers = Broker::orderBy("id", "desc")->take(10)->get();
     $latestTags = Tag::orderBy("id", "desc")->take(10)->get();
     $banners = Banner::all();
-
-    return view('main.index',compact('banners','latestTags','brokers'));
+    $infos = Info::all();
+    return view('main.index',compact('banners','latestTags','brokers','infos'));
 
 });
 

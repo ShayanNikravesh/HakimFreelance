@@ -3,6 +3,7 @@
 use App\Http\Controllers\Managers\BannerController;
 use App\Http\Controllers\Managers\BrokerController;
 use App\Http\Controllers\Managers\ChallengeController;
+use App\Http\Controllers\Managers\InfoController;
 use App\Http\Controllers\Managers\ManagerController;
 use App\Http\Controllers\Managers\TagController;
 use App\Http\Controllers\Managers\UserController;
@@ -75,6 +76,9 @@ Route::middleware('auth:managers')->prefix('admin')->group(function () {
     Route::resource('challenges',ChallengeController::class);
 
     Route::get('challenge_status/{id}/{status}',[ChallengeController::class,'changeStatus'])->name('change-status-challenge');
+
+    //news
+    Route::resource('info',InfoController::class);
 
     Route::prefix('user-monitoring')->as('user-monitoring.')->group(function ($router) {
         // Visit Monitoring

@@ -293,6 +293,7 @@ License: You must have a valid license purchased only from themeforest(the above
 		<!--end::Global Theme Bundle-->
 		<!--begin::Page Vendors(used by this page)-->
 		<script src="{{asset('adminassets/plugins/custom/fullcalendar/fullcalendar.bundle.js')}}"></script>
+		<script src="{{asset('adminassets/js/pages/crud/forms/editors/summernote.js')}}"></script>
 		<!--end::Page Vendors-->
 		<!--begin::Page Vendors(used by this page)-->
 		<script src="{{asset('adminassets/plugins/custom/datatables/datatables.bundle.js')}}"></script>
