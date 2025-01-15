@@ -29,10 +29,14 @@
         @endif
         <img src="{{asset('adminassets/media/logos/HakimFreelance.png')}}" alt="" title="" class="mx-auto d-block">
         <div class="form-info text-center my-3">
-            <h1 class="fw-bold fs-5">ورود کاربران</h1>
+            <h1 class="fw-bold fs-5">ورود</h1>
         </div>
         <form action="{{route('Authenticate')}}" method="POST">
             @csrf
+            <select class="mb-3 form-select form-control h-auto form-control-solid fw-bold py-3 px-8 mb-2" aria-label="Default select example" name="table_name" id="my_select">
+                <option value="1">دانشجویان</option>
+                <option value="2" selected>کارفرمایان</option>
+            </select>
             <label for="national_code" class="form-label fw-bold">کد ملی:</label>
             <input type="text" name="national_code" class="form-control border-radius-xl mb-1" placeholder="کد ملی را وارد کنید.">
             <label for="password" class="form-label fw-bold">رمز عبور:</label>

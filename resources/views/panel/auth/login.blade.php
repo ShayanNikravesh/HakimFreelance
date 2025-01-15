@@ -74,17 +74,13 @@ License: You must have a valid license purchased only from themeforest(the above
 								<div class="form-group mb-5">
 									<input class="form-control h-auto form-control-solid py-4 px-8" type="password" placeholder="رمز خود را وارد کنید." name="password" />
 								</div>
-                                <select class="form-select form-control h-auto form-control-solid py-4 px-8 mb-2" aria-label="Default select example" name="table_name" id="my_select">
-                                    <option value="1" selected>مدیر</option>
-                                    <option value="2">کارگزار</option>
-                                </select>
 								<div class="form-group d-flex flex-wrap justify-content-between align-items-center">
 									<div class="checkbox-inline">
 										<label class="checkbox m-0 text-muted">
 										<input type="checkbox" name="remember" />
 										<span></span>مرا به خاطر بسپار</label>
 									</div>
-									<a href="javascript:;" id="kt_login_forgot" class="text-muted text-hover-primary">فراموشی رمز</a>
+									<a href="java   script:;" id="kt_login_forgot" class="text-muted text-hover-primary">فراموشی رمز</a>
 								</div>
 								<button id="kt_login_signin_submit" class="btn btn-primary font-weight-bold px-9 py-4 my-3 mx-4">ورود</button>
 							</form>
@@ -106,26 +102,6 @@ License: You must have a valid license purchased only from themeforest(the above
 		<!--end::Global Theme Bundle-->
 		<!--begin::Page Scripts(used by this page)-->
 		<script src="{{asset('aminassets/js/pages/custom/login/login-general.js')}}"></script>
-        <script>
-            // گرفتن عناصر فرم
-            const usernameInput = document.getElementById('field');
-            const selectField = document.getElementById('my_select');
-
-            selectField.addEventListener('change', function() {
-                if (this.value === '2') {
-                    usernameInput.placeholder = 'لطفا کد ملی خود را وارد کنید';
-                    usernameInput.type = 'number';
-                    usernameInput.name = 'national_code'
-                    usernameInput.value = '';
-                } else {
-                    usernameInput.placeholder = 'لطفا ایمیل خود را وارد کنید';
-                    usernameInput.type = 'email';
-                    usernameInput.name = 'email'
-                    usernameInput.value = '';
-                }
-            });
-
-        </script>
 		<!--end::Page Scripts-->
         </div>
     </body>
