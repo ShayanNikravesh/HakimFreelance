@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->tinyText('title');
             $table->tinyText('english_title');
-            $table->tinyText('text');
+            $table->Text('text');
             $table->text('photo');
             $table->timestamps();
         });

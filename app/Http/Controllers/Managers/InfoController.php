@@ -40,14 +40,14 @@ class InfoController extends Controller
         $request->validate([
             'title' => ['required'],
             'english_title' => ['required'],
-            'text' => ['required'],
+            'text' => ['required', 'max:1024'],
             'photo' => ['required','max:2028','image','mimes:jpeg,png,jpg'],
         ]);
 
-       
+
         $fileName = time().'_'.$request->photo->getClientOriginalName();
         $filePath = $request->photo->storeAs('infosphoto',$fileName,'public');
-        
+
         $info = new Info();
         $info->title = $request->title;
         $info->english_title = $request->english_title;
@@ -116,7 +116,7 @@ class InfoController extends Controller
     public function destroy(string $id)
     {
         $info = Info::findOrFail($id);
-        
+
         if($info){
             File::delete(public_path($info->photo));
         }

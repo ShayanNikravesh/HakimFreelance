@@ -46,21 +46,26 @@
                         @endif
                         <div class="form-group row">
                             <div class="col-lg-6">
-                                <label>عنوان :</label>
-                                <input type="text" name="title" class="form-control" placeholder="عنوان را وارد کنید...">
+                                <label for="title">عنوان :</label>
+                                <input value="{{old('title')}}" id="title" type="text" name="title" class="form-control" placeholder="عنوان را وارد کنید...">
                             </div>
                             <div class="col-lg-6">
-                                <label>عنوان انگلیسی :</label>
-                                <input type="text" name="english_title" class="form-control" placeholder="عنوان انگلیسی را وارد کنید...">
+                                <label for="english_title">عنوان انگلیسی :</label>
+                                <input value="{{old('english_title')}}" id="english_title" type="text" name="english_title" class="form-control" placeholder="عنوان انگلیسی را وارد کنید...">
                             </div>
                             <div class="col-lg-6">
-                                <label>عکس :</label>
-                                <input name="photo" type="file" class="form-control">
+                                <label for="photo">عکس :</label>
+                                <input name="photo" id="photo" type="file" class="form-control">
                             </div>
                         </div>
                         <div class="form-group row">
                             <div class="col-lg-12">
                                 <label class="text-right"> متن خبر :</label>
+                                <style>
+                                    .note-btn-group.btn-group.note-insert {
+                                        display: none;
+                                    }
+                                </style>
                                 <textarea class="summernote" name="text" style="display: none;"></textarea>
                             </div>
                         </div>
