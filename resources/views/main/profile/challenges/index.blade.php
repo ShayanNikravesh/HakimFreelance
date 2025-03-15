@@ -132,7 +132,7 @@
                                 @else
                                     <div class="text-center my-5">
                                         <img src="assets/img/order-empty.svg" alt="">
-                                        <p class="fs-8">ایده ای ارسال نکرده اید.</p>
+                                        <p class="fs-8">چالشی ارسال نکرده اید.</p>
                                     </div>
                                 @endif
                                 <!--User Panel Comments Content:end-->
